@@ -1,21 +1,24 @@
 package com.billhub.qa.pages;
+
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.billhub.qa.base.TestBase;
 
-public class CustomerPage extends TestBase{
+public class BaPage extends TestBase{
 	
 	@FindBy(xpath = "//button[@class='btn btn-secondary btn-verify-blue active']")
-	WebElement addCustomerBtn;
+	WebElement addBaBtn;
 	
-	public CustomerPage() {
+	public BaPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickOnAddCustomerBtn() {
-		addCustomerBtn.click();
+	public void clickOnAddBaBtn() throws InterruptedException {
+		addBaBtn.click();
+		Thread.sleep(Duration.ofSeconds(4));
 	}
-	
 }

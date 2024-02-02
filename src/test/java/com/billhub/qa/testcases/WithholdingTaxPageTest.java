@@ -5,17 +5,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.pages.CustomerPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
+import com.billhub.qa.pages.WithholdingTaxPage;
 
-public class CustomerPageTest extends TestBase{
+public class WithholdingTaxPageTest extends TestBase{
 	
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
-	CustomerPage customerPage;
+	WithholdingTaxPage withholdingTaxPage;
 	
-	public CustomerPageTest() {
+	public WithholdingTaxPageTest() {
 		super();
 	}
 	
@@ -24,12 +24,12 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
-		customerPage = mdmDashboardPage.clickOnCustomerLink();
+		withholdingTaxPage = mdmDashboardPage.clickOnWithholdingTaxLink();
 	}
 	
 	@Test
-	public void addNewCustomerTest(){
-		customerPage.clickOnAddCustomerBtn();
+	public void addNewWithholdingTaxTest(){
+		withholdingTaxPage.clickOnWithholdingTaxBtn();;
 	}
 	
 	@AfterMethod						

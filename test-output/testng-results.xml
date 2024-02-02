@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-02T21:22:51 IST" name="Default suite" finished-at="2024-02-02T21:23:05 IST" duration-ms="14064">
+  <suite started-at="2024-02-03T01:17:15 IST" name="Default suite" finished-at="2024-02-03T01:17:44 IST" duration-ms="28756">
     <groups>
     </groups>
-    <test started-at="2024-02-02T21:22:51 IST" name="Default test" finished-at="2024-02-02T21:23:05 IST" duration-ms="14064">
-      <class name="com.billhub.qa.testcases.CustomerPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.CustomerPageTest@3c19aaa5]" started-at="2024-02-02T21:22:51 IST" name="setup" finished-at="2024-02-02T21:23:00 IST" duration-ms="9216" status="PASS">
+    <test started-at="2024-02-03T01:17:15 IST" name="Default test" finished-at="2024-02-03T01:17:44 IST" duration-ms="28756">
+      <class name="com.billhub.qa.testcases.ReasonPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.ReasonPageTest@3c19aaa5]" started-at="2024-02-03T01:17:15 IST" name="setup" finished-at="2024-02-03T01:17:36 IST" duration-ms="20944" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="addNewCustomerTest()[pri:0, instance:com.billhub.qa.testcases.CustomerPageTest@3c19aaa5]" started-at="2024-02-02T21:23:00 IST" name="addNewCustomerTest" finished-at="2024-02-02T21:23:05 IST" duration-ms="4714" status="PASS">
+        <test-method signature="addNewUserTest()[pri:0, instance:com.billhub.qa.testcases.ReasonPageTest@3c19aaa5]" started-at="2024-02-03T01:17:36 IST" name="addNewUserTest" finished-at="2024-02-03T01:17:43 IST" duration-ms="7701" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addNewCustomerTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.CustomerPageTest@3c19aaa5]" started-at="2024-02-02T21:23:05 IST" name="tearDown" finished-at="2024-02-02T21:23:05 IST" duration-ms="85" status="PASS">
+        </test-method> <!-- addNewUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.ReasonPageTest@3c19aaa5]" started-at="2024-02-03T01:17:43 IST" name="tearDown" finished-at="2024-02-03T01:17:44 IST" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.billhub.qa.testcases.CustomerPageTest -->
+      </class> <!-- com.billhub.qa.testcases.ReasonPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -5,17 +5,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.pages.CustomerPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
+import com.billhub.qa.pages.ReasonPage;
 
-public class CustomerPageTest extends TestBase{
+public class ReasonPageTest extends TestBase{
 	
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
-	CustomerPage customerPage;
+	ReasonPage reasonPage;
 	
-	public CustomerPageTest() {
+	public ReasonPageTest() {
 		super();
 	}
 	
@@ -24,17 +24,16 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
-		customerPage = mdmDashboardPage.clickOnCustomerLink();
+		reasonPage = mdmDashboardPage.clickOnReasonLink();
 	}
 	
 	@Test
-	public void addNewCustomerTest(){
-		customerPage.clickOnAddCustomerBtn();
+	public void addNewUserTest(){
+		reasonPage.clickOnAddReasonBtn();
 	}
 	
 	@AfterMethod						
 	public void tearDown() {
 		driver.close();						
 	}
-
 }

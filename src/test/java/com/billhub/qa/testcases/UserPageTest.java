@@ -8,14 +8,15 @@ import com.billhub.qa.base.TestBase;
 import com.billhub.qa.pages.CustomerPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
+import com.billhub.qa.pages.UserPage;
 
-public class CustomerPageTest extends TestBase{
+public class UserPageTest extends TestBase{
 	
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
-	CustomerPage customerPage;
+	UserPage userPage;
 	
-	public CustomerPageTest() {
+	public UserPageTest() {
 		super();
 	}
 	
@@ -24,12 +25,12 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
-		customerPage = mdmDashboardPage.clickOnCustomerLink();
+		userPage = mdmDashboardPage.clickOnUserLink();
 	}
 	
 	@Test
-	public void addNewCustomerTest(){
-		customerPage.clickOnAddCustomerBtn();
+	public void addNewUserTest(){
+		userPage.clickOnAddUserBtn();
 	}
 	
 	@AfterMethod						

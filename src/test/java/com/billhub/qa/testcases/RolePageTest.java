@@ -5,17 +5,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.pages.CustomerPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
+import com.billhub.qa.pages.RolePage;
 
-public class CustomerPageTest extends TestBase{
+public class RolePageTest extends TestBase{
 	
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
-	CustomerPage customerPage;
+	RolePage rolePage;
 	
-	public CustomerPageTest() {
+	public RolePageTest() {
 		super();
 	}
 	
@@ -24,17 +24,16 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
-		customerPage = mdmDashboardPage.clickOnCustomerLink();
+		rolePage = mdmDashboardPage.clickOnRoleLink();
 	}
 	
 	@Test
-	public void addNewCustomerTest(){
-		customerPage.clickOnAddCustomerBtn();
+	public void addNewRoleTest() throws InterruptedException{
+		rolePage.clickOnAddRoleBtn();
 	}
 	
 	@AfterMethod						
 	public void tearDown() {
 		driver.close();						
 	}
-
 }
