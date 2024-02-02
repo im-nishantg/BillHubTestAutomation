@@ -15,6 +15,7 @@ public class LoginPageTest extends TestBase{
 	TaxationDashboardPage taxationDashboardPage;
 	BaDashboardPage baDashboardPage;
 	CommercialDashboardPage commercialDashboardPage;
+	
 	public LoginPageTest(){
 		super();
 	}
