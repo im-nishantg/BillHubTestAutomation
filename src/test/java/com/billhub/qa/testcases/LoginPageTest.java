@@ -1,33 +1,55 @@
 package com.billhub.qa.testcases;
 
+import com.billhub.qa.pages.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.billhub.qa.pages.BADashboard;
-import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.base.TestBase;
 
 public class LoginPageTest extends TestBase{
-	
+
 	LoginPage loginPage;
-	BADashboard baDashBoard;
-	
-	public LoginPageTest() {
-		super();					
+	MdmDashboardPage mdmDashboardPage;
+	AccountDashboardPage accountDashboardPage;
+	TaxationDashboardPage taxationDashboardPage;
+	BaDashboardPage baDashboardPage;
+	CommercialDashboardPage commercialDashboardPage;
+	public LoginPageTest(){
+		super();
 	}
-	
-	@BeforeMethod						
-	public void setUp() {
-		initialization();								
-		loginPage = new LoginPage();												
+
+	@BeforeMethod
+	public void setup(){
+		initialization();
+		loginPage= new LoginPage();
 	}
-	
-	@Test(priority=1)
-	public void loginTest() {
-		baDashBoard = loginPage.login(prop.getProperty("ba_po_userId"), prop.getProperty("ba_po_password"));
+
+	@Test
+	public void loginAsMdmTest(){
+		mdmDashboardPage= loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));;
 	}
-	
+	@Test
+	public void loginAsBaTest(){
+		baDashboardPage= loginPage.loginAsBa(prop.getProperty("Ba_userId"),prop.getProperty("password"));
+	}
+
+	@Test
+	public void loginAsCommercialTest(){
+		commercialDashboardPage=loginPage.loginAsCommercial(prop.getProperty("Commercial_userId"),prop.getProperty("password"));
+
+	}
+
+	@Test
+	public void loginAsAccountTest(){
+		accountDashboardPage= loginPage.loginAsAccount(prop.getProperty("Account_userId"),prop.getProperty("password"));
+	}
+
+	@Test
+	public void loginAsTaxationTest(){
+		taxationDashboardPage= loginPage.loginAsTaxation(prop.getProperty("Taxation_userId"),prop.getProperty("password"));
+
+	}
 	@AfterMethod						
 	public void tearDown() {
 		driver.close();						
