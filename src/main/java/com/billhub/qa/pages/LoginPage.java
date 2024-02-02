@@ -8,7 +8,7 @@ import com.billhub.qa.base.TestBase;
 
 public class LoginPage extends TestBase{
 
-	@FindBy(xpath = "//input[@id='password']")
+	@FindBy(xpath = "//input[@id='passwordInput']")
 	WebElement password;
 	@FindBy(xpath = "//input[@id='emailInput']")
 	WebElement userId;

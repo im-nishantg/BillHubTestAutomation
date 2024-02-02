@@ -28,7 +28,7 @@ public class LoginPageTest extends TestBase{
 
 	@Test
 	public void loginAsMdmTest(){
-		mdmDashboardPage= loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));;
+		mdmDashboardPage= loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
 	}
 	@Test
 	public void loginAsBaTest(){

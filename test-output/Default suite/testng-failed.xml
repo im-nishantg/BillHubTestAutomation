@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.LoginPageTest">
+      <class name="com.billhub.qa.testcases.MdmDashboardPageTest">
         <methods>
+          <include name="setup"/>
+          <include name="addNewCustomerTest"/>
           <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="loginTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.LoginPageTest -->
+      </class> <!-- com.billhub.qa.testcases.MdmDashboardPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
