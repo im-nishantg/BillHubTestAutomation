@@ -5,17 +5,18 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
+import com.billhub.qa.pages.BaPage;
 import com.billhub.qa.pages.CustomerPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
 
-public class CustomerPageTest extends TestBase{
+public class BaPageTest extends TestBase{
 	
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
-	CustomerPage customerPage;
+	BaPage baPage;
 	
-	public CustomerPageTest() {
+	public BaPageTest() {
 		super();
 	}
 	
@@ -24,26 +25,15 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
-		customerPage = mdmDashboardPage.clickOnCustomerLink();
+		baPage = mdmDashboardPage.clickOnBaLink();
 	}
 	
 	@Test
-	public void addNewCustomerTest() throws InterruptedException {
-		customerPage.clickOnAddCustomerBtn();
+	public void addNewBaTest() throws InterruptedException  {
+		baPage.clickOnAddBaBtn();
 	}
-	@Test
-	public void verifySearchCustomerByName() throws InterruptedException {
-		customerPage.validateSearchCustomerByName();
-	}
-	@Test
-	public void verifySearchCustomerByCode() throws InterruptedException {
-		customerPage.validateSearchCustomerByCode();
-	}
-	@Test
-	public void verifyUpdateByName() throws InterruptedException {
-		customerPage.validateUpateByCustomerName();
-	}
-	@AfterMethod
+	
+	@AfterMethod						
 	public void tearDown() {
 		driver.close();						
 	}
