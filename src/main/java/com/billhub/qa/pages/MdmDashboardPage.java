@@ -48,12 +48,12 @@ public class MdmDashboardPage extends TestBase{
 		return new CustomerPage();
 	}
 	
-	public BaPage clickOnBaLink() throws InterruptedException {
+	public BAPage clickOnBaLink() throws InterruptedException {
 		Thread.sleep(Duration.ofSeconds(5));
 		navbarExpandBtn.click();
 		masterBtn.click();
 		baBtn.click();
-		return new BaPage();
+		return new BAPage();
 	}
 	
 	public UserPage clickOnUserLink() throws InterruptedException{

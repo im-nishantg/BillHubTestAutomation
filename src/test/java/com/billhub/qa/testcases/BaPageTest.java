@@ -5,18 +5,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.pages.BaPage;
-import com.billhub.qa.pages.CustomerPage;
+import com.billhub.qa.pages.BAPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
 
-public class BaPageTest extends TestBase{
+public class BAPageTest extends TestBase{
 	
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
-	BaPage baPage;
+	BAPage baPage;
 	
-	public BaPageTest() {
+	public BAPageTest() {
 		super();
 	}
 	

@@ -29,11 +29,11 @@ public class LoginPage extends TestBase{
 
 	}
 
-	public BaDashboardPage loginAsBa(String user, String pass){
+	public BADashboardPage loginAsBa(String user, String pass){
 		userId.sendKeys(user);
 		password.sendKeys(pass);
 		loginBtn.click();
-		return new BaDashboardPage();
+		return new BADashboardPage();
 	}
 	public CommercialDashboardPage loginAsCommercial(String user, String pass){
 		userId.sendKeys(user);

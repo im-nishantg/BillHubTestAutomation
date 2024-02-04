@@ -13,7 +13,7 @@ public class LoginPageTest extends TestBase{
 	MdmDashboardPage mdmDashboardPage;
 	AccountDashboardPage accountDashboardPage;
 	TaxationDashboardPage taxationDashboardPage;
-	BaDashboardPage baDashboardPage;
+	BADashboardPage baDashboardPage;
 	CommercialDashboardPage commercialDashboardPage;
 	
 	public LoginPageTest(){

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.RolePageTest">
+      <class name="com.billhub.qa.testcases.BAPageTest">
         <methods>
           <include name="setup"/>
+          <include name="addNewBaTest"/>
           <include name="tearDown"/>
-          <include name="addNewRoleTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.RolePageTest -->
+      </class> <!-- com.billhub.qa.testcases.BAPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
