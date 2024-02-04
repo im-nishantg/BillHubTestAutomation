@@ -1,5 +1,6 @@
 package com.billhub.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -34,14 +35,14 @@ public class CustomerPageTest extends TestBase{
 	@Test
 	public void verifySearchCustomerByCode() throws InterruptedException {
 		customerPage.validateSearchCustomerByCode();
-	}
-//	@Test
-//	public void verifyUpdateByName() throws InterruptedException {
-//		customerPage.validateUpdateByCustomerName();
-//	}
-	@Test
-	public void verifyAddCustomerWithValidData() throws InterruptedException {
-		customerPage.validateAddCustomerWithValidData();
+		boolean isTestFailed = false;
+		try {
+			isTestFailed = customerPage.validateAddCustomerWithValidData();
+			Assert.fail("Test should fail as invalid data is saved successfully.");
+		} catch (Exception e) {
+			// Catch any exceptions
+		}
+		Assert.assertTrue(isTestFailed, "Test passed as invalid data saved successfully.");
 	}
 
 	@Test

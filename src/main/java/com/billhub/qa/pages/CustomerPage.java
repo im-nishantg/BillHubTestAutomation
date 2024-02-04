@@ -109,6 +109,24 @@ public class CustomerPage extends TestBase {
         return successToast.isDisplayed();
     }
 
+//    public boolean validateAddCustomerWithInvalidData() throws InterruptedException {
+//        addCustomerBtn.click();
+//        Thread.sleep(Duration.ofSeconds(5).toMillis());
+//        initializePopupWebElements();
+//
+//        customerCode.sendKeys("jhon");
+//        customerName.sendKeys("112233");
+//        customerPeriod.sendKeys("1");
+//        Select selectVertical = new Select(verticalDropdown);
+//        selectVertical.selectByVisibleText("AOB");
+//        ActiveCheckBox.click();
+//
+//        AddUserBtn.click();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
+//        return successToast.isDisplayed();
+//    }
+
 
     public boolean validateCustomerInTable() throws InterruptedException {
         String newUsername = "JohnDoe";
