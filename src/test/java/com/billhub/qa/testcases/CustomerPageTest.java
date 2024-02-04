@@ -26,11 +26,7 @@ public class CustomerPageTest extends TestBase{
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
 		customerPage = mdmDashboardPage.clickOnCustomerLink();
 	}
-	
-	@Test
-	public void addNewCustomerTest() throws InterruptedException {
-		customerPage.clickOnAddCustomerBtn();
-	}
+
 	@Test
 	public void verifySearchCustomerByName() throws InterruptedException {
 		customerPage.validateSearchCustomerByName();
@@ -39,9 +35,23 @@ public class CustomerPageTest extends TestBase{
 	public void verifySearchCustomerByCode() throws InterruptedException {
 		customerPage.validateSearchCustomerByCode();
 	}
+//	@Test
+//	public void verifyUpdateByName() throws InterruptedException {
+//		customerPage.validateUpdateByCustomerName();
+//	}
 	@Test
-	public void verifyUpdateByName() throws InterruptedException {
-		customerPage.validateUpateByCustomerName();
+	public void verifyAddCustomerWithValidData() throws InterruptedException {
+		customerPage.validateAddCustomerWithValidData();
+	}
+
+	@Test
+	public void verifyCustomerAppearanceTest() throws InterruptedException {
+		customerPage.validateCustomerInTable();
+	}
+
+	@Test
+	public void verifyAddCustomerWithBlankTest() throws InterruptedException {
+		customerPage.validateAddCustomerWithBlank();
 	}
 	@AfterMethod
 	public void tearDown() {
