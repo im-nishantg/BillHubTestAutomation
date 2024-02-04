@@ -91,20 +91,20 @@ public class CustomerPage extends TestBase {
 //
 //    }
 
-    public boolean validateAddCustomerWithValidData() throws InterruptedException {
+    public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
         addCustomerBtn.click();
         Thread.sleep(Duration.ofSeconds(5).toMillis());
         initializePopupWebElements();
 
-        customerCode.sendKeys("090090");
-        customerName.sendKeys("Suraj");
-        customerPeriod.sendKeys("1");
+        customerCode.sendKeys(custCode);
+        customerName.sendKeys(custName);
+        customerPeriod.sendKeys(custPeriod);
         Select selectVertical = new Select(verticalDropdown);
-        selectVertical.selectByVisibleText("AOB");
+        selectVertical.selectByVisibleText(custDrop);
         ActiveCheckBox.click();
 
         AddUserBtn.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
         return successToast.isDisplayed();
     }
@@ -128,22 +128,21 @@ public class CustomerPage extends TestBase {
 //    }
 
 
-    public boolean validateCustomerInTable() throws InterruptedException {
-        String newUsername = "JohnDoe";
+    public boolean validateCustomerInTable(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
         addCustomerBtn.click();
         Thread.sleep(Duration.ofSeconds(5).toMillis());
         initializePopupWebElements();
 
-        customerCode.sendKeys("010304");
-        customerName.sendKeys(newUsername);
-        customerPeriod.sendKeys("8");
+        customerCode.sendKeys(custCode);
+        customerName.sendKeys(custName);
+        customerPeriod.sendKeys(custPeriod);
         Select selectVertical = new Select(verticalDropdown);
-        selectVertical.selectByVisibleText("BULK");
+        selectVertical.selectByVisibleText(custDrop);
         ActiveCheckBox.click();
         AddUserBtn.click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        String xpathExpression = "//tr[contains(@class, 'ng-star-inserted') and td[contains(.,'" + newUsername + "')]]";
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        String xpathExpression = "//tr[contains(@class, 'ng-star-inserted') and td[contains(.,'" + custName + "')]]";
         WebElement userRow = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
         return userRow.isDisplayed();
     }

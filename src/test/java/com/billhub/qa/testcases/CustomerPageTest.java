@@ -11,7 +11,10 @@ import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
 
 public class CustomerPageTest extends TestBase{
-	
+	String customerName="Rajneesh";
+	String customerCode="9087654";
+	String customerPeriod="2";
+	String customerDrop="AOB";
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
 	CustomerPage customerPage;
@@ -29,29 +32,38 @@ public class CustomerPageTest extends TestBase{
 	}
 
 	@Test
-	public void verifySearchCustomerByName() throws InterruptedException {
+	public void SearchCustomerByNameTest() throws InterruptedException {
 		customerPage.validateSearchCustomerByName();
 	}
 	@Test
-	public void verifySearchCustomerByCode() throws InterruptedException {
+	public void SearchCustomerByCodeTest() throws InterruptedException {
 		customerPage.validateSearchCustomerByCode();
+	}
+
+	@Test
+	public void AddCustomerWithInvalidDataTest(){
 		boolean isTestFailed = false;
 		try {
-			isTestFailed = customerPage.validateAddCustomerWithValidData();
+			isTestFailed = customerPage.validateAddCustomerWithValidData(customerCode,customerName,customerPeriod,customerDrop);
 			Assert.fail("Test should fail as invalid data is saved successfully.");
 		} catch (Exception e) {
 			// Catch any exceptions
 		}
 		Assert.assertTrue(isTestFailed, "Test passed as invalid data saved successfully.");
 	}
-
 	@Test
-	public void verifyCustomerAppearanceTest() throws InterruptedException {
-		customerPage.validateCustomerInTable();
+	public void AddCustomerWithValdiDataTest() throws InterruptedException {
+
+		customerPage.validateAddCustomerWithValidData(customerName,customerCode,customerPeriod,customerDrop);
 	}
 
 	@Test
-	public void verifyAddCustomerWithBlankTest() throws InterruptedException {
+	public void CustomerAppearanceTest() throws InterruptedException {
+		customerPage.validateCustomerInTable(customerName,customerCode,customerPeriod,customerDrop);
+	}
+
+	@Test
+	public void AddCustomerWithoutDataTest() throws InterruptedException {
 		customerPage.validateAddCustomerWithBlank();
 	}
 	@AfterMethod
