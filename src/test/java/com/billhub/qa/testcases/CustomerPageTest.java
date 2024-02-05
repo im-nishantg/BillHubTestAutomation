@@ -1,5 +1,9 @@
 package com.billhub.qa.testcases;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +22,7 @@ public class CustomerPageTest extends TestBase{
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
 	CustomerPage customerPage;
-	
+
 	public CustomerPageTest() {
 		super();
 	}
@@ -33,38 +37,38 @@ public class CustomerPageTest extends TestBase{
 
 	@Test
 	public void SearchCustomerByNameTest() throws InterruptedException {
-		customerPage.validateSearchCustomerByName();
+			boolean result = customerPage.validateSearchCustomerByName();
+			Assert.assertTrue(result, "Search Customer By Name Test Passed");
 	}
 	@Test
 	public void SearchCustomerByCodeTest() throws InterruptedException {
-		customerPage.validateSearchCustomerByCode();
+//		customerPage.validateSearchCustomerByCode();
+			boolean result = customerPage.validateSearchCustomerByCode();
+			Assert.assertTrue(result, "Search Customer By Code Test Passed");
+
 	}
 
 	@Test
-	public void AddCustomerWithInvalidDataTest(){
-		boolean isTestFailed = false;
-		try {
-			isTestFailed = customerPage.validateAddCustomerWithValidData(customerCode,customerName,customerPeriod,customerDrop);
-			Assert.fail("Test should fail as invalid data is saved successfully.");
-		} catch (Exception e) {
-			// Catch any exceptions
-		}
-		Assert.assertTrue(isTestFailed, "Test passed as invalid data saved successfully.");
+	public void AddCustomerWithInvalidDataTest() throws InterruptedException {
+		boolean isTestFailed = customerPage.validateAddCustomerWithValidData(customerCode,customerName,customerPeriod,customerDrop);
+		Assert.assertFalse(isTestFailed, "Test failed as invalid data saved successfully.");
 	}
 	@Test
 	public void AddCustomerWithValdiDataTest() throws InterruptedException {
-
-		customerPage.validateAddCustomerWithValidData(customerName,customerCode,customerPeriod,customerDrop);
+		boolean result= customerPage.validateAddCustomerWithValidData(customerName,customerCode,customerPeriod,customerDrop);
+		Assert.assertTrue(result,"Test failed");
 	}
 
 	@Test
 	public void CustomerAppearanceTest() throws InterruptedException {
-		customerPage.validateCustomerInTable(customerName,customerCode,customerPeriod,customerDrop);
+		boolean result= customerPage.validateCustomerInTable(customerName,customerCode,customerPeriod,customerDrop);
+		Assert.assertTrue(result,"Test failed");
 	}
 
 	@Test
 	public void AddCustomerWithoutDataTest() throws InterruptedException {
-		customerPage.validateAddCustomerWithBlank();
+		boolean result=customerPage.validateAddCustomerWithBlank();
+		Assert.assertTrue(result,"Test failed as it has not saved with blank data");
 	}
 	@AfterMethod
 	public void tearDown() {

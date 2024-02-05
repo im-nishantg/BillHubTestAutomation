@@ -62,34 +62,7 @@ public class CustomerPage extends TestBase {
 
     }
 
-//    all the test related to update customer
-//    public void validateUpdateByCustomerName() throws InterruptedException {
-//        updateBtn.click();
-//        Thread.sleep(TestUtil.EXPLICIT_WAIT);
-//        WebElement inputField = new WebDriverWait(driver, Duration.ofSeconds(5))
-//                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[class='modal-body pb-0'] div:nth-child(2) input:nth-child(1)")));
-//
-////        WebElement inputField = driver.findElement(By.id("Customer_Name"));
-//        inputField.clear();
-//        inputField.sendKeys("Abhay log");
-//
-//        // Click on the update button
-//        WebElement newUpdateBtn= driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-//        newUpdateBtn.click();
-//
-//        // Wait for some time to allow the update to take effect (you may need to implement a proper wait strategy)
-//        try {
-//            Thread.sleep(TestUtil.EXPLICIT_WAIT);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        // Verify if the update functionality is working fine
-//        WebElement updatedElement = driver.findElement(By.xpath("//tr[@class='ng-star-inserted']/td[3]"));
-//        String updatedText = updatedElement.getText();
-//        Assert.assertEquals(updatedText, "Abhay log", "Update functionality is not working as expected");
-//
-//    }
+
 
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
         addCustomerBtn.click();
@@ -108,24 +81,6 @@ public class CustomerPage extends TestBase {
         WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
         return successToast.isDisplayed();
     }
-
-//    public boolean validateAddCustomerWithInvalidData() throws InterruptedException {
-//        addCustomerBtn.click();
-//        Thread.sleep(Duration.ofSeconds(5).toMillis());
-//        initializePopupWebElements();
-//
-//        customerCode.sendKeys("jhon");
-//        customerName.sendKeys("112233");
-//        customerPeriod.sendKeys("1");
-//        Select selectVertical = new Select(verticalDropdown);
-//        selectVertical.selectByVisibleText("AOB");
-//        ActiveCheckBox.click();
-//
-//        AddUserBtn.click();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
-//        return successToast.isDisplayed();
-//    }
 
 
     public boolean validateCustomerInTable(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
@@ -154,7 +109,7 @@ public class CustomerPage extends TestBase {
             Thread.sleep(Duration.ofSeconds(5).toMillis());
             AddUserBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
             AddUserBtn.click();
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
             WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
             return successToast.isDisplayed();
         } catch (Exception e) {

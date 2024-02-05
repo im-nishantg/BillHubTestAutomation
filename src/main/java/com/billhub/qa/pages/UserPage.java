@@ -18,4 +18,7 @@ public class UserPage extends TestBase{
 	public void clickOnAddUserBtn() {
 		addUserBtn.click();
 	}
+
+
+
 }
