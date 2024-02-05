@@ -35,6 +35,7 @@ public class LoginPage extends TestBase{
 		loginBtn.click();
 		return new BADashboardPage();
 	}
+	
 	public CommercialDashboardPage loginAsCommercial(String user, String pass){
 		userId.sendKeys(user);
 		password.sendKeys(pass);

@@ -26,42 +26,41 @@ public class BAPage extends TestBase{
 	
 	public void initializePopupWebElements() {
 		
-		baCode = driver.findElement(By.xpath("//input[@formcontrolname='ba_code']"));
-		baName = driver.findElement(By.xpath("//input[@formcontrolname='ba_name']"));
-		stateName = driver.findElement(By.xpath("//select[@id='state-id']"));
-		tradeDiscount = driver.findElement(By.xpath("//input[@formcontrolname='tradeDiscount']"));
-		creditPeriod = driver.findElement(By.xpath("//input[@formcontrolname='credit_Period']"));
-		tdCreditPeriod = driver.findElement(By.xpath("//input[@formcontrolname='td_Credit_Period']"));
-		baGroupCode = driver.findElement(By.xpath("//input[@formcontrolname='ba_group_id']"));
-		isMSMED = driver.findElement(By.xpath("//select[@formcontrolname='is_msmed']"));
-		emailID = driver.findElement(By.xpath("//input[@formcontrolname='email_id']"));
-		contactPersonName = driver.findElement(By.xpath("//input[@formcontrolname='contact_name']"));
-		contactPersonNumber = driver.findElement(By.xpath("//input[@formcontrolname='contact_number']"));
-		activeBtn = driver.findElement(By.xpath("//input[@id='defaultCheck2']"));
-		addBtn = driver.findElement(By.xpath("//button[@class='btn btn-primary btn-done']"));
-		closeBtn = driver.findElement(By.xpath("//button[normalize-space()='Close']"));
-
+		baCode = driver.findElement(By.cssSelector("div[class='card-body p-2'] div:nth-child(1) div:nth-child(1) input:nth-child(1)"));
+		baName = driver.findElement(By.cssSelector("div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)"));
+		stateName = driver.findElement(By.cssSelector("#state-id"));
+		tradeDiscount = driver.findElement(By.cssSelector("div[class='modal-body pb-0'] div:nth-child(2) div:nth-child(2) input:nth-child(1)"));
+		creditPeriod = driver.findElement(By.cssSelector("div:nth-child(3) div:nth-child(1) input:nth-child(1)"));
+		tdCreditPeriod = driver.findElement(By.cssSelector("div:nth-child(3) div:nth-child(2) input:nth-child(1)"));
+		baGroupCode = driver.findElement(By.cssSelector("div:nth-child(4) div:nth-child(1) input:nth-child(1)"));
+		isMSMED = driver.findElement(By.cssSelector("#msmed-id"));
+		emailID = driver.findElement(By.cssSelector("input[formcontrolname='email_id']"));
+		contactPersonName = driver.findElement(By.cssSelector("input[formcontrolname='contact_name']"));
+		contactPersonNumber = driver.findElement(By.cssSelector("input[formcontrolname='contact_number']"));
+		activeBtn = driver.findElement(By.cssSelector("#defaultCheck2"));
+		addBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
+		closeBtn = driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
 	}
-	
-	public void clickOnAddBaBtn() {
-        try {
-            addBaBtn.click();
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-            // Wait for BA code input field to be clickable and visible
-            WebElement baCodeInput = wait.until(ExpectedConditions.elementToBeClickable(baCode));
-            wait.until(ExpectedConditions.visibilityOf(baCodeInput));
-
-            baCodeInput.sendKeys("124");
-            baName.sendKeys("Nishant");
-            
-            // Continue entering data for other fields...
-
-            // Click the close button
-            closeBtn.click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	public boolean addNewBA(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) throws InterruptedException {
+		addBaBtn.click();
+        initializePopupWebElements();
+        
+        baCode.sendKeys(ba_code);
+        baName.sendKeys(ba_name);
+        stateName.sendKeys(state);
+        tradeDiscount.sendKeys(trd_disc);
+        creditPeriod.sendKeys(credit_period);
+        tdCreditPeriod.sendKeys(td_credit_period);
+        baGroupCode.sendKeys(ba_groupcode);
+        isMSMED.sendKeys(msmed);
+        emailID.sendKeys(email);
+        contactPersonName.sendKeys(contact_person_name);
+        contactPersonNumber.sendKeys(contact_person_number);
+        addBtn.click();
+        
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='BA Data Added successfully']")));
+        return successToast.isDisplayed();
+	}
 }

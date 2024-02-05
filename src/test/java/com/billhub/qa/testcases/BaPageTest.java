@@ -1,5 +1,6 @@
 package com.billhub.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -28,8 +29,21 @@ public class BAPageTest extends TestBase{
 	}
 	
 	@Test
-	public void addNewBaTest() throws InterruptedException  {
-		baPage.clickOnAddBaBtn();
+	public void addNewBaWithValidDataTest() throws InterruptedException  {
+		boolean isAdded = baPage.addNewBA("427", "Nishant", "Maharashtra", "10", "2", "5", "420", "small", "nishant@gmail.com", "Nis", "1234567890");
+		Assert.assertTrue(isAdded, "BA was not added.");
+	}
+	
+	@Test
+	public void addNewBaWithInvalidDataTest() throws InterruptedException  {
+		boolean isAdded = baPage.addNewBA("nish", "Nishant", "Maharashtra", "10", "2", "5", "420", "small", "nishant@gmail.com", "Nis", "1234567890");
+		Assert.assertTrue(isAdded, "BA was not added.");
+	}
+	
+	@Test
+	public void addNewBaWithoutDataTest() throws InterruptedException  {
+		boolean isAdded = baPage.addNewBA("", "", "", "", "", "", "", "", "", "", "");
+		Assert.assertFalse(isAdded, "BA was added without data.");
 	}
 	
 	@AfterMethod						

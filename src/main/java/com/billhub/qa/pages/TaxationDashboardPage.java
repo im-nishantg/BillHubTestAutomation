@@ -1,4 +1,8 @@
 package com.billhub.qa.pages;
 
-public class TaxationDashboardPage {
+import com.billhub.qa.base.TestBase;
+
+public class TaxationDashboardPage extends TestBase {
+
+
 }

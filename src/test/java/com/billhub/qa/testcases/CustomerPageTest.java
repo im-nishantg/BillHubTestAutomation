@@ -1,5 +1,6 @@
 package com.billhub.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,13 +27,35 @@ public class CustomerPageTest extends TestBase{
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
 		customerPage = mdmDashboardPage.clickOnCustomerLink();
 	}
-	
+
 	@Test
-	public void addNewCustomerTest(){
-		customerPage.clickOnAddCustomerBtn();
+	public void SearchCustomerByNameTest() throws InterruptedException {
+		customerPage.validateSearchCustomerByName();
+	}
+	@Test
+	public void SearchCustomerByCodeTest() throws InterruptedException {
+		customerPage.validateSearchCustomerByCode();
+		boolean isTestFailed = false;
+		try {
+			isTestFailed = customerPage.validateAddCustomerWithValidData();
+			Assert.fail("Test should fail as invalid data is saved successfully.");
+		} catch (Exception e) {
+			// Catch any exceptions
+		}
+		Assert.assertTrue(isTestFailed, "Test passed as invalid data saved successfully.");
+	}
+
+	@Test
+	public void CustomerAppearanceTest() throws InterruptedException {
+		customerPage.validateCustomerInTable();
+	}
+
+	@Test
+	public void AddCustomerWithoutDataTest() throws InterruptedException {
+		customerPage.validateAddCustomerWithBlank();
 	}
 	
-	@AfterMethod						
+	@AfterMethod
 	public void tearDown() {
 		driver.close();						
 	}
