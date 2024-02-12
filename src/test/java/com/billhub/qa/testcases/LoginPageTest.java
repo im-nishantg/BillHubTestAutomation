@@ -27,18 +27,17 @@ public class LoginPageTest extends TestBase{
 	}
 
 	@Test
-	public void loginAsMdmTest(){
+	public void loginAsMdmTest() throws InterruptedException{
 		mdmDashboardPage= loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
 	}
 	@Test
-	public void loginAsBaTest(){
-		baDashboardPage= loginPage.loginAsBa(prop.getProperty("Ba_userId"),prop.getProperty("password"));
+	public void loginAsBATest(){
+		baDashboardPage= loginPage.loginAsBa(prop.getProperty("BA_userId"),prop.getProperty("password"));
 	}
 
 	@Test
 	public void loginAsCommercialTest(){
 		commercialDashboardPage=loginPage.loginAsCommercial(prop.getProperty("Commercial_userId"),prop.getProperty("password"));
-
 	}
 
 	@Test
@@ -49,8 +48,8 @@ public class LoginPageTest extends TestBase{
 	@Test
 	public void loginAsTaxationTest(){
 		taxationDashboardPage= loginPage.loginAsTaxation(prop.getProperty("Taxation_userId"),prop.getProperty("password"));
-
 	}
+	
 	@AfterMethod						
 	public void tearDown() {
 		driver.close();						

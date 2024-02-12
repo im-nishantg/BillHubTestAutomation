@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CustomerPage extends TestBase {
+	
     @FindBy(xpath = "//input[@id='Customer_Name']")
     WebElement SearchCustomerByName;
     @FindBy(xpath = "//input[@id='Customer_Code']")
@@ -62,45 +63,18 @@ public class CustomerPage extends TestBase {
 
     }
 
-//    all the test related to update customer
-//    public void validateUpdateByCustomerName() throws InterruptedException {
-//        updateBtn.click();
-//        Thread.sleep(TestUtil.EXPLICIT_WAIT);
-//        WebElement inputField = new WebDriverWait(driver, Duration.ofSeconds(5))
-//                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[class='modal-body pb-0'] div:nth-child(2) input:nth-child(1)")));
-//
-////        WebElement inputField = driver.findElement(By.id("Customer_Name"));
-//        inputField.clear();
-//        inputField.sendKeys("Abhay log");
-//
-//        // Click on the update button
-//        WebElement newUpdateBtn= driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-//        newUpdateBtn.click();
-//
-//        // Wait for some time to allow the update to take effect (you may need to implement a proper wait strategy)
-//        try {
-//            Thread.sleep(TestUtil.EXPLICIT_WAIT);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        // Verify if the update functionality is working fine
-//        WebElement updatedElement = driver.findElement(By.xpath("//tr[@class='ng-star-inserted']/td[3]"));
-//        String updatedText = updatedElement.getText();
-//        Assert.assertEquals(updatedText, "Abhay log", "Update functionality is not working as expected");
-//
-//    }
 
-    public boolean validateAddCustomerWithValidData() throws InterruptedException {
+
+    public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
         addCustomerBtn.click();
         Thread.sleep(Duration.ofSeconds(5).toMillis());
         initializePopupWebElements();
 
-        customerCode.sendKeys("090090");
-        customerName.sendKeys("Suraj");
-        customerPeriod.sendKeys("1");
+        customerCode.sendKeys(custCode);
+        customerName.sendKeys(custName);
+        customerPeriod.sendKeys(custPeriod);
         Select selectVertical = new Select(verticalDropdown);
-        selectVertical.selectByVisibleText("AOB");
+        selectVertical.selectByVisibleText(custDrop);
         ActiveCheckBox.click();
 
         AddUserBtn.click();
@@ -109,41 +83,24 @@ public class CustomerPage extends TestBase {
         return successToast.isDisplayed();
     }
 
-//    public boolean validateAddCustomerWithInvalidData() throws InterruptedException {
-//        addCustomerBtn.click();
-//        Thread.sleep(Duration.ofSeconds(5).toMillis());
-//        initializePopupWebElements();
-//
-//        customerCode.sendKeys("jhon");
-//        customerName.sendKeys("112233");
-//        customerPeriod.sendKeys("1");
-//        Select selectVertical = new Select(verticalDropdown);
-//        selectVertical.selectByVisibleText("AOB");
-//        ActiveCheckBox.click();
-//
-//        AddUserBtn.click();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
-//        return successToast.isDisplayed();
-//    }
 
-
-    public boolean validateCustomerInTable() throws InterruptedException {
-        String newUsername = "JohnDoe";
+    public boolean validateCustomerInTable(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
         addCustomerBtn.click();
         Thread.sleep(Duration.ofSeconds(5).toMillis());
         initializePopupWebElements();
 
-        customerCode.sendKeys("010304");
-        customerName.sendKeys(newUsername);
-        customerPeriod.sendKeys("8");
+        customerCode.sendKeys(custCode);
+        customerName.sendKeys(custName);
+        customerPeriod.sendKeys(custPeriod);
         Select selectVertical = new Select(verticalDropdown);
-        selectVertical.selectByVisibleText("BULK");
+        selectVertical.selectByVisibleText(custDrop);
         ActiveCheckBox.click();
         AddUserBtn.click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        String xpathExpression = "//tr[contains(@class, 'ng-star-inserted') and td[contains(.,'" + newUsername + "')]]";
+
+        String xpathExpression = "//tr[contains(@class, 'ng-star-inserted') and td[contains(.,'" + custName + "')]]";
+
         WebElement userRow = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
         return userRow.isDisplayed();
     }

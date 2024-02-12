@@ -1,9 +1,13 @@
 package com.billhub.qa.pages;
 import com.billhub.qa.base.TestBase;
 import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class MdmDashboardPage extends TestBase{
@@ -39,59 +43,66 @@ public class MdmDashboardPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 
-	public CustomerPage clickOnCustomerLink() throws InterruptedException {
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		customerBtn.click();
+	public CustomerPage clickOnCustomerLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(customerBtn)).click();
 		return new CustomerPage();
 	}
 	
-	public BAPage clickOnBaLink() throws InterruptedException {
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		baBtn.click();
+	public BAPage clickOnBaLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(baBtn)).click();
 		return new BAPage();
 	}
 
-	public UserPage clickOnUserLink() throws InterruptedException{
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		userBtn.click();
+	public UserPage clickOnUserLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(userBtn)).click();
 		return new UserPage();
 	}
 
-	public WithholdingTaxPage clickOnWithholdingTaxLink() throws InterruptedException{
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		withHoldingTaxBtn.click();
+	public WithholdingTaxPage clickOnWithholdingTaxLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(withHoldingTaxBtn)).click();
 		return new WithholdingTaxPage();
 	}
 
-	public RolePage clickOnRoleLink() throws InterruptedException{
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		roleBtn.click();
+	public RolePage clickOnRoleLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(roleBtn)).click();
 		return new RolePage();
 	}
 
-	public TaxCodePage clickOnTaxCodeLink() throws InterruptedException{
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		taxCodeBtn.click();
+	public TaxCodePage clickOnTaxCodeLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(taxCodeBtn)).click();
 		return new TaxCodePage();
 	}
 
-	public ReasonPage clickOnReasonLink() throws InterruptedException{
-		Thread.sleep(Duration.ofSeconds(5).toMillis());
-		navbarExpandBtn.click();
-		masterBtn.click();
-		reasonBtn.click();
+	public ReasonPage clickOnReasonLink(){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
+        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(reasonBtn)).click();
 		return new ReasonPage();
 	}
 

@@ -15,8 +15,7 @@ public class RolePage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickOnAddRoleBtn() throws InterruptedException {
-		Thread.sleep(4);
+	public void clickOnAddRoleBtn(){
 		addRoleBtn.click();
 	}
 }

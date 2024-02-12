@@ -28,7 +28,7 @@ public class RolePageTest extends TestBase{
 	}
 	
 	@Test
-	public void addNewRoleTest() throws InterruptedException{
+	public void addNewRoleTest() {
 		rolePage.clickOnAddRoleBtn();
 	}
 	

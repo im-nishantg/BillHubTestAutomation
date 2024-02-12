@@ -42,7 +42,7 @@ public class BAPage extends TestBase{
 		closeBtn = driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
 	}
 
-	public boolean addNewBA(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) throws InterruptedException {
+	public boolean addNewBA(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number){
 		addBaBtn.click();
         initializePopupWebElements();
         

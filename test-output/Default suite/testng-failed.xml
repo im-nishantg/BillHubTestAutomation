@@ -5,6 +5,7 @@
     <classes>
       <class name="com.billhub.qa.testcases.BAPageTest">
         <methods>
+          <include name="addNewBaWithInvalidDataTest"/>
           <include name="addNewBaWithoutDataTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
