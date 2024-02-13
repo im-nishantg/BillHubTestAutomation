@@ -111,8 +111,11 @@ public class BAPage extends TestBase{
 		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
 	}
 	
-	public boolean addNewBAWithActiveStatus(String ba_code) {
-		return searchBAByCode(ba_code);
+	public String addNewBAWithActiveStatus(String ba_code) {
+		searchBAByCode(ba_code);
+		WebElement isActive = TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[9]"));
+		System.out.println(isActive.getText());
+		return isActive.getText();
 	}
 	
 	public boolean validateAddedBAInTheDatabase(String ba_code) {

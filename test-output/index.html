@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\nisha\AppData\Local\Temp\testng-eclipse-704702915\testng-customsuite.xml</span>
+                    <span>C:\Users\nisha\AppData\Local\Temp\testng-eclipse--1150108370\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.billhub.qa.testcases.BAPageTest" class="method navigator-link" hash-for-method="searchBAByCodeTest">searchBAByCodeTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.billhub.qa.testcases.BAPageTest" class="method navigator-link" hash-for-method="addNewBAWithActiveStatusTest">addNewBAWithActiveStatusTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,16 +126,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="searchBAByCodeTest">
-                  </a> <!-- searchBAByCodeTest -->
-                  <span class="method-name">searchBAByCodeTest</span>
-                  <div class="stack-trace">java.lang.NumberFormatException: For input string: &quot;429.0&quot;
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:662)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:541)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:679)
-	at com.billhub.qa.utils.TestUtils.numberToString(TestUtils.java:61)
-	at com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest(BAPageTest.java:113)
+                  <a name="addNewBAWithActiveStatusTest">
+                  </a> <!-- addNewBAWithActiveStatusTest -->
+                  <span class="method-name">addNewBAWithActiveStatusTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: BA with active status was not added or not found in database upon searching. expected [Active] but found [Deactive]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest(BAPageTest.java:102)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -171,7 +171,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\nisha\AppData\Local\Temp\testng-eclipse-704702915\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\nisha\AppData\Local\Temp\testng-eclipse--1150108370\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -182,7 +182,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.billhub.qa.testcases.BAPageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;searchBAByCodeTest&quot;/&gt;
+          &lt;include name=&quot;addNewBAWithActiveStatusTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.BAPageTest --&gt;
     &lt;/classes&gt;
@@ -226,14 +226,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchBAByCodeTest')
+data.setCell(0, 1, 'addNewBAWithActiveStatusTest')
 data.setCell(0, 2, 'com.billhub.qa.testcases.BAPageTest')
-data.setCell(0, 3, 13);
+data.setCell(0, 3, 252);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 ms</span>
+              <span class="suite-total-time">Total running time: 252 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -254,23 +254,23 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.billhub.qa.testcases.BAPageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">validateAddedBAInTheDatabaseTest</span>
-                <br/>
-                <span class="ignored-method-name">addNewBAWithDuplicateDataTest</span>
-                <br/>
-                <span class="ignored-method-name">addNewBAWithActiveStatusTest</span>
-                <br/>
                 <span class="ignored-method-name">addNewBaWithoutDataTest</span>
-                <br/>
-                <span class="ignored-method-name">updateBA</span>
-                <br/>
-                <span class="ignored-method-name">addNewBaWithInvalidDataTest</span>
-                <br/>
-                <span class="ignored-method-name">addNewBAWithInactiveStatusTest</span>
                 <br/>
                 <span class="ignored-method-name">searchBAByNameTest</span>
                 <br/>
+                <span class="ignored-method-name">validateAddedBAInTheDatabaseTest</span>
+                <br/>
+                <span class="ignored-method-name">addNewBAWithInactiveStatusTest</span>
+                <br/>
+                <span class="ignored-method-name">updateBA</span>
+                <br/>
+                <span class="ignored-method-name">searchBAByCodeTest</span>
+                <br/>
+                <span class="ignored-method-name">addNewBAWithDuplicateDataTest</span>
+                <br/>
                 <span class="ignored-method-name">addNewBaWithValidDataTest</span>
+                <br/>
+                <span class="ignored-method-name">addNewBaWithInvalidDataTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -290,12 +290,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">searchBAByCodeTest</span>
-                <span class="method-start">17499 ms</span>
+                <span class="method-name">addNewBAWithActiveStatusTest</span>
+                <span class="method-start">17531 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">17516 ms</span>
+                <span class="method-start">17790 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

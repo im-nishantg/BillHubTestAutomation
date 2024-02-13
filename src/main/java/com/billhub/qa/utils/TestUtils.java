@@ -5,9 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.time.Duration;
 
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -58,7 +60,9 @@ public class TestUtils extends TestBase{
 	}
 	
 	public static String numberToString(Object data) {
-		return String.valueOf(new BigInteger(data.toString()));
+		BigDecimal number = new BigDecimal(data.toString());
+        number = number.setScale(0, RoundingMode.DOWN); // Removes the decimal part
+        return number.toString();
 	}
 	
 	public static boolean isTableDisplayed(By selector) {
@@ -90,7 +94,8 @@ public class TestUtils extends TestBase{
 		
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
-				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
+				Cell cell = sheet.getRow(i + 1).getCell(k);
+	            data[i][k] = (cell != null) ? cell.toString() : ""; // Check for null before invoking toString()
 //				System.out.println(i + " " + k + " " + data[i][k]);
 			}
 		}

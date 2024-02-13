@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 13 18:36:19 IST 2024</td>
+<td>Started on:</td><td>Tue Feb 13 20:42:12 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>17 seconds (17641 ms)</td>
+<tr><td>Total time:</td><td>17 seconds (17956 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest()'><b>searchBAByCodeTest</b><br>Test class: com.billhub.qa.testcases.BAPageTest</td>
-<td><div><pre>java.lang.NumberFormatException: For input string: &quot;429.0&quot;
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:662)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:541)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:679)
-	at com.billhub.qa.utils.TestUtils.numberToString(TestUtils.java:61)
-	at com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest(BAPageTest.java:113)
+<td title='com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest()'><b>addNewBAWithActiveStatusTest</b><br>Test class: com.billhub.qa.testcases.BAPageTest</td>
+<td><div><pre>java.lang.AssertionError: BA with active status was not added or not found in database upon searching. expected [Active] but found [Deactive]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest(BAPageTest.java:102)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -110,14 +110,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1330411679", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1330411679'><pre>java.lang.NumberFormatException: For input string: &quot;429.0&quot;
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:662)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:541)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:679)
-	at com.billhub.qa.utils.TestUtils.numberToString(TestUtils.java:61)
-	at com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest(BAPageTest.java:113)
+</pre></div><a href='#' onClick='toggleBox("stack-trace337816703", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace337816703'><pre>java.lang.AssertionError: BA with active status was not added or not found in database upon searching. expected [Active] but found [Deactive]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest(BAPageTest.java:102)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -146,7 +146,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.billhub.qa.testcases.BAPageTest@35d019a3</td></tr>
+<td>com.billhub.qa.testcases.BAPageTest@3270d194</td></tr>
 </table><p>
 </body>
 </html>

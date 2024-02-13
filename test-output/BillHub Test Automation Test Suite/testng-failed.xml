@@ -8,10 +8,9 @@
     <classes>
       <class name="com.billhub.qa.testcases.BAPageTest">
         <methods>
-          <include name="addNewBAWithInactiveStatusTest"/>
           <include name="addNewBaWithoutDataTest"/>
           <include name="setup"/>
-          <include name="updateBA"/>
+          <include name="addNewBAWithDuplicateDataTest"/>
           <include name="addNewBaWithValidDataTest"/>
           <include name="tearDown"/>
         </methods>

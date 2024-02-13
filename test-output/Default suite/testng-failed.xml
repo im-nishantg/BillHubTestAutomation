@@ -5,9 +5,9 @@
     <classes>
       <class name="com.billhub.qa.testcases.BAPageTest">
         <methods>
-          <include name="searchBAByCodeTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="addNewBAWithActiveStatusTest"/>
         </methods>
       </class> <!-- com.billhub.qa.testcases.BAPageTest -->
     </classes>

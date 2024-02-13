@@ -9,17 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">17,641</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">17,956</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.billhub.qa.testcases.BAPageTest</td><td><a href="#m0">searchBAByCodeTest</a></td><td rowspan="1">1707829597069</td><td rowspan="1">13</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.billhub.qa.testcases.BAPageTest</td><td><a href="#m0">addNewBAWithActiveStatusTest</a></td><td rowspan="1">1707837150454</td><td rowspan="1">252</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.billhub.qa.testcases.BAPageTest#searchBAByCodeTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NumberFormatException: For input string: &quot;429.0&quot;
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:662)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:541)
-	at java.base/java.math.BigInteger.&lt;init&gt;(BigInteger.java:679)
-	at com.billhub.qa.utils.TestUtils.numberToString(TestUtils.java:61)
-	at com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest(BAPageTest.java:113)
+<h2>Default test</h2><h3 id="m0">com.billhub.qa.testcases.BAPageTest#addNewBAWithActiveStatusTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: BA with active status was not added or not found in database upon searching. expected [Active] but found [Deactive]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest(BAPageTest.java:102)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
