@@ -8,24 +8,14 @@
     <classes>
       <class name="com.billhub.qa.testcases.BAPageTest">
         <methods>
-          <include name="addNewBaWithInvalidDataTest"/>
+          <include name="addNewBAWithInactiveStatusTest"/>
           <include name="addNewBaWithoutDataTest"/>
           <include name="setup"/>
+          <include name="updateBA"/>
           <include name="addNewBaWithValidDataTest"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.billhub.qa.testcases.BAPageTest -->
-      <class name="com.billhub.qa.testcases.CustomerPageTest">
-        <methods>
-          <include name="AddCustomerWithInvalidDataTest"/>
-          <include name="setup"/>
-          <include name="CustomerAppearanceTest"/>
-          <include name="AddCustomerWithoutDataTest"/>
-          <include name="SearchCustomerByCodeTest"/>
-          <include name="tearDown"/>
-          <include name="SearchCustomerByNameTest"/>
-        </methods>
-      </class> <!-- com.billhub.qa.testcases.CustomerPageTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->

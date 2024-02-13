@@ -1,7 +1,5 @@
 package com.billhub.qa.pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,11 +21,10 @@ public class LoginPage extends TestBase{
 		PageFactory.initElements(driver,this);
 	}
 
-	public MdmDashboardPage loginAsMdm(String user,String pass) throws InterruptedException{
+	public MdmDashboardPage loginAsMdm(String user,String pass){
 		userId.sendKeys(user);
 		password.sendKeys(pass);
 		loginBtn.click();
-		Thread.sleep(Duration.ofSeconds(20));					// to enter the OTP manually
 		return new MdmDashboardPage();
 	}
 

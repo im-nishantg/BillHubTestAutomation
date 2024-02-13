@@ -2,7 +2,8 @@ package com.billhub.qa.pages;
 
 
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.utils.TestUtil;
+import com.billhub.qa.utils.TestUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,7 +45,7 @@ public class CustomerPage extends TestBase {
     public boolean validateSearchCustomerByName() throws InterruptedException {
         SearchCustomerByName.sendKeys(prop.getProperty("customerNameforSearch"));
         SearchCustomerBtn.click();
-        Thread.sleep(TestUtil.EXPLICIT_WAIT);
+        Thread.sleep(TestUtils.EXPLICIT_WAIT);
         WebElement TableContent=driver.findElement(By.xpath("//body/app-root/app-layout[@class='ng-star-inserted']" +
                 "/div[@id='main']/main[@class='page-content']/div[@class='row']/div[@class='col-md-12']" +
                 "/app-list-customer[@class='ng-star-inserted']/div[@class='page-header']/div[@class='inner-page-wraper']/div[3]"));
@@ -54,7 +55,7 @@ public class CustomerPage extends TestBase {
     public boolean validateSearchCustomerByCode() throws InterruptedException {
         SearchCustomerByCode.sendKeys(prop.getProperty("customerCodeForSearch"));
         SearchCustomerBtn.click();
-        Thread.sleep(TestUtil.EXPLICIT_WAIT);
+        Thread.sleep(TestUtils.EXPLICIT_WAIT);
         WebElement TableContent=driver.findElement(By.xpath("//body/app-root/app-layout[@class='ng-star-inserted']" +
                 "/div[@id='main']/main[@class='page-content']/div[@class='row']" +
                 "/div[@class='col-md-12']/app-list-customer[@class='ng-star-inserted']" +
