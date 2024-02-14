@@ -27,7 +27,6 @@ public class LoginPage extends TestBase{
 		userId.sendKeys(user);
 		password.sendKeys(pass);
 		loginBtn.click();
-		Thread.sleep(Duration.ofSeconds(20));					// to enter the OTP manually
 		return new MdmDashboardPage();
 	}
 

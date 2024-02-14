@@ -1,9 +1,7 @@
 package com.billhub.qa.testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.pages.CustomerPage;
@@ -24,11 +22,11 @@ public class CustomerPageTest extends TestBase{
 		super();
 	}
 	
-	@BeforeClass
+	@BeforeMethod
 	public void setup() throws InterruptedException  {
 		initialization();
 		loginPage= new LoginPage();
-		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
+		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 		customerPage = mdmDashboardPage.clickOnCustomerLink();
 	}
 
@@ -67,7 +65,7 @@ public class CustomerPageTest extends TestBase{
 		Assert.assertTrue(result,"Test failed as it has not saved with blank data");
 	}
 	
-	@AfterClass
+	@AfterMethod
 	public void tearDown() {
 		driver.close();						
 	}
