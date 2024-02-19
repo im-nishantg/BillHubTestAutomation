@@ -9,6 +9,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -73,9 +74,8 @@ public class BAPage extends TestBase{
         contactPersonNumber.sendKeys(contact_person_number);
 	}
 	
-	
-	
 	public boolean addNewBAWithValidData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
+		
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 	    addBtn.click();
 	    closeBtn.click();
@@ -83,6 +83,7 @@ public class BAPage extends TestBase{
 	}
 	
 	public boolean addNewBAWithInvalidData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
+		
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		addBtn.click();
 	    closeBtn.click();
@@ -90,13 +91,15 @@ public class BAPage extends TestBase{
 	}
 	
 	public boolean addNewBAWithoutData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
+		
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		addBtn.click();
 	    closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("Please enter valid data.");
+		return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
 	}
 	
 	public boolean addNewBAWithDuplicateData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
+		
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		addBtn.click();
 	    closeBtn.click();
@@ -104,38 +107,73 @@ public class BAPage extends TestBase{
 	}
 	
 	public boolean addNewBAWithInactiveStatus(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
+
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		activeBtn.click();
 		addBtn.click();
-	    closeBtn.click();
+	    closeBtn.click();	
 		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
 	}
 	
 	public String addNewBAWithActiveStatus(String ba_code) {
-		searchBAByCode(ba_code);
-		WebElement isActive = TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[9]"));
-		System.out.println(isActive.getText());
-		return isActive.getText();
+		
+	    if(searchBAByCode(ba_code) == false)	// if BA is not found in DB then its status is neither active or deactive
+	    	return "";
+	    
+	    WebElement isActive = TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[9]"));
+	    return isActive.getText();
 	}
 	
 	public boolean validateAddedBAInTheDatabase(String ba_code) {
+		
 		return searchBAByCode(ba_code);
 	}
 	
 	public boolean searchBAByName(String ba_name) {
+		
 		searchBAByName.sendKeys(ba_name);
 		searchBtn.click();
-		return TestUtils.isTableDisplayed(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table"));
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+	    // Custom expected condition to wait until baName in the table is equal to ba_name
+	    ExpectedCondition<Boolean> condition = driver -> {
+	        WebElement baName = driver.findElement(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[3]"));
+	        return baName.getText().equals(ba_name);
+	    };
+	    
+	    try {
+	        wait.until(condition);
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
 	}
 	
 	public boolean searchBAByCode(String ba_code) {
+		
 		searchBAByCode.sendKeys(ba_code);
 		searchBtn.click();
-		return TestUtils.isTableDisplayed(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table"));
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+	    // Custom expected condition to wait until baCode in the table is equal to ba_code
+	    ExpectedCondition<Boolean> condition = driver -> {
+	        WebElement baCode = driver.findElement(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[2]"));
+	        return baCode.getText().equals(ba_code);
+	    };
+	    
+	    try {
+	        wait.until(condition);
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
 	}
 	
 	public boolean updateBA(String ba_code, String ba_name, String contact_person_number){
-	    searchBAByCode.sendKeys(ba_code);
+	    
+		searchBAByCode.sendKeys(ba_code);
 	    searchBtn.click();
 	    
 	    WebElement editBtn = TestUtils.locateAndClickEditBtn(By.cssSelector("tbody tr:nth-child(1) td:nth-child(11) i:nth-child(1)"));  

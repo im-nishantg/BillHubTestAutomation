@@ -9,8 +9,8 @@
 	<test name="BillHub App Test Cases">
 		<classes>
 			<!-- <class name = "com.billhub.qa.testcases.CustomerPageTest"></class> -->
-			<class name = "com.billhub.qa.testcases.BAPageTest"></class>
-			<!-- <class name = "com.billhub.qa.testcases.UserPageTest"></class> -->
+			<class name = "com.billhub.qa.testcases.BAPageTest"></class> 
+			<class name = "com.billhub.qa.testcases.UserPageTest"></class>
 		</classes>
 	</test>
 </suite>

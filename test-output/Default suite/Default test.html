@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 13 20:42:12 IST 2024</td>
+<td>Started on:</td><td>Mon Feb 19 16:07:09 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>17 seconds (17956 ms)</td>
+<tr><td>Total time:</td><td>23 seconds (23249 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest()'><b>addNewBAWithActiveStatusTest</b><br>Test class: com.billhub.qa.testcases.BAPageTest</td>
-<td><div><pre>java.lang.AssertionError: BA with active status was not added or not found in database upon searching. expected [Active] but found [Deactive]
+<td title='com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest()'><b>searchBAByCodeTest</b><br>Test class: com.billhub.qa.testcases.BAPageTest</td>
+<td><div><pre>java.lang.AssertionError: BA is present but not found on searching expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest(BAPageTest.java:102)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest(BAPageTest.java:132)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -110,14 +108,12 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace337816703", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace337816703'><pre>java.lang.AssertionError: BA with active status was not added or not found in database upon searching. expected [Active] but found [Deactive]
+</pre></div><a href='#' onClick='toggleBox("stack-trace1991075605", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1991075605'><pre>java.lang.AssertionError: BA is present but not found on searching expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at com.billhub.qa.testcases.BAPageTest.addNewBAWithActiveStatusTest(BAPageTest.java:102)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.BAPageTest.searchBAByCodeTest(BAPageTest.java:132)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -145,8 +141,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.billhub.qa.testcases.BAPageTest@3270d194</td></tr>
+<td>6</td>
+<td>com.billhub.qa.testcases.BAPageTest@5bfa8cc5</td></tr>
 </table><p>
 </body>
 </html>

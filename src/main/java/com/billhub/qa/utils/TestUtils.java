@@ -32,13 +32,15 @@ public class TestUtils extends TestBase{
 	static Sheet sheet;
 	
 	public static WebElement waitForElementVisibility(By selector) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 	
 	public static boolean isSuccessToastDisplayed(String message) {
+		
         try {
-        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='" + message + "']")));
             return true;
         } catch (TimeoutException e) {
@@ -47,7 +49,8 @@ public class TestUtils extends TestBase{
     }
 	
 	public static WebElement locateAndClickEditBtn(By selector) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	    try {
 	        WebElement editBtn = wait.until(ExpectedConditions.elementToBeClickable(selector));
 	        editBtn.click();
@@ -60,12 +63,14 @@ public class TestUtils extends TestBase{
 	}
 	
 	public static String numberToString(Object data) {
+		
 		BigDecimal number = new BigDecimal(data.toString());
         number = number.setScale(0, RoundingMode.DOWN); // Removes the decimal part
         return number.toString();
 	}
 	
 	public static boolean isTableDisplayed(By selector) {
+		
         try {
         	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
@@ -76,6 +81,7 @@ public class TestUtils extends TestBase{
     }
 	
 	public static Object[][] getTestData(String sheetName) {
+		
 		FileInputStream file = null;
 		try {
 			file = new FileInputStream(TESTDATA_SHEET_PATH);

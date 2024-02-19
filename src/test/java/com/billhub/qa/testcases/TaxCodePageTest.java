@@ -21,10 +21,10 @@ public class TaxCodePageTest extends TestBase{
 	}
 	
 	@BeforeMethod
-	public void setup() throws InterruptedException{
+	public void setup(){
 		initialization();
 		loginPage= new LoginPage();
-		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("Mdm_userId"),prop.getProperty("password"));
+		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userId"),prop.getProperty("mdm_password"));
 		taxCodePage = mdmDashboardPage.clickOnTaxCodeLink();
 	}
 	
