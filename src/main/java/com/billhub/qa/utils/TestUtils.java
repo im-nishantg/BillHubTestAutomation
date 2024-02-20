@@ -17,6 +17,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -69,15 +70,22 @@ public class TestUtils extends TestBase{
         return number.toString();
 	}
 	
-	public static boolean isTableDisplayed(By selector) {
+	public static boolean matchSearchedData(By selector, String expectedValue) {
 		
-        try {
-        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
-            return true;
-        } catch (TimeoutException e) {
-            return false;
-        }
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+	    // Custom expected condition to wait until value in the table is equal to searched value
+	    ExpectedCondition<Boolean> condition = driver -> {
+	        WebElement userName = driver.findElement(selector);
+	        return userName.getText().equals(expectedValue);
+	    };
+	    
+	    try {
+	        wait.until(condition);
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
     }
 	
 	public static Object[][] getTestData(String sheetName) {

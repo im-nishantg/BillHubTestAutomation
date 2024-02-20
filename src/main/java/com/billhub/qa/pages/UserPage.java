@@ -104,41 +104,14 @@ public class UserPage extends TestBase{
 		
 		searchUserByName.sendKeys(user_name);
 		searchBtn.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-	    // Custom expected condition to wait until baGroupID in the table is equal to ba_group_id
-	    ExpectedCondition<Boolean> condition = driver -> {
-	        WebElement userName = driver.findElement(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[2]"));
-	        return userName.getText().equals(user_name);
-	    };
-	    
-	    try {
-	        wait.until(condition);
-	        return true;
-	    } catch (TimeoutException e) {
-	        return false;
-	    }
+		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), user_name);
 	}
 	
 	public boolean searchUserByBAGroupID(String ba_group_id) {
 		
 		searchUserByBAGroupID.sendKeys(ba_group_id);
 		searchBtn.click();
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-	    // Custom expected condition to wait until baGroupID in the table is equal to ba_group_id
-	    ExpectedCondition<Boolean> condition = driver -> {
-	        WebElement baGroupID = driver.findElement(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[3]"));
-	        return baGroupID.getText().equals(ba_group_id);
-	    };
-	    
-	    try {
-	        wait.until(condition);
-	        return true;
-	    } catch (TimeoutException e) {
-	        return false;
-	    }
+		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_group_id);
 	}
 
 	public String addNewUserWithActiveStatus(String ba_group_id){

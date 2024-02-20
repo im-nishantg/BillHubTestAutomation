@@ -79,8 +79,8 @@ public class UserPageTest extends TestBase{
 	public void updateUserTest(){
 		
 		String ba_group_id = TestUtils.numberToString(data[0][1]), first_name = (String) data[1][2], last_name = (String) data[1][3];
-		boolean isAdded = userPage.updateUser(ba_group_id, first_name, last_name);	
-		Assert.assertTrue(isAdded, "User was not updated.");
+		boolean isUpdated = userPage.updateUser(ba_group_id, first_name, last_name);	
+		Assert.assertTrue(isUpdated, "User was not updated.");
 	}
 	
 	@Test(priority = 6)

@@ -133,42 +133,14 @@ public class BAPage extends TestBase{
 		
 		searchBAByName.sendKeys(ba_name);
 		searchBtn.click();
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-	    // Custom expected condition to wait until baName in the table is equal to ba_name
-	    ExpectedCondition<Boolean> condition = driver -> {
-	        WebElement baName = driver.findElement(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[3]"));
-	        return baName.getText().equals(ba_name);
-	    };
-	    
-	    try {
-	        wait.until(condition);
-	        return true;
-	    } catch (TimeoutException e) {
-	        return false;
-	    }
+		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_name);
 	}
 	
 	public boolean searchBAByCode(String ba_code) {
 		
 		searchBAByCode.sendKeys(ba_code);
 		searchBtn.click();
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-	    // Custom expected condition to wait until baCode in the table is equal to ba_code
-	    ExpectedCondition<Boolean> condition = driver -> {
-	        WebElement baCode = driver.findElement(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[2]"));
-	        return baCode.getText().equals(ba_code);
-	    };
-	    
-	    try {
-	        wait.until(condition);
-	        return true;
-	    } catch (TimeoutException e) {
-	        return false;
-	    }
+		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), ba_code);
 	}
 	
 	public boolean updateBA(String ba_code, String ba_name, String contact_person_number){
