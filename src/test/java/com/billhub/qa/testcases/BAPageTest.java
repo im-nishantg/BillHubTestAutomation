@@ -16,7 +16,7 @@ public class BAPageTest extends TestBase{
 	MdmDashboardPage mdmDashboardPage;
 	BAPage baPage;
 	
-	public Object[][] data;
+	public Object[][] data = TestUtils.getTestData("BA");
 	
 	public BAPageTest() {
 		super();
@@ -29,7 +29,6 @@ public class BAPageTest extends TestBase{
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 		baPage = mdmDashboardPage.clickOnBaLink();
-		data = TestUtils.getTestData("BA");
 	}
 	
 	@Test(priority = 1)
@@ -86,7 +85,7 @@ public class BAPageTest extends TestBase{
 	}
 	
 	@Test(priority = 5)
-	public void updateBA(){
+	public void updateBATest(){
 		
 		String ba_code = TestUtils.numberToString(data[1][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
 		String ba_name = (String) data[1][1];

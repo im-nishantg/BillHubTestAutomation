@@ -46,7 +46,6 @@ public class RolePage extends TestBase{
 		addRoleBtn.click();
 		Thread.sleep(Duration.ofSeconds(5).toMillis());
 		initializePopupWebElements();
-git
 		roleCodePopUpInput.sendKeys(roleCode);
 		roleNamePopUpInput.sendKeys(roleName);
 		addNewRolePopUpBtn.click();

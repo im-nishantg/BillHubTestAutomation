@@ -17,6 +17,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,13 +33,15 @@ public class TestUtils extends TestBase{
 	static Sheet sheet;
 	
 	public static WebElement waitForElementVisibility(By selector) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 	
 	public static boolean isSuccessToastDisplayed(String message) {
+		
         try {
-        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='" + message + "']")));
             return true;
         } catch (TimeoutException e) {
@@ -47,7 +50,8 @@ public class TestUtils extends TestBase{
     }
 	
 	public static WebElement locateAndClickEditBtn(By selector) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	    try {
 	        WebElement editBtn = wait.until(ExpectedConditions.elementToBeClickable(selector));
 	        editBtn.click();
@@ -60,22 +64,32 @@ public class TestUtils extends TestBase{
 	}
 	
 	public static String numberToString(Object data) {
+		
 		BigDecimal number = new BigDecimal(data.toString());
         number = number.setScale(0, RoundingMode.DOWN); // Removes the decimal part
         return number.toString();
 	}
 	
-	public static boolean isTableDisplayed(By selector) {
-        try {
-        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
-            return true;
-        } catch (TimeoutException e) {
-            return false;
-        }
+	public static boolean matchSearchedData(By selector, String expectedValue) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+	    // Custom expected condition to wait until value in the table is equal to searched value
+	    ExpectedCondition<Boolean> condition = driver -> {
+	        WebElement userName = driver.findElement(selector);
+	        return userName.getText().equals(expectedValue);
+	    };
+	    
+	    try {
+	        wait.until(condition);
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
     }
 	
 	public static Object[][] getTestData(String sheetName) {
+		
 		FileInputStream file = null;
 		try {
 			file = new FileInputStream(TESTDATA_SHEET_PATH);
