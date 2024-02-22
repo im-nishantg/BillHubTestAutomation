@@ -10,6 +10,8 @@ import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
 import com.billhub.qa.pages.RolePage;
 
+import java.time.Duration;
+
 public class RolePageTest extends TestBase{
 	String roleName="TAX";
 	String roleCode="MDM";
@@ -26,14 +28,29 @@ public class RolePageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
+		Thread.sleep(Duration.ofSeconds(15).toMillis());
 		rolePage = mdmDashboardPage.clickOnRoleLink();
 	}
 	
 	@Test
 	public void addRoleWithValidDataTest() throws InterruptedException {
-		boolean result=rolePage.validateAddCustomerWithValidData(roleCode,roleName);
+		boolean result=rolePage.validateAddRoleWithValidData(roleCode,roleName);
 		Assert.assertTrue(result,"Test failed!");
 	}
+
+	@Test
+	public void addRoleWithInvalidDataTest() throws InterruptedException {
+		boolean result = rolePage.validateAddRoleWithValidData(roleName, roleCode);
+		Assert.assertFalse(result, "Test failed!");
+	}
+
+    @Test
+		public void addRoleWithOutDataTest() throws InterruptedException{
+		boolean result=rolePage.validateAddRoleWithValidData("","");
+		Assert.assertFalse(result, "Test failed");
+
+		}
+
 	
 	@AfterMethod						
 	public void tearDown() {

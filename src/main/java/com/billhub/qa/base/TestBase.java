@@ -9,7 +9,9 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.billhub.qa.utils.TestUtil;
+import com.billhub.qa.utils.TestUtils;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class TestBase {
@@ -31,17 +33,11 @@ public class TestBase {
 	
 	public static void initialization() {
 		
-		String browserName = prop.getProperty("browser");
-		 
-		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", prop.getProperty("chromeDriverFilePath"));
-			driver = new ChromeDriver();
-		}
-		
+		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtils.PAGE_LOAD_TIMEOUT));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtils.IMPLICIT_WAIT));
 		driver.get(prop.getProperty("url"));
 	}
 }

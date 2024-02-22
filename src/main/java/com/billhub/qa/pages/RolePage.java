@@ -34,22 +34,22 @@ public class RolePage extends TestBase{
 
 
 
-	WebElement roleCodeInput,roleNameInput,addNewRoleBtn;
+	WebElement roleCodePopUpInput,roleNamePopUpInput,addNewRolePopUpBtn;
 
 	public void initializePopupWebElements(){
-		roleCodeInput = driver.findElement(By.cssSelector("#invoiceNumber"));
-		roleNameInput= driver.findElement(By.cssSelector("#tokenID"));
-		addNewRoleBtn=driver.findElement(By.cssSelector("button[type='submit']"));
+		roleCodePopUpInput = driver.findElement(By.cssSelector("#invoiceNumber"));
+		roleNamePopUpInput= driver.findElement(By.cssSelector("#tokenID"));
+		addNewRolePopUpBtn=driver.findElement(By.cssSelector("button[type='submit']"));
 	}
 
-	public boolean validateAddCustomerWithValidData(String roleCode, String roleName) throws InterruptedException {
+	public boolean validateAddRoleWithValidData(String roleCode, String roleName) throws InterruptedException {
 		addRoleBtn.click();
 		Thread.sleep(Duration.ofSeconds(5).toMillis());
 		initializePopupWebElements();
-
-		roleCodeInput.sendKeys(roleCode);
-		roleNameInput.sendKeys(roleName);
-		addNewRoleBtn.click();
+git
+		roleCodePopUpInput.sendKeys(roleCode);
+		roleNamePopUpInput.sendKeys(roleName);
+		addNewRolePopUpBtn.click();
 
 		try{
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -60,4 +60,5 @@ public class RolePage extends TestBase{
 		}
 
 	}
+
 }
