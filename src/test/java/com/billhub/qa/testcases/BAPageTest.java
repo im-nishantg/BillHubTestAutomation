@@ -67,7 +67,7 @@ public class BAPageTest extends TestBase{
 		String ba_groupcode = TestUtils.numberToString(data[1][6]), contact_person_number = TestUtils.numberToString(data[1][10]);
 		
 		boolean isAdded = baPage.addNewBAWithInvalidData(ba_code, ba_name, state , trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
-		Assert.assertFalse(isAdded, "BA was not added.");
+		Assert.assertFalse(isAdded, "BA was added with invalid data.");
 	}
 	
 
