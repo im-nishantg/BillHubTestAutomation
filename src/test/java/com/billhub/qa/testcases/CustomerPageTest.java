@@ -14,15 +14,12 @@ import com.billhub.qa.pages.MdmDashboardPage;
 import java.time.Duration;
 
 public class CustomerPageTest extends TestBase{
-	
-	String customerName="Aman sharma";
-	String customerCode="234510";
-	String customerPeriod="2";
-	String customerDrop="AOB";
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
 	CustomerPage customerPage;
 
+	public Object[][] data=TestUtils.getTestData("Customer");
+	String customerName=(String) data[0][0], customerCode=TestUtils.numberToString(data[0][1]),customerPeriod=TestUtils.numberToString(data[0][2]), customerDrop=(String) data[0][3];
 	public CustomerPageTest() {
 		super();
 	}
@@ -48,18 +45,18 @@ public class CustomerPageTest extends TestBase{
 
 	}
 	@Test
-	public void AddCustomerWithValdiDataTest() throws InterruptedException {
+	public void AddCustomerWithValdiDataTest(){
 		boolean result= customerPage.validateAddCustomerWithValidData(customerName,customerCode,customerPeriod,customerDrop);
 		Assert.assertTrue(result,"Test failed");
 	}
 	@Test
-	public void AddCustomerWithInvalidDataTest() throws InterruptedException {
+	public void AddCustomerWithInvalidDataTest(){
 		boolean isTestFailed = customerPage.validateAddCustomerWithInvalidData(customerName,customerCode,customerPeriod,customerDrop);
 		Assert.assertFalse(isTestFailed, "Test failed as invalid data saved successfully.");
 	}
 
 	@Test
-	public void AddCustomerWithoutDataTest() throws InterruptedException {
+	public void AddCustomerWithoutDataTest(){
 		boolean result=customerPage.validateAddNewCustomerWithoutData(customerName,customerCode,customerPeriod,customerDrop);
 		Assert.assertTrue(result,"Test failed as it has not saved with blank data");
 	}
