@@ -1,43 +1,39 @@
-package com.billhub.qa.testcases;
+package com.billhub.qa.pages;
 
+import com.billhub.qa.base.TestBase;
 import com.billhub.qa.utils.TestUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.billhub.qa.base.TestBase;
-import com.billhub.qa.pages.LoginPage;
-import com.billhub.qa.pages.MdmDashboardPage;
-import com.billhub.qa.pages.WithholdingTaxPage;
-
 import java.time.Duration;
 
-public class WithholdingTaxPageTest extends TestBase{
-	LoginPage loginPage;
-	MdmDashboardPage mdmDashboardPage;
-	WithholdingTaxPage withholdingTaxPage;
-	public Object[][] data= TestUtils.getTestData("WithholdingTax");
-	String tax_Type=(String) data[0][0], tax_Code=TestUtils.numberToString(data[0][1]), tax_Rate=(String) data[0][2], tax_Description=(String) data[0][3];
-	public WithholdingTaxPageTest() {
-		super();
-	}
-	@BeforeClass
-	public void setup() throws InterruptedException {
-		initialization();
-		loginPage= new LoginPage();
-		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-		Thread.sleep(Duration.ofSeconds(20).toMillis());
-		withholdingTaxPage = mdmDashboardPage.clickOnWithholdingTaxLink();
-	}
+public class WithholdTaxPageTest extends TestBase {
+    LoginPage loginPage;
+    MdmDashboardPage mdmDashboardPage;
+    WithholdingTaxPage withholdingTaxPage;
+    public Object[][] data= TestUtils.getTestData("WithholdingTax");
+    String taxType=(String) data[0][0], taxCode=TestUtils.numberToString(data[0][1]), taxRate=(String) data[0][2], taxDescription=(String) data[0][3];
+    public  WithholdTaxPageTest() {
+        super();
+    }
+    @BeforeClass
+    public void setup() throws InterruptedException {
+        initialization();
+        loginPage= new LoginPage();
+        mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
+        Thread.sleep(Duration.ofSeconds(20).toMillis());
+        withholdingTaxPage = mdmDashboardPage.clickOnWithholdingTaxLink();
+    }
 
 
-	@Test(priority = 1)
-	public void AddTaxWithValidDataTest(){
-		boolean result=withholdingTaxPage.validateAddTaxWithValidData(tax_Type,tax_Code,tax_Rate,tax_Description);
-		Assert.assertTrue(result,"Withholding tax add failed");
-	}
-//	@Test(priority = 2)
+    @Test
+    public void AddTaxWithValidDataTest() throws InterruptedException {
+        boolean result=withholdingTaxPage.validateAddTaxWithValidData(taxType,taxCode,taxRate,taxDescription);
+        Assert.assertTrue(result,"Withholding tax add failed");
+    }
+    //	@Test(priority = 2)
 //	public void AddTaxWithInvalidDataTest() throws InterruptedException {
 //		// for this test, use same function of validation with invalide data
 //		boolean result=withholdingTaxPage.validateAddTaxWithValidData(taxCode,taxRate,taxType,taxDescription);
@@ -64,10 +60,8 @@ public class WithholdingTaxPageTest extends TestBase{
 //		boolean result=withholdingTaxPage.validateDuplicateWithholdingData(taxType,taxCode,taxRate,taxDescription);
 //		Assert.assertFalse(result,"Test Failed!: duplicate credentials has been saved");
 //	}
-	@AfterClass
-	public void tearDown() {
-		driver.close();
-	}
-
+    @AfterClass
+    public void tearDown() {
+        driver.close();
+    }
 }
-

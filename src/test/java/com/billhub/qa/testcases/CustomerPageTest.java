@@ -57,8 +57,8 @@ public class CustomerPageTest extends TestBase{
 
 	@Test
 	public void AddCustomerWithoutDataTest(){
-		boolean result=customerPage.validateAddNewCustomerWithoutData(customerName,customerCode,customerPeriod,customerDrop);
-		Assert.assertTrue(result,"Test failed as it has not saved with blank data");
+		boolean result=customerPage.validateAddNewCustomerWithoutData("","","","");
+		Assert.assertFalse(result,"Test failed as it has saved with blank data");
 	}
 
 	@Test

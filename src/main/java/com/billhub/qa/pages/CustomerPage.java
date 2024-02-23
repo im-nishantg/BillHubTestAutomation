@@ -55,7 +55,8 @@ public class CustomerPage extends TestBase {
 
         SearchCustomerByCode.sendKeys(customer_code);
         SearchCustomerBtn.click();
-        return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), customer_code);
+        // modify this xpath
+        return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), customer_code);
     }
 
     public boolean validateSearchCustomerByName(String customer_name) throws InterruptedException {
@@ -74,12 +75,14 @@ public class CustomerPage extends TestBase {
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
         addBtn.click();
+        closeBtn.click();
         return TestUtils.isSuccessToastDisplayed("customer Added successfully");
     }
 
     public boolean validateAddCustomerWithInvalidData(String custName, String custCode, String custPeriod, String custDrop){
         fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
         addBtn.click();
+        closeBtn.click();
         return TestUtils.isSuccessToastDisplayed("customer Added successfully");
     }
 

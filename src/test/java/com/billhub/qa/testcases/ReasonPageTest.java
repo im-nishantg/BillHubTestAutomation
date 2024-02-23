@@ -33,7 +33,7 @@ public class ReasonPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-		Thread.sleep(Duration.ofSeconds(15));
+		Thread.sleep(Duration.ofSeconds(15).toMillis());
 		reasonPage = mdmDashboardPage.clickOnReasonLink();
 	}
 	
