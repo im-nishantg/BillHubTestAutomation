@@ -19,7 +19,7 @@ public class CustomerPageTest extends TestBase{
 	CustomerPage customerPage;
 
 	public Object[][] data=TestUtils.getTestData("Customer");
-	String customerName=(String) data[0][0], customerCode=TestUtils.numberToString(data[0][1]),customerPeriod=TestUtils.numberToString(data[0][2]), customerDrop=(String) data[0][3];
+	
 	public CustomerPageTest() {
 		super();
 	}
@@ -29,43 +29,54 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-		Thread.sleep(Duration.ofSeconds(30).toMillis());
+		Thread.sleep(Duration.ofSeconds(15).toMillis());
 		customerPage = mdmDashboardPage.clickOnCustomerLink();
 	}
 
-	@Test
-	public void SearchCustomerByNameTest() throws InterruptedException {
-			boolean result = customerPage.validateSearchCustomerByName(customerName);
-			Assert.assertTrue(result, "Search Customer By Name Test Failed");
+	@Test(priority = 5)
+	public void SearchCustomerByNameTest(){
+		
+		String customerName=(String) data[0][0];
+		boolean result = customerPage.validateSearchCustomerByName(customerName);
+		Assert.assertTrue(result, "Search Customer By Name Test Failed");
 	}
-	@Test
-	public void SearchCustomerByCodeTest() throws InterruptedException {
-			boolean result = customerPage.validateSearchCustomerByCode(customerCode);
-			Assert.assertTrue(result, "Search Customer By Code Test Failed");
+	@Test(priority = 6)
+	public void SearchCustomerByCodeTest(){
+		
+		String customerCode=TestUtils.numberToString(data[0][1]);
+		boolean result = customerPage.validateSearchCustomerByCode(customerCode);
+		Assert.assertTrue(result, "Search Customer By Code Test Failed");
 
 	}
-	@Test
-	public void AddCustomerWithValdiDataTest(){
+	@Test(priority = 1)
+	public void AddCustomerWithValidDataTest(){
+		
+		String customerName=(String) data[0][0], customerCode=TestUtils.numberToString(data[0][1]),customerPeriod=TestUtils.numberToString(data[0][2]), customerDrop=(String) data[0][3];
 		boolean result= customerPage.validateAddCustomerWithValidData(customerName,customerCode,customerPeriod,customerDrop);
 		Assert.assertTrue(result,"Test failed");
 	}
-	@Test
+	@Test(priority = 2)
 	public void AddCustomerWithInvalidDataTest(){
+		
+		String customerName=(String) data[1][0], customerCode=(String)data[1][1],customerPeriod=(String)data[1][2], customerDrop=(String) data[1][3];
 		boolean isTestFailed = customerPage.validateAddCustomerWithInvalidData(customerName,customerCode,customerPeriod,customerDrop);
 		Assert.assertFalse(isTestFailed, "Test failed as invalid data saved successfully.");
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void AddCustomerWithoutDataTest(){
+		
 		boolean result=customerPage.validateAddNewCustomerWithoutData("","","","");
 		Assert.assertFalse(result,"Test failed as it has saved with blank data");
 	}
 
-	@Test
+	@Test(priority = 4)
 	public void ValidateCustomerInDatabaseTest(){
+		String customerCode=TestUtils.numberToString(data[0][1]);
 		boolean isPresent = customerPage.validateAddedCustomerInDatabase(customerCode);
 		Assert.assertTrue(isPresent, "Customer is present but not found in the database.");
 	}
+	
 	@AfterClass
 	public void tearDown() {
 		driver.close();						

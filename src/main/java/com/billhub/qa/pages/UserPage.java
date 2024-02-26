@@ -27,23 +27,44 @@ public class UserPage extends TestBase{
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement searchBtn;
 	
-	WebElement userName, BAGroupId, firstName, lastName, roleName, emailID, addBtn, closeBtn, activeBtn, updateBtn; 
+	@FindBy(css = "input[formcontrolname='User_Name']")
+    WebElement userName;
+
+    @FindBy(css = "input[formcontrolname='Token_Id']")
+    WebElement BAGroupId;
+
+    @FindBy(css = "input[formcontrolname='First_Name']")
+    WebElement firstName;
+
+    @FindBy(css = "input[formcontrolname='Last_Name']")
+    WebElement lastName;
+
+    @FindBy(css = "#role_id")
+    WebElement roleName;
+
+    @FindBy(css = "input[formcontrolname='Email_ID']")
+    WebElement emailID;
+
+    @FindBy(css = "#defaultCheck2")
+    WebElement activeBtn;
+
+    @FindBy(css = "button[class='btn btn-primary btn-done'] span")
+    WebElement addBtn;
+
+    @FindBy(css = "button[class='btn btn-danger btn-done']")
+    WebElement closeBtn;
+
+    @FindBy(css = "button[class='btn btn-primary btn-done'] span")
+    WebElement updateBtn; 
 	
 	public UserPage() {
+		
 		PageFactory.initElements(driver, this);
 	}
 	
 	public void initializePopupWebElements() {
-        
-		userName = driver.findElement(By.cssSelector("input[formcontrolname='User_Name']"));
-		BAGroupId = driver.findElement(By.cssSelector("input[formcontrolname='Token_Id']"));
-		firstName = driver.findElement(By.cssSelector("input[formcontrolname='First_Name']"));
-		lastName = driver.findElement(By.cssSelector("input[formcontrolname='Last_Name']"));
-		roleName = driver.findElement(By.cssSelector("#role_id"));
-		emailID = driver.findElement(By.cssSelector("input[formcontrolname='Email_ID']"));	
-		activeBtn = driver.findElement(By.cssSelector("#defaultCheck2"));
-		addBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done'] span"));
-		closeBtn = driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
+		
+		PageFactory.initElements(driver, this);
 	}
 	
 	public void fillAddUserForm(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email ) {
@@ -102,6 +123,7 @@ public class UserPage extends TestBase{
 	
 	public boolean searchUserByName(String user_name) {
 		
+		searchUserByName.clear();
 		searchUserByName.sendKeys(user_name);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), user_name);
@@ -109,6 +131,7 @@ public class UserPage extends TestBase{
 	
 	public boolean searchUserByBAGroupID(String ba_group_id) {
 		
+		searchUserByBAGroupID.clear();
 		searchUserByBAGroupID.sendKeys(ba_group_id);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_group_id);

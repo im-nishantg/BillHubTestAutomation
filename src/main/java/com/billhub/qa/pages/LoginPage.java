@@ -10,12 +10,12 @@ public class LoginPage extends TestBase{
 
 	@FindBy(xpath = "//input[@id='passwordInput']")
 	WebElement password;
+	
 	@FindBy(xpath = "//input[@id='emailInput']")
 	WebElement userId;
+	
 	@FindBy(xpath = "//button[@id='login']")
 	WebElement loginBtn;
-
-
 
 	public LoginPage(){
 		PageFactory.initElements(driver,this);

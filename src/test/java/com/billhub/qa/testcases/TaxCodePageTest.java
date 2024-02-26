@@ -1,8 +1,10 @@
 package com.billhub.qa.testcases;
 
+import java.time.Duration;
+
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
@@ -18,18 +20,32 @@ public class TaxCodePageTest extends TestBase{
 	MdmDashboardPage mdmDashboardPage;
 	TaxCodePage taxCodePage;
 	
-	public Object[][] data = TestUtils.getTestData("TaxCode");
+	public Object[][] data;
 	
 	public TaxCodePageTest() {
 		super();
 	}
 	
-	@BeforeMethod
-	public void setup(){
+	public void updateExcelSheetData() {
+		
+		String random_tax_code = TestUtils.generateRandomString(2).toUpperCase();  
+		String random_tax_percent_first = TestUtils.generateRandomNumber(2); 
+		String random_tax_percent_second = TestUtils.generateRandomNumber(2); 
+		TestUtils.setCellData("TaxCode", 1, 0, random_tax_code);
+		TestUtils.setCellData("TaxCode", 1, 1, random_tax_percent_first);
+		TestUtils.setCellData("TaxCode", 3, 1, random_tax_percent_second);
+	}
+	
+	@BeforeClass
+	public void setup() throws InterruptedException{
+		
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
+		Thread.sleep(Duration.ofSeconds(20));
 		taxCodePage = mdmDashboardPage.clickOnTaxCodeLink();
+		updateExcelSheetData();
+		data = TestUtils.getTestData("TaxCode");
 	}
 	
 	@Test(priority = 1)
@@ -42,36 +58,36 @@ public class TaxCodePageTest extends TestBase{
 	}
 	
 	@Test(priority = 2)
+	public void validateAddedTaxCodeInTheDatabaseTest(){
+		
+		String tax_code = (String) data[0][0];
+		boolean isPresent = taxCodePage.validateAddedTaxCodeInTheDatabase(tax_code);
+		Assert.assertTrue(isPresent, "Tax code is present but not found on searching.");
+	}
+	
+	@Test(priority = 3)
 	public void addNewTaxCodeWithInvalidDataTest(){
 		
 		String tax_code = (String) data[1][0], tax_percent = (String) (data[1][1]), desc = (String) data[1][2];
 		
-		boolean isAdded = taxCodePage.addNewTaxCodeWithValidData(tax_code, tax_percent, desc);
+		boolean isAdded = taxCodePage.addNewTaxCodeWithInvalidData(tax_code, tax_percent, desc);
 		Assert.assertFalse(isAdded, "Tax Code was added with invalid data.");
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void addNewTaxCodeWithoutDataTest(){
 		
-		boolean isAdded = taxCodePage.addNewTaxCodeWithValidData("", "", "");
-		Assert.assertTrue(isAdded, "Expected error popup box found none.");
+		boolean isAdded = taxCodePage.addNewTaxCodeWithoutData("", "", "");
+		Assert.assertFalse(isAdded, "Tax code was added without data.");
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void addNewTaxCodeWithDuplicateDataTest(){
 		
 		String tax_code = (String) data[0][0], tax_percent = TestUtils.numberToString(data[0][1]), desc = (String) data[0][2];
 		
 		boolean isAdded = taxCodePage.addNewTaxCodeWithDuplicateData(tax_code, tax_percent, desc);
 		Assert.assertFalse(isAdded, "Duplicate data was added.");
-	}
-	
-	@Test(priority = 5)
-	public void updateUserTest(){
-		
-		String tax_code = (String) data[0][0], tax_percent = TestUtils.numberToString(data[2][1]), desc = (String) data[2][2];
-		boolean isUpdated = taxCodePage.updateTaxCode(tax_code, tax_percent, desc);	
-		Assert.assertTrue(isUpdated, "Tax Code was not updated.");
 	}
 	
 	@Test(priority = 6)
@@ -89,16 +105,16 @@ public class TaxCodePageTest extends TestBase{
 		boolean isPresent = taxCodePage.searchByTaxPercentage(tax_percent);
 		Assert.assertTrue(isPresent, "Tax code is present but not found on searching.");
 	}
-	
+
 	@Test(priority = 8)
-	public void validateAddedTaxCodeInTheDatabaseTest(){
+	public void updateTaxCodeTest(){
 		
-		String tax_code = (String) data[0][0];
-		boolean isPresent = taxCodePage.validateAddedTaxCodeInTheDatabase(tax_code);
-		Assert.assertTrue(isPresent, "Tax code is present but not found on searching.");
+		String tax_code = (String) data[0][0], tax_percent = TestUtils.numberToString(data[2][1]), desc = (String) data[2][2];
+		boolean isUpdated = taxCodePage.updateTaxCode(tax_code, tax_percent, desc);	
+		Assert.assertTrue(isUpdated, "Tax Code was not updated.");
 	}
 	
-	@AfterMethod						
+	@AfterClass						
 	public void tearDown() {
 		driver.close();						
 	}
