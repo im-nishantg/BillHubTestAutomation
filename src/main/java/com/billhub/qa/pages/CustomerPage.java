@@ -8,11 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class CustomerPage extends TestBase {
 	
@@ -27,98 +23,79 @@ public class CustomerPage extends TestBase {
     WebElement addCustomerBtn;
     @FindBy(xpath = "//tbody/tr[1]/td[6]")
     WebElement updateBtn;
+    @FindBy(css = "div[class='has-float-label form-group col-md-6'] input[type='text']")
+    WebElement customerCode;
+    @FindBy(css = "div[class='modal-body pb-0'] div:nth-child(2) input:nth-child(1)")
+    WebElement customerName;
+    @FindBy(css = "input[formcontrolname='Credit_Period']")
+    WebElement customerPeriod;
+    @FindBy(id = "Vertical")
+    WebElement verticalDropdown;
+    @FindBy(css = "#defaultCheck2")
+    WebElement ActiveCheckBox;
+    @FindBy(css = "button[class='btn btn-primary btn-done']")
+    WebElement addBtn;
+    @FindBy(css = "button[class='btn btn-danger btn-done']")
+    WebElement closeBtn;
 
     public CustomerPage(){
         PageFactory.initElements(driver,this);
     }
-    WebElement customerCode,customerName,customerPeriod, verticalDropdown,ActiveCheckBox,AddUserBtn;
-
     public void initializePopupWebElements(){
-        customerCode = driver.findElement(By.cssSelector("div[class='has-float-label form-group col-md-6'] input[type='text']"));
-        customerName= driver.findElement(By.cssSelector("div[class='modal-body pb-0'] div:nth-child(2) input:nth-child(1)"));
-        customerPeriod=driver.findElement(By.cssSelector("input[formcontrolname='Credit_Period']"));
-        verticalDropdown = driver.findElement(By.id("Vertical"));
-        ActiveCheckBox=driver.findElement(By.cssSelector("#defaultCheck2"));
-        AddUserBtn=driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
+        PageFactory.initElements(driver,this);
     }
-
-    public boolean validateSearchCustomerByName() throws InterruptedException {
-        SearchCustomerByName.sendKeys(prop.getProperty("customerNameforSearch"));
-        SearchCustomerBtn.click();
-        Thread.sleep(TestUtils.EXPLICIT_WAIT);
-        WebElement TableContent=driver.findElement(By.xpath("//body/app-root/app-layout[@class='ng-star-inserted']" +
-                "/div[@id='main']/main[@class='page-content']/div[@class='row']/div[@class='col-md-12']" +
-                "/app-list-customer[@class='ng-star-inserted']/div[@class='page-header']/div[@class='inner-page-wraper']/div[3]"));
-        return TableContent.isDisplayed();
-    }
-
-    public boolean validateSearchCustomerByCode() throws InterruptedException {
-        SearchCustomerByCode.sendKeys(prop.getProperty("customerCodeForSearch"));
-        SearchCustomerBtn.click();
-        Thread.sleep(TestUtils.EXPLICIT_WAIT);
-        WebElement TableContent=driver.findElement(By.xpath("//body/app-root/app-layout[@class='ng-star-inserted']" +
-                "/div[@id='main']/main[@class='page-content']/div[@class='row']" +
-                "/div[@class='col-md-12']/app-list-customer[@class='ng-star-inserted']" +
-                "/div[@class='page-header']/div[@class='inner-page-wraper']/div[3]"));
-        return TableContent.isDisplayed();
-
-    }
-
-
-
-    public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
+    public void fillNewCustomerForm(String customer_code,String customer_name, String customer_period, String customer_drop){
         addCustomerBtn.click();
-        Thread.sleep(Duration.ofSeconds(5).toMillis());
         initializePopupWebElements();
-
-        customerCode.sendKeys(custCode);
-        customerName.sendKeys(custName);
-        customerPeriod.sendKeys(custPeriod);
+        customerCode.sendKeys(customer_code);
+        customerName.sendKeys(customer_name);
+        customerPeriod.sendKeys(customer_period);
         Select selectVertical = new Select(verticalDropdown);
-        selectVertical.selectByVisibleText(custDrop);
+        selectVertical.selectByVisibleText(customer_drop);
         ActiveCheckBox.click();
-
-        AddUserBtn.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
-        return successToast.isDisplayed();
+    }
+    public boolean searchAddedCustomerByCode(String customer_code) {
+        SearchCustomerByCode.clear();
+        SearchCustomerByName.clear();
+        SearchCustomerByCode.sendKeys(customer_code);
+        SearchCustomerBtn.click();
+        return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), customer_code);
     }
 
-
-    public boolean validateCustomerInTable(String custName, String custCode, String custPeriod, String custDrop) throws InterruptedException {
-        addCustomerBtn.click();
-        Thread.sleep(Duration.ofSeconds(5).toMillis());
-        initializePopupWebElements();
-
-        customerCode.sendKeys(custCode);
-        customerName.sendKeys(custName);
-        customerPeriod.sendKeys(custPeriod);
-        Select selectVertical = new Select(verticalDropdown);
-        selectVertical.selectByVisibleText(custDrop);
-        ActiveCheckBox.click();
-        AddUserBtn.click();
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        String xpathExpression = "//tr[contains(@class, 'ng-star-inserted') and td[contains(.,'" + custName + "')]]";
-
-        WebElement userRow = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
-        return userRow.isDisplayed();
+    public boolean validateSearchCustomerByName(String customer_name){
+        SearchCustomerByCode.clear();
+        SearchCustomerByName.clear();
+        SearchCustomerByName.sendKeys(customer_name);
+        SearchCustomerBtn.click();
+        return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[3]"),customer_name);
     }
 
-
-    public boolean validateAddCustomerWithBlank() throws InterruptedException {
-        try {
-            addCustomerBtn.click();
-            Thread.sleep(Duration.ofSeconds(5).toMillis());
-            AddUserBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-            AddUserBtn.click();
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            WebElement successToast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='customer Added successfully']")));
-            return successToast.isDisplayed();
-        } catch (Exception e) {
-            System.err.println("An exception occurred: " + e.getMessage());
-            return false;
-        }
+    public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
+        TestUtils.waitForToastToDisappear();
+        fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
+        addBtn.click();
+        closeBtn.click();
+        return TestUtils.isSuccessToastDisplayed("customer Added successfully");
     }
+
+    public boolean validateAddCustomerWithInvalidData(String custName, String custCode, String custPeriod, String custDrop){
+        TestUtils.waitForToastToDisappear();
+        fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
+        addBtn.click();
+        closeBtn.click();
+        return TestUtils.isSuccessToastDisplayed("customer Added successfully");
+    }
+
+    public boolean validateAddNewCustomerWithoutData(String custName, String custCode, String custPeriod, String custDrop) {
+        TestUtils.waitForToastToDisappear();
+        fillNewCustomerForm(custName, custCode, custPeriod, custDrop);
+        addBtn.click();
+        closeBtn.click();
+        return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
+    }
+
+    public boolean validateAddedCustomerInDatabase(String customer_code){
+        return searchAddedCustomerByCode(customer_code);
+    }
+
 }

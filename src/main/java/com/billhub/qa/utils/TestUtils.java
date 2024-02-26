@@ -2,17 +2,21 @@ package com.billhub.qa.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.time.Duration;
+import java.util.Random;
 
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
@@ -43,6 +47,16 @@ public class TestUtils extends TestBase{
         try {
         	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='" + message + "']")));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+	
+	public static boolean waitForToastToDisappear() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id=\"toast-container\"]")));
             return true;
         } catch (TimeoutException e) {
             return false;
@@ -114,6 +128,68 @@ public class TestUtils extends TestBase{
 			}
 		}
 		return data;
+	}
+	
+	public static String generateRandomNumber(int length) {
+        if (length <= 0) {
+            throw new IllegalArgumentException("Length must be greater than zero");
+        }
+
+        // Generate a random number with the specified length
+        StringBuilder randomNumber = new StringBuilder();
+        Random random = new Random();
+
+        for (int i = 0; i < length; i++) {
+            int digit = random.nextInt(10);  // Generate a random digit (0-9)
+            randomNumber.append(digit);
+        }
+
+        return randomNumber.toString();
+    }
+	
+	 public static String generateRandomString(int length) {
+		 
+        if (length <= 0) {
+            throw new IllegalArgumentException("Length must be greater than zero");
+        }
+
+        // Generate a random string with the specified length
+        StringBuilder randomString = new StringBuilder();
+        Random random = new Random();
+
+        for (int i = 0; i < length; i++) {
+            char randomChar = (char) ('a' + random.nextInt(26));  // Generate a random lowercase English character
+            randomString.append(randomChar);
+        }
+
+        return randomString.toString();
+    }
+	 
+	 public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
+		   
+		 try {
+		        
+			FileInputStream file = new FileInputStream(TESTDATA_SHEET_PATH);
+
+	        try (XSSFWorkbook xsf = new XSSFWorkbook(file)) {
+	            XSSFSheet sheet = xsf.getSheet(sheetName);
+
+	            if (sheet != null) {
+	                sheet.getRow(rowNum).getCell(colNum).setCellValue(data);
+
+	                try (FileOutputStream fos = new FileOutputStream(TESTDATA_SHEET_PATH)) {
+	                    xsf.write(fos);
+	                }
+	            } else {
+	                System.out.println("Sheet not found!");
+	            }
+	        }
+
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 }

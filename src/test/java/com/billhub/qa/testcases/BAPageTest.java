@@ -1,8 +1,10 @@
 package com.billhub.qa.testcases;
 
+import java.time.Duration;
+
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.pages.BAPage;
@@ -16,19 +18,36 @@ public class BAPageTest extends TestBase{
 	MdmDashboardPage mdmDashboardPage;
 	BAPage baPage;
 	
-	public Object[][] data = TestUtils.getTestData("BA");
+	public Object[][] data;
 	
 	public BAPageTest() {
 		super();
 	}
 	
-	@BeforeMethod
-	public void setup(){
+	public void updateExcelSheetData() {
+		
+		String random_BA_name_first = "test_" + TestUtils.generateRandomString(6);  
+		String random_BA_name_second = "test_" + TestUtils.generateRandomString(6); 
+		String random_BA_code_first = TestUtils.generateRandomNumber(6);
+		String random_BA_code_second = TestUtils.generateRandomNumber(6);
+		TestUtils.setCellData("BA", 1, 1, random_BA_name_first);
+		TestUtils.setCellData("BA", 3, 1, random_BA_name_second);
+		TestUtils.setCellData("BA", 1, 0, random_BA_code_first);
+		TestUtils.setCellData("BA", 3, 0, random_BA_code_second);
+	}
+	
+	@BeforeClass
+	public void setup() throws InterruptedException{
 		
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
+
+		Thread.sleep(Duration.ofSeconds(20).toMillis());
+
 		baPage = mdmDashboardPage.clickOnBaLink();
+		updateExcelSheetData();
+		data = TestUtils.getTestData("BA");
 	}
 	
 	@Test(priority = 1)
@@ -58,6 +77,22 @@ public class BAPageTest extends TestBase{
 	}
 	
 	@Test(priority = 3)
+	public void addNewBAWithActiveStatusTest() {
+		
+		String ba_code = TestUtils.numberToString(data[0][0]);
+		String isActive = baPage.addNewBAWithActiveStatus(ba_code);
+		Assert.assertEquals(isActive, "Active", "BA with active status was not added or not found in database on searching.");
+	}
+	
+	@Test(priority = 4)
+	public void validateAddedBAInTheDatabaseTest() {
+		
+		String ba_code = TestUtils.numberToString(data[0][0]);
+		boolean isPresent = baPage.validateAddedBAInTheDatabase(ba_code);
+		Assert.assertTrue(isPresent, "BA is present but not found in the database.");
+	}
+	
+	@Test(priority = 5)
 	public void addNewBaWithInvalidDataTest() {
 		
 		String ba_name = (String) data[1][1], state = (String) data[0][2], msmed = (String) data[1][7];
@@ -67,11 +102,10 @@ public class BAPageTest extends TestBase{
 		String ba_groupcode = TestUtils.numberToString(data[1][6]), contact_person_number = TestUtils.numberToString(data[1][10]);
 		
 		boolean isAdded = baPage.addNewBAWithInvalidData(ba_code, ba_name, state , trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
-		Assert.assertFalse(isAdded, "BA was not added.");
+		Assert.assertFalse(isAdded, "BA was added with invalid data.");
 	}
-	
 
-	@Test(priority = 4)
+	@Test(priority = 6)
 	public void addNewBAWithDuplicateDataTest() {
 		
 		String ba_name = (String) data[0][1], state = (String) data[0][2], msmed = (String) data[0][7];
@@ -84,7 +118,14 @@ public class BAPageTest extends TestBase{
 		Assert.assertFalse(isAdded, "BA was added without data.");
 	}
 	
-	@Test(priority = 5)
+	@Test(priority = 7)
+	public void addNewBaWithoutDataTest() {
+		
+		boolean isAdded = baPage.addNewBAWithoutData("", "", "", "", "", "", "", "", "", "", "");
+		Assert.assertFalse(isAdded, "BA was added without data.");
+	}
+	
+	@Test(priority = 8)
 	public void updateBATest(){
 		
 		String ba_code = TestUtils.numberToString(data[1][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
@@ -92,30 +133,7 @@ public class BAPageTest extends TestBase{
 		boolean isUpdated = baPage.updateBA(ba_code, ba_name, contact_person_number);
 		Assert.assertTrue(isUpdated, "BA was not updated.");
 	}
-	
-	@Test(priority = 6)
-	public void addNewBAWithActiveStatusTest() {
-		
-		String ba_code = TestUtils.numberToString(data[0][0]);
-		String isActive = baPage.addNewBAWithActiveStatus(ba_code);
-		Assert.assertEquals(isActive, "Active", "BA with active status was not added or not found in database upon searching.");
-	}
-	
-	@Test(priority = 7)
-	public void validateAddedBAInTheDatabaseTest() {
-		
-		String ba_code = TestUtils.numberToString(data[0][0]);
-		boolean isPresent = baPage.validateAddedBAInTheDatabase(ba_code);
-		Assert.assertTrue(isPresent, "BA is present but not found in the database.");
-	}
-	
-	@Test(priority = 8)
-	public void addNewBaWithoutDataTest() {
-		
-		boolean isAdded = baPage.addNewBAWithoutData("", "", "", "", "", "", "", "", "", "", "");
-		Assert.assertTrue(isAdded, "Expected error popup box found none.");
-	}
-	
+
 	@Test(priority = 9)
 	public void searchBAByNameTest() {
 		
@@ -132,7 +150,7 @@ public class BAPageTest extends TestBase{
 		Assert.assertTrue(isPresent, "BA is present but not found on searching");
 	}
 	
-	@AfterMethod				
+	@AfterClass				
 	public void tearDown() {
 		driver.close();						
 	}

@@ -6,14 +6,13 @@
   </listeners>
   <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.TaxCodePageTest">
+      <class name="com.billhub.qa.testcases.ReasonPageTest">
         <methods>
-          <include name="addNewTaxCodeWithoutDataTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="updateUserTest"/>
+          <include name="addNewReasonWithDuplicateDataTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.TaxCodePageTest -->
+      </class> <!-- com.billhub.qa.testcases.ReasonPageTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->
