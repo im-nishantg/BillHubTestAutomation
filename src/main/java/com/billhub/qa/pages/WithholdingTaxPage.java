@@ -22,11 +22,17 @@ public class WithholdingTaxPage extends TestBase{
 	}
 	WebElement withTaxType,withTaxCode,withTaxRate,withTaxDescrp,addBtn,closeBtn;
 
+	public boolean searchWithholdingTaxByTaxRate(String tax_rate) {
+
+		withholdingTaxInput.sendKeys(tax_rate);
+		searchBtn.click();
+		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), tax_rate);
+	}
 	public void initalizePopupElements(){
-		withTaxType=driver.findElement(By.cssSelector(".form-control.ng-pristine.ng-invalid.ng-touched"));
 		withTaxCode=driver.findElement(By.cssSelector("input[formcontrolname='taxCode']"));
+		withTaxType=driver.findElement(By.cssSelector("input[formcontrolname='taxType']"));
 		withTaxRate=driver.findElement(By.cssSelector("div:nth-child(3) input:nth-child(1)"));
-		withTaxDescrp=driver.findElement(By.id("msmed-id"));
+		withTaxDescrp=driver.findElement(By.cssSelector("#msmed-id"));
 		addBtn=driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
 		closeBtn=driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
 	}
@@ -41,30 +47,34 @@ public class WithholdingTaxPage extends TestBase{
 		selectVertical.selectByVisibleText(tax_drop);
 	}
 
-
 	
+	public boolean validateSearchWithholdingTax(String taxRate) {
+		withholdingTaxInput.sendKeys(taxRate);
+		searchBtn.click();
+		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), taxRate);
+	}
 
-	
-//	public boolean validateSearchWithholdingTax(String taxType) {
-//
-//	}
-//
 	public boolean validateAddTaxWithValidData(String taxType, String taxCode, String taxRate, String taxDescription) {
+		fillNewWithholdingTaxForm(taxType,taxCode,taxRate,taxDescription);
+		addBtn.click();
+		return TestUtils.isSuccessToastDisplayed("Withholding tax added successfully");
+	}
+
+	public boolean validateWithholdingTaxInDatabase(String taxRate) {
+		return searchWithholdingTaxByTaxRate(taxRate);
+	}
+
+	public boolean validateAddTaxWithBlankData(String taxType, String taxCode, String taxRate, String taxDescription) {
+		fillNewWithholdingTaxForm(taxType, taxCode, taxRate, taxDescription);
+		addBtn.click();
+		closeBtn.click();
+		return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
+	}
+
+	public boolean validateDuplicateWithholdingData(String taxType, String taxCode, String taxRate, String taxDescription) {
 		fillNewWithholdingTaxForm(taxType,taxCode,taxRate,taxDescription);
 		addBtn.click();
 		closeBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Withholding tax added successfully");
 	}
-//
-//	public boolean validateWithholdingTaxInTable(String taxType, String taxCode, String taxRate, String taxDescription) {
-//
-//	}
-//
-//	public boolean validateAddTaxWithBlankData() {
-//
-//	}
-//
-//	public boolean validateDuplicateWithholdingData(String taxType, String taxCode, String taxRate, String taxDescription) {
-//
-//	}
 }
