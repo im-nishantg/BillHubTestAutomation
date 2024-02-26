@@ -30,8 +30,50 @@ public class BAPage extends TestBase{
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement searchBtn;
 	
-	WebElement baCode, baName, stateName, tradeDiscount, creditPeriod, tdCreditPeriod, baGroupCode, isMSMED;
-	WebElement emailID, contactPersonName, contactPersonNumber, activeBtn, addBtn, closeBtn, editBtn, updateBtn;
+    @FindBy(css = "div[class='card-body p-2'] div:nth-child(1) div:nth-child(1) input:nth-child(1)")
+    WebElement baCode;
+
+    @FindBy(css = "div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)")
+    WebElement baName;
+
+    @FindBy(css = "#state-id")
+    WebElement stateName;
+
+    @FindBy(css = "div[class='modal-body pb-0'] div:nth-child(2) div:nth-child(2) input:nth-child(1)")
+    WebElement tradeDiscount;
+
+    @FindBy(css = "div:nth-child(3) div:nth-child(1) input:nth-child(1)")
+    WebElement creditPeriod;
+
+    @FindBy(css = "div:nth-child(3) div:nth-child(2) input:nth-child(1)")
+    WebElement tdCreditPeriod;
+
+    @FindBy(css = "div:nth-child(4) div:nth-child(1) input:nth-child(1)")
+    WebElement baGroupCode;
+
+    @FindBy(css = "#msmed-id")
+    WebElement isMSMED;
+
+    @FindBy(css = "input[formcontrolname='email_id']")
+    WebElement emailID;
+
+    @FindBy(css = "input[formcontrolname='contact_name']")
+    WebElement contactPersonName;
+
+    @FindBy(css = "input[formcontrolname='contact_number']")
+    WebElement contactPersonNumber;
+
+    @FindBy(css = "#defaultCheck2")
+    WebElement activeBtn;
+
+    @FindBy(css = "button[class='btn btn-primary btn-done']")
+    WebElement addBtn;
+
+    @FindBy(css = "button[class='btn btn-danger btn-done']")
+    WebElement closeBtn;
+
+    @FindBy(css = "button[class='btn btn-primary btn-done'] span")
+    WebElement updateBtn;
 	
 	
 	public BAPage() {
@@ -39,21 +81,7 @@ public class BAPage extends TestBase{
 	}
 	
 	public void initializePopupWebElements() {
-		
-		baCode = driver.findElement(By.cssSelector("div[class='card-body p-2'] div:nth-child(1) div:nth-child(1) input:nth-child(1)"));
-		baName = driver.findElement(By.cssSelector("div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)"));
-		stateName = driver.findElement(By.cssSelector("#state-id"));
-		tradeDiscount = driver.findElement(By.cssSelector("div[class='modal-body pb-0'] div:nth-child(2) div:nth-child(2) input:nth-child(1)"));
-		creditPeriod = driver.findElement(By.cssSelector("div:nth-child(3) div:nth-child(1) input:nth-child(1)"));
-		tdCreditPeriod = driver.findElement(By.cssSelector("div:nth-child(3) div:nth-child(2) input:nth-child(1)"));
-		baGroupCode = driver.findElement(By.cssSelector("div:nth-child(4) div:nth-child(1) input:nth-child(1)"));
-		isMSMED = driver.findElement(By.cssSelector("#msmed-id"));
-		emailID = driver.findElement(By.cssSelector("input[formcontrolname='email_id']"));
-		contactPersonName = driver.findElement(By.cssSelector("input[formcontrolname='contact_name']"));
-		contactPersonNumber = driver.findElement(By.cssSelector("input[formcontrolname='contact_number']"));
-		activeBtn = driver.findElement(By.cssSelector("#defaultCheck2"));
-		addBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-		closeBtn = driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
+		PageFactory.initElements(driver, this);
 	}
 
 	public void fillAddNewBAForm(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number){
@@ -76,6 +104,7 @@ public class BAPage extends TestBase{
 	
 	public boolean addNewBAWithValidData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 	    addBtn.click();
 	    closeBtn.click();
@@ -84,6 +113,7 @@ public class BAPage extends TestBase{
 	
 	public boolean addNewBAWithInvalidData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		addBtn.click();
 	    closeBtn.click();
@@ -92,14 +122,16 @@ public class BAPage extends TestBase{
 	
 	public boolean addNewBAWithoutData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		addBtn.click();
 	    closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
+		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
 	}
 	
 	public boolean addNewBAWithDuplicateData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		addBtn.click();
 	    closeBtn.click();
@@ -108,6 +140,7 @@ public class BAPage extends TestBase{
 	
 	public boolean addNewBAWithInactiveStatus(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
 
+		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		activeBtn.click();
 		addBtn.click();
@@ -131,6 +164,8 @@ public class BAPage extends TestBase{
 	
 	public boolean searchBAByName(String ba_name) {
 		
+		searchBAByCode.clear();
+		searchBAByName.clear();
 		searchBAByName.sendKeys(ba_name);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_name);
@@ -138,6 +173,8 @@ public class BAPage extends TestBase{
 	
 	public boolean searchBAByCode(String ba_code) {
 		
+		searchBAByName.clear();
+		searchBAByCode.clear();
 		searchBAByCode.sendKeys(ba_code);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), ba_code);
@@ -145,14 +182,13 @@ public class BAPage extends TestBase{
 	
 	public boolean updateBA(String ba_code, String ba_name, String contact_person_number){
 	    
-		searchBAByCode.sendKeys(ba_code);
-	    searchBtn.click();
+		TestUtils.waitForToastToDisappear();
+		searchBAByCode(ba_code);
 	    
 	    WebElement editBtn = TestUtils.locateAndClickEditBtn(By.cssSelector("tbody tr:nth-child(1) td:nth-child(11) i:nth-child(1)"));  
 	    baName = TestUtils.waitForElementVisibility(By.cssSelector("div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)")); 
 	    contactPersonNumber = TestUtils.waitForElementVisibility(By.cssSelector("input[formcontrolname='contact_number']")); 
-	    updateBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-	    
+
 	    baName.clear();
 	    contactPersonNumber.clear();
 	    

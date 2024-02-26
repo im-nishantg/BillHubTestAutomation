@@ -8,6 +8,7 @@
 	
 	<test name="BillHub App Test Cases">
 		<classes>
+<<<<<<< HEAD
 		    <class name = "com.billhub.qa.testcases.CustomerPageTest"></class>
 			<class name="com.billhub.qa.testcases.WithholdingTaxPageTest"></class>
 			<!--
@@ -15,6 +16,13 @@
 			<class name = "com.billhub.qa.testcases.UserPageTest"></class>
 			<class name = "com.billhub.qa.testcases.TaxCodePageTest"></class> -->
 <!--			<class name = "com.billhub.qa.testcases.ReasonPageTest"></class>-->
+=======
+		<!-- <class name = "com.billhub.qa.testcases.CustomerPageTest"></class> -->
+		<!-- 	<class name = "com.billhub.qa.testcases.BAPageTest"></class>  -->
+			<!--  <class name = "com.billhub.qa.testcases.UserPageTest"></class>  -->
+			<!-- <class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
+			<class name = "com.billhub.qa.testcases.ReasonPageTest"></class>
+>>>>>>> 985a5c04dd50f1457f1834a556d1b56239239775
 		</classes>
 	</test>
 </suite>

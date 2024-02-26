@@ -10,8 +10,6 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="addNewReasonWithInvalidDataTest"/>
-          <include name="updateReasonTest"/>
           <include name="addNewReasonWithDuplicateDataTest"/>
         </methods>
       </class> <!-- com.billhub.qa.testcases.ReasonPageTest -->

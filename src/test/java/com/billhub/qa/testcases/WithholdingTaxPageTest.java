@@ -17,9 +17,16 @@ public class WithholdingTaxPageTest extends TestBase{
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
 	WithholdingTaxPage withholdingTaxPage;
-	public Object[][] data= TestUtils.getTestData("WithholdingTax");
+	public Object[][] data;
 	public WithholdingTaxPageTest() {
 		super();
+	}
+
+	public void updateExcelSheetData() {
+		String random_WTAX_code= TestUtils.generateRandomNumber(2);
+		String random_WRATE_code=TestUtils.generateRandomNumber(2);
+		TestUtils.setCellData("WithholdingTax", 1, 1, random_WTAX_code);
+		TestUtils.setCellData("WithholdingTax",1,2,random_WRATE_code);
 	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
@@ -28,6 +35,8 @@ public class WithholdingTaxPageTest extends TestBase{
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 		Thread.sleep(Duration.ofSeconds(25).toMillis());
 		withholdingTaxPage = mdmDashboardPage.clickOnWithholdingTaxLink();
+		updateExcelSheetData();
+		data=TestUtils.getTestData("WithholdingTax");
 	}
 
 

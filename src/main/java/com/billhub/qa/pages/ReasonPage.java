@@ -22,20 +22,33 @@ public class ReasonPage extends TestBase{
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement searchBtn;
 	
-	WebElement reasonCode, reasonName, typeInput, activeBtn, addBtn, closeBtn, updateBtn;
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-edit-reason/div[2]/div/div/form/div/div[1]/input")
+    WebElement reasonCode;
+
+    @FindBy(xpath = "/html/body/modal-container/div/div/app-add-edit-reason/div[2]/div/div/form/div/div[2]/input")
+    WebElement reasonName;
+
+    @FindBy(xpath = "//*[@id=\"type\"]")
+    WebElement typeInput;
+
+    @FindBy(css = "#defaultCheck2")
+    WebElement activeBtn;
+
+    @FindBy(css = "button[class='btn btn-primary btn-done']")
+    WebElement addBtn;
+
+    @FindBy(css = "button[class='btn btn-danger btn-done']")
+    WebElement closeBtn;
+
+    @FindBy(css = "button[class='btn btn-primary btn-done'] span")
+    WebElement updateBtn;
 	
 	public ReasonPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
 	public void initializePopupWebElements() {
-        
-		reasonCode = driver.findElement(By.xpath("/html/body/modal-container/div/div/app-add-edit-reason/div[2]/div/div/form/div/div[1]/input"));
-		reasonName = driver.findElement(By.xpath("/html/body/modal-container/div/div/app-add-edit-reason/div[2]/div/div/form/div/div[2]/input"));
-		typeInput = driver.findElement(By.xpath("//*[@id=\"type\"]"));
-		activeBtn = driver.findElement(By.cssSelector("#defaultCheck2"));
-		addBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-		closeBtn = driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
+		PageFactory.initElements(driver, this);
 	}
 	
 	public void fillAddReasonForm(String reason_code, String reason_name, String type) {
@@ -50,6 +63,7 @@ public class ReasonPage extends TestBase{
 	
 	public boolean addNewReasonWithValidData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
@@ -58,6 +72,7 @@ public class ReasonPage extends TestBase{
 	
 	public boolean addNewReasonWithInvalidData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
@@ -66,6 +81,7 @@ public class ReasonPage extends TestBase{
 	
 	public boolean addNewReasonWithoutData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
@@ -74,6 +90,7 @@ public class ReasonPage extends TestBase{
 	
 	public boolean addNewReasonWithDuplicateData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
@@ -82,6 +99,8 @@ public class ReasonPage extends TestBase{
 	
 	public boolean searchByReasonName(String reason_name) {
 		
+		searchByReasonCode.clear();
+		searchByReasonName.clear();
 		searchByReasonName.sendKeys(reason_name);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-reason/div/div/div[3]/div/table/tbody/tr/td[3]"), reason_name);
@@ -89,6 +108,8 @@ public class ReasonPage extends TestBase{
 
 	public boolean searchByReasonCode(String reason_code) {
 		
+		searchByReasonName.clear();
+		searchByReasonCode.clear();
 		searchByReasonCode.sendKeys(reason_code);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-reason/div/div/div[3]/div/table/tbody/tr/td[2]"), reason_code);
@@ -96,13 +117,13 @@ public class ReasonPage extends TestBase{
 	
 	public boolean updateReason(String reason_code, String reason_name, String type) {
 		
+		TestUtils.waitForToastToDisappear();
 		searchByReasonCode(reason_code);
 		
 		WebElement editBtn = TestUtils.locateAndClickEditBtn(By.cssSelector("i[class='fa fa-edit']"));  
 		reasonName = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-add-edit-reason/div[2]/div/div/form/div/div[2]/input")); 
 		typeInput = TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"type\"]")); 
-	    updateBtn = driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done'] span"));
-	    
+
 	    reasonName.clear();
 	    
 	    reasonName.sendKeys(reason_name);

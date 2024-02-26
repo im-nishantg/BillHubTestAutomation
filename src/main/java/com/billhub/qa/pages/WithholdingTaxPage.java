@@ -17,24 +17,31 @@ public class WithholdingTaxPage extends TestBase{
 	WebElement withholdingTaxInput;
 	@FindBy(xpath = "//button[normalize-space()='Search']")
 	WebElement searchBtn;
+
+	@FindBy(css = "input[formcontrolname='taxCode']")
+	WebElement withTaxCode;
+	@FindBy(css = "input[formcontrolname='taxType']")
+	WebElement withTaxType;
+	@FindBy(css = "div:nth-child(3) input:nth-child(1)")
+	WebElement withTaxRate;
+	@FindBy(css = "#msmed-id")
+	WebElement withTaxDescrp;
+	@FindBy(css = "button[class='btn btn-primary btn-done']")
+	WebElement addBtn;
+	@FindBy(css = "button[class='btn btn-danger btn-done']")
+	WebElement closeBtn;
+
 	public WithholdingTaxPage() {
 		PageFactory.initElements(driver, this);
 	}
-	WebElement withTaxType,withTaxCode,withTaxRate,withTaxDescrp,addBtn,closeBtn;
-
 	public boolean searchWithholdingTaxByTaxRate(String tax_rate) {
-
 		withholdingTaxInput.sendKeys(tax_rate);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), tax_rate);
 	}
+
 	public void initalizePopupElements(){
-		withTaxCode=driver.findElement(By.cssSelector("input[formcontrolname='taxCode']"));
-		withTaxType=driver.findElement(By.cssSelector("input[formcontrolname='taxType']"));
-		withTaxRate=driver.findElement(By.cssSelector("div:nth-child(3) input:nth-child(1)"));
-		withTaxDescrp=driver.findElement(By.cssSelector("#msmed-id"));
-		addBtn=driver.findElement(By.cssSelector("button[class='btn btn-primary btn-done']"));
-		closeBtn=driver.findElement(By.cssSelector("button[class='btn btn-danger btn-done']"));
+		PageFactory.initElements(driver, this);
 	}
 
 	public void fillNewWithholdingTaxForm(String tax_type, String tax_code,String tax_rate,String tax_drop){
@@ -49,6 +56,7 @@ public class WithholdingTaxPage extends TestBase{
 
 	
 	public boolean validateSearchWithholdingTax(String taxRate) {
+		withholdingTaxInput.clear();
 		withholdingTaxInput.sendKeys(taxRate);
 		searchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), taxRate);
