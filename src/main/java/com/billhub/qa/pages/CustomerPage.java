@@ -70,12 +70,6 @@ public class CustomerPage extends TestBase {
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[3]"),customer_name);
     }
 
-    public boolean validateSearchCustomerByCode(String customer_code){
-        SearchCustomerByCode.sendKeys(customer_code);
-        SearchCustomerBtn.click();
-        return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[2]"),customer_code);
-
-    }
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);

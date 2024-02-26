@@ -46,7 +46,11 @@ public class UserPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
+<<<<<<< HEAD
 		Thread.sleep(Duration.ofSeconds(20).toMillis());
+=======
+		Thread.sleep(Duration.ofSeconds(20));
+>>>>>>> 985a5c04dd50f1457f1834a556d1b56239239775
 		userPage = mdmDashboardPage.clickOnUserLink();
 		updateExcelSheetData();
 		data = TestUtils.getTestData("User");
