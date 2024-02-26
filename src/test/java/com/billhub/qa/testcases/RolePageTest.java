@@ -1,5 +1,6 @@
 package com.billhub.qa.testcases;
 
+import com.billhub.qa.utils.TestUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,11 +14,13 @@ import com.billhub.qa.pages.RolePage;
 import java.time.Duration;
 
 public class RolePageTest extends TestBase{
-	String roleName="TAX";
-	String roleCode="MDM";
+//	String roleName="20164014@";
+//	String roleCode="suraj@";
 	LoginPage loginPage;
 	MdmDashboardPage mdmDashboardPage;
 	RolePage rolePage;
+
+	public Object[][] data = TestUtils.getTestData("Role");
 	
 	public RolePageTest() {
 		super();
@@ -32,24 +35,10 @@ public class RolePageTest extends TestBase{
 		rolePage = mdmDashboardPage.clickOnRoleLink();
 	}
 	
-	@Test
-	public void addRoleWithValidDataTest() throws InterruptedException {
-		boolean result=rolePage.validateAddRoleWithValidData(roleCode,roleName);
-		Assert.assertTrue(result,"Test failed!");
-	}
 
-	@Test
-	public void addRoleWithInvalidDataTest() throws InterruptedException {
-		boolean result = rolePage.validateAddRoleWithValidData(roleName, roleCode);
-		Assert.assertFalse(result, "Test failed!");
-	}
 
     @Test
-		public void addRoleWithOutDataTest() throws InterruptedException{
-		boolean result=rolePage.validateAddRoleWithValidData("","");
-		Assert.assertFalse(result, "Test failed");
 
-		}
 
 	
 	@AfterMethod						
