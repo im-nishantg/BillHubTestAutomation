@@ -43,7 +43,7 @@ public class BADashboardPage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		POBasedInvoiceCheckbox.click();
 		fromState.sendKeys("Rajasthan");
-		toState.sendKeys("Delhi");
+		toState.sendKeys("Kerala");
 		proceedManuallyBtn.click();
 		return new CreatePOBasedInvoicePage();
 		

@@ -29,6 +29,8 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	@FindBy(xpath = "//input[@id='td']")
 	WebElement cd;
+	@FindBy(xpath = "//input[@id='tcsAmount']")
+	WebElement tcs_amount;
 	
 	@FindBy(xpath = "//input[@id='igst']")
 	WebElement igst;
@@ -74,6 +76,9 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button")
 	WebElement submitMemoBtn;
+
+	@FindBy(xpath = "//div[@class='inv-footer-text']")
+	WebElement totalInvAmount;
 	
 	public CreatePOBasedInvoicePage() {
 		PageFactory.initElements(driver, this);
@@ -111,7 +116,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		hsnCode.sendKeys("996713");
 		addPOTransactionBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		TestUtils.waitForWebElementToBeClickable(saveBtn).click();
+//		TestUtils.waitForWebElementToBeClickable(saveBtn).click();
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
 		submittingAt.sendKeys("Ahmedabad");
@@ -119,5 +124,35 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		submitMemoBtn.click();
 		
 	}
-	
+
+	public String verifyGstCode(){
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		baseAmount.sendKeys("10");
+		igst.sendKeys("1.80");
+		comment.click();
+		String amount=  totalInvAmount.getText();
+		return TestUtils.splitString(amount);
+	}
+
+	public String verifyTdCode(){
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		baseAmount.clear();
+		cd.clear();
+		baseAmount.sendKeys("10");
+		cd.sendKeys("1");
+		comment.click();
+		String amount=  totalInvAmount.getText();
+		return TestUtils.splitString(amount);
+	}
+
+	public String verifyAdditionalAmount(){
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		baseAmount.clear();
+		tcs_amount.clear();
+		baseAmount.sendKeys("10");
+		tcs_amount.sendKeys("1");
+		comment.click();
+		String amount=  totalInvAmount.getText();
+		return TestUtils.splitString(amount);
+	}
 }

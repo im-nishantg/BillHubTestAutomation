@@ -181,6 +181,11 @@ public class TestUtils extends TestBase{
 
         return randomString.toString();
     }
+
+	public static String splitString(String str){
+		String final_str=str.substring(2);
+		return final_str;
+	}
 	 
 	 public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
 		   

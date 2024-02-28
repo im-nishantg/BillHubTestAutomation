@@ -1,5 +1,7 @@
 package com.billhub.qa.testcases;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -21,7 +23,6 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	
 	@BeforeClass
 	public void setup(){
-		
 		initialization();
 		loginPage= new LoginPage();
 		baDashboardPage = loginPage.loginAsBa(prop.getProperty("ba_userid_po"),prop.getProperty("ba_password_po"));
@@ -32,4 +33,28 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	public void createInvoiceTest(){
 		createPOBasedInvoicePage.createInvoice();
 	}
+	@Test
+	public void gstCodeVerificationTest(){
+		String expected_amount="11.8";
+		String actual_amount=createPOBasedInvoicePage.verifyGstCode();
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed!"+actual_amount+" "+ expected_amount+" ");
+	}
+	@Test
+	public void tdCodeVerificationTest(){
+		String expected_amount="9";
+		String actual_amount=createPOBasedInvoicePage.verifyTdCode();
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed!"+actual_amount+" "+ expected_amount+" ");
+	}
+	@Test
+	public void additionalAmountVerificationTest(){
+		String expected_amount="11";
+		String actual_amount=createPOBasedInvoicePage.verifyAdditionalAmount();
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed!"+actual_amount+" "+ expected_amount+" ");
+	}
+
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
+
 }
