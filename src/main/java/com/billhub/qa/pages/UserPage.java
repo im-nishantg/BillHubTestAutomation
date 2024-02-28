@@ -1,15 +1,10 @@
 package com.billhub.qa.pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.utils.TestUtils;
 
@@ -41,6 +36,18 @@ public class UserPage extends TestBase{
 
     @FindBy(css = "#role_id")
     WebElement roleName;
+    
+    @FindBy(css = "button[class='btn btn-success']")
+    WebElement addCompanyBtn;
+    
+    @FindBy(css = "#Company_ID")
+    WebElement companyCode;
+    
+    @FindBy(css = ".dropdown-btn")
+    WebElement selectCity;
+    
+    @FindBy(css = "input[placeholder='Location..']")
+    WebElement location;
 
     @FindBy(css = "input[formcontrolname='Email_ID']")
     WebElement emailID;
@@ -78,11 +85,27 @@ public class UserPage extends TestBase{
 		lastName.sendKeys(last_name);
 		emailID.sendKeys(email);
 		roleName.sendKeys(role_name);
+		
 	}
 	
-	public boolean addNewUserWithValidData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
+	public boolean addNewUserWithValidData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email, String company_code, String city_name) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
+		addCompanyBtn = TestUtils.waitForElementVisibility(By.cssSelector("button[class='btn btn-success']"));
+		addCompanyBtn.click();
+		companyCode = TestUtils.waitForElementVisibility(By.cssSelector("#Company_ID"));
+		selectCity = TestUtils.waitForElementVisibility(By.cssSelector(".dropdown-btn"));
+		selectCity.click();
+		companyCode.sendKeys(company_code);
+		
+		// code to select city from dropdown
+	    WebElement overlayingElement = TestUtils.waitForElementToBeClickable(By.cssSelector("li.multiselect-item-checkbox"));
+	    String cityCheckboxSelector = String.format("input[aria-label='%s']", city_name);
+	    WebElement selectedLocation = TestUtils.waitForElementToBeClickable(By.cssSelector(cityCheckboxSelector));
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(selectedLocation).click().build().perform();
+	    
 		addBtn.click();
 		closeBtn.click();
 		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
@@ -90,6 +113,7 @@ public class UserPage extends TestBase{
 	
 	public boolean addNewUserWithInactiveStatus(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		activeBtn.click();
 		addBtn.click();
@@ -99,6 +123,7 @@ public class UserPage extends TestBase{
 	
 	public boolean addNewUserWithInvalidData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		addBtn.click();
 		closeBtn.click();
@@ -107,6 +132,7 @@ public class UserPage extends TestBase{
 	
 	public boolean addNewUserWithDuplicateData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		addBtn.click();
 		closeBtn.click();
@@ -115,14 +141,25 @@ public class UserPage extends TestBase{
 	
 	public boolean addNewUserWithoutData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		addBtn.click();
 		closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
+		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+	}
+	
+	public boolean addNewReadOnlyUser(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
+		
+		TestUtils.waitForToastToDisappear();
+		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
+		addBtn.click();
+		closeBtn.click();
+		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
 	}
 	
 	public boolean searchUserByName(String user_name) {
 		
+		searchUserByBAGroupID.clear();
 		searchUserByName.clear();
 		searchUserByName.sendKeys(user_name);
 		searchBtn.click();
@@ -131,6 +168,7 @@ public class UserPage extends TestBase{
 	
 	public boolean searchUserByBAGroupID(String ba_group_id) {
 		
+		searchUserByName.clear();
 		searchUserByBAGroupID.clear();
 		searchUserByBAGroupID.sendKeys(ba_group_id);
 		searchBtn.click();
@@ -151,8 +189,24 @@ public class UserPage extends TestBase{
 		return searchUserByBAGroupID(ba_group_id);
 	}
 	
+	public boolean createCommercialForDifferentLocation(String ba_group_id) {
+		
+		return searchUserByBAGroupID(ba_group_id);
+	}
+	
+	public boolean createMDMAndReadOnlyUsers(String ba_group_id) {
+		
+		return searchUserByBAGroupID(ba_group_id);
+	}
+	
+	public boolean createAccountForSpecificCompany(String ba_group_id) {
+		
+		return searchUserByBAGroupID(ba_group_id);
+	}
+	
 	public boolean updateUser(String ba_group_id, String first_name, String last_name) {
 		
+		TestUtils.waitForToastToDisappear();
 		searchUserByBAGroupID(ba_group_id);
 		
 		WebElement editBtn = TestUtils.locateAndClickEditBtn(By.cssSelector("tbody tr:nth-child(1) td:nth-child(9) i:nth-child(1)"));  

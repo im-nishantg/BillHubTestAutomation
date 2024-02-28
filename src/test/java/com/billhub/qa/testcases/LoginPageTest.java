@@ -27,7 +27,7 @@ public class LoginPageTest extends TestBase{
 	}
 
 	@Test
-	public void loginAsMdmTest() throws InterruptedException{
+	public void loginAsMdmTest(){
 		mdmDashboardPage= loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 	}
 	@Test

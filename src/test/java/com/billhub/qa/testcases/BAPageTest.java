@@ -1,7 +1,5 @@
 package com.billhub.qa.testcases;
 
-import java.time.Duration;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -37,13 +35,12 @@ public class BAPageTest extends TestBase{
 	}
 	
 	@BeforeClass
-	public void setup() throws InterruptedException{
+	public void setup(){
 		
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 
-		Thread.sleep(Duration.ofSeconds(20).toMillis());
 
 		baPage = mdmDashboardPage.clickOnBaLink();
 		updateExcelSheetData();
@@ -126,15 +123,6 @@ public class BAPageTest extends TestBase{
 	}
 	
 	@Test(priority = 8)
-	public void updateBATest(){
-		
-		String ba_code = TestUtils.numberToString(data[1][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
-		String ba_name = (String) data[1][1];
-		boolean isUpdated = baPage.updateBA(ba_code, ba_name, contact_person_number);
-		Assert.assertTrue(isUpdated, "BA was not updated.");
-	}
-
-	@Test(priority = 9)
 	public void searchBAByNameTest() {
 		
 		String ba_name = (String) data[0][1];
@@ -142,12 +130,21 @@ public class BAPageTest extends TestBase{
 		Assert.assertTrue(isPresent, "BA is present but not found on searching");
 	}
 	
-	@Test(priority = 10)
+	@Test(priority = 9)
 	public void searchBAByCodeTest() {
 		
 		String ba_code = TestUtils.numberToString(data[0][0]);
 		boolean isPresent = baPage.searchBAByCode(ba_code);
 		Assert.assertTrue(isPresent, "BA is present but not found on searching");
+	}
+	
+	@Test(priority = 10)
+	public void updateBATest(){
+		
+		String ba_code = TestUtils.numberToString(data[1][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
+		String ba_name = (String) data[1][1];
+		boolean isUpdated = baPage.updateBA(ba_code, ba_name, contact_person_number);
+		Assert.assertTrue(isUpdated, "BA was not updated.");
 	}
 	
 	@AfterClass				
