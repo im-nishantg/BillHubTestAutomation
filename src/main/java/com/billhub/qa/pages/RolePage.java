@@ -30,17 +30,21 @@ public class RolePage extends TestBase{
 	WebElement editRoleBtn;
 
 	@FindBy(xpath = "//div[@class='has-float-label form-group col-md-6']//input[@type='text']")
-	WebElement roleCodePopUpInput;
+	WebElement roleCodeInput;
 	@FindBy(xpath = "//div[@class='form-group has-float-label col-md-6']//input[@type='text']")
-	WebElement roleNamePopUpInput;
+	WebElement roleNameInput;
 
 	@FindBy(xpath = "//button[@class='btn btn-primary btn-done']")
-	WebElement addNewRolePopUpBtn;
+	WebElement addNewRoleBtn;
 
 	@FindBy(xpath = "//button[normalize-space()='Close']")
 	WebElement closeBtn;
 
-	
+	@FindBy(css = "button[class='btn btn-primary btn-done'] span")
+	WebElement updateBtn;
+
+
+
 	public RolePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -49,83 +53,75 @@ public class RolePage extends TestBase{
 		PageFactory.initElements(driver,this);
 	}
 
-public void fillAddNewRoleForm(String role_code, String role_name){
+	public void fillAddNewRoleForm(String role_code, String role_name){
 
-	addRoleBtn.click();
-	initializePopupWebElements();
-	roleCodePopUpInput.sendKeys(role_code);
-	roleNamePopUpInput.sendKeys(role_name);
-}
+		addRoleBtn.click();
+		initializePopupWebElements();
+		roleCodeInput.sendKeys(role_code);
+		roleNameInput.sendKeys(role_name);
+	}
 
 	public boolean addNewRoleWithValidData(String role_code, String role_name) {
-
+		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
-		addNewRolePopUpBtn.click();
+		addNewRoleBtn.click();
 		closeBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Role Added successfully");
 	}
 
 	public boolean addNewRoleWithInvalidData(String role_code, String role_name) {
-
+		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
-		addNewRolePopUpBtn.click();
+		addNewRoleBtn.click();
 		closeBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Role Added successfully");
 	}
 
 	public boolean addNewRoleWithoutData(String role_code, String role_name) {
-
+		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
-		addNewRolePopUpBtn.click();
+		addNewRoleBtn.click();
 		closeBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
 	}
 
 	public boolean addNewRoleWithDuplicateData(String role_code, String role_name) {
-
+		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
-		addNewRolePopUpBtn.click();
-		closeBtn.click();
+		addNewRoleBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Role Added successfully");
 	}
 
 	public boolean validateAddedRoleInTheDatabase(String role_code) {
-
 		return searchRoleByCode(role_code);
 	}
 
 	public boolean searchRoleByName(String role_name) {
-
+		searchRoleCode.clear();
+		searchRoleName.clear();
 		searchRoleName.sendKeys(role_name);
 		roleSearchBtn.click();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-roles/div/div/div[3]/div/table/tbody/tr/td[3]"), role_name);
 	}
 
 	public boolean searchRoleByCode(String role_code) {
-
+		searchRoleCode.clear();
+		searchRoleName.clear();
 		searchRoleCode.sendKeys(role_code);
 		roleSearchBtn.click();
+		searchRoleCode.clear();
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-roles/div/div/div[3]/div/table/tbody/tr/td[2]"), role_code);
 	}
 
 	public boolean updateRole(String role_code, String role_name){
+		TestUtils.waitForToastToDisappear();
+		searchRoleByCode(role_code);
 
-		searchRoleCode.sendKeys(role_code);
-		roleSearchBtn.click();
-
-		WebElement editBtn = TestUtils.locateAndClickEditBtn(By.cssSelector("//*[@id=\"main\"]/main/div/div/app-list-roles/div/div/div[3]/div/table/tbody/tr/td[4]/i"));
-		roleNamePopUpInput = TestUtils.waitForElementVisibility(By.cssSelector("//*[@id=\"main\"]/main/div/div/app-list-roles/div/div/div[3]/div/table/tbody/tr/td[3]"));
-		WebElement updateBtn = driver.findElement(By.cssSelector("/html/body/modal-container/div/div/app-add-edit-role/div[3]/div/div[1]/button"));
-		roleNamePopUpInput.clear();
-
-
-		roleNamePopUpInput.sendKeys(role_name);
-
+		TestUtils.locateAndClickEditBtn(By.xpath("//tbody/tr[1]/td[4]"));
+		roleNameInput = TestUtils.waitForElementVisibility(By.xpath("//div[@class='form-group has-float-label col-md-6']//input[@type='text']"));
+		roleNameInput.clear();
+		roleNameInput.sendKeys(role_name);
 		updateBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Role data updated successfully");
 	}
-
-
-
-
 }
