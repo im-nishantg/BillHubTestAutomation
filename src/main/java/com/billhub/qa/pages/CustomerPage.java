@@ -8,7 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CustomerPage extends TestBase {
 	
@@ -52,7 +56,7 @@ public class CustomerPage extends TestBase {
         customerPeriod.sendKeys(customer_period);
         Select selectVertical = new Select(verticalDropdown);
         selectVertical.selectByVisibleText(customer_drop);
-        ActiveCheckBox.click();
+
     }
     public boolean searchAddedCustomerByCode(String customer_code) {
         SearchCustomerByCode.clear();
@@ -73,6 +77,7 @@ public class CustomerPage extends TestBase {
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
+        ActiveCheckBox.click();
         addBtn.click();
         closeBtn.click();
         return TestUtils.isSuccessToastDisplayed("customer Added successfully");
@@ -81,6 +86,7 @@ public class CustomerPage extends TestBase {
     public boolean validateAddCustomerWithInvalidData(String custName, String custCode, String custPeriod, String custDrop){
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
+        ActiveCheckBox.click();
         addBtn.click();
         closeBtn.click();
         return TestUtils.isSuccessToastDisplayed("customer Added successfully");
@@ -89,12 +95,33 @@ public class CustomerPage extends TestBase {
     public boolean validateAddNewCustomerWithoutData(String custName, String custCode, String custPeriod, String custDrop) {
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custName, custCode, custPeriod, custDrop);
+        ActiveCheckBox.click();
         addBtn.click();
         closeBtn.click();
         return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
     }
 
+    public boolean validateActiveStatus(String customer_code){
+        SearchCustomerByCode.clear();
+        SearchCustomerByName.clear();
+        SearchCustomerByCode.sendKeys(customer_code);
+        SearchCustomerBtn.click();
+
+        TestUtils.locateAndClickEditBtn(By.xpath("//tbody/tr[1]/td[6]/i[1]"));
+        boolean isActive= ActiveCheckBox.isSelected();
+        closeBtn.click();
+        return isActive;
+    }
+
+    public boolean validateInactiveStatus(String custName, String custCode, String custPeriod, String custDrop){
+        fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
+        addBtn.click();
+        closeBtn.click();
+        return validateActiveStatus(custCode);
+    }
+
     public boolean validateAddedCustomerInDatabase(String customer_code){
+        SearchCustomerByCode.clear();
         return searchAddedCustomerByCode(customer_code);
     }
 

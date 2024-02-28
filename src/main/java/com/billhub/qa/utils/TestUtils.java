@@ -82,7 +82,7 @@ public class TestUtils extends TestBase{
 	
 	public static WebElement locateAndClickEditBtn(By selector) {
 		
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    try {
 	        WebElement editBtn = wait.until(ExpectedConditions.elementToBeClickable(selector));
 	        editBtn.click();
