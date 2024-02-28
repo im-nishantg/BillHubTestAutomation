@@ -41,7 +41,7 @@ public class BAPageTest extends TestBase{
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 		baPage = mdmDashboardPage.clickOnBaLink();
-//		updateExcelSheetData();
+		updateExcelSheetData();
 		data = TestUtils.getTestData("BA");
 	}
 	

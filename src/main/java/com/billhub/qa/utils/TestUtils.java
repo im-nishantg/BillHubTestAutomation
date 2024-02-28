@@ -37,25 +37,25 @@ public class TestUtils extends TestBase{
 	
 	public static WebElement waitForElementVisibility(By selector) {
 		
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 	
 	public static void waitForElementInvisibility(By selector) {
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
 	
 	public static WebElement waitForElementToBeClickable(By selector) {
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.elementToBeClickable(selector));
 	}
 	
 	public static WebElement waitForWebElementToBeClickable(WebElement element) {
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
