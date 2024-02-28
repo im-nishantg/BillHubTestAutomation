@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.time.Duration;
 import java.util.Random;
@@ -41,6 +40,24 @@ public class TestUtils extends TestBase{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
+	
+	public static void waitForElementInvisibility(By selector) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
+    }
+	
+	public static WebElement waitForElementToBeClickable(By selector) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		return wait.until(ExpectedConditions.elementToBeClickable(selector));
+	}
+	
+	public static WebElement waitForWebElementToBeClickable(WebElement element) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
 	
 	public static boolean isSuccessToastDisplayed(String message) {
 		
@@ -191,5 +208,7 @@ public class TestUtils extends TestBase{
 	        e.printStackTrace();
 	    }
 	}
+
+	
 	
 }

@@ -1,6 +1,5 @@
 package com.billhub.qa.testcases;
 
-import java.time.Duration;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -35,12 +34,11 @@ public class ReasonPageTest extends TestBase{
 	}
 
 	@BeforeClass
-	public void setup() throws InterruptedException {
+	public void setup(){
 		
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-		Thread.sleep(Duration.ofSeconds(15).toMillis());
 		reasonPage = mdmDashboardPage.clickOnReasonLink();
 		updateExcelSheetData();
 		data = TestUtils.getTestData("Reason");

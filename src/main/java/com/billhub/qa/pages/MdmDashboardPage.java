@@ -1,5 +1,7 @@
 package com.billhub.qa.pages;
 import com.billhub.qa.base.TestBase;
+import com.billhub.qa.utils.TestUtils;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -40,69 +42,70 @@ public class MdmDashboardPage extends TestBase{
 	WebElement reasonBtn;
 	
 	public MdmDashboardPage() {
+		
 		PageFactory.initElements(driver, this);
 	}
 
 	public CustomerPage clickOnCustomerLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(customerBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
+		TestUtils.waitForWebElementToBeClickable(customerBtn).click();
 		return new CustomerPage();
 	}
 	
 	public BAPage clickOnBaLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(baBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
+		TestUtils.waitForWebElementToBeClickable(baBtn).click();
 		return new BAPage();
 	}
 
 	public UserPage clickOnUserLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(userBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
+		TestUtils.waitForWebElementToBeClickable(userBtn).click();
 		return new UserPage();
 	}
 
 	public WithholdingTaxPage clickOnWithholdingTaxLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(withHoldingTaxBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
+		TestUtils.waitForWebElementToBeClickable(withHoldingTaxBtn).click();
 		return new WithholdingTaxPage();
 	}
 
 	public RolePage clickOnRoleLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(roleBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();
+		TestUtils.waitForWebElementToBeClickable(roleBtn).click();
 		return new RolePage();
 	}
 
 	public TaxCodePage clickOnTaxCodeLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(taxCodeBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();
+		TestUtils.waitForWebElementToBeClickable(taxCodeBtn).click();
 		return new TaxCodePage();
 	}
 
 	public ReasonPage clickOnReasonLink(){
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("modal-container")));
-        wait.until(ExpectedConditions.elementToBeClickable(navbarExpandBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(masterBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(reasonBtn)).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
+		TestUtils.waitForWebElementToBeClickable(masterBtn).click();
+		TestUtils.waitForWebElementToBeClickable(reasonBtn).click();
 		return new ReasonPage();
 	}
 
