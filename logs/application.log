@@ -1,3 +1,2 @@
-21:11:07.705 [main] INFO  com.billhub.qa.base.TestBase - Successfully created a new memo.
-21:15:06.019 [main] INFO  com.billhub.qa.base.TestBase - here
-21:15:17.256 [main] INFO  com.billhub.qa.base.TestBase - Successfully created a new memo.
+21:47:51.866 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:48:06.904 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (485c80d3e0588cbcc619e75389772d9b)] -> xpath: //button[normalize-space()='SAVE']]

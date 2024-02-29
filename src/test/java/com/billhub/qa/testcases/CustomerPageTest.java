@@ -1,10 +1,9 @@
+
 package com.billhub.qa.testcases;
 
 import com.billhub.qa.utils.TestUtils;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.pages.CustomerPage;
@@ -24,14 +23,17 @@ public class CustomerPageTest extends TestBase{
 
 	public void updateExcelSheetData() {
 		String random_CUSTOMER_code= TestUtils.generateRandomNumber(6);
+		String random_CCODE_inactive=TestUtils.generateRandomNumber(6);
 		TestUtils.setCellData("Customer", 1, 1, random_CUSTOMER_code);
+		TestUtils.setCellData("Customer", 3, 1, random_CCODE_inactive);
+
 	}
 	@BeforeClass
-	public void setup() throws InterruptedException  {
+	public void setup(){
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-		Thread.sleep(Duration.ofSeconds(15).toMillis());
+//		Thread.sleep(Duration.ofSeconds(15).toMillis());
 		customerPage = mdmDashboardPage.clickOnCustomerLink();
 		updateExcelSheetData();
 		data=TestUtils.getTestData("Customer");
@@ -76,9 +78,26 @@ public class CustomerPageTest extends TestBase{
 		Assert.assertFalse(isTestFailed, "Test failed as invalid data saved successfully.");
 	}
 
+	@Test(priority = 7)
+	public void CheckCustomerActiveStatusTest(){
+		String customerCode=TestUtils.numberToString(data[0][1]);
+		boolean isActive=customerPage.validateActiveStatus(customerCode);
+		Assert.assertTrue(isActive,"Test Failed! customer is not active");
+	}
+	@Test(priority = 8)
+	public void CheckCustomerInactiveStatus(){
+		String customerName=(String) data[2][0], customerCode=TestUtils.numberToString(data[2][1]),customerPeriod=TestUtils.numberToString(data[2][2]), customerDrop=(String) data[2][3];
+		boolean isActive=customerPage.validateInactiveStatus(customerName,customerCode,customerPeriod,customerDrop);
+		Assert.assertFalse(isActive,"Test Failed! customer is still active");
+
+	}
+
+
+
 	@AfterClass
 	public void tearDown() {
 		driver.close();						
 	}
 
 }
+

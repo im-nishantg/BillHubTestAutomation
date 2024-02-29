@@ -30,24 +30,53 @@ public class BADashboardPage extends TestBase{
 	
 	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
 	WebElement updateAndContinueBtn;
-	
+
+
 	public BADashboardPage() {
+
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	public CreatePOBasedInvoicePage createNewMemo() {
+	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
+			
+//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+//		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+//		TestUtils.waitForWebElementToBeClickable(editDraftbtn).click();
+//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		POBasedInvoiceCheckbox.click();
+		fromState.sendKeys(from_state);
+		toState.sendKeys(to_state);
+		proceedManuallyBtn.click();
+		return new CreatePOBasedInvoicePage();
+	}
 
-		log.info("here");
+	public CreateNonPOBasedInvoicePage createNewBTBased(){
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		fromState.sendKeys("Rajasthan");
+		toState.sendKeys("Kerala");
+		proceedManuallyBtn.click();
+		return new CreateNonPOBasedInvoicePage();
+	}
+	
+	public boolean verifyDuplicateMemo(){
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		POBasedInvoiceCheckbox.click();
 		fromState.sendKeys("Rajasthan");
-		toState.sendKeys("Delhi");
+		toState.sendKeys("Kerala");
 		proceedManuallyBtn.click();
-		log.info("Successfully created a new memo.");
-		return new CreatePOBasedInvoicePage();
+
+		return TestUtils.isErrorToastBisplayed("Draft Already exist");
+
 	}
 }
 

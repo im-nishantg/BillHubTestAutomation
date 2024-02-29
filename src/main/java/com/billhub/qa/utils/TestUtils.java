@@ -1,5 +1,6 @@
 package com.billhub.qa.utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,6 +11,7 @@ import java.time.Duration;
 import java.util.Random;
 
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -17,7 +19,9 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -29,7 +33,7 @@ import com.billhub.qa.base.TestBase;
 public class TestUtils extends TestBase{
 	
 	public static long PAGE_LOAD_TIMEOUT = 30;
-	public static long IMPLICIT_WAIT = 10;
+	public static long IMPLICIT_WAIT = 15;
 	public static long EXPLICIT_WAIT = 10;
 	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";		
 	static Workbook book;
@@ -45,7 +49,7 @@ public class TestUtils extends TestBase{
 	public static void waitForElementInvisibility(By selector) {
 		
 		log.info("Waiting for element invisibility: " + selector);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
 	
@@ -63,6 +67,17 @@ public class TestUtils extends TestBase{
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
+	public static boolean isElementVisible(WebElement element) {
+        
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+	}
+	 
 	public static boolean isSuccessToastDisplayed(String message) {
 		
 		log.info("Checking if success toast is displayed for message: " + message);
@@ -75,6 +90,16 @@ public class TestUtils extends TestBase{
             return false;
         }
     }
+
+	public static boolean isErrorToastBisplayed(String message){
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'toast-warning') and contains(text(), " + message + "')]")));
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
 	
 	public static boolean waitForToastToDisappear() {
 		
@@ -91,7 +116,7 @@ public class TestUtils extends TestBase{
 	
 	public static WebElement locateAndClickEditBtn(By selector) {
 		
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    try {
 	        WebElement editBtn = wait.until(ExpectedConditions.elementToBeClickable(selector));
 	        editBtn.click();
@@ -190,6 +215,11 @@ public class TestUtils extends TestBase{
 
         return randomString.toString();
     }
+
+	public static String splitString(String str){
+		String final_str=str.substring(2);
+		return final_str;
+	}
 	 
 	 public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
 		   
@@ -221,6 +251,19 @@ public class TestUtils extends TestBase{
 	    }
 	}
 
-	
+	 public static String takeScreenshot(String testName) {
+			
+			File sourceScreenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			File destinationScreenshotFile = new File(System.getProperty("user.dir")+"\\Screenshots\\"+testName+".png");
+			try {
+				FileUtils.copyFile(sourceScreenshotFile, destinationScreenshotFile);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return destinationScreenshotFile.getAbsolutePath();
+		
+		}
 	
 }

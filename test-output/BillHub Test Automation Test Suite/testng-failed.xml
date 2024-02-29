@@ -6,15 +6,6 @@
   </listeners>
   <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.UserPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="createMDMAndReadOnlyUsersTest"/>
-          <include name="addNewUserWithValidDataTest"/>
-          <include name="setup"/>
-          <include name="addNewUserWithInactiveStatusTest"/>
-        </methods>
-      </class> <!-- com.billhub.qa.testcases.UserPageTest -->
       <class name="com.billhub.qa.testcases.ReasonPageTest">
         <methods>
           <include name="setup"/>
@@ -22,22 +13,6 @@
           <include name="addNewReasonWithDuplicateDataTest"/>
         </methods>
       </class> <!-- com.billhub.qa.testcases.ReasonPageTest -->
-      <class name="com.billhub.qa.testcases.BAPageTest">
-        <methods>
-          <include name="searchBAByNameTest"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.billhub.qa.testcases.BAPageTest -->
-      <class name="com.billhub.qa.testcases.TaxCodePageTest">
-        <methods>
-          <include name="searchByTaxPercentageTest"/>
-          <include name="setup"/>
-          <include name="updateTaxCodeTest"/>
-          <include name="tearDown"/>
-          <include name="addNewTaxCodeWithValidDataTest"/>
-        </methods>
-      </class> <!-- com.billhub.qa.testcases.TaxCodePageTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->
