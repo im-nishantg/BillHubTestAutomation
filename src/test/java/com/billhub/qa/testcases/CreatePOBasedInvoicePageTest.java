@@ -26,7 +26,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		baDashboardPage = loginPage.loginAsBa(prop.getProperty("ba_userid_po"),prop.getProperty("ba_password_po"));
-		createPOBasedInvoicePage = baDashboardPage.createNewMemo();
+		createPOBasedInvoicePage = baDashboardPage.createNewMemoPOBased();
 	} 
 	
 	@Test

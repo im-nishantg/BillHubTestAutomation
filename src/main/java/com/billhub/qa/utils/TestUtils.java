@@ -69,6 +69,16 @@ public class TestUtils extends TestBase{
             return false;
         }
     }
+
+	public static boolean isErrorToastBisplayed(String message){
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'toast-warning') and contains(text(), " + message + "')]")));
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
 	
 	public static boolean waitForToastToDisappear() {
         try {

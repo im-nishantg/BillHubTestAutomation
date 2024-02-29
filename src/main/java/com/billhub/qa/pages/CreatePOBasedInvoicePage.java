@@ -155,4 +155,6 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		String amount=  totalInvAmount.getText();
 		return TestUtils.splitString(amount);
 	}
+
+
 }
