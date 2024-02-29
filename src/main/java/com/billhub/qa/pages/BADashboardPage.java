@@ -38,6 +38,7 @@ public class BADashboardPage extends TestBase{
 	
 	public CreatePOBasedInvoicePage createNewMemo() {
 
+		log.info("here");
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
@@ -45,8 +46,8 @@ public class BADashboardPage extends TestBase{
 		fromState.sendKeys("Rajasthan");
 		toState.sendKeys("Delhi");
 		proceedManuallyBtn.click();
+		log.info("Successfully created a new memo.");
 		return new CreatePOBasedInvoicePage();
-		
 	}
 }
 

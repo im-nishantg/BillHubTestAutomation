@@ -112,11 +112,11 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		addPOTransactionBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();
-		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
-		submittingAt.sendKeys("Ahmedabad");
-		submittingTo.sendKeys("Nishant Gore");
-		submitMemoBtn.click();
+//		
+//		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+//		submittingAt.sendKeys("Ahmedabad");
+//		submittingTo.sendKeys("Nishant Gore");
+//		submitMemoBtn.click();
 		
 	}
 	

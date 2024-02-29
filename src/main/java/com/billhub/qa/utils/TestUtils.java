@@ -37,45 +37,54 @@ public class TestUtils extends TestBase{
 	
 	public static WebElement waitForElementVisibility(By selector) {
 		
+		log.info("Waiting for element visibility: " + selector);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 	
 	public static void waitForElementInvisibility(By selector) {
 		
+		log.info("Waiting for element invisibility: " + selector);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
 	
 	public static WebElement waitForElementToBeClickable(By selector) {
 		
+		log.info("Waiting for element to be clickable: " + selector);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.elementToBeClickable(selector));
 	}
 	
 	public static WebElement waitForWebElementToBeClickable(WebElement element) {
 		
+		log.info("Waiting for web element to be clickable: " + element);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	public static boolean isSuccessToastDisplayed(String message) {
 		
+		log.info("Checking if success toast is displayed for message: " + message);
         try {
         	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='" + message + "']")));
             return true;
         } catch (TimeoutException e) {
+        	 log.error("TimeoutException: Success toast not displayed for message - " + message);
             return false;
         }
     }
 	
 	public static boolean waitForToastToDisappear() {
+		
+		log.info("Waiting for toast to disappear");
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id=\"toast-container\"]")));
             return true;
         } catch (TimeoutException e) {
+        	log.error("TimeoutException: Toast did not disappear");
             return false;
         }
     }
@@ -184,6 +193,7 @@ public class TestUtils extends TestBase{
 	 
 	 public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
 		   
+		 log.info("Setting cell data in sheet: " + sheetName + ", row: " + rowNum + ", col: " + colNum + ", data: " + data);
 		 try {
 		        
 			FileInputStream file = new FileInputStream(TESTDATA_SHEET_PATH);
@@ -198,13 +208,15 @@ public class TestUtils extends TestBase{
 	                    xsf.write(fos);
 	                }
 	            } else {
-	                System.out.println("Sheet not found!");
+	            	log.error("Sheet not found: " + sheetName);
 	            }
 	        }
 
 	    } catch (FileNotFoundException e) {
+	    	log.error("FileNotFoundException: " + e.getMessage());
 	        e.printStackTrace();
 	    } catch (IOException e) {
+	    	log.error("IOException: " + e.getMessage());
 	        e.printStackTrace();
 	    }
 	}
