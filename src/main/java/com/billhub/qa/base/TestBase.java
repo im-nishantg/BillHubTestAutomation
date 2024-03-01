@@ -6,11 +6,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.billhub.qa.utils.TestUtils;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -18,6 +17,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	public static Logger log;
 
 	public TestBase() {
 		try {															// to load the props from config.properties
@@ -33,6 +33,7 @@ public class TestBase {
 	
 	public static void initialization() {
 		
+		log = LogManager.getLogger(TestBase.class.getName());
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

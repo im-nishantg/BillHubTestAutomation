@@ -1,0 +1,72 @@
+20:57:44.996 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 8, col: 0, data: TESTINV7366
+20:57:45.066 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 8, col: 1, data: 3
+20:57:45.128 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 8, col: 2, data: 0.54
+20:57:49.647 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+20:58:00.581 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+20:58:10.645 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c112ae081532c34966e5d692b282f811)] -> xpath: //button[normalize-space()='Done']]
+20:58:11.590 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+20:58:21.667 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c112ae081532c34966e5d692b282f811)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr/td[1]/div/input]
+20:58:22.180 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:00:07.787 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:00:17.842 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f418caf37a0ea685c54831d7889702cd)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:00:18.088 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f418caf37a0ea685c54831d7889702cd)] -> xpath: //span[normalize-space()='Create Memo']]
+21:00:18.999 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 1, col: 0, data: TESTINV8041
+21:00:19.311 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 1, col: 1, data: 9
+21:00:19.461 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 1, col: 2, data: 1.6199999999999999
+21:00:19.587 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 2, col: 0, data: TESTINV3759
+21:00:19.700 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 2, col: 1, data: 9
+21:00:19.827 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 2, col: 2, data: 1.6199999999999999
+21:00:19.944 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 3, col: 0, data: TESTINV8398
+21:00:20.033 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 3, col: 1, data: 6
+21:00:20.138 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 3, col: 2, data: 1.08
+21:00:20.227 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 4, col: 0, data: TESTINV8761
+21:00:20.319 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 4, col: 1, data: 4
+21:00:20.400 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 4, col: 2, data: 0.72
+21:00:20.498 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 5, col: 0, data: TESTINV0639
+21:00:20.576 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 5, col: 1, data: 9
+21:00:20.659 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 5, col: 2, data: 1.6199999999999999
+21:00:20.747 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 6, col: 0, data: TESTINV0220
+21:00:20.860 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 6, col: 1, data: 7
+21:00:20.935 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 6, col: 2, data: 1.26
+21:00:21.012 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 7, col: 0, data: TESTINV1281
+21:00:21.086 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 7, col: 1, data: 9
+21:00:21.152 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 7, col: 2, data: 1.6199999999999999
+21:00:21.225 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 8, col: 0, data: TESTINV3580
+21:00:21.289 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 8, col: 1, data: 4
+21:00:21.356 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 8, col: 2, data: 0.72
+21:00:21.700 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:00:32.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:00:42.690 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f418caf37a0ea685c54831d7889702cd)] -> xpath: //button[normalize-space()='Done']]
+21:00:43.639 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:00:53.691 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f418caf37a0ea685c54831d7889702cd)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr/td[1]/div/input]
+21:00:54.188 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:01:04.238 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f418caf37a0ea685c54831d7889702cd)] -> xpath: //button[normalize-space()='SAVE']]
+21:01:04.340 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:01:14.666 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Memo submitted successfully.
+21:01:24.702 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Memo submitted successfully.
+21:15:11.244 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:15:31.354 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //tbody/tr[7]/td[6]/div[1]/button[1]'
+21:16:50.390 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:17:00.476 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e236fa5ebeb1bef659bdd2e1aec42e2f)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:17:00.936 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e236fa5ebeb1bef659bdd2e1aec42e2f)] -> xpath: //tbody/tr[7]/td[6]/div[1]/button[1]]
+21:17:01.050 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:17:11.105 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 1, col: 0, data: TESTINV7118
+21:17:11.398 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 1, col: 1, data: 8
+21:17:11.533 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 1, col: 2, data: 1.44
+21:17:11.651 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 2, col: 0, data: TESTINV5998
+21:17:11.757 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 2, col: 1, data: 4
+21:17:11.859 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 2, col: 2, data: 0.72
+21:17:11.972 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 3, col: 0, data: TESTINV3485
+21:17:12.065 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 3, col: 1, data: 0
+21:17:12.151 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 3, col: 2, data: 0.0
+21:17:12.248 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 4, col: 0, data: TESTINV2843
+21:17:12.334 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 4, col: 1, data: 3
+21:17:12.413 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 4, col: 2, data: 0.54
+21:17:12.501 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 5, col: 0, data: TESTINV6941
+21:17:12.574 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 5, col: 1, data: 0
+21:17:12.652 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 5, col: 2, data: 0.0
+21:17:12.733 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 6, col: 0, data: TESTINV4576
+21:17:12.815 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 6, col: 1, data: 2
+21:17:12.888 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 6, col: 2, data: 0.36
+21:17:12.960 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 7, col: 0, data: TESTINV0535
+21:17:13.024 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: POBasedInvoice, row: 7, col: 1, data: 2

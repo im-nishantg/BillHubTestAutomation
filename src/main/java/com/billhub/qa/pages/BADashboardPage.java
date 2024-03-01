@@ -30,26 +30,32 @@ public class BADashboardPage extends TestBase{
 	
 	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
 	WebElement updateAndContinueBtn;
-	
+
+
 	public BADashboardPage() {
+
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	public CreatePOBasedInvoicePage createNewMemoPOBased() {
-
+	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
+			
+//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+//		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+//		TestUtils.waitForWebElementToBeClickable(editDraftbtn).click();
+//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		POBasedInvoiceCheckbox.click();
-		fromState.sendKeys("Rajasthan");
-		toState.sendKeys("Kerala");
+		fromState.sendKeys(from_state);
+		toState.sendKeys(to_state);
 		proceedManuallyBtn.click();
 		return new CreatePOBasedInvoicePage();
-		
 	}
 
 	public CreateNonPOBasedInvoicePage createNewBTBased(){
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
@@ -58,7 +64,9 @@ public class BADashboardPage extends TestBase{
 		proceedManuallyBtn.click();
 		return new CreateNonPOBasedInvoicePage();
 	}
+	
 	public boolean verifyDuplicateMemo(){
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
