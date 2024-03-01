@@ -53,7 +53,7 @@ public class BADashboardPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
-		fromState.sendKeys("Rajasthan");
+		fromState.sendKeys("Maharastra");
 		toState.sendKeys("Kerala");
 		proceedManuallyBtn.click();
 		return new CreateNonPOBasedInvoicePage();
@@ -67,7 +67,7 @@ public class BADashboardPage extends TestBase{
 		toState.sendKeys("Kerala");
 		proceedManuallyBtn.click();
 
-		return TestUtils.isErrorToastBisplayed("Draft Already exist");
+		return TestUtils.isErrorToastDisplayed("Draft Already exist");
 
 	}
 }

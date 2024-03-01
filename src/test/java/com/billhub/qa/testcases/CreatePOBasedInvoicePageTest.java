@@ -37,19 +37,19 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	public void gstCodeVerificationTest(){
 		String expected_amount="11.8";
 		String actual_amount=createPOBasedInvoicePage.verifyGstCode();
-		Assert.assertEquals(actual_amount,expected_amount,"Test failed!"+actual_amount+" "+ expected_amount+" ");
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
 	}
 	@Test
 	public void tdCodeVerificationTest(){
 		String expected_amount="9";
 		String actual_amount=createPOBasedInvoicePage.verifyTdCode();
-		Assert.assertEquals(actual_amount,expected_amount,"Test failed!"+actual_amount+" "+ expected_amount+" ");
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
 	}
 	@Test
 	public void additionalAmountVerificationTest(){
 		String expected_amount="11";
 		String actual_amount=createPOBasedInvoicePage.verifyAdditionalAmount();
-		Assert.assertEquals(actual_amount,expected_amount,"Test failed!"+actual_amount+" "+ expected_amount+" ");
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
 	}
 
 	@AfterClass

@@ -6,6 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CreateNonPOBasedInvoicePage extends TestBase {
 
@@ -26,7 +30,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
 
     @FindBy(xpath = "//input[@id='td']")
     WebElement cd;
-    @FindBy(xpath = "//input[@id='tcsAmount']")
+    @FindBy(xpath = "//input[@id='taxAmt']")
     WebElement tcs_amount;
 
     @FindBy(xpath = "//input[@id='igst']")
@@ -148,6 +152,24 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         comment.click();
         String amount=  totalInvAmount.getText();
         return TestUtils.splitString(amount);
+    }
+
+    public boolean CreateInvoiceWithoutData(){
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        baseAmount.clear();
+        tcs_amount.clear();
+        cd.clear();
+        igst.clear();
+        invoiceNumber.sendKeys("556677");
+        subServiceCategory.sendKeys("cargo");
+        endCustomer.sendKeys("Test_user");
+        comment.sendKeys("Test_inv");
+        saveBtn.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement errorToast = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='toast-container']")));
+
+        boolean isErrorToastDisplayed = errorToast.isDisplayed();
+        return isErrorToastDisplayed;
     }
 
 

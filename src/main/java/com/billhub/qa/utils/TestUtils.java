@@ -70,7 +70,7 @@ public class TestUtils extends TestBase{
         }
     }
 
-	public static boolean isErrorToastBisplayed(String message){
+	public static boolean isErrorToastDisplayed(String message){
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'toast-warning') and contains(text(), " + message + "')]")));
