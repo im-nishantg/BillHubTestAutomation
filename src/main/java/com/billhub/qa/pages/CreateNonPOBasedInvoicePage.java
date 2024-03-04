@@ -26,6 +26,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
 
     @FindBy(xpath = "//input[@id='td']")
     WebElement cd;
+    
     @FindBy(xpath = "//input[@id='tcsAmount']")
     WebElement tcs_amount;
 

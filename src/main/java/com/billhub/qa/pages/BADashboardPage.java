@@ -39,11 +39,6 @@ public class BADashboardPage extends TestBase{
 	
 	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
 			
-//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-//		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
-//		TestUtils.waitForWebElementToBeClickable(editDraftbtn).click();
-//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
@@ -52,6 +47,18 @@ public class BADashboardPage extends TestBase{
 		toState.sendKeys(to_state);
 		proceedManuallyBtn.click();
 		return new CreatePOBasedInvoicePage();
+	}
+	
+	public CreatePOBasedInvoiceWithExcelsheetPage createNewMemoPOBasedWithExcelsheet(String from_state, String to_state) {
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		POBasedInvoiceCheckbox.click();
+		fromState.sendKeys(from_state);
+		toState.sendKeys(to_state);
+		updateAndContinueBtn.click();
+		return new CreatePOBasedInvoiceWithExcelsheetPage();
 	}
 
 	public CreateNonPOBasedInvoicePage createNewBTBased(){
@@ -65,18 +72,6 @@ public class BADashboardPage extends TestBase{
 		return new CreateNonPOBasedInvoicePage();
 	}
 	
-	public boolean verifyDuplicateMemo(){
-		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
-		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
-		POBasedInvoiceCheckbox.click();
-		fromState.sendKeys("Rajasthan");
-		toState.sendKeys("Kerala");
-		proceedManuallyBtn.click();
 
-		return TestUtils.isErrorToastBisplayed("Draft Already exist");
-
-	}
 }
 

@@ -46,6 +46,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	public void setup(){
 		
 		String from_state = (String) memoData[0][0], to_state = (String) memoData[0][1];
+		
 		initialization();
 		loginPage= new LoginPage();
 		baDashboardPage = loginPage.loginAsBa(prop.getProperty("ba_userid_po"),prop.getProperty("ba_password_po"));
@@ -54,7 +55,44 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		data = TestUtils.getTestData("POBasedInvoice");
 	} 
 	
+
+	
 	@Test(priority = 1)
+	public void gstCodeVerificationTest(){
+		
+		String base_amount = (String) data[0][1], igst = (String) data[0][2];
+		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(igst);
+		double actual_amount = createPOBasedInvoicePage.verifyGstCode(base_amount, igst);
+		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
+	}
+	
+	@Test(priority = 2)
+	public void tdCodeVerificationTest(){
+		
+		String base_amount = (String) data[0][1], cd = (String) data[0][4];
+		double expected_amount = Double.parseDouble(base_amount) - Double.parseDouble(cd);
+		double actual_amount = createPOBasedInvoicePage.verifyTdCode(base_amount, cd);
+		Assert.assertEquals(actual_amount,expected_amount,"Test failed");
+	}
+	
+	@Test(priority = 3)
+	public void additionalAmountVerificationTest(){
+		
+		String base_amount = (String) data[0][1], tcs = (String) data[0][5];
+		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(tcs);
+		double actual_amount=createPOBasedInvoicePage.verifyAdditionalAmount(base_amount, tcs);
+		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
+	}
+	
+	@Test(priority = 4)
+	public void createInvoiceWithoutDataTest(){
+		
+		Invoice invoice = new Invoice("", "", "", "", "", "", "", "", "", "", "", "");
+		boolean isSubmitted = createPOBasedInvoicePage.createInvoiceWithoutData(invoice);
+		Assert.assertFalse(isSubmitted, "Invoice was created without data.");
+	}
+	
+	@Test(priority = 5)
 	public void submitMemoWithValidDataTest(){
 		
 		String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
@@ -67,37 +105,26 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
 	}
 	
-	@Test(priority = 2)
-	public void gstCodeVerificationTest(){
+	@Test(priority = 6)
+	public void submitMemoWithDuplicateDataTest(){
 		
-		String base_amount = (String) data[0][1], igst = (String) data[0][2];
-		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(igst);
-		double actual_amount = createPOBasedInvoicePage.verifyGstCode(base_amount, igst);
-		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
+		String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
+		String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
+		String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], quantity = TestUtils.numberToString(data[0][9]);
+		String submitting_at = (String) data[0][10], submitting_to = (String) data[0][11];
+		
+		Invoice invoice = new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, quantity, submitting_at, submitting_to);
+		boolean isSubmitted = createPOBasedInvoicePage.submitMemoWithDuplicateData(invoice);
+		Assert.assertTrue(isSubmitted, "Memo was submitted with duplicate data.");
 	}
 	
-	@Test(priority = 3)
-	public void tdCodeVerificationTest(){
-		
-		String base_amount = (String) data[0][1], cd = (String) data[0][4];
-		double expected_amount = Double.parseDouble(base_amount) - Double.parseDouble(cd);
-		double actual_amount = createPOBasedInvoicePage.verifyTdCode(base_amount, cd);
-		Assert.assertEquals(actual_amount,expected_amount,"Test failed");
-	}
-	
-	@Test(priority = 4)
-	public void additionalAmountVerificationTest(){
-		
-		String base_amount = (String) data[0][1], tcs = (String) data[0][5];
-		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(tcs);
-		double actual_amount=createPOBasedInvoicePage.verifyAdditionalAmount(base_amount, tcs);
-		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
-	}
-	
-	@Test(priority = 5)
+	@Test(priority = 7)
 	public void createMultipleInvoiceInSingleMemoTest() {
 		
+		String from_state = (String) memoData[0][0], to_state = (String) memoData[0][1];
+		createPOBasedInvoicePage = baDashboardPage.createNewMemoPOBased(from_state, to_state);
 		List<Invoice> invoices = new ArrayList<>();
+		
 		for(int i=1; i<8; i++)
 		{
 			String invoice_number = (String) data[i][0], base_amount = (String) data[i][1], igst = (String) data[i][2];
@@ -108,9 +135,12 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 			Invoice invoice = new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, quantity, submitting_at, submitting_to);
 			invoices.add(invoice);
 		}
+		
 		boolean isSubmitted = createPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices);
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
 	}
+	
+	
 
 	@AfterClass
 	public void tearDown() {

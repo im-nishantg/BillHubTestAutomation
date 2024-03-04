@@ -90,16 +90,6 @@ public class TestUtils extends TestBase{
             return false;
         }
     }
-
-	public static boolean isErrorToastBisplayed(String message){
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'toast-warning') and contains(text(), " + message + "')]")));
-			return true;
-		} catch (TimeoutException e) {
-			return false;
-		}
-	}
 	
 	public static boolean waitForToastToDisappear() {
 		
@@ -194,7 +184,13 @@ public class TestUtils extends TestBase{
             int digit = random.nextInt(10);  // Generate a random digit (0-9)
             randomNumber.append(digit);
         }
-
+        
+        if (randomNumber.toString().equals("0")) {
+            // If the generated number is "0", set it to "1"
+            randomNumber.setLength(0);
+            randomNumber.append("1");
+        }
+        
         return randomNumber.toString();
     }
 	
@@ -223,7 +219,6 @@ public class TestUtils extends TestBase{
 	 
 	 public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
 		   
-		 log.info("Setting cell data in sheet: " + sheetName + ", row: " + rowNum + ", col: " + colNum + ", data: " + data);
 		 try {
 		        
 			FileInputStream file = new FileInputStream(TESTDATA_SHEET_PATH);
@@ -258,7 +253,6 @@ public class TestUtils extends TestBase{
 			try {
 				FileUtils.copyFile(sourceScreenshotFile, destinationScreenshotFile);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
