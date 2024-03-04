@@ -76,19 +76,19 @@ public class CustomerPageTest extends TestBase{
 		Assert.assertFalse(isTestFailed, "Test failed as invalid data saved successfully.");
 	}
 
-//	@Test(priority = 7)
-//	public void CheckCustomerActiveStatusTest(){
-//		String customerCode=TestUtils.numberToString(data[0][1]);
-//		boolean isActive=customerPage.validateActiveStatus(customerCode);
-//		Assert.assertTrue(isActive,"Test Failed! customer is not active");
-//	}
-//	@Test(priority = 8)
-//	public void CheckCustomerInactiveStatus(){
-//		String customerName=(String) data[2][0], customerCode=TestUtils.numberToString(data[2][1]),customerPeriod=TestUtils.numberToString(data[2][2]), customerDrop=(String) data[2][3];
-//		boolean isActive=customerPage.validateInactiveStatus(customerName,customerCode,customerPeriod,customerDrop);
-//		Assert.assertFalse(isActive,"Test Failed! customer is still active");
-//
-//	}
+	@Test(priority = 7)
+	public void CheckCustomerActiveStatusTest(){
+		String customerCode=TestUtils.numberToString(data[0][1]);
+		boolean isActive=customerPage.validateActiveStatus(customerCode);
+		Assert.assertTrue(isActive,"Test Failed! customer is not active");
+	}
+	@Test(priority = 8)
+	public void CheckCustomerInactiveStatus(){
+		String customerName=(String) data[2][0], customerCode=TestUtils.numberToString(data[2][1]),customerPeriod=TestUtils.numberToString(data[2][2]), customerDrop=(String) data[2][3];
+		boolean isActive=customerPage.validateInactiveStatus(customerName,customerCode,customerPeriod,customerDrop);
+		Assert.assertFalse(isActive,"Test Failed! customer is still active");
+
+	}
 
 
 

@@ -1,2 +1,19 @@
-21:47:51.866 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
-21:48:06.904 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (485c80d3e0588cbcc619e75389772d9b)] -> xpath: //button[normalize-space()='SAVE']]
+08:19:45.682 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (0754f14629f64a90620b84b3965d754d)] -> link text: Customer]
+08:19:45.812 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: Customer, row: 1, col: 1, data: 105448
+08:19:46.713 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: Customer, row: 3, col: 1, data: 858362
+08:19:46.962 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+08:19:47.776 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: customer Added successfully
+08:20:45.164 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+08:21:00.283 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (43517db2ce16bda36f7b4938bb2b4348)] -> xpath: //button[@class='btn btn-link']]
+08:21:00.383 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (43517db2ce16bda36f7b4938bb2b4348)] -> xpath: //span[normalize-space()='Master']]
+08:21:01.077 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (43517db2ce16bda36f7b4938bb2b4348)] -> link text: Customer]
+08:21:01.184 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: Customer, row: 1, col: 1, data: 289370
+08:21:02.051 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: Customer, row: 3, col: 1, data: 260749
+08:21:02.313 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+08:21:03.140 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: customer Added successfully
+08:21:27.650 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+08:21:42.715 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (938ba51ffd213a06b892fdb70cf4594b)] -> xpath: //button[@class='btn btn-link']]
+08:21:42.811 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (938ba51ffd213a06b892fdb70cf4594b)] -> xpath: //span[normalize-space()='Master']]
+08:21:43.502 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (938ba51ffd213a06b892fdb70cf4594b)] -> link text: Customer]
+08:21:43.606 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: Customer, row: 1, col: 1, data: 669663
+08:21:44.502 [main] INFO  com.billhub.qa.base.TestBase - Setting cell data in sheet: Customer, row: 3, col: 1, data: 196984
