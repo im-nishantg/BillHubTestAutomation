@@ -17,6 +17,8 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 	CreatePOBasedInvoiceWithExcelsheetPage createPOBasedInvoiceWithExcelsheetPage;
 	public Object[][] data;
 	public Object[][] memoData = TestUtils.getTestData("BADashboardPage");
+	public static String INVOICE_SHEET_PATH = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\10005176_template.xlsx";
+	
 	
 	public CreatePOBasedInvoiceWithExcelsheetTest() {
 		super();
@@ -35,11 +37,9 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 	} 
 	
 	@Test(priority = 1)
-	public void submitMemoWithValidDataTest(){
+	public void gstCodeVerificationTest(){
 		
-		String base_amount = (String) data[0][1], igst = (String) data[0][2];
-		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(igst);
-		double actual_amount = createPOBasedInvoicePage.verifyGstCode(base_amount, igst);
-		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
+		createPOBasedInvoiceWithExcelsheetPage.uploadExcelSheet(INVOICE_SHEET_PATH);
 	}
+	
 }

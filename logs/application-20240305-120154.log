@@ -1,0 +1,59 @@
+21:00:52.001 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (91c2e1a1d1dc131c0b97af1709c4cd53)] -> xpath: //span[normalize-space()='Create Memo']]
+21:00:52.933 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:01:07.993 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (91c2e1a1d1dc131c0b97af1709c4cd53)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+21:01:08.182 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:01:23.282 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+21:01:27.733 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (91c2e1a1d1dc131c0b97af1709c4cd53)] -> css selector: .btn.btn-warning.btn-acknowledge]
+21:01:27.846 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:06:58.619 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:07:13.682 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e88712b8129e1b33c42a06af992a85ce)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:07:13.943 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e88712b8129e1b33c42a06af992a85ce)] -> xpath: //span[normalize-space()='Create Memo']]
+21:07:14.868 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:07:44.941 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input'
+21:08:24.186 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:08:39.259 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (14fe0f50a70f7ab1d87d7f2ba2581639)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:08:39.527 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (14fe0f50a70f7ab1d87d7f2ba2581639)] -> xpath: //span[normalize-space()='Create Memo']]
+21:08:40.444 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:08:55.505 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (14fe0f50a70f7ab1d87d7f2ba2581639)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+21:08:55.684 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:09:10.791 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+21:09:15.165 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (14fe0f50a70f7ab1d87d7f2ba2581639)] -> css selector: .btn.btn-warning.btn-acknowledge]
+21:09:15.270 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:09:51.618 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:10:06.685 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c138489d549f34c36db9526e7a434bb6)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:10:06.958 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c138489d549f34c36db9526e7a434bb6)] -> xpath: //span[normalize-space()='Create Memo']]
+21:10:07.860 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:10:22.914 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c138489d549f34c36db9526e7a434bb6)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+21:10:23.088 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:10:38.169 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+21:10:42.579 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c138489d549f34c36db9526e7a434bb6)] -> css selector: .btn.btn-warning.btn-acknowledge]
+21:10:42.690 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:11:55.852 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:12:10.910 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e74191125245f5c61e8e207ffb4d6f7e)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:12:11.171 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e74191125245f5c61e8e207ffb4d6f7e)] -> xpath: //span[normalize-space()='Create Memo']]
+21:12:12.090 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:12:27.123 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e74191125245f5c61e8e207ffb4d6f7e)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+21:12:27.311 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:12:42.413 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+21:12:46.690 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e74191125245f5c61e8e207ffb4d6f7e)] -> css selector: .btn.btn-warning.btn-acknowledge]
+21:12:46.800 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:14:51.049 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:15:06.109 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e92b3f260b6f7b0aeb323e4f01364f6)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:15:06.364 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e92b3f260b6f7b0aeb323e4f01364f6)] -> xpath: //span[normalize-space()='Create Memo']]
+21:15:07.276 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:15:22.335 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e92b3f260b6f7b0aeb323e4f01364f6)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+21:15:22.518 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:15:37.608 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+21:15:41.987 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e92b3f260b6f7b0aeb323e4f01364f6)] -> css selector: .btn.btn-warning.btn-acknowledge]
+21:15:42.085 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:02.909 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:17.997 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1990a1cec93fceaec17cca989436832d)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+21:20:18.757 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1990a1cec93fceaec17cca989436832d)] -> xpath: //span[normalize-space()='Create Memo']]
+21:20:19.668 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:34.695 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1990a1cec93fceaec17cca989436832d)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+21:20:34.887 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:49.987 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+21:20:54.460 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1990a1cec93fceaec17cca989436832d)] -> css selector: .btn.btn-warning.btn-acknowledge]
+21:20:54.569 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:01:39.457 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:01:54.529 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e9affd0ad0844d102efaf68f458a74bd)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]

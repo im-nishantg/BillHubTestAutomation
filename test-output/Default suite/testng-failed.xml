@@ -5,9 +5,9 @@
     <classes>
       <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
         <methods>
-          <include name="submitMemoWithDuplicateDataTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="gstCodeVerificationTest"/>
         </methods>
       </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
     </classes>

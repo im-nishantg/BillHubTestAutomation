@@ -21,6 +21,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	LoginPage loginPage;
 	BADashboardPage baDashboardPage;
 	CreatePOBasedInvoicePage createPOBasedInvoicePage;
+	private static boolean isMultipleInvoicesSubmitted = false;
 	public Object[][] data;
 	public Object[][] memoData = TestUtils.getTestData("BADashboardPage");
 	
@@ -32,13 +33,16 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		
 		for(int i=1; i<=8; i++)
 		{
-			String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(4);
-			String base_amount = TestUtils.generateRandomNumber(1);
-			double igst = Double.parseDouble(base_amount) * 0.18;
+			String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(5);
+			String quantity = TestUtils.generateRandomNumber(1);
+			String base_amount = quantity;
+			double igst = Double.parseDouble(quantity) * 0.18;
+			igst = Math.floor(igst * 100) / 100.0;		// Round down igst to 2 digits after the decimal
 			String Igst = String.valueOf(igst);
 			TestUtils.setCellData("POBasedInvoice", i, 0, invoice_number);
-			TestUtils.setCellData("POBasedInvoice", i, 1, base_amount);
+			TestUtils.setCellData("POBasedInvoice", i, 9, quantity);
 			TestUtils.setCellData("POBasedInvoice", i, 2, Igst);
+			TestUtils.setCellData("POBasedInvoice", i, 1, base_amount);
 		}
 	}
 	
@@ -54,8 +58,6 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		updateExcelSheetData();
 		data = TestUtils.getTestData("POBasedInvoice");
 	} 
-	
-
 	
 	@Test(priority = 1)
 	public void gstCodeVerificationTest(){
@@ -108,6 +110,9 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	@Test(priority = 6)
 	public void submitMemoWithDuplicateDataTest(){
 		
+		String from_state = (String) memoData[0][0], to_state = (String) memoData[0][1];
+		createPOBasedInvoicePage = baDashboardPage.createNewMemoPOBased(from_state, to_state);
+
 		String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
 		String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
 		String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], quantity = TestUtils.numberToString(data[0][9]);
@@ -120,9 +125,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	
 	@Test(priority = 7)
 	public void createMultipleInvoiceInSingleMemoTest() {
-		
-		String from_state = (String) memoData[0][0], to_state = (String) memoData[0][1];
-		createPOBasedInvoicePage = baDashboardPage.createNewMemoPOBased(from_state, to_state);
+			
 		List<Invoice> invoices = new ArrayList<>();
 		
 		for(int i=1; i<8; i++)
@@ -137,7 +140,15 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		}
 		
 		boolean isSubmitted = createPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices);
+		isMultipleInvoicesSubmitted = isSubmitted;
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
+	}
+	
+	@Test(priority = 8)
+	public void splitPoQuantityAndCreateMultipleInvoicesTest(){
+		
+		// this test was already performed in test createMultipleInvoiceInSingleMemoTest and hence their result is same
+		Assert.assertTrue(isMultipleInvoicesSubmitted, "Memo was not submitted");
 	}
 	
 	
