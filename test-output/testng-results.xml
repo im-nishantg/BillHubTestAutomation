@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-04T08:32:05 IST" name="Default suite" finished-at="2024-03-04T08:32:44 IST" duration-ms="38750">
+  <suite started-at="2024-03-05T19:19:33 IST" name="BillHub Test Automation Test Suite" finished-at="2024-03-05T19:28:43 IST" duration-ms="549628">
     <groups>
     </groups>
-    <test started-at="2024-03-04T08:32:05 IST" name="Default test" finished-at="2024-03-04T08:32:44 IST" duration-ms="38750">
+    <test started-at="2024-03-05T19:19:33 IST" name="BillHub App Test Cases" finished-at="2024-03-05T19:28:43 IST" duration-ms="549628">
       <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@6f8f8a80]" started-at="2024-03-04T08:32:05 IST" name="setup" finished-at="2024-03-04T08:32:28 IST" duration-ms="22240" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:19:33 IST" name="setup" finished-at="2024-03-05T19:19:57 IST" duration-ms="23882" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="submitMemoWithDuplicateDataTest()[pri:6, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@6f8f8a80]" started-at="2024-03-04T08:32:28 IST" name="submitMemoWithDuplicateDataTest" finished-at="2024-03-04T08:32:44 IST" duration-ms="16373" status="PASS">
+        <test-method signature="gstCodeVerificationTest()[pri:1, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:19:57 IST" name="gstCodeVerificationTest" finished-at="2024-03-05T19:20:13 IST" duration-ms="15648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gstCodeVerificationTest -->
+        <test-method signature="tdCodeVerificationTest()[pri:2, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:20:13 IST" name="tdCodeVerificationTest" finished-at="2024-03-05T19:20:28 IST" duration-ms="15558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tdCodeVerificationTest -->
+        <test-method signature="additionalAmountVerificationTest()[pri:3, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:20:28 IST" name="additionalAmountVerificationTest" finished-at="2024-03-05T19:20:44 IST" duration-ms="15522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- additionalAmountVerificationTest -->
+        <test-method signature="createInvoiceWithoutDataTest()[pri:4, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:20:44 IST" name="createInvoiceWithoutDataTest" finished-at="2024-03-05T19:21:15 IST" duration-ms="30873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createInvoiceWithoutDataTest -->
+        <test-method signature="submitMemoWithValidDataTest()[pri:5, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:21:15 IST" name="submitMemoWithValidDataTest" finished-at="2024-03-05T19:23:34 IST" duration-ms="139625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitMemoWithValidDataTest -->
+        <test-method signature="submitMemoWithDuplicateDataTest()[pri:6, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:23:34 IST" name="submitMemoWithDuplicateDataTest" finished-at="2024-03-05T19:24:06 IST" duration-ms="32182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitMemoWithDuplicateDataTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@6f8f8a80]" started-at="2024-03-04T08:32:44 IST" name="tearDown" finished-at="2024-03-04T08:32:44 IST" duration-ms="96" status="PASS">
+        <test-method signature="createMultipleInvoiceInSingleMemoTest()[pri:7, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:24:06 IST" name="createMultipleInvoiceInSingleMemoTest" finished-at="2024-03-05T19:28:43 IST" duration-ms="276160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMultipleInvoiceInSingleMemoTest -->
+        <test-method signature="splitPoQuantityAndCreateMultipleInvoicesTest()[pri:8, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:28:43 IST" name="splitPoQuantityAndCreateMultipleInvoicesTest" finished-at="2024-03-05T19:28:43 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- splitPoQuantityAndCreateMultipleInvoicesTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:28:43 IST" name="tearDown" finished-at="2024-03-05T19:28:43 IST" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- BillHub App Test Cases -->
+  </suite> <!-- BillHub Test Automation Test Suite -->
 </testng-results>

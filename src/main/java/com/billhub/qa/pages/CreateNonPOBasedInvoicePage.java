@@ -58,6 +58,10 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
 
     @FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[3]/table/tbody/tr/td[5]/input")
     WebElement hsnCode;
+    @FindBy(xpath = "//input[@placeholder='LRNUMBER2345']")
+    WebElement searchInvInput;
+    @FindBy(xpath = "//button[normalize-space()='Search Number']")
+    WebElement searchInvBtn;
 
     @FindBy(xpath = "//span[normalize-space()='Add Base Transaction']")
     WebElement addBTTransactionBtn;
@@ -90,11 +94,11 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     WebElement totalInvAmount;
 
     @FindBy(xpath = "//button[normalize-space()='SUBMIT MEMO']")
-    WebElement submitMemoFinal;
+    WebElement nextSubmitMemoBtn;
     @FindBy(xpath = "//div[@class='modal-content']")
     WebElement confirmationTab;
     @FindBy(xpath = "//button[normalize-space()='Submit Memo']")
-    WebElement submitMemo_CTab_btn;
+    WebElement finalSubmitMemoBtn;
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[2]/button")
     WebElement printBtn;
 
@@ -134,12 +138,15 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         TestUtils.waitForWebElementToBeClickable(doneBtn).click();
     }
 
-    public void tagBT(String amount,String company_code,String service_type){
+    public void tagBT(String amount,String company_code,String service_type, String BT_number){
         tagBTBtn.click();
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         companyCode.sendKeys(company_code);
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         serviceType.sendKeys(service_type);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        searchInvInput.sendKeys(BT_number);
+        searchInvBtn.click();
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForWebElementToBeClickable(btResultCheckBox).click();
         addToListBtn.click();
@@ -148,17 +155,19 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         addBTTransactionBtn.click();
     }
 
-    public void createInvoiceBTBased(Invoice invoice,String company_code,String service_type){
+    public void createInvoiceBTBased(Invoice invoice,String company_code,String service_type,String BT_number){
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         clearInputFields();
         fillCreateNewInvoiceForm(invoice);
         attachSampleInvoiceFile();
-        tagBT(invoice.quantity,company_code,service_type);
+        tagBT(invoice.quantity,company_code,service_type,BT_number);
     }
 
-    public boolean submitMemoWithValidData(Invoice invoice,String company_code, String service_type ){
-        createInvoiceBTBased(invoice,company_code,service_type);
-        TestUtils.waitForWebElementToBeClickable(saveBtn).click();
+    public boolean submitMemoWithValidData(Invoice invoice,String company_code, String service_type,String invoice_number ){
+        createInvoiceBTBased(invoice,company_code,service_type,invoice_number);
+        TestUtils.waitForWebElementToBeClickable(saveBtn).click();//saving the current invoice
+
+//        code for tagging the location and the person fo the memo
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         submittingAt.sendKeys(invoice.submittingAt);
         System.out.println(invoice.submittingAt);
@@ -166,11 +175,15 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         submittingTo.sendKeys(invoice.submittingTo);
         System.out.println(invoice.submittingTo);
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+//        code for actuallly submitting the memo
         submitMemoBtn.click();
-        submitMemoFinal = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
-        submitMemoFinal.click();
-        submitMemo_CTab_btn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
-        TestUtils.waitForWebElementToBeClickable(submitMemo_CTab_btn).click();
+        nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
+        nextSubmitMemoBtn.click();
+        finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
+        TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
+
+//        print button will be visible once the memo is submitted successfully
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
         homeBtn.click();
@@ -230,36 +243,32 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         return isSuccess;
     }
 
-    public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices,String company_code,String service_type) {
-
+    public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices,String company_code,String service_type,List<String> listOfBTs) {
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        int curr_BT_index = 0;
 
         for (Invoice invoice : invoices) {
-
-            createInvoiceBTBased(invoice,company_code,service_type);
+            createInvoiceBTBased(invoice,company_code,service_type,listOfBTs.get(curr_BT_index));
             TestUtils.waitForElementInvisibility(By.className("modal-container"));
             TestUtils.waitForWebElementToBeClickable(saveBtn).click();
-            resetBtn.click();
-            TestUtils.waitForElementInvisibility(By.className("modal-container"));
+            curr_BT_index++;
         }
-
+        //code for tagging the location and person for the memo
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         submittingAt.sendKeys(invoices.get(0).submittingAt);
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         submittingTo.sendKeys(invoices.get(0).submittingTo);
 
+        //code for actually submitting the memo
         submitMemoBtn.click();
-        submitMemoFinal = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
-        TestUtils.waitForWebElementToBeClickable(submitMemoFinal).click();
-//        submitMemo_CTab_btn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
-//        TestUtils.waitForWebElementToBeClickable(submitMemo_CTab_btn).click();
-//
-//        TestUtils.waitForElementInvisibility(By.className("modal-container"));
-//        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
-//        return isPrintBtnVisible;
-        return true;
+        nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
+        TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
+        finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
+        TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
+
+//      print button will be visible once the memo is submitted successfully
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
+        return isPrintBtnVisible;
     }
-
-
-
 }
