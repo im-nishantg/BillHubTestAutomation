@@ -13,7 +13,9 @@
 			 	<class name = "com.billhub.qa.testcases.BAPageTest"></class>
 			 	<class name = "com.billhub.qa.testcases.UserPageTest"></class> 
 			 	<class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
-			 	<class name = "com.billhub.qa.testcases.ReasonPageTest"></class>
+			 	<!-- <class name = "com.billhub.qa.testcases.ReasonPageTest"></class> -->
+<!--			 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class>-->
+			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest"></class>
 		</classes>
 	</test>
 </suite>

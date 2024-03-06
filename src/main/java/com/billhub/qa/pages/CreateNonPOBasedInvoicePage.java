@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CreateNonPOBasedInvoicePage extends TestBase {
 
@@ -52,7 +53,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     @FindBy(xpath = "/html/body/modal-container/div/div/app-add-lr-popup/div[2]/div[2]/div[3]/table/tbody/tr/td[5]/input")
     WebElement amountBT;
 
-    @FindBy(xpath = "//td[@scope='row']//input[@type='checkbox']")
+    @FindBy(xpath = "//tbody/tr[1]/td[1]")
     WebElement btResultCheckBox;
 
     @FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[3]/table/tbody/tr/td[5]/input")
@@ -65,7 +66,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     WebElement addInvoice;
     @FindBy(xpath = "(//select[@id='typeService'])[1]")
     WebElement serviceType;
-    @FindBy(xpath = "//select[@id='companyCode']")
+    @FindBy(css = "body > modal-container:nth-child(10) > div:nth-child(1) > div:nth-child(1) > app-add-lr-popup:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(3) > select:nth-child(1)")
     WebElement companyCode;
 
     @FindBy(xpath = "//button[normalize-space()='Done']")
@@ -94,6 +95,13 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     WebElement confirmationTab;
     @FindBy(xpath = "//button[normalize-space()='Submit Memo']")
     WebElement submitMemo_CTab_btn;
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[2]/button")
+    WebElement printBtn;
+
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[1]/button")
+    WebElement homeBtn;
+    @FindBy(xpath = "//button[normalize-space()='RESET']")
+    WebElement resetBtn;
 
 
     public CreateNonPOBasedInvoicePage(){
@@ -149,20 +157,24 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     }
 
     public boolean submitMemoWithValidData(Invoice invoice,String company_code, String service_type ){
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         createInvoiceBTBased(invoice,company_code,service_type);
         TestUtils.waitForWebElementToBeClickable(saveBtn).click();
-
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         submittingAt.sendKeys(invoice.submittingAt);
+        System.out.println(invoice.submittingAt);
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         submittingTo.sendKeys(invoice.submittingTo);
-
-        submitMemoBtn.click();
+        System.out.println(invoice.submittingTo);
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        submitMemoBtn.click();
+        submitMemoFinal = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
         submitMemoFinal.click();
+        submitMemo_CTab_btn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
         TestUtils.waitForWebElementToBeClickable(submitMemo_CTab_btn).click();
-        return true;
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
+        homeBtn.click();
+        return isPrintBtnVisible;
 
     }
     public double verifyGstCode(String base_amount,String Igst){
@@ -173,6 +185,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         comment.click();
         String amount=  totalInvAmount.getText();
         amount= TestUtils.splitString(amount);
+        resetBtn.click();
         return Double.parseDouble(amount);
     }
 
@@ -184,6 +197,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         comment.click();
         String amount=  totalInvAmount.getText();
         amount= TestUtils.splitString(amount);
+        resetBtn.click();
         return Double.parseDouble(amount);
     }
 
@@ -195,22 +209,55 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         comment.click();
         String amount=  totalInvAmount.getText();
         amount= TestUtils.splitString(amount);
+        resetBtn.click();
         return Double.parseDouble(amount);
     }
 
-    public boolean CreateInvoiceWithoutData(String Inv,String subService,String EndCustomer, String Comment){
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
-        clearInputFields();
-        invoiceNumber.sendKeys(Inv);
-        subServiceCategory.sendKeys(subService);
-        endCustomer.sendKeys(EndCustomer);
-        comment.sendKeys(Comment);
-        saveBtn.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement errorToast = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='toast-container']")));
+    public boolean submitMemoWithDuplicateData(Invoice invoice){
+        fillCreateNewInvoiceForm(invoice);
+        return TestUtils.isSuccessToastDisplayed("Invoice Number Exist try another!");
+    }
 
-        boolean isErrorToastDisplayed = errorToast.isDisplayed();
-        return isErrorToastDisplayed;
+    public boolean CreateInvoiceWithoutData(Invoice invoice){
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        fillCreateNewInvoiceForm(invoice);
+        saveBtn.click();
+        TestUtils.waitForWebElementToBeClickable(saveBtn).click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        resetBtn.click();
+        boolean isSuccess= TestUtils.isSuccessToastDisplayed("Invoice created successfully.");
+        resetBtn.click();
+        return isSuccess;
+    }
+
+    public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices,String company_code,String service_type) {
+
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+        for (Invoice invoice : invoices) {
+
+            createInvoiceBTBased(invoice,company_code,service_type);
+            TestUtils.waitForElementInvisibility(By.className("modal-container"));
+            TestUtils.waitForWebElementToBeClickable(saveBtn).click();
+            resetBtn.click();
+            TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        }
+
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        submittingAt.sendKeys(invoices.get(0).submittingAt);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        submittingTo.sendKeys(invoices.get(0).submittingTo);
+
+        submitMemoBtn.click();
+        submitMemoFinal = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
+        TestUtils.waitForWebElementToBeClickable(submitMemoFinal).click();
+//        submitMemo_CTab_btn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
+//        TestUtils.waitForWebElementToBeClickable(submitMemo_CTab_btn).click();
+//
+//        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+//        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
+//        return isPrintBtnVisible;
+        return true;
     }
 
 

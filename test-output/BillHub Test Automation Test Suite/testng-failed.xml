@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.ReasonPageTest">
+      <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
         <methods>
           <include name="setup"/>
+          <include name="createMultipleInvoiceInSingleMemoTest"/>
           <include name="tearDown"/>
-          <include name="addNewReasonWithDuplicateDataTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.ReasonPageTest -->
+      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->

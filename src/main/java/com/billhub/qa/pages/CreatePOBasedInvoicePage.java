@@ -1,6 +1,5 @@
 package com.billhub.qa.pages;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -71,10 +70,13 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//button[normalize-space()='SAVE']")
 	WebElement saveBtn;
 	
-	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[4]/select")
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[2]/form/div/div[1]/div/div/div[2]/button")
+	WebElement resetBtn;
+	
+	@FindBy(xpath = "//select[@class='form-control ng-pristine ng-invalid ng-touched']")
 	WebElement submittingAt;
 	
-	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[5]/select")
+	@FindBy(xpath = "select[formcontrolname='submittedTo']")
 	WebElement submittingTo;
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button")
@@ -83,9 +85,17 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//div[@class='inv-footer-text']")
 	WebElement totalInvAmount;
 	
-	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-memo-list/div/div/div[3]/div/div/div[1]/div/span")
-	WebElement allInvoices;
-
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement nextSubmitMemoBtn;
+	
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button")
+	WebElement finalSubmitMemoBtn;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[2]/button")
+	WebElement printBtn;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[1]/button")
+	WebElement homeBtn;
 	
 	public CreatePOBasedInvoicePage() {
 		
@@ -115,6 +125,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	public void attachSampleInvoiceFile() {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		attachBtn.click();
 		String invoice_file_path = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\Sample_Invoice.pdf";
 		addInvoice.sendKeys(invoice_file_path);
@@ -124,6 +135,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	public void tagPO(String qty, String hsn_code) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		tagPOBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
@@ -137,6 +149,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	public void createNewInvoice(Invoice invoice) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		clearInputFields();
 		fillCreateNewInvoiceForm(invoice);
 		attachSampleInvoiceFile();
@@ -154,8 +167,29 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		submittingTo.sendKeys(invoice.submittingTo);
 		
 		submitMemoBtn.click();
-		boolean isAllInvoicesVisible = TestUtils.isElementVisible(allInvoices);
-		return isAllInvoicesVisible;
+		nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
+		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();	
+		finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
+		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));			
+		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);	
+		homeBtn.click();
+		return isPrintBtnVisible;
+	}
+	
+	public boolean submitMemoWithDuplicateData(Invoice invoice) {
+		
+		fillCreateNewInvoiceForm(invoice);
+		return TestUtils.isSuccessToastDisplayed("Invoice Number Exist try another!");
+	}
+	
+	public boolean createInvoiceWithoutData(Invoice invoice){
+		
+		fillCreateNewInvoiceForm(invoice);
+		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	
+		resetBtn.click();
+		return TestUtils.isSuccessToastDisplayed("Invoice created successfully.");
 	}
 
 	public double verifyGstCode(String base_amount, String Igst){
@@ -167,6 +201,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		comment.click();
 		String amount =  totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
 
@@ -179,6 +214,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		comment.click();
 		String amount = totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
 
@@ -191,12 +227,14 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		comment.click();
 		String amount = totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
 	
 	public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
 		for (Invoice invoice : invoices) {
 			
 	        createNewInvoice(invoice);
@@ -210,9 +248,14 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		submittingTo.sendKeys(invoices.get(0).submittingTo);
 		
 		submitMemoBtn.click();
-		boolean isAllInvoicesVisible = TestUtils.isElementVisible(allInvoices);
-		return isAllInvoicesVisible;
+		nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
+		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
+		finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
+		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));		
+		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
+		return isPrintBtnVisible;	
 	}
 
 

@@ -39,11 +39,6 @@ public class BADashboardPage extends TestBase{
 	
 	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
 			
-//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-//		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
-//		TestUtils.waitForWebElementToBeClickable(editDraftbtn).click();
-//		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
@@ -53,30 +48,29 @@ public class BADashboardPage extends TestBase{
 		proceedManuallyBtn.click();
 		return new CreatePOBasedInvoicePage();
 	}
-
-	public CreateNonPOBasedInvoicePage createNewBTBased(){
-		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
-		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
-		fromState.sendKeys("Maharastra");
-		toState.sendKeys("Kerala");
-		proceedManuallyBtn.click();
-		return new CreateNonPOBasedInvoicePage();
-	}
 	
-	public boolean verifyDuplicateMemo(){
+	public CreatePOBasedInvoiceWithExcelsheetPage createNewMemoPOBasedWithExcelsheet(String from_state, String to_state) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		POBasedInvoiceCheckbox.click();
-		fromState.sendKeys("Rajasthan");
-		toState.sendKeys("Kerala");
+		fromState.sendKeys(from_state);
+		toState.sendKeys(to_state);
+		updateAndContinueBtn.click();
+		return new CreatePOBasedInvoiceWithExcelsheetPage();
+	}
+
+	public CreateNonPOBasedInvoicePage createNewBTBased(String from_state, String to_state){
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		fromState.sendKeys(from_state);
+		toState.sendKeys(to_state);
 		proceedManuallyBtn.click();
-
-		return TestUtils.isErrorToastDisplayed("Draft Already exist");
-
+		System.out.println("ihihi");
+		return new CreateNonPOBasedInvoicePage();
 	}
 }
 
