@@ -1,53 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-05T19:19:33 IST" name="BillHub Test Automation Test Suite" finished-at="2024-03-05T19:28:43 IST" duration-ms="549628">
+  <suite started-at="2024-03-06T16:29:48 IST" name="Default suite" finished-at="2024-03-06T16:30:57 IST" duration-ms="68589">
     <groups>
     </groups>
-    <test started-at="2024-03-05T19:19:33 IST" name="BillHub App Test Cases" finished-at="2024-03-05T19:28:43 IST" duration-ms="549628">
-      <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:19:33 IST" name="setup" finished-at="2024-03-05T19:19:57 IST" duration-ms="23882" status="PASS">
+    <test started-at="2024-03-06T16:29:48 IST" name="Default test" finished-at="2024-03-06T16:30:57 IST" duration-ms="68589">
+      <class name="com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest@1a5b8489]" started-at="2024-03-06T16:29:48 IST" name="setup" finished-at="2024-03-06T16:30:57 IST" duration-ms="68543" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (54d8be656f161a231dfd7e9917672179)] -> css selector: .btn.btn-warning.btn-acknowledge] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57239}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57239/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d8be656f161a231dfd7e9917672179]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (54d8be656f161a231dfd7e9917672179)] -> css selector: .btn.btn-warning.btn-acknowledge] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57239}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57239/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d8be656f161a231dfd7e9917672179
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.billhub.qa.utils.TestUtils.waitForWebElementToBeClickable(TestUtils.java:67)
+at com.billhub.qa.pages.CreatePOBasedInvoiceWithExcelsheetPage.uploadExcelSheet(CreatePOBasedInvoiceWithExcelsheetPage.java:79)
+at com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest.setup(CreatePOBasedInvoiceWithExcelsheetTest.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="gstCodeVerificationTest()[pri:1, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:19:57 IST" name="gstCodeVerificationTest" finished-at="2024-03-05T19:20:13 IST" duration-ms="15648" status="PASS">
+        <test-method signature="gstCodeVerificationTest()[pri:1, instance:com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest@1a5b8489]" started-at="2024-03-06T16:30:57 IST" name="gstCodeVerificationTest" finished-at="2024-03-06T16:30:57 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (54d8be656f161a231dfd7e9917672179)] -> css selector: .btn.btn-warning.btn-acknowledge] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57239}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57239/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d8be656f161a231dfd7e9917672179]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (54d8be656f161a231dfd7e9917672179)] -> css selector: .btn.btn-warning.btn-acknowledge] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57239}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57239/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d8be656f161a231dfd7e9917672179
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.billhub.qa.utils.TestUtils.waitForWebElementToBeClickable(TestUtils.java:67)
+at com.billhub.qa.pages.CreatePOBasedInvoiceWithExcelsheetPage.uploadExcelSheet(CreatePOBasedInvoiceWithExcelsheetPage.java:79)
+at com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest.setup(CreatePOBasedInvoiceWithExcelsheetTest.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- gstCodeVerificationTest -->
-        <test-method signature="tdCodeVerificationTest()[pri:2, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:20:13 IST" name="tdCodeVerificationTest" finished-at="2024-03-05T19:20:28 IST" duration-ms="15558" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tdCodeVerificationTest -->
-        <test-method signature="additionalAmountVerificationTest()[pri:3, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:20:28 IST" name="additionalAmountVerificationTest" finished-at="2024-03-05T19:20:44 IST" duration-ms="15522" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- additionalAmountVerificationTest -->
-        <test-method signature="createInvoiceWithoutDataTest()[pri:4, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:20:44 IST" name="createInvoiceWithoutDataTest" finished-at="2024-03-05T19:21:15 IST" duration-ms="30873" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createInvoiceWithoutDataTest -->
-        <test-method signature="submitMemoWithValidDataTest()[pri:5, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:21:15 IST" name="submitMemoWithValidDataTest" finished-at="2024-03-05T19:23:34 IST" duration-ms="139625" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitMemoWithValidDataTest -->
-        <test-method signature="submitMemoWithDuplicateDataTest()[pri:6, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:23:34 IST" name="submitMemoWithDuplicateDataTest" finished-at="2024-03-05T19:24:06 IST" duration-ms="32182" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitMemoWithDuplicateDataTest -->
-        <test-method signature="createMultipleInvoiceInSingleMemoTest()[pri:7, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:24:06 IST" name="createMultipleInvoiceInSingleMemoTest" finished-at="2024-03-05T19:28:43 IST" duration-ms="276160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createMultipleInvoiceInSingleMemoTest -->
-        <test-method signature="splitPoQuantityAndCreateMultipleInvoicesTest()[pri:8, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:28:43 IST" name="splitPoQuantityAndCreateMultipleInvoicesTest" finished-at="2024-03-05T19:28:43 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- splitPoQuantityAndCreateMultipleInvoicesTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@2764c546]" started-at="2024-03-05T19:28:43 IST" name="tearDown" finished-at="2024-03-05T19:28:43 IST" duration-ms="105" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
-    </test> <!-- BillHub App Test Cases -->
-  </suite> <!-- BillHub Test Automation Test Suite -->
+      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

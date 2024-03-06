@@ -46,7 +46,13 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//input[@id='commet']")
 	WebElement comment;
 	
-	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[1]/div/input")
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[1]/div/form/div[2]/div/div/input")
+	WebElement searchPoInput;
+	
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[1]/div/form/div[2]/div/div/div/button")
+	WebElement searchPoBtn;
+	
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input")
 	WebElement poResultCheckBox;
 	
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-primary btn-block marginTop']")
@@ -133,12 +139,18 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(doneBtn).click();
 	}
 	
-	public void tagPO(String qty, String hsn_code) {
+	public void tagPO(String qty, String hsn_code, String po_number) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		tagPOBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		// searching and tagging the PO to the invoice
+		searchPoInput.sendKeys(po_number);
+		searchPoBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
+		
 		addToListBtn.click();
 		quantity.clear();
 		hsnCode.clear();
@@ -147,18 +159,18 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		addPOTransactionBtn.click();
 	}
 	
-	public void createNewInvoice(Invoice invoice) {
+	public void createNewInvoice(Invoice invoice, String po_number) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		clearInputFields();
 		fillCreateNewInvoiceForm(invoice);
 		attachSampleInvoiceFile();
-		tagPO(invoice.quantity, invoice.hsnCode);
+		tagPO(invoice.quantity, invoice.hsnCode, po_number);
 	}
 	
-	public boolean submitMemoWithValidData(Invoice invoice){
+	public boolean submitMemoWithValidData(Invoice invoice, String po_number){
 		
-		createNewInvoice(invoice);
+		createNewInvoice(invoice, po_number);
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the current invoice
 		
 		// code for tagging the location and the person for the memo
@@ -240,13 +252,13 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		return Double.parseDouble(amount);
 	}
 	
-	public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices) {
+	public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices, String po_number) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		
 		for (Invoice invoice : invoices) {
 			
-	        createNewInvoice(invoice);
+	        createNewInvoice(invoice, po_number);
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 			TestUtils.waitForWebElementToBeClickable(saveBtn).click();				// saving the current invoice
 	    }

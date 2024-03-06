@@ -31,10 +31,10 @@ public class BADashboardPage extends TestBase{
 	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
 	WebElement updateAndContinueBtn;
 	
-	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[3]/button[1]/span")
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[3]/button[1]")
 	WebElement uploadBtn;
 	
-	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input")
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[1]/div/input")
 	WebElement poResultCheckBox;
 
 

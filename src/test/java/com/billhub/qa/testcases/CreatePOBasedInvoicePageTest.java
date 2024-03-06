@@ -24,6 +24,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	private static boolean isMultipleInvoicesSubmitted = false;
 	public Object[][] data;
 	public Object[][] memoData = TestUtils.getTestData("BADashboardPage");
+	String po_number = "4500000887";										// This PO number has been used in all the test
 	
 	public CreatePOBasedInvoicePageTest() {
 		super();
@@ -103,7 +104,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		String submitting_at = (String) data[0][10], submitting_to = (String) data[0][11];
 		
 		Invoice invoice = new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, quantity, submitting_at, submitting_to);
-		boolean isSubmitted = createPOBasedInvoicePage.submitMemoWithValidData(invoice);
+		boolean isSubmitted = createPOBasedInvoicePage.submitMemoWithValidData(invoice, po_number);
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
 	}
 	
@@ -128,6 +129,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 			
 		List<Invoice> invoices = new ArrayList<>();
 		
+		
 		for(int i=1; i<8; i++)
 		{
 			String invoice_number = (String) data[i][0], base_amount = (String) data[i][1], igst = (String) data[i][2];
@@ -139,7 +141,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 			invoices.add(invoice);
 		}
 		
-		boolean isSubmitted = createPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices);
+		boolean isSubmitted = createPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices, po_number);
 		isMultipleInvoicesSubmitted = isSubmitted;
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
 	}

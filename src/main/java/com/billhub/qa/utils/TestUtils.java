@@ -194,7 +194,7 @@ public class TestUtils extends TestBase{
         return randomNumber.toString();
     }
 	
-	 public static String generateRandomString(int length) {
+	public static String generateRandomString(int length) {
 		 
         if (length <= 0) {
             throw new IllegalArgumentException("Length must be greater than zero");
@@ -217,7 +217,7 @@ public class TestUtils extends TestBase{
 		return final_str;
 	}
 	 
-	 public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
+	public static void setCellData(String sheetName, int rowNum, int colNum, String data) {
 		   
 		 try {
 		        
@@ -246,7 +246,7 @@ public class TestUtils extends TestBase{
 	    }
 	}
 
-	 public static String takeScreenshot(String testName) {
+	public static String takeScreenshot(String testName) {
 			
 			File sourceScreenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			File destinationScreenshotFile = new File(System.getProperty("user.dir")+"\\Screenshots\\"+testName+".png");
@@ -258,6 +258,68 @@ public class TestUtils extends TestBase{
 			
 			return destinationScreenshotFile.getAbsolutePath();
 		
+	}
+	
+	public static Object[][] readExcelSheetByFilePath(String filePath, String sheetName) {
+		
+		FileInputStream file = null;
+		Workbook book = null;
+		Sheet sheet = null;
+		
+		try {
+			file = new FileInputStream(filePath);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
+		try {
+			book = WorkbookFactory.create(file);
+		} catch (InvalidFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		sheet = book.getSheet(sheetName);
+		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+		
+		for (int i = 0; i < sheet.getLastRowNum(); i++) {
+			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
+				Cell cell = sheet.getRow(i + 1).getCell(k);
+	            data[i][k] = (cell != null) ? cell.toString() : ""; // Check for null before invoking toString()
+//				System.out.println(i + " " + k + " " + data[i][k]);
+			}
+		}
+		return data;
+	}
+	
+	public static void updateExcelSheetByFilePath(String filePath, String sheetName, int rowNum, int colNum, String data) {
+		
+
+		try {
+	        
+			FileInputStream file = new FileInputStream(filePath);
+
+	        try (XSSFWorkbook xsf = new XSSFWorkbook(file)) {
+	            XSSFSheet sheet = xsf.getSheet(sheetName);
+
+	            if (sheet != null) {
+	                sheet.getRow(rowNum).getCell(colNum).setCellValue(data);
+
+	                try (FileOutputStream fos = new FileOutputStream(filePath)) {
+	                    xsf.write(fos);
+	                }
+	            } else {
+	            	log.error("Sheet not found: " + sheetName);
+	            }
+	        }
+
+	    } catch (FileNotFoundException e) {
+	    	log.error("FileNotFoundException: " + e.getMessage());
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	    	log.error("IOException: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	}
 	
 }
