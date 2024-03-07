@@ -29,13 +29,19 @@ public class BADashboardPage extends TestBase{
 	WebElement proceedManuallyBtn;
 	
 	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
-	WebElement updateAndContinueBtn;
+	WebElement uploadAndContinueBtn;
 	
 	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[3]/button[1]")
 	WebElement uploadBtn;
 	
-	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[1]/div/input")
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input")
 	WebElement poResultCheckBox;
+	
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[1]/div/form/div[2]/div/div/input")
+	WebElement searchPoInput;
+	
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[1]/div/form/div[2]/div/div/div/button")
+	WebElement searchPoBtn;
 
 
 	public BADashboardPage() {
@@ -55,15 +61,21 @@ public class BADashboardPage extends TestBase{
 		return new CreatePOBasedInvoicePage();
 	}
 	
-	public CreatePOBasedInvoiceWithExcelsheetPage createNewMemoPOBasedWithExcelsheet(String from_state, String to_state) {
+	public CreatePOBasedInvoiceWithExcelsheetPage createNewMemoPOBasedWithExcelsheet(String from_state, String to_state, String po_number) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		
 		POBasedInvoiceCheckbox.click();
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
-		updateAndContinueBtn.click();
+		uploadAndContinueBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		// searching and tagging the PO to the invoice
+		searchPoInput.sendKeys(po_number);
+		searchPoBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
 		uploadBtn.click();

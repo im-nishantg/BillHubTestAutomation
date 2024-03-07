@@ -152,8 +152,6 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		// this test was already performed in test createMultipleInvoiceInSingleMemoTest and hence their result is same
 		Assert.assertTrue(isMultipleInvoicesSubmitted, "Memo was not submitted");
 	}
-	
-	
 
 	@AfterClass
 	public void tearDown() {
