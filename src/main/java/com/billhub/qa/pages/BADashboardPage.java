@@ -31,11 +31,20 @@ public class BADashboardPage extends TestBase{
 	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
 	WebElement updateAndContinueBtn;
 	
-	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[3]/button[1]/span")
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[3]/button[1]")
 	WebElement uploadBtn;
+
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-lr-popup/div[3]/button[1]")
+	WebElement uploadBTBtn;
 	
-	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input")
+	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[1]/div/input")
 	WebElement poResultCheckBox;
+	@FindBy(xpath = "//body[1]/modal-container[1]/div[1]/div[1]/app-add-lr-popup[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]")
+	WebElement btResultCheckBox;
+	@FindBy(css = "#companyCode")
+	WebElement companyCode;
+	@FindBy(xpath = "//select[@id='typeService']")
+	WebElement secviceType;
 
 
 	public BADashboardPage() {
@@ -68,6 +77,21 @@ public class BADashboardPage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
 		uploadBtn.click();
 		return new CreatePOBasedInvoiceWithExcelsheetPage();
+	}
+	public CreateNonPOBasedInvoiceWithExcelsheetPage createNewMemoNonPOBasedWithExcelsheet(String from_state,String to_state,String company_code,String service_type){
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
+		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		fromState.sendKeys(from_state);
+		toState.sendKeys(to_state);
+		updateAndContinueBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		companyCode.sendKeys(company_code);
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		secviceType.sendKeys(service_type);
+		TestUtils.waitForWebElementToBeClickable(btResultCheckBox).click();
+		uploadBTBtn.click();
+		return new CreateNonPOBasedInvoiceWithExcelsheetPage();
 	}
 
 	public CreateNonPOBasedInvoicePage createNewBTBased(String from_state, String to_state){
