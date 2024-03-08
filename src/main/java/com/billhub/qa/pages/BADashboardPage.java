@@ -91,9 +91,6 @@ public class BADashboardPage extends TestBase{
 	WebElement del_service;
 
 	@FindBy(xpath="//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[4]/div[1]/span[2]/i")
-	WebElement del_invo;
-
-	@FindBy(xpath="//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[4]/div[1]/span[2]/i")
 	WebElement del_memo;
 
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/div/input")
