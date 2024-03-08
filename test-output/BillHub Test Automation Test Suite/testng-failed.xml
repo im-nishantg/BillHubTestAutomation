@@ -8,15 +8,9 @@
     <classes>
       <class name="com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest">
         <methods>
-          <include name="tdCodeVerificationTest"/>
-          <include name="additionalAmountVerificationTest"/>
           <include name="createMultipleInvoiceInSingleMemoTest"/>
           <include name="splitPoQuantityAndCreateMultipleInvoicesTest"/>
-          <include name="gstCodeVerificationTest"/>
-          <include name="submitMemoWithoutDataTest"/>
-          <include name="submitMemoWithValidDataTest"/>
           <include name="setup"/>
-          <include name="submitMemoWithDuplicateDataTest"/>
         </methods>
       </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest -->
     </classes>
