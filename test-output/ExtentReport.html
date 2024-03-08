@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 6, 2024 04:36:52 pm</span></a>
+<a href="#"><span class="badge badge-primary">Mar 8, 2024 04:27:41 pm</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -81,7 +87,7 @@
           <div class="test-detail">
             <p class="name">filterByCompanyTest</p>
             <p class="text-sm">
-              <span>4:35:15 pm</span> / <span>00:01:37:212</span>
+              <span>4:27:52 pm</span> / <span>00:00:16:046</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -90,9 +96,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">filterByCompanyTest</h5>
-<span class='badge badge-success'>03.06.2024 4:35:15 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:52 pm</span>
-<span class='badge badge-default'>00:01:37:212</span>
+<span class='badge badge-success'>03.08.2024 4:27:52 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:28:08 pm</span>
+<span class='badge badge-default'>00:00:16:046</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -104,10 +110,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:52 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:27:52 pm</td>
         <td>
-          Test passed
+          filterByCompanyTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:28:08 pm</td>
+        <td>
+          filterByCompanyTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -120,9 +133,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">filterByCompanyServiceAndMemoTest</p>
+            <p class="name">filterByServiceTest</p>
             <p class="text-sm">
-              <span>4:36:09 pm</span> / <span>00:00:43:750</span>
+              <span>4:28:08 pm</span> / <span>00:00:00:468</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -130,10 +143,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">filterByCompanyServiceAndMemoTest</h5>
-<span class='badge badge-success'>03.06.2024 4:36:09 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:53 pm</span>
-<span class='badge badge-default'>00:00:43:750</span>
+<h5 class="test-status text-pass">filterByServiceTest</h5>
+<span class='badge badge-success'>03.08.2024 4:28:08 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:28:08 pm</span>
+<span class='badge badge-default'>00:00:00:468</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -145,10 +158,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:53 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:28:08 pm</td>
         <td>
-          Test passed
+          filterByServiceTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:28:08 pm</td>
+        <td>
+          filterByServiceTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -156,40 +176,89 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="fail" test-id="3"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">filterByPoTest</p>
+            <p class="name">filterByCompanyAndLocationTest</p>
             <p class="text-sm">
-              <span>4:35:47 pm</span> / <span>00:01:05:617</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>4:28:08 pm</span> / <span>00:00:21:159</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">filterByPoTest</h5>
-<span class='badge badge-success'>03.06.2024 4:35:47 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:53 pm</span>
-<span class='badge badge-default'>00:01:05:617</span>
+<h5 class="test-status text-fail">filterByCompanyAndLocationTest</h5>
+<span class='badge badge-success'>03.08.2024 4:28:08 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:28:29 pm</span>
+<span class='badge badge-default'>00:00:21:159</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Acer\OneDrive - itbhu.ac.in\Desktop\BillHubTestAutomation\Screenshots\filterByCompanyAndLocationTest.png' src="C:\Users\Acer\OneDrive - itbhu.ac.in\Desktop\BillHubTestAutomation\Screenshots\filterByCompanyAndLocationTest.png">
+    <div class="title">filterByCompanyAndLocationTest</div>
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:53 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:28:08 pm</td>
         <td>
-          Test passed
+          filterByCompanyAndLocationTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:28:29 pm</td>
+        <td>
+          filterByCompanyAndLocationTest got failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:28:29 pm</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Filter by Company and Location is not working. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.BADashboardPageTest.filterByCompanyAndLocationTest(BADashboardPageTest.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -197,40 +266,89 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="4"
+        <li class="test-item"  status="fail" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">filterByInvoiceServiceAndLocationTest</p>
+            <p class="name">filterByLocationTest</p>
             <p class="text-sm">
-              <span>4:36:20 pm</span> / <span>00:00:32:787</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>4:28:29 pm</span> / <span>00:00:36:152</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">filterByInvoiceServiceAndLocationTest</h5>
-<span class='badge badge-success'>03.06.2024 4:36:20 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:53 pm</span>
-<span class='badge badge-default'>00:00:32:787</span>
+<h5 class="test-status text-fail">filterByLocationTest</h5>
+<span class='badge badge-success'>03.08.2024 4:28:29 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:29:05 pm</span>
+<span class='badge badge-default'>00:00:36:152</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Acer\OneDrive - itbhu.ac.in\Desktop\BillHubTestAutomation\Screenshots\filterByLocationTest.png' src="C:\Users\Acer\OneDrive - itbhu.ac.in\Desktop\BillHubTestAutomation\Screenshots\filterByLocationTest.png">
+    <div class="title">filterByLocationTest</div>
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:53 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:28:29 pm</td>
         <td>
-          Test passed
+          filterByLocationTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:29:05 pm</td>
+        <td>
+          filterByLocationTest got failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:29:05 pm</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Filter by Location is not working expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.BADashboardPageTest.filterByLocationTest(BADashboardPageTest.java:60)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -243,9 +361,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">filterByBothTest</p>
+            <p class="name">filterByPoTest</p>
             <p class="text-sm">
-              <span>4:35:58 pm</span> / <span>00:00:54:407</span>
+              <span>4:29:05 pm</span> / <span>00:00:15:245</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -253,10 +371,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">filterByBothTest</h5>
-<span class='badge badge-success'>03.06.2024 4:35:58 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:53 pm</span>
-<span class='badge badge-default'>00:00:54:407</span>
+<h5 class="test-status text-pass">filterByPoTest</h5>
+<span class='badge badge-success'>03.08.2024 4:29:05 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:29:21 pm</span>
+<span class='badge badge-default'>00:00:15:245</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -268,10 +386,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:53 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:29:05 pm</td>
         <td>
-          Test passed
+          filterByPoTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:29:21 pm</td>
+        <td>
+          filterByPoTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -284,9 +409,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">filterByServiceTest</p>
+            <p class="name">filterByBothTest</p>
             <p class="text-sm">
-              <span>4:35:26 pm</span> / <span>00:01:26:945</span>
+              <span>4:29:21 pm</span> / <span>00:00:15:653</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -294,10 +419,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">filterByServiceTest</h5>
-<span class='badge badge-success'>03.06.2024 4:35:26 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:53 pm</span>
-<span class='badge badge-default'>00:01:26:945</span>
+<h5 class="test-status text-pass">filterByBothTest</h5>
+<span class='badge badge-success'>03.08.2024 4:29:21 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:29:36 pm</span>
+<span class='badge badge-default'>00:00:15:653</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -309,10 +434,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:53 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:29:21 pm</td>
         <td>
-          Test passed
+          filterByBothTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:29:36 pm</td>
+        <td>
+          filterByBothTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -320,14 +452,104 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="7"
+        <li class="test-item"  status="fail" test-id="7"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">filterByLocationTest</p>
+            <p class="name">filterByCompanyServiceAndMemoTest</p>
             <p class="text-sm">
-              <span>4:35:26 pm</span> / <span>00:01:26:501</span>
+              <span>4:29:36 pm</span> / <span>00:00:21:493</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">filterByCompanyServiceAndMemoTest</h5>
+<span class='badge badge-success'>03.08.2024 4:29:36 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:29:58 pm</span>
+<span class='badge badge-default'>00:00:21:493</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Acer\OneDrive - itbhu.ac.in\Desktop\BillHubTestAutomation\Screenshots\filterByCompanyServiceAndMemoTest.png' src="C:\Users\Acer\OneDrive - itbhu.ac.in\Desktop\BillHubTestAutomation\Screenshots\filterByCompanyServiceAndMemoTest.png">
+    <div class="title">filterByCompanyServiceAndMemoTest</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:29:36 pm</td>
+        <td>
+          filterByCompanyServiceAndMemoTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:29:58 pm</td>
+        <td>
+          filterByCompanyServiceAndMemoTest got failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:29:58 pm</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Filter by Company, Service and Memo is not working expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.BADashboardPageTest.filterByCompanyServiceAndMemoTest(BADashboardPageTest.java:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">filterByInvoiceServiceAndLocationTest</p>
+            <p class="text-sm">
+              <span>4:29:58 pm</span> / <span>00:00:47:243</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -335,11 +557,11 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">filterByLocationTest</h5>
-<span class='badge badge-success'>03.06.2024 4:35:26 pm</span>
-<span class='badge badge-danger'>03.06.2024 4:36:53 pm</span>
-<span class='badge badge-default'>00:01:26:501</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<h5 class="test-status text-pass">filterByInvoiceServiceAndLocationTest</h5>
+<span class='badge badge-success'>03.08.2024 4:29:58 pm</span>
+<span class='badge badge-danger'>03.08.2024 4:30:45 pm</span>
+<span class='badge badge-default'>00:00:47:243</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
@@ -350,10 +572,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:53 pm</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:29:58 pm</td>
         <td>
-          Test passed
+          filterByInvoiceServiceAndLocationTest execution started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:30:45 pm</td>
+        <td>
+          filterByInvoiceServiceAndLocationTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -370,30 +599,93 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:28:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>filterByCompanyAndLocationTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:28:29 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>filterByLocationTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:29:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>filterByCompanyServiceAndMemoTest</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 6, 2024 04:36:52 pm</h3>
+<h3>Mar 8, 2024 04:27:41 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 6, 2024 04:36:53 pm</h3>
+<h3>Mar 8, 2024 04:30:45 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>7</h3>
+<h3>5</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>3</h3>
 </div></div>
 </div>
 </div>
@@ -409,12 +701,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>7</b> tests passed
+<div><small data-tooltip='62%'>
+<b>5</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='37%'><b>3</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -432,10 +724,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>7</b> events passed</small></div>
+<div><small data-tooltip='26%'><b>5</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>0</b> others
+<small data-tooltip='15%'><b>3</b> events failed,
+<b data-tooltip='%'>11</b> others
 </small>
 </div>
 </div>
@@ -451,7 +743,7 @@
 </div></div>
 <script>
 var timeline = {
-"filterByCompanyTest":97.212,"filterByCompanyServiceAndMemoTest":43.75,"filterByPoTest":65.617,"filterByInvoiceServiceAndLocationTest":32.787,"filterByBothTest":54.407,"filterByServiceTest":86.945,"filterByLocationTest":86.501
+"filterByCompanyTest":16.046,"filterByServiceTest":0.468,"filterByCompanyAndLocationTest":21.159,"filterByLocationTest":36.152,"filterByPoTest":15.245,"filterByBothTest":15.653,"filterByCompanyServiceAndMemoTest":21.493,"filterByInvoiceServiceAndLocationTest":47.243
 };
 </script>
 <div class="row">
@@ -460,8 +752,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 7,
-failParent: 0,
+passParent: 5,
+failParent: 3,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -477,11 +769,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 7,
-failEvents: 0,
+passEvents: 5,
+failEvents: 3,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 11
 };
 </script>        </div>
       </div>

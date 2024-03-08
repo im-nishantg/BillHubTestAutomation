@@ -8,13 +8,16 @@
 	
 	<test name="BillHub App Test Cases">
 		<classes>
-<!--		    <class name = "com.billhub.qa.testcases.CustomerPageTest"></class>-->
-<!--			<class name="com.billhub.qa.testcases.WithholdingTaxPageTest"></class>-->
-<!--			<class name = "com.billhub.qa.testcases.BAPageTest"></class>-->
-<!--			<class name = "com.billhub.qa.testcases.UserPageTest"></class>-->
-<!--			<class name = "com.billhub.qa.testcases.TaxCodePageTest"></class> -->
-<!--			<class name = "com.billhub.qa.testcases.ReasonPageTest"></class>-->
-			    <class name="com.billhub.qa.testcases.BADashboardPageTest"></class>
+		    	<!-- <class name = "com.billhub.qa.testcases.CustomerPageTest"></class>
+				<class name="com.billhub.qa.testcases.WithholdingTaxPageTest"></class>
+			 	<class name = "com.billhub.qa.testcases.BAPageTest"></class>
+			 	<class name = "com.billhub.qa.testcases.UserPageTest"></class> 
+			 	<class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
+			 	<!-- <class name = "com.billhub.qa.testcases.ReasonPageTest"></class> -->
+			 	<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class> -->
+<!--			 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class>-->
+				<class name="com.billhub.qa.testcases.BADashboardPageTest"></class>
+
 		</classes>
 	</test>
 </suite>
