@@ -18,6 +18,7 @@
 <!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest"></class>-->
 <!--			 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class>-->
 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class>
+
 		</classes>
 	</test>
 </suite>
