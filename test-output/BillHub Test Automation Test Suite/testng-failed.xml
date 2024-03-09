@@ -6,15 +6,19 @@
   </listeners>
   <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
+      <class name="com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest">
         <methods>
-          <include name="submitMemoWithDuplicateDataTest"/>
-          <include name="setup"/>
-          <include name="splitPoQuantityAndCreateMultipleInvoicesTest"/>
+          <include name="tdCodeVerificationTest"/>
+          <include name="additionalAmountVerificationTest"/>
           <include name="createMultipleInvoiceInSingleMemoTest"/>
-          <include name="tearDown"/>
+          <include name="splitPoQuantityAndCreateMultipleInvoicesTest"/>
+          <include name="gstCodeVerificationTest"/>
+          <include name="submitMemoWithoutDataTest"/>
+          <include name="submitMemoWithValidDataTest"/>
+          <include name="setup"/>
+          <include name="submitMemoWithDuplicateDataTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
+      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->

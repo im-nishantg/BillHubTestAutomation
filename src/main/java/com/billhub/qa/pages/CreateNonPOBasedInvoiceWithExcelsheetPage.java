@@ -12,18 +12,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
-    @FindBy(xpath = "//select[@id='companyCode']")
-    WebElement companyCode;
-    @FindBy(xpath = "//select[@id='typeService']")
-    WebElement secviceType;
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-upload/div/div/div[2]/div/div[1]/div[2]/div/input")
     WebElement uploadFileBtn;
 
     @FindBy(css = ".btn.btn-warning.btn-acknowledge")
     WebElement uploadBtn;
-
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div/div/div/div[4]/button[1]")
     WebElement editBtn;
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[1]/div/div/div[4]/button[1]/i")
+    WebElement editBtn1;
+
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[2]/div/div/div[4]/button[1]/i")
+    WebElement editBtn2;
+
 
     @FindBy(xpath = "//div[@class='inv-footer-text']")
     WebElement totalInvAmount;
@@ -57,6 +58,8 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//button[@type='submit']")
     WebElement nextSubmitMemoBtn;
+    @FindBy(xpath = "/html/body/modal-container/div/div/app-add-lr-popup/div[3]/button[1]")
+    WebElement uploadBTBtn;
 
     @FindBy(xpath = "/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button")
     WebElement finalSubmitMemoBtn;
@@ -66,11 +69,17 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[1]/button")
     WebElement homeBtn;
+    @FindBy(xpath = "//button[@aria-label='Close']")
+    WebElement statusCloseBtn;
+
+    @FindBy(css = "modal-container[role='dialog'] div[class='row'] div:nth-child(3) div:nth-child(2)")
+    WebElement statusOfInv;
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-invalid-invoices/div/div/div[2]/div[2]/table/tbody/tr/td[1]")
     WebElement invoiceAlreadyExistErrorText;
     @FindBy(xpath = "//button[normalize-space()='Load Dashboard Data']")
     WebElement loadDashboardBtn;
+
 
     public CreateNonPOBasedInvoiceWithExcelsheetPage(){
         PageFactory.initElements(driver,this);
@@ -118,11 +127,83 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
         return Double.parseDouble(amount);
     }
 
+    public boolean submitWithoutInvDoc(){
+        editBtn.click();
+        TestUtils.waitForWebElementToBeClickable(saveBtn).click();
+        // Wait for the toast message to appear
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='-Files not found.']")));
+        // Check if the toast message is visible
+        boolean isToastVisible = toast.isDisplayed();
+        return isToastVisible;
+    }
+
     public boolean submitMemoWithValidData(String submitting_at, String submitting_to) {
 
         editBtn.click();
         attachSampleInvoiceFile();
         TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the current invoice
+
+        // code for tagging the location and the person for the memo
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        submittingAt.sendKeys(submitting_at);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        submittingTo.sendKeys(submitting_to);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+        // code for actually submitting the memo
+        submitMemoBtn.click();
+        nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
+        TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
+        finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
+        TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
+
+        //print button will be visible once the memo is submitted successfully
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
+        homeBtn.click();							// going back to home button for next test
+        return isPrintBtnVisible;
+    }
+
+    public String statusOfSubmittedMemo(String invoice_number){
+        String inv="TESTINV4309";
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        loadDashboardBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        By xpath = By.xpath("//label[normalize-space()='" + inv + "']");
+        // Wait for the element to be visible
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // Wait for maximum of 10 seconds
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+        element.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        String status=statusOfInv.getText();
+        statusCloseBtn.click();
+        return status;
+    }
+
+
+    public boolean submitMemoWithoutData(String SHEET_PATH_FOR_EMPTY_INVOICE) {
+
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        uploadFileBtn.sendKeys(SHEET_PATH_FOR_EMPTY_INVOICE);
+        boolean isSubmitMemoBtnDisplayed = TestUtils.isElementVisible(submitMemoBtn);
+        return isSubmitMemoBtnDisplayed;
+    }
+
+    public boolean createMultipleInvoiceInSingleMemo(String SHEET_PATH_FOR_MULTIPLE_INVOICE, String submitting_at, String submitting_to) {
+
+        uploadExcelSheet(SHEET_PATH_FOR_MULTIPLE_INVOICE);					// uploading the excel sheet with multiple invoices
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+        editBtn1.click();
+        attachSampleInvoiceFile();
+        TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the first invoice
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+        editBtn2.click();
+        attachSampleInvoiceFile();
+        TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the second invoice
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 
         // code for tagging the location and the person for the memo
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
@@ -135,41 +216,12 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
         nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
         TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
         finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
-//        TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
-//
-//        //print button will be visible once the memo is submitted successfully
-//        TestUtils.waitForElementInvisibility(By.className("modal-container"));
-//        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
-//        homeBtn.click();							// going back to home button for next test
-//        return isPrintBtnVisible;
-        return true;
-    }
+        TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 
-    public boolean statusOfSubmittedMemo(String invoice_number){
-        String inv="TESTINV4309";
-        loadDashboardBtn.click();
+        //print button will be visible once the memo is submitted successfully
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
-        By xpath = By.xpath("//label[normalize-space()='" + inv + "']");
-        // Wait for the element to be visible
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // Wait for maximum of 10 seconds
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
-        element.click();
-        return true;
+        boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
+        homeBtn.click();							// going back to home button for next test
+        return isPrintBtnVisible;
     }
-
-    public boolean submitMemoWithDuplicateData() {
-
-        boolean isErrorDisplayed = TestUtils.isElementVisible(invoiceAlreadyExistErrorText);
-        return isErrorDisplayed;
-    }
-
-    public boolean submitMemoWithoutData(String SHEET_PATH_FOR_EMPTY_INVOICE) {
-
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
-        uploadFileBtn.sendKeys(SHEET_PATH_FOR_EMPTY_INVOICE);
-        boolean isSubmitMemoBtnDisplayed = TestUtils.isElementVisible(submitMemoBtn);
-        return isSubmitMemoBtnDisplayed;
-    }
-
-
 }

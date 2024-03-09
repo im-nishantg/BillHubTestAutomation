@@ -48,7 +48,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         initialization();
         loginPage= new LoginPage();
         baDashboardPage = loginPage.loginAsBa(prop.getProperty("ba_userid_bt"),prop.getProperty("ba_password_bt"));
-        createNonPOBasedInvoicePage = baDashboardPage.createNewBTBased(from_state,to_state);
+        createNonPOBasedInvoicePage = baDashboardPage.createNewMemoBTBased(from_state,to_state);
         updateExcelSheetData();
         data=TestUtils.getTestData("BTBasedInvoice");
     }
@@ -112,7 +112,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
     public void submitMemoWithDuplicateDataTest(){
 
         String from_state = (String) memoData[2][0], to_state = (String) memoData[2][1];
-        createNonPOBasedInvoicePage = baDashboardPage.createNewBTBased(from_state, to_state);
+        createNonPOBasedInvoicePage = baDashboardPage.createNewMemoBTBased(from_state, to_state);
 
         String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
         String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
@@ -131,7 +131,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         listOfBTs.addAll(Arrays.asList("14048678", "14395978"));// Add BT number corresponding to company code and service type
 
         String from_state = (String) memoData[3][0], to_state = (String) memoData[3][1];
-        createNonPOBasedInvoicePage = baDashboardPage.createNewBTBased(from_state, to_state);
+        createNonPOBasedInvoicePage = baDashboardPage.createNewMemoBTBased(from_state, to_state);
 
         for(int i=2; i<4; i++)
         {

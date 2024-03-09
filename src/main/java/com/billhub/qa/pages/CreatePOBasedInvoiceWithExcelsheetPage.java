@@ -1,5 +1,7 @@
 package com.billhub.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +20,19 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	WebElement uploadBtn;
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div/div/div/div[4]/button[1]")
+	WebElement editBtn;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[1]/div/div/div[4]/button[1]/i")
 	WebElement editBtn1;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[2]/div/div/div[4]/button[1]/i")
+	WebElement editBtn2;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[3]/div/div/div[4]/button[1]/i")
+	WebElement editBtn3;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[4]/div/div/div[4]/button[1]/i")
+	WebElement editBtn4;
 	
 	@FindBy(xpath = "//div[@class='inv-footer-text']")
 	WebElement totalInvAmount;
@@ -91,9 +105,9 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	}
 
 
-	public double verifyGstCode(String base_amount, String igst) {
+	public double verifyGstCode() {
 		
-		editBtn1.click();
+		editBtn.click();
 		String amount =  totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
 		resetBtn.click();
@@ -101,9 +115,9 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	}
 
 
-	public double verifyTdCode(String base_amount, String cd) {
+	public double verifyTdCode() {
 		
-		editBtn1.click();
+		editBtn.click();
 		String amount =  totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
 		resetBtn.click();
@@ -111,9 +125,9 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	}
 
 
-	public double verifyAdditionalAmount(String base_amount, String tcs) {
+	public double verifyAdditionalAmount() {
 		
-		editBtn1.click();
+		editBtn.click();
 		String amount =  totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
 		resetBtn.click();
@@ -122,7 +136,7 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	
 	public boolean submitMemoWithValidData(String submitting_at, String submitting_to) {
 		
-		editBtn1.click();
+		editBtn.click();
 		attachSampleInvoiceFile();
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the current invoice
 		
@@ -146,7 +160,10 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		return isPrintBtnVisible;
 	}
 	
-	public boolean submitMemoWithDuplicateData() {
+	public boolean submitMemoWithDuplicateData(String SHEET_PATH_FOR_SINGLE_INVOICE) {
+		
+		uploadExcelSheet(SHEET_PATH_FOR_SINGLE_INVOICE);		// uploading the excel sheet with duplicate data
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
 		
 		boolean isErrorDisplayed = TestUtils.isElementVisible(invoiceAlreadyExistErrorText);	
 		return isErrorDisplayed;
@@ -156,8 +173,44 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		uploadFileBtn.sendKeys(SHEET_PATH_FOR_EMPTY_INVOICE);
+		
 		boolean isSubmitMemoBtnDisplayed = TestUtils.isElementVisible(submitMemoBtn);	
 		return isSubmitMemoBtnDisplayed;
+	}
+	
+	public boolean createMultipleInvoiceInSingleMemo(String SHEET_PATH_FOR_MULTIPLE_INVOICE, String submitting_at, String submitting_to) {
+		
+		uploadExcelSheet(SHEET_PATH_FOR_MULTIPLE_INVOICE);					// uploading the excel sheet with multiple invoices
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		
+		editBtn1.click();
+		attachSampleInvoiceFile();
+		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the first invoice
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		
+		editBtn2.click();
+		attachSampleInvoiceFile();
+		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the second invoice
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		
+		// code for tagging the location and the person for the memo
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		submittingAt.sendKeys(submitting_at);
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		submittingTo.sendKeys(submitting_to);
+		
+		// code for actually submitting the memo
+		submitMemoBtn.click();
+		nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
+		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();	
+		finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
+		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
+		
+		//print button will be visible once the memo is submitted successfully
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));			
+		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);	
+		homeBtn.click();							// going back to home button for next test
+		return isPrintBtnVisible;
 	}
 	
 }
