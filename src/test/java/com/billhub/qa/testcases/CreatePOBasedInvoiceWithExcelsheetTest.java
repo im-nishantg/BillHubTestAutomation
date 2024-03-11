@@ -68,7 +68,7 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 		createPOBasedInvoiceWithExcelsheetPage.uploadExcelSheet(SHEET_PATH_FOR_SINGLE_INVOICE);
 		data = TestUtils.readExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Memo");
 	} 
-	
+
 	@Test(priority = 1)
 	public void gstCodeVerificationTest(){
 		
@@ -147,4 +147,5 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 		Assert.assertTrue(isMultipleInvoicesSubmitted, "Memo was not submitted");
 	}
 	
+
 }

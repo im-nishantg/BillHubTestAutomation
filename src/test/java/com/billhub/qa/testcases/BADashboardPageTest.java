@@ -45,16 +45,16 @@ public class BADashboardPageTest extends TestBase {
     @Test(priority = 3)
     public void filterByCompanyAndLocationTest(){
 
-        String location_name = (String) data[0][8];
+        String company_name = TestUtils.numberToString(data[0][4]),location_name = (String) data[0][2];
 
-        boolean result = baDashboardPage.filterByCompanyAndLocation(location_name);
+        boolean result = baDashboardPage.filterByCompanyAndLocation(company_name,location_name);
         Assert.assertTrue(result,"Filter by Company and Location is not working.");
     }
 
     @Test(priority = 4)
     public void filterByLocationTest()  {
 
-        String location_name = (String) data[0][8];
+        String location_name = (String) data[0][2];
 
         boolean result = baDashboardPage.filterByLocation(location_name);
         Assert.assertTrue(result, "Filter by Location is not working");
@@ -78,6 +78,7 @@ public class BADashboardPageTest extends TestBase {
     public void filterByCompanyServiceAndMemoTest()  {
 
         String company_name = TestUtils.numberToString(data[0][4]), service = (String) data[0][5], memo_number = (String) data[0][6];
+        System.out.println(memo_number);
 
         boolean result = baDashboardPage.filterByCompanyServiceAndMemo(company_name, service, memo_number);
         Assert.assertTrue(result, "Filter by Company, Service and Memo is not working");
@@ -86,7 +87,7 @@ public class BADashboardPageTest extends TestBase {
     @Test(priority = 8)
     public void filterByInvoiceServiceAndLocationTest()  {
 
-        String invoice_number = (String) data[0][7], service = (String) data[0][4], location_name = (String) data[0][8];
+        String invoice_number = (String) data[0][7], service = (String) data[0][4], location_name = (String) data[0][2];
 
         boolean result=baDashboardPage.filterByInvoiceServiceAndLocation(invoice_number, service, location_name);
         Assert.assertTrue(result, "Filter by Invoice, Service and Location is not working");

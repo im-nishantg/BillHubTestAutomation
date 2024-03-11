@@ -79,10 +79,10 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[2]/form/div/div[1]/div/div/div[2]/button")
 	WebElement resetBtn;
 	
-	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[4]/select")
+	@FindBy(xpath = "//select[@class='form-control ng-pristine ng-invalid ng-touched']")
 	WebElement submittingAt;
 	
-	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[5]/select")
+	@FindBy(xpath = "select[formcontrolname='submittedTo']")
 	WebElement submittingTo;
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button")
@@ -272,7 +272,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		// code for actually submitting the memo
 		submitMemoBtn.click();
 		nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
-		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();	
+		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
 		finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
 		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 		
@@ -281,6 +281,4 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
 		return isPrintBtnVisible;	
 	}
-
-
 }
