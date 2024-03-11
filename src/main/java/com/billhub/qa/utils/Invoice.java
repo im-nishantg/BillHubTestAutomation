@@ -16,7 +16,7 @@ public class Invoice {
 	public String submittingTo;
 
     public Invoice(String invoiceNumber, String baseAmount, String igst, String subServiceCategory, String cd,
-                   String tcs, String hsnCode, String endCustomer, String comment, String quantity, String submittingAt, String submittingTo) {
+                   String tcs, String hsnCode, String endCustomer, String comment, String quantity,String submittingAt, String submittingTo) {
         
     	this.invoiceNumber = invoiceNumber;
         this.baseAmount = baseAmount;

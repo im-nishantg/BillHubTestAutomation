@@ -10,7 +10,6 @@ import com.billhub.qa.pages.CustomerPage;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.pages.MdmDashboardPage;
 
-import java.time.Duration;
 
 public class CustomerPageTest extends TestBase{
 	LoginPage loginPage;
@@ -33,7 +32,6 @@ public class CustomerPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-//		Thread.sleep(Duration.ofSeconds(15).toMillis());
 		customerPage = mdmDashboardPage.clickOnCustomerLink();
 		updateExcelSheetData();
 		data=TestUtils.getTestData("Customer");

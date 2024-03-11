@@ -58,8 +58,8 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		createPOBasedInvoicePage = baDashboardPage.createNewMemoPOBased(from_state, to_state);
 		updateExcelSheetData();
 		data = TestUtils.getTestData("POBasedInvoice");
-	} 
-	
+	}
+
 	@Test(priority = 1)
 	public void gstCodeVerificationTest(){
 		
@@ -107,10 +107,9 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		boolean isSubmitted = createPOBasedInvoicePage.submitMemoWithValidData(invoice, po_number);
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
 	}
-	
 	@Test(priority = 6)
 	public void submitMemoWithDuplicateDataTest(){
-		
+
 		String from_state = (String) memoData[0][0], to_state = (String) memoData[0][1];
 		createPOBasedInvoicePage = baDashboardPage.createNewMemoPOBased(from_state, to_state);
 
@@ -144,6 +143,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		boolean isSubmitted = createPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices, po_number);
 		isMultipleInvoicesSubmitted = isSubmitted;
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
+
 	}
 	
 	@Test(priority = 8)

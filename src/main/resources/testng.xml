@@ -14,9 +14,10 @@
 			 	<class name = "com.billhub.qa.testcases.UserPageTest"></class> 
 			 	<class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
 			 	<!-- <class name = "com.billhub.qa.testcases.ReasonPageTest"></class> -->
-			 	<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class> -->
+<!--			 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class>-->
+<!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest"></class>-->
 <!--			 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class>-->
-				<class name="com.billhub.qa.testcases.BADashboardPageTest"></class>
+			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class>
 
 		</classes>
 	</test>

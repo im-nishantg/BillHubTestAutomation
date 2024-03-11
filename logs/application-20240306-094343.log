@@ -1,0 +1,64 @@
+09:24:08.479 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:24:23.746 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:24:39.865 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:24:54.888 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ba48379f795cbd8b37eb7e252f26e939)] -> xpath: //button[normalize-space()='Done']]
+09:24:55.876 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:25:10.986 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:25:26.089 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:25:41.140 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ba48379f795cbd8b37eb7e252f26e939)] -> xpath: //tbody/tr[1]/td[1]]
+09:25:41.468 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ba48379f795cbd8b37eb7e252f26e939)] -> xpath: //button[normalize-space()='SAVE']]
+09:25:42.259 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:25:57.341 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:26:12.483 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[normalize-space()='SUBMIT MEMO']
+09:26:12.550 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[normalize-space()='Submit Memo']
+09:26:27.659 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:26:43.303 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice Number Exist try another!
+09:26:43.475 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:26:58.525 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:27:13.812 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:27:29.826 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:28:25.467 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:28:40.591 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (8df5d1ec1c9557069911ca8344eb9eba)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+09:28:40.912 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (8df5d1ec1c9557069911ca8344eb9eba)] -> xpath: //span[normalize-space()='Create Memo']]
+09:28:43.939 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:29:42.431 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:29:57.519 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19416670c71cf973dbe1c5e307b1112a)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+09:29:57.775 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19416670c71cf973dbe1c5e307b1112a)] -> xpath: //span[normalize-space()='Create Memo']]
+09:30:01.022 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:30:16.288 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:30:32.285 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:30:47.375 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19416670c71cf973dbe1c5e307b1112a)] -> xpath: //button[normalize-space()='Done']]
+09:30:48.332 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:31:03.423 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:31:18.537 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:31:33.611 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19416670c71cf973dbe1c5e307b1112a)] -> xpath: //tbody/tr[1]/td[1]]
+09:31:33.946 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19416670c71cf973dbe1c5e307b1112a)] -> xpath: //button[normalize-space()='SAVE']]
+09:31:34.736 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:31:49.840 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:32:04.979 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[normalize-space()='SUBMIT MEMO']
+09:32:05.030 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[normalize-space()='Submit Memo']
+09:34:50.018 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:35:05.096 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (0921cf902c2fe20bb1dc8ddc4970208e)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+09:35:05.770 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (0921cf902c2fe20bb1dc8ddc4970208e)] -> xpath: //span[normalize-space()='Create Memo']]
+09:35:08.894 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:35:24.188 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:35:40.215 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:35:55.261 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (0921cf902c2fe20bb1dc8ddc4970208e)] -> xpath: //button[normalize-space()='Done']]
+09:35:56.183 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:36:11.346 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:36:26.493 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:36:41.559 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (0921cf902c2fe20bb1dc8ddc4970208e)] -> xpath: //tbody/tr[1]/td[1]]
+09:36:41.875 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (0921cf902c2fe20bb1dc8ddc4970208e)] -> xpath: //button[normalize-space()='SAVE']]
+09:36:42.657 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:36:57.750 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:37:12.843 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:37:28.006 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[normalize-space()='SUBMIT MEMO']
+09:37:28.064 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[normalize-space()='Submit Memo']
+09:43:27.255 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+09:43:42.295 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c7251bed6cced109f0ca21a9ce36a726)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+09:43:42.557 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c7251bed6cced109f0ca21a9ce36a726)] -> xpath: //span[normalize-space()='Create Memo']]
+09:43:43.509 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
+09:43:43.597 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
+09:43:43.714 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
+09:43:43.801 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
+09:43:43.912 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
