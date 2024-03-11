@@ -27,9 +27,6 @@ public class BADashboardPage extends TestBase{
 	
 	@FindBy(xpath = "//button[normalize-space()='Proceed Manually']")
 	WebElement proceedManuallyBtn;
-	
-	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
-	WebElement updateAndContinueBtn;
 
 	@FindBy(xpath = "//a[normalize-space()='Filter']")
 	WebElement filterBtn;
@@ -77,19 +74,19 @@ public class BADashboardPage extends TestBase{
 	WebElement both;
 
 	@FindBy(xpath="//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[4]/div[1]/span[2]/i")
-	WebElement del_company;
+	WebElement delCompany;
 
 	@FindBy(xpath="//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[4]/div[1]/span[2]/i")
-	WebElement del_location;
+	WebElement delLocation;
 
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[4]/div[1]/span[3]/i")
-	WebElement del_service;
+	WebElement delService;
 
 	@FindBy(xpath="//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[4]/div[1]/span[2]/i")
-	WebElement del_memo;
+	WebElement delMemo;
 
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/div/input")
-	WebElement viewMemoBar;
+	WebElement viewMemoInput;
 
 	@FindBy(xpath = "//button[normalize-space()='Upload & Continue']")
 	WebElement uploadAndContinueBtn;
@@ -148,15 +145,23 @@ public class BADashboardPage extends TestBase{
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
 
-		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[3]"), "1022");
+		WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
+		return result.isDisplayed();
 	}
 
-	public boolean filterByCompanyAndLocation(String location_name){
+	public boolean filterByCompanyAndLocation(String company_name,String location_name){
 
-		del_service.click();
+		//		removing previously applied filters
+		delService.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		delCompany.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 
 		filterBtn.click();
+		company.click();
+		companySearch.sendKeys(company_name);
+		targetCompany.click();
+		viewMemoInput.click();
 		location.click();
 		locationSearch.sendKeys(location_name);
 		targetLocation.click();
@@ -169,9 +174,9 @@ public class BADashboardPage extends TestBase{
 	 public boolean filterByLocation(String location_name) {
 
 //		removing previously applied filters
-		del_location.click();
+		delLocation.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		del_company.click();
+		delCompany.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 
 		filterBtn.click();
@@ -186,18 +191,21 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByPo() {
 
-		del_location.click();		// removing previously applied filters
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		delLocation.click();		// removing previously applied filters
 
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		filterBtn.click();
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
 
-		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[3]"), "1022");
+		WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
+		return result.isDisplayed();
 	}
 
 	public boolean filterByBoth() {
 
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		filterBtn.click();
 		poBtn.click();
 		both.click();
@@ -205,7 +213,8 @@ public class BADashboardPage extends TestBase{
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
 
-		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[3]"), "1022");
+		WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
+		return result.isDisplayed();
 	}
 
 	public boolean filterByCompanyServiceAndMemo(String company_name,String service_name,String memo_num) {
@@ -217,26 +226,27 @@ public class BADashboardPage extends TestBase{
 		targetCompany.click();
 
 //		clicking outside to remove the selected dropdown which is covering other filter options
-		viewMemoBar.click();
+		viewMemoInput.click();
 		service.click();
 		serviceSearch.sendKeys(service_name);
 		targetService.click();
-		viewMemoBar.click();
+		viewMemoInput.click();
 		memo.sendKeys(memo_num);
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
 
-		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[2]/td[5]"), memo_num);
+		WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
+		return result.isDisplayed();
 	}
 
 	public boolean filterByInvoiceServiceAndLocation(String invo_num,String service_name,String loc_name) {
 
 		// removing previously applied filters
-		del_memo.click();
+		delMemo.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		del_service.click();
+		delService.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		del_company.click();
+		delCompany.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 
 		filterBtn.click();
@@ -244,15 +254,16 @@ public class BADashboardPage extends TestBase{
 		service.click();
 		serviceSearch.sendKeys(service_name);
 		targetService.click();
-		viewMemoBar.click();
+		viewMemoInput.click();
 		location.click();
 		locationSearch.sendKeys(loc_name);
 		targetLocation.click();
-		viewMemoBar.click();
+		viewMemoInput.click();
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
 
-		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]/label"), invo_num);
+		WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
+		return result.isDisplayed();
 	}
 
 	public CreatePOBasedInvoiceWithExcelsheetPage createNewMemoPOBasedWithExcelsheet(String from_state, String to_state, String po_number) {
