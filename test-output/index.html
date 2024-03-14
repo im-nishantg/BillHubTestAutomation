@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-skipped">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\nisha\AppData\Local\Temp\testng-eclipse-1977214774\testng-customsuite.xml</span>
+                    <span>C:\Users\nisha\AppData\Local\Temp\testng-eclipse-1187721543\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content skipped suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="searchByInvalidTransactionBatchIdTest">searchByInvalidTransactionBatchIdTest</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest" class="method navigator-link" hash-for-method="tdCodeVerificationTest">tdCodeVerificationTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,25 +118,86 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</span>
+              <img src="skipped.png"/>
+              <span class="class-name">com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="searchByInvalidTransactionBatchIdTest">
-                  </a> <!-- searchByInvalidTransactionBatchIdTest -->
-                  <span class="method-name">searchByInvalidTransactionBatchIdTest</span>
+                  <a name="tdCodeVerificationTest">
+                  </a> <!-- tdCodeVerificationTest -->
+                  <span class="method-name">tdCodeVerificationTest</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=122.0.6261.112)
+Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6aa4c030a8eaa2994b9072fcfba7a22, findElement {using=xpath, value=/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.112, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54379}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54379/devtoo..., se:cdpVersion: 122.0.6261.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6aa4c030a8eaa2994b9072fcfba7a22
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.toString(Unknown Source)
+	at java.base/java.lang.StringConcatHelper.stringOf(StringConcatHelper.java:467)
+	at java.base/java.lang.StringConcatHelper.simpleConcat(StringConcatHelper.java:422)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.toString(ExpectedConditions.java:669)
+	at java.base/java.lang.StringConcatHelper.stringOf(StringConcatHelper.java:467)
+	at java.base/java.lang.StringConcatHelper.simpleConcat(StringConcatHelper.java:422)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:225)
+	at com.billhub.qa.utils.TestUtils.waitForWebElementToBeClickable(TestUtils.java:67)
+	at com.billhub.qa.pages.BADashboardPage.createNewMemoPOBasedWithExcelsheet(BADashboardPage.java:316)
+	at com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest.setup(CreatePOBasedInvoiceWithExcelsheetTest.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-skipped -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\nisha\AppData\Local\Temp\testng-eclipse-1977214774\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\nisha\AppData\Local\Temp\testng-eclipse-1187721543\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,11 +206,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest&quot;&gt;
+      &lt;class name=&quot;com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;searchByInvalidTransactionBatchIdTest&quot;/&gt;
+          &lt;include name=&quot;tdCodeVerificationTest&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest --&gt;
+      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -191,14 +252,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchByInvalidTransactionBatchIdTest')
-data.setCell(0, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(0, 3, 40530);
+data.setCell(0, 1, 'tdCodeVerificationTest')
+data.setCell(0, 2, 'com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest')
+data.setCell(0, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 40 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -213,49 +274,25 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">19 ignored methods</span>
+            <span class="header-content">7 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</span>
+              <span class="ignored-class-name">com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">ValidateRejectTheAcknowledgedInvoiceTest</span>
+                <span class="ignored-method-name">splitPoQuantityAndCreateMultipleInvoicesTest</span>
                 <br/>
-                <span class="ignored-method-name">validateAcknowledgedStatusTest</span>
+                <span class="ignored-method-name">createMultipleInvoiceInSingleMemoTest</span>
                 <br/>
-                <span class="ignored-method-name">downloadingInvoiceBeforeBookingTest</span>
+                <span class="ignored-method-name">gstCodeVerificationTest</span>
                 <br/>
-                <span class="ignored-method-name">validateInvoiceFilePreviewTest</span>
+                <span class="ignored-method-name">submitMemoWithDuplicateDataTest</span>
                 <br/>
-                <span class="ignored-method-name">validatingTwoDocumentNumbersTest</span>
+                <span class="ignored-method-name">submitMemoWithValidDataTest</span>
                 <br/>
-                <span class="ignored-method-name">verifyInvoiceWithInvalidTaxCodeTest</span>
+                <span class="ignored-method-name">submitMemoWithoutDataTest</span>
                 <br/>
-                <span class="ignored-method-name">ValidateReassignTheMemoTest</span>
-                <br/>
-                <span class="ignored-method-name">searchingInvoiceWithInvalidDataTest</span>
-                <br/>
-                <span class="ignored-method-name">validateRejectedStatusTest</span>
-                <br/>
-                <span class="ignored-method-name">validateVerifiedStatusTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyInvoiceWithValidDataTest</span>
-                <br/>
-                <span class="ignored-method-name">validateAcknowledgeTheMemoTest</span>
-                <br/>
-                <span class="ignored-method-name">validateSubmittedPoBasedInvoiceInDashboardTest</span>
-                <br/>
-                <span class="ignored-method-name">searchingInvoiceWithMultipleFieldsTest</span>
-                <br/>
-                <span class="ignored-method-name">ValidateRejectTheMemoTest</span>
-                <br/>
-                <span class="ignored-method-name">downloadingBookedInvoiceTest</span>
-                <br/>
-                <span class="ignored-method-name">searchByTransactionBatchIdTest</span>
-                <br/>
-                <span class="ignored-method-name">acknowledgingInvalidGRNTest</span>
-                <br/>
-                <span class="ignored-method-name">bookingInvoiceWithValidDataTest</span>
+                <span class="ignored-method-name">additionalAmountVerificationTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -267,15 +304,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">searchByInvalidTransactionBatchIdTest</span>
-                <span class="method-start">6191 ms</span>
-              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

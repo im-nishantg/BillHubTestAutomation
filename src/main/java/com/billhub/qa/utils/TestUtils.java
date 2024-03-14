@@ -49,7 +49,7 @@ public class TestUtils extends TestBase{
 	public static void waitForElementInvisibility(By selector) {
 		
 		log.info("Waiting for element invisibility: " + selector);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
 	
