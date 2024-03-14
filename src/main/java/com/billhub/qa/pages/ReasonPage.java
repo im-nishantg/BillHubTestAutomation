@@ -76,6 +76,7 @@ public class ReasonPage extends TestBase{
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.isSuccessToastDisplayed("Reason Added successfully");
 	}
 	
@@ -85,6 +86,7 @@ public class ReasonPage extends TestBase{
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.isSuccessToastDisplayed("Reason Added successfully");
 	}
 	
@@ -94,6 +96,7 @@ public class ReasonPage extends TestBase{
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.isSuccessToastDisplayed("Reason Added successfully");
 	}
 	

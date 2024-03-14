@@ -139,7 +139,7 @@ public class BAPageTest extends TestBase{
 	@Test(priority = 10)
 	public void updateBATest(){
 		
-		String ba_code = TestUtils.numberToString(data[1][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
+		String ba_code = TestUtils.numberToString(data[2][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
 		String ba_name = (String) data[1][1];
 		boolean isUpdated = baPage.updateBA(ba_code, ba_name, contact_person_number);
 		Assert.assertTrue(isUpdated, "BA was not updated.");

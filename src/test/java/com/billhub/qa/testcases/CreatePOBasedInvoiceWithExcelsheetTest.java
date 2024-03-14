@@ -23,7 +23,7 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 	public static String SHEET_PATH_FOR_EMPTY_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\10005176_template_for_po_based_without_data.xlsx";
 	
 	String BaDashboardPageUrl = "https://billhub.mlldev.com/#/dashboard";
-	String po_number = "4500000887";										// This PO number has been used in all the test
+	String po_number = "4500000888";										// This PO number has been used in all the test
 	
 	public CreatePOBasedInvoiceWithExcelsheetTest() {
 		super();
@@ -34,7 +34,8 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 		String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(5);	
 				
 		TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Invoice_PO_Mapping", 1, 1, invoice_number);
-		TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Memo", 1, 1, invoice_number);		
+		TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Memo", 1, 1, invoice_number);
+		TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Invoice_PO_Mapping", 1, 4, po_number);
 	}
 	
 	public void updateMultipleInvoiceExcelSheet() {
@@ -45,6 +46,7 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 			
 			TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Invoice_PO_Mapping", i, 1, invoice_number);
 			TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Memo", i, 1, invoice_number);
+			TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Invoice_PO_Mapping", i, 4, po_number);
 		}
 		
 	}

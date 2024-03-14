@@ -1,0 +1,7 @@
+19:12:53.944 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:13:09.032 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1a7cedebc48530320d26afbde0e92900)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+19:13:09.224 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:13:24.339 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+19:13:29.011 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1a7cedebc48530320d26afbde0e92900)] -> css selector: .btn.btn-warning.btn-acknowledge]
+19:13:29.119 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:13:45.945 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container

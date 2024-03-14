@@ -75,6 +75,7 @@ public class TaxCodePage extends TestBase {
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
         closeBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.isSuccessToastDisplayed("Tax Code Added successfully");
     }
 
@@ -84,6 +85,7 @@ public class TaxCodePage extends TestBase {
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
         closeBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.isSuccessToastDisplayed("Tax Code Added successfully");
     }
 
@@ -93,6 +95,7 @@ public class TaxCodePage extends TestBase {
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
         closeBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.isSuccessToastDisplayed("Tax Code Added successfully");
     }
 

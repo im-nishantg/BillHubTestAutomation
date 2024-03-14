@@ -127,6 +127,7 @@ public class UserPage extends TestBase{
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		addBtn.click();
 		closeBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
 	}
 	
@@ -136,6 +137,7 @@ public class UserPage extends TestBase{
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		addBtn.click();
 		closeBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
 	}
 	
@@ -145,6 +147,7 @@ public class UserPage extends TestBase{
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
 		addBtn.click();
 		closeBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
 	}
 	
