@@ -314,6 +314,7 @@ public class BADashboardPage extends TestBase{
 		searchPoBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
+		
 		uploadBtn.click();
 		return new CreatePOBasedInvoiceWithExcelsheetPage();
 	}

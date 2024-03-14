@@ -33,7 +33,6 @@ public class WithholdingTaxPageTest extends TestBase{
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
-		Thread.sleep(Duration.ofSeconds(25).toMillis());
 		withholdingTaxPage = mdmDashboardPage.clickOnWithholdingTaxLink();
 		updateExcelSheetData();
 		data=TestUtils.getTestData("WithholdingTax");

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Mar 07 09:48:47 IST 2024</td>
+<td>Started on:</td><td>Mon Mar 11 21:21:36 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>119 seconds (119249 ms)</td>
+<tr><td>Total time:</td><td>42 seconds (42692 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest.createMultipleInvoiceInSingleMemoTest()'><b>createMultipleInvoiceInSingleMemoTest</b><br>Test class: com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=122.0.6261.96)
+<td title='com.billhub.qa.testcases.POBasedInvoiceValidationPageTest.validateRejectedStatusTest()'><b>validateRejectedStatusTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceValidationPageTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.form-control.ng-pristine.ng-valid.ng-touched&quot;}
+  (Session info: chrome=122.0.6261.112)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e95c872e8b311c1baeade234f3c3775c, findElement {using=xpath, value=//button[normalize-space()=&apos;Attach&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.96, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63019}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63019/devtoo..., se:cdpVersion: 122.0.6261.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e95c872e8b311c1baeade234f3c3775c
+Command: [437bc82fc456abc29dcaca537b16e189, findElement {using=css selector, value=.form-control.ng-pristine.ng-valid.ng-touched}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.112, chrome: {chromedriverVersion: 122.0.6261.111 (9d4c1072da6..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50779}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50779/devtoo..., se:cdpVersion: 122.0.6261.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437bc82fc456abc29dcaca537b16e189
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -102,10 +102,9 @@ Session ID: e95c872e8b311c1baeade234f3c3775c
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
-	at com.billhub.qa.pages.CreatePOBasedInvoiceWithExcelsheetPage.attachSampleInvoiceFile(CreatePOBasedInvoiceWithExcelsheetPage.java:100)
-	at com.billhub.qa.pages.CreatePOBasedInvoiceWithExcelsheetPage.createMultipleInvoiceInSingleMemo(CreatePOBasedInvoiceWithExcelsheetPage.java:187)
-	at com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest.createMultipleInvoiceInSingleMemoTest(CreatePOBasedInvoiceWithExcelsheetTest.java:142)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.sendKeys(Unknown Source)
+	at com.billhub.qa.pages.POBasedInvoiceValidationPage.validateRejectedMemoStatus(POBasedInvoiceValidationPage.java:177)
+	at com.billhub.qa.testcases.POBasedInvoiceValidationPageTest.validateRejectedStatusTest(POBasedInvoiceValidationPageTest.java:64)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -132,16 +131,16 @@ Session ID: e95c872e8b311c1baeade234f3c3775c
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace104298781", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace104298781'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=122.0.6261.96)
+</pre></div><a href='#' onClick='toggleBox("stack-trace244190700", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace244190700'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.form-control.ng-pristine.ng-valid.ng-touched&quot;}
+  (Session info: chrome=122.0.6261.112)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e95c872e8b311c1baeade234f3c3775c, findElement {using=xpath, value=//button[normalize-space()=&apos;Attach&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.96, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63019}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63019/devtoo..., se:cdpVersion: 122.0.6261.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e95c872e8b311c1baeade234f3c3775c
+Command: [437bc82fc456abc29dcaca537b16e189, findElement {using=css selector, value=.form-control.ng-pristine.ng-valid.ng-touched}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.112, chrome: {chromedriverVersion: 122.0.6261.111 (9d4c1072da6..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50779}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50779/devtoo..., se:cdpVersion: 122.0.6261.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437bc82fc456abc29dcaca537b16e189
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -158,10 +157,9 @@ Session ID: e95c872e8b311c1baeade234f3c3775c
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
-	at com.billhub.qa.pages.CreatePOBasedInvoiceWithExcelsheetPage.attachSampleInvoiceFile(CreatePOBasedInvoiceWithExcelsheetPage.java:100)
-	at com.billhub.qa.pages.CreatePOBasedInvoiceWithExcelsheetPage.createMultipleInvoiceInSingleMemo(CreatePOBasedInvoiceWithExcelsheetPage.java:187)
-	at com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest.createMultipleInvoiceInSingleMemoTest(CreatePOBasedInvoiceWithExcelsheetTest.java:142)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.sendKeys(Unknown Source)
+	at com.billhub.qa.pages.POBasedInvoiceValidationPage.validateRejectedMemoStatus(POBasedInvoiceValidationPage.java:177)
+	at com.billhub.qa.testcases.POBasedInvoiceValidationPageTest.validateRejectedStatusTest(POBasedInvoiceValidationPageTest.java:64)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -189,8 +187,8 @@ Session ID: e95c872e8b311c1baeade234f3c3775c
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>105</td>
-<td>com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest@6f8f8a80</td></tr>
+<td>34</td>
+<td>com.billhub.qa.testcases.POBasedInvoiceValidationPageTest@54d9d12d</td></tr>
 </table><p>
 </body>
 </html>

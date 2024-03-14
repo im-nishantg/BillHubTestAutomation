@@ -1,0 +1,61 @@
+10:06:12.369 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:07:14.864 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:07:44.744 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:07:46.499 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:08:01.742 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:08:19.813 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:08:35.133 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:27:30.334 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:27:31.291 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:29:52.084 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:29:52.921 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:35:35.121 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:35:50.732 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:36:05.886 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:36:20.996 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:41:58.657 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:41:59.428 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:42:20.302 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:42:35.426 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+10:43:41.598 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+10:43:42.396 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:07:48.394 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:08:03.470 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e234ce84aa3dde44504fe9b73af29a61)] -> xpath: //button[@class='btn btn-link']]
+11:08:03.602 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e234ce84aa3dde44504fe9b73af29a61)] -> xpath: //span[normalize-space()='Master']]
+11:08:04.360 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e234ce84aa3dde44504fe9b73af29a61)] -> link text: User]
+11:10:19.764 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:10:34.799 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d398ad3e483e848b37d63602d6a8b635)] -> xpath: //button[@class='btn btn-link']]
+11:10:34.905 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d398ad3e483e848b37d63602d6a8b635)] -> xpath: //span[normalize-space()='Master']]
+11:10:35.706 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d398ad3e483e848b37d63602d6a8b635)] -> link text: User]
+11:10:36.728 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
+11:10:36.846 [main] ERROR com.billhub.qa.base.TestBase - FileNotFoundException: C:\Users\SURAJ PATEL\OneDrive\Desktop\BillHubTestAutomation\src\main\java\com\billhub\qa\testdata\BillHubTestdata.xlsx (The process cannot access the file because it is being used by another process)
+11:28:36.050 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:28:51.146 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (29af8f5880bc5dd6ce97524ed3e01c26)] -> xpath: //button[@class='btn btn-link']]
+11:28:51.244 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (29af8f5880bc5dd6ce97524ed3e01c26)] -> xpath: //span[normalize-space()='Master']]
+11:28:52.014 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (29af8f5880bc5dd6ce97524ed3e01c26)] -> link text: Customer]
+11:32:31.901 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:32:46.984 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b7889b03a5af22b9548d9fc53c9722ef)] -> xpath: //button[@class='btn btn-link']]
+11:32:47.082 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b7889b03a5af22b9548d9fc53c9722ef)] -> xpath: //span[normalize-space()='Master']]
+11:32:47.862 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b7889b03a5af22b9548d9fc53c9722ef)] -> link text: Customer]
+11:32:49.170 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:32:50.096 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: customer Added successfully
+11:39:34.661 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:39:49.714 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4a4ac280bf7f672ed597c2bfdfb637f2)] -> xpath: //button[@class='btn btn-link']]
+11:39:49.811 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4a4ac280bf7f672ed597c2bfdfb637f2)] -> xpath: //span[normalize-space()='Master']]
+11:39:50.558 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4a4ac280bf7f672ed597c2bfdfb637f2)] -> link text: Customer]
+11:40:39.821 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:40:54.879 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (371c5c0fe79d0fea3fcecc1b693cb385)] -> xpath: //button[@class='btn btn-link']]
+11:40:54.976 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (371c5c0fe79d0fea3fcecc1b693cb385)] -> xpath: //span[normalize-space()='Master']]
+11:40:55.641 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (371c5c0fe79d0fea3fcecc1b693cb385)] -> link text: Customer]
+11:40:56.927 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:40:57.848 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: customer Added successfully
+11:40:59.084 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:41:01.774 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Kindly fill out all the mandatory fields
+11:41:16.817 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Kindly fill out all the mandatory fields
+11:41:16.821 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:41:17.360 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: customer Added successfully
+11:41:32.416 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - customer Added successfully
+11:43:00.639 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:43:15.686 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (bdbd8a4dc661c31fafd23f9d76951bdd)] -> xpath: //button[@class='btn btn-link']]
+11:43:15.782 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (bdbd8a4dc661c31fafd23f9d76951bdd)] -> xpath: //span[normalize-space()='Master']]
+11:43:16.506 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (bdbd8a4dc661c31fafd23f9d76951bdd)] -> link text: Withholding Tax]

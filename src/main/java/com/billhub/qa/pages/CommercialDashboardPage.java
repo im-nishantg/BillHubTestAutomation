@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static com.billhub.qa.base.TestBase.driver;
 
-public class CommercialDashboardPage {
+public class CommercialDashboardPage extends TestBase{
 
     @FindBy(xpath = "//a[normalize-space()='Filter']")
     WebElement filterBtn;
@@ -73,12 +73,11 @@ public class CommercialDashboardPage {
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/div/input")
     WebElement acknowledgeMemoInput;
+    
 
     public CommercialDashboardPage() {
+    	
         PageFactory.initElements(driver, this);
-    }
-    public void initializePopupWebElements(){
-        PageFactory.initElements(driver,this);
     }
 
     public boolean filterByCompany(String company_name){
@@ -135,6 +134,7 @@ public class CommercialDashboardPage {
 
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[9]"), location_name);
     }
+    
     public boolean filterByLocation(String location_name) {
 
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
@@ -153,6 +153,8 @@ public class CommercialDashboardPage {
 
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[9]"), location_name);
     }
+    
+   
 
     public boolean filterByPo() {
 
@@ -246,6 +248,5 @@ public class CommercialDashboardPage {
         WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
         return result.isDisplayed();
     }
-
 
 }
