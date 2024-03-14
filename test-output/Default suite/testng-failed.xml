@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.POBasedInvoiceValidationPageTest">
+      <class name="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest">
         <methods>
-          <include name="validateRejectedStatusTest"/>
           <include name="setup"/>
+          <include name="searchByInvalidTransactionBatchIdTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.POBasedInvoiceValidationPageTest -->
+      </class> <!-- com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

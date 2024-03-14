@@ -1,9 +1,5 @@
 package com.billhub.qa.testcases;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -54,7 +50,7 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 	}
 	
 	@BeforeClass
-	public void setup() throws InterruptedException{
+	public void setup(){
 		
 		String from_state = (String) memoData[0][0], to_state = (String) memoData[0][1];
 		
@@ -63,7 +59,6 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 		updateMultipleInvoiceExcelSheet();
 		loginPage= new LoginPage();
 		baDashboardPage = loginPage.loginAsBa(prop.getProperty("ba_userid_po"),prop.getProperty("ba_password_po"));
-		Thread.sleep(Duration.ofSeconds(20));;
 		createPOBasedInvoiceWithExcelsheetPage = baDashboardPage.createNewMemoPOBasedWithExcelsheet(from_state, to_state, po_number);
 		createPOBasedInvoiceWithExcelsheetPage.uploadExcelSheet(SHEET_PATH_FOR_SINGLE_INVOICE);
 		data = TestUtils.readExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Memo");
