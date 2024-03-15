@@ -22,7 +22,7 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
 
         initialization();
         loginPage= new LoginPage();
-        loginPage.loginAsCommercial(prop.getProperty("commercial_userid"),prop.getProperty("commercial_password"));
+        loginPage.loginAsCommercial(prop.getProperty("commercial_userid_for_po"),prop.getProperty("commercial_password_for_po"));
         poBasedInvoiceAcknowledgementPage = new POBasedInvoiceAcknowledgementPage();
     }
 	

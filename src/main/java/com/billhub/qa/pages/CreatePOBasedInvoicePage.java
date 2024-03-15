@@ -79,10 +79,10 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[2]/form/div/div[1]/div/div/div[2]/button")
 	WebElement resetBtn;
 	
-	@FindBy(xpath = "//select[@class='form-control ng-pristine ng-invalid ng-touched']")
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[4]/select")
 	WebElement submittingAt;
 	
-	@FindBy(xpath = "select[formcontrolname='submittedTo']")
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[5]/select")
 	WebElement submittingTo;
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button")
