@@ -1,0 +1,66 @@
+16:58:24.345 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:58:39.609 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:58:54.715 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: invoice updated successfully
+16:59:09.730 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - invoice updated successfully
+17:05:01.997 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:05:17.045 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:05:32.152 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:05:47.443 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (25204e7b3f436df5da01579463e3055a)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/ul[2]/li]
+17:05:47.796 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (25204e7b3f436df5da01579463e3055a)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]]
+17:05:48.012 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:06:03.309 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:06:18.448 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice updated successfully
+17:06:56.750 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:07:11.819 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:07:26.927 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:07:42.230 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e1dceb624ce10af3402f5c160643f2e2)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/ul[2]/li]
+17:07:42.605 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (e1dceb624ce10af3402f5c160643f2e2)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]]
+17:07:42.827 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:07:58.114 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:08:13.212 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: invoice updated successfully
+17:08:28.276 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - invoice updated successfully
+17:21:34.405 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:21:49.471 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b1975e5b18c7d8bb4ed2c7eb43088d58)] -> xpath: //button[@class='btn btn-link']]
+17:21:49.604 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b1975e5b18c7d8bb4ed2c7eb43088d58)] -> xpath: //span[normalize-space()='Master']]
+17:21:50.348 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b1975e5b18c7d8bb4ed2c7eb43088d58)] -> link text: BA]
+17:21:51.414 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:21:52.842 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:21:52.881 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:21:57.447 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:21:58.645 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[9]
+17:21:58.945 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:22:01.503 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:22:16.567 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+17:22:16.571 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:22:17.671 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:22:28.500 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+17:22:28.505 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:22:38.786 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Toast did not disappear
+19:14:35.007 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal_container
+19:15:00.114 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal_container
+19:23:17.871 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal_container
+19:23:32.912 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6a07c235dc0b3a5bc196be5c6e3ffbf6)] -> xpath: //*[@id="main"]/nav/div[1]/button]
+19:23:33.048 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6a07c235dc0b3a5bc196be5c6e3ffbf6)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[2]/a]
+19:23:33.702 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal_container
+19:24:03.132 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal_container
+19:24:46.695 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:25:01.811 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal_container
+19:34:16.147 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:34:31.216 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:34:46.347 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:35:01.691 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (64ff1e9eaa0c6efb494b677db2e0f7e0)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/ul[2]/li]
+19:35:02.065 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (64ff1e9eaa0c6efb494b677db2e0f7e0)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]]
+19:35:02.289 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:35:17.578 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:35:32.770 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice updated successfully
+19:43:49.921 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:44:04.980 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:44:20.089 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:44:35.418 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (032856944fb13c0124b6f9917f3f67b4)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/ul[2]/li]
+19:44:35.777 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (032856944fb13c0124b6f9917f3f67b4)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]]
+19:44:35.999 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:44:51.294 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:45:06.486 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice updated successfully
+19:45:22.054 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:45:37.174 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:45:52.479 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d22620a6db6060a9000bea47d4a2d051)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/ul[2]/li]
