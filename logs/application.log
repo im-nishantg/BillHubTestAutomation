@@ -1,2 +1,42 @@
-19:45:52.861 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d22620a6db6060a9000bea47d4a2d051)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]]
-19:45:53.087 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:44:41.470 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:44:56.497 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:11.761 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:26.783 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:45:26.907 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:42.580 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:57.685 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+14:45:57.914 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:46:12.973 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:46:44.010 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:46:59.032 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:47:14.464 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:47:29.487 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:47:29.521 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:47:45.020 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: input[formcontrolname='First_Name']
+14:47:45.584 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: input[formcontrolname='Last_Name']
+14:47:45.935 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Updated successfully
+14:55:28.791 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:55:43.841 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f2569ac92d53840f74e5f4f4c4756843)] -> xpath: //button[@class='btn btn-link']]
+14:55:43.972 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f2569ac92d53840f74e5f4f4c4756843)] -> xpath: //span[normalize-space()='Master']]
+14:55:44.710 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f2569ac92d53840f74e5f4f4c4756843)] -> link text: Withholding Tax]
+14:55:46.208 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:56:01.349 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:56:16.761 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:56:31.871 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Withholding tax added successfully
+14:56:32.592 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:56:47.672 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:57:03.039 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:57:18.440 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Withholding tax added successfully
+14:57:18.655 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:57:33.926 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:57:48.946 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:04.127 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:19.241 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:34.621 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:49.827 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Kindly fill out all the mandatory fields
+14:59:04.885 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Kindly fill out all the mandatory fields
+14:59:04.890 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:59:19.983 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:59:35.359 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:59:50.468 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Withholding tax added successfully
+15:00:05.502 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Withholding tax added successfully

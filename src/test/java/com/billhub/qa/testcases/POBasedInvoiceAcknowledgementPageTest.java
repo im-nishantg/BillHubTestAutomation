@@ -204,4 +204,5 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
         boolean areDetailsDisplayed = poBasedInvoiceAcknowledgementPage.searchByInvalidTransactionBatchId(batch_id);
         Assert.assertFalse(areDetailsDisplayed, "Details of the transaction were displayed for invalid batchId.");
     }
+
 }

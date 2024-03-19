@@ -586,8 +586,5 @@ public class POBasedInvoiceAcknowledgementPage extends TestBase{
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return true;
 	}
-
-	
-    
-    
+ 
 }

@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test">
+      <class name="com.billhub.qa.testcases.CustomerPageTest">
         <methods>
+          <include name="CheckCustomerInactiveStatus"/>
           <include name="setup"/>
-          <include name="validateRaiseQueryTest"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test -->
+      </class> <!-- com.billhub.qa.testcases.CustomerPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
