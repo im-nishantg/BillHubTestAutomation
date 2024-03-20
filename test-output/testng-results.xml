@@ -1,31 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="13" passed="12" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-19T14:55:18 IST" name="BillHub Test Automation Test Suite" finished-at="2024-03-19T15:00:05 IST" duration-ms="286593">
+  <suite started-at="2024-03-20T16:31:55 IST" name="BillHub Test Automation Test Suite" finished-at="2024-03-20T16:50:40 IST" duration-ms="1125501">
     <groups>
     </groups>
-    <test started-at="2024-03-19T14:55:18 IST" name="BillHub App Test Cases" finished-at="2024-03-19T15:00:05 IST" duration-ms="286593">
-      <class name="com.billhub.qa.testcases.WithholdingTaxPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:55:18 IST" name="setup" finished-at="2024-03-19T14:55:46 IST" duration-ms="27169" status="PASS">
+    <test started-at="2024-03-20T16:31:55 IST" name="BillHub App Test Cases" finished-at="2024-03-20T16:50:40 IST" duration-ms="1125501">
+      <class name="com.billhub.qa.testcases.UserPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:31:55 IST" name="setup" finished-at="2024-03-20T16:32:27 IST" duration-ms="31981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddTaxWithValidDataTest()[pri:1, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:55:46 IST" name="AddTaxWithValidDataTest" finished-at="2024-03-19T14:56:32 IST" duration-ms="46402" status="PASS">
+        <test-method signature="addNewUserWithValidDataTest()[pri:1, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:32:27 IST" name="addNewUserWithValidDataTest" finished-at="2024-03-20T16:33:49 IST" duration-ms="81820" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddTaxWithValidDataTest -->
-        <test-method signature="duplicateWithholdingTaxAddTest()[pri:2, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:56:32 IST" name="duplicateWithholdingTaxAddTest" finished-at="2024-03-19T14:57:18 IST" duration-ms="45884" status="FAIL">
+        </test-method> <!-- addNewUserWithValidDataTest -->
+        <test-method signature="addNewUserWithInactiveStatusTest()[pri:2, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:33:49 IST" name="addNewUserWithInactiveStatusTest" finished-at="2024-03-20T16:35:10 IST" duration-ms="81627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserWithInactiveStatusTest -->
+        <test-method signature="addNewUserWithActiveStatusTest()[pri:3, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:35:10 IST" name="addNewUserWithActiveStatusTest" finished-at="2024-03-20T16:36:31 IST" duration-ms="80503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserWithActiveStatusTest -->
+        <test-method signature="validateAddedUserInTheDatabaseTest()[pri:4, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:36:31 IST" name="validateAddedUserInTheDatabaseTest" finished-at="2024-03-20T16:37:51 IST" duration-ms="80447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAddedUserInTheDatabaseTest -->
+        <test-method signature="addNewUserWithInvalidDataTest()[pri:5, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:37:51 IST" name="addNewUserWithInvalidDataTest" finished-at="2024-03-20T16:39:12 IST" duration-ms="81034" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserWithInvalidDataTest -->
+        <test-method signature="addNewUserWithDuplicateDataTest()[pri:6, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:39:12 IST" name="addNewUserWithDuplicateDataTest" finished-at="2024-03-20T16:40:14 IST" duration-ms="61611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserWithDuplicateDataTest -->
+        <test-method signature="addNewUserWithoutDataTest()[pri:7, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:40:14 IST" name="addNewUserWithoutDataTest" finished-at="2024-03-20T16:41:35 IST" duration-ms="80790" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUserWithoutDataTest -->
+        <test-method signature="searchUserByNameTest()[pri:8, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:41:35 IST" name="searchUserByNameTest" finished-at="2024-03-20T16:42:35 IST" duration-ms="60463" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchUserByNameTest -->
+        <test-method signature="searchUserByBAGroupIDTest()[pri:9, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:42:35 IST" name="searchUserByBAGroupIDTest" finished-at="2024-03-20T16:43:36 IST" duration-ms="60376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchUserByBAGroupIDTest -->
+        <test-method signature="createCommercialForDifferentLocationTest()[pri:10, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:43:36 IST" name="createCommercialForDifferentLocationTest" finished-at="2024-03-20T16:44:56 IST" duration-ms="80288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCommercialForDifferentLocationTest -->
+        <test-method signature="createMDMAndReadOnlyUsersTest()[pri:11, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:44:56 IST" name="createMDMAndReadOnlyUsersTest" finished-at="2024-03-20T16:47:38 IST" duration-ms="162056" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Test Failed!: duplicate credentials has been saved expected [false] but found [true]]]>
+              <![CDATA[User is present but not found on searching expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Test Failed!: duplicate credentials has been saved expected [false] but found [true]
+              <![CDATA[java.lang.AssertionError: User is present but not found on searching expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertFalse(Assert.java:79)
-at com.billhub.qa.testcases.WithholdingTaxPageTest.duplicateWithholdingTaxAddTest(WithholdingTaxPageTest.java:62)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at com.billhub.qa.testcases.UserPageTest.createMDMAndReadOnlyUsersTest(UserPageTest.java:152)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -57,28 +93,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- duplicateWithholdingTaxAddTest -->
-        <test-method signature="SearchWithholdingTaxByRate()[pri:3, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:57:18 IST" name="SearchWithholdingTaxByRate" finished-at="2024-03-19T14:57:33 IST" duration-ms="15270" status="PASS">
+        </test-method> <!-- createMDMAndReadOnlyUsersTest -->
+        <test-method signature="createAccountForSpecificCompanyTest()[pri:12, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:47:38 IST" name="createAccountForSpecificCompanyTest" finished-at="2024-03-20T16:48:59 IST" duration-ms="80435" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchWithholdingTaxByRate -->
-        <test-method signature="withholdingTaxAppearanceTest()[pri:4, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:57:33 IST" name="withholdingTaxAppearanceTest" finished-at="2024-03-19T14:58:04 IST" duration-ms="30199" status="PASS">
+        </test-method> <!-- createAccountForSpecificCompanyTest -->
+        <test-method signature="updateUserTest()[pri:13, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:48:59 IST" name="updateUserTest" finished-at="2024-03-20T16:50:40 IST" duration-ms="101710" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- withholdingTaxAppearanceTest -->
-        <test-method signature="AddTaxWithBlankDataTest()[pri:5, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:58:04 IST" name="AddTaxWithBlankDataTest" finished-at="2024-03-19T14:59:04 IST" duration-ms="60759" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddTaxWithBlankDataTest -->
-        <test-method signature="AddTaxWithInvalidDataTest()[pri:6, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T14:59:04 IST" name="AddTaxWithInvalidDataTest" finished-at="2024-03-19T15:00:05 IST" duration-ms="60614" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddTaxWithInvalidDataTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395]" started-at="2024-03-19T15:00:05 IST" name="tearDown" finished-at="2024-03-19T15:00:05 IST" duration-ms="63" status="PASS">
+        </test-method> <!-- updateUserTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:50:40 IST" name="tearDown" finished-at="2024-03-20T16:50:40 IST" duration-ms="99" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.billhub.qa.testcases.WithholdingTaxPageTest -->
+      </class> <!-- com.billhub.qa.testcases.UserPageTest -->
     </test> <!-- BillHub App Test Cases -->
   </suite> <!-- BillHub Test Automation Test Suite -->
 </testng-results>

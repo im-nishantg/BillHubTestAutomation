@@ -1,0 +1,77 @@
+14:39:25.207 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:40:36.751 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:40:56.785 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e2a9cf5a6ebbd883913e5c4f819b965)] -> xpath: //button[@class='btn btn-link']]
+14:40:56.917 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e2a9cf5a6ebbd883913e5c4f819b965)] -> xpath: //span[normalize-space()='Master']]
+14:40:57.657 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (4e2a9cf5a6ebbd883913e5c4f819b965)] -> link text: BA]
+14:40:59.460 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:41:19.507 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:41:19.620 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:41:40.613 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:42:01.078 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+14:42:01.115 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:42:21.157 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:42:21.271 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:42:42.217 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:43:02.367 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:43:22.560 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+14:43:42.611 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+14:43:42.821 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:44:02.878 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:44:23.111 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:44:43.231 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:03.334 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[9]
+14:45:03.382 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:23.451 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:45:43.693 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:46:03.782 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:46:23.843 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:46:43.883 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:46:44.006 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:47:04.870 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:47:25.025 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+14:47:45.046 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+14:47:45.051 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:48:05.093 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:48:05.219 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:48:26.211 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:48:46.372 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+14:49:06.414 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+14:49:06.418 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:49:26.448 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:49:26.572 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:49:47.385 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:50:07.541 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+14:50:27.564 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+14:50:27.569 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:50:47.809 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:51:07.911 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:51:27.990 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:51:48.187 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:52:08.316 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:52:28.383 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:52:48.431 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:52:48.464 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:53:08.682 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:53:28.790 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:53:48.991 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)
+14:53:49.563 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: input[formcontrolname='contact_number']
+14:53:49.804 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:54:09.888 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:54:29.912 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Updated successfully
+14:54:49.928 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Updated successfully
+14:57:06.837 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:57:26.930 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7360abdad94271f9d1ad4c51037f9ed8)] -> xpath: //button[@class='btn btn-link']]
+14:57:27.064 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7360abdad94271f9d1ad4c51037f9ed8)] -> xpath: //span[normalize-space()='Master']]
+14:57:27.829 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7360abdad94271f9d1ad4c51037f9ed8)] -> link text: BA]
+14:57:29.688 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:57:49.728 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+14:57:49.837 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:10.821 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:30.930 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+14:58:51.384 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+15:00:52.663 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:01:12.743 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c761af41d61d451818f0a268bab9b46f)] -> xpath: //button[@class='btn btn-link']]
+15:01:12.885 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c761af41d61d451818f0a268bab9b46f)] -> xpath: //span[normalize-space()='Master']]
+15:01:13.630 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c761af41d61d451818f0a268bab9b46f)] -> link text: BA]
+15:01:15.248 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:01:35.271 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear

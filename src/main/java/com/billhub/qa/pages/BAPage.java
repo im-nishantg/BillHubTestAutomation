@@ -100,10 +100,13 @@ public class BAPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-//	    closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+	    
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		if(isAdded == false) closeBtn.click();	
+		return isAdded;
 	}
 	
 	public boolean addNewBAWithInvalidData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
@@ -111,10 +114,13 @@ public class BAPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-	    closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+	    
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		if(isAdded == false) closeBtn.click();	
+		return isAdded;
 	}
 	
 	public boolean addNewBAWithoutData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
@@ -122,10 +128,13 @@ public class BAPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-	    closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+	    
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		if(isAdded == false) closeBtn.click();	
+		return isAdded;
 	}
 	
 	public boolean addNewBAWithDuplicateData(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
@@ -133,25 +142,30 @@ public class BAPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-	    closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		if(isAdded == false) closeBtn.click();	
+		return isAdded;
 	}
 	
 	public boolean addNewBAWithInactiveStatus(String ba_code, String ba_name, String state, String trd_disc, String credit_period, String td_credit_period, String ba_groupcode, String msmed, String email, String contact_person_name, String contact_person_number) {
 
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
-		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		
+		fillAddNewBAForm(ba_code, ba_name, state, trd_disc, credit_period, td_credit_period, ba_groupcode, msmed, email, contact_person_name, contact_person_number);
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		activeBtn.click();
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-//	    closeBtn.click();	
-		return TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("BA Data Added successfully");
+		if(isAdded == false) closeBtn.click();	
+		return isAdded;
 	}
 	
 	public String addNewBAWithActiveStatus(String ba_code) {
@@ -177,7 +191,10 @@ public class BAPage extends TestBase{
 		searchBAByCode.clear();
 		searchBAByName.clear();
 		searchBAByName.sendKeys(ba_name);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_name);
 	}
 	
@@ -187,7 +204,10 @@ public class BAPage extends TestBase{
 		searchBAByName.clear();
 		searchBAByCode.clear();
 		searchBAByCode.sendKeys(ba_code);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), ba_code);
 	}
 	
@@ -197,7 +217,7 @@ public class BAPage extends TestBase{
 		TestUtils.waitForToastToDisappear();
 		searchBAByCode(ba_code);
 	    
-	    WebElement editBtn = TestUtils.locateAndClickEditBtn(By.cssSelector("tbody tr:nth-child(1) td:nth-child(11) i:nth-child(1)"));  
+	    WebElement editBtn = TestUtils.locateAndClickEditBtn(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr/td[11]/i"));  
 	    baName = TestUtils.waitForElementVisibility(By.cssSelector("div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)")); 
 	    contactPersonNumber = TestUtils.waitForElementVisibility(By.cssSelector("input[formcontrolname='contact_number']")); 
 
@@ -207,8 +227,9 @@ public class BAPage extends TestBase{
 	    baName.sendKeys(ba_name);
 	    contactPersonNumber.sendKeys(contact_person_number);
 	    
+	    TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	    updateBtn.click();
-
+	    
 	    return TestUtils.isSuccessToastDisplayed("BA Data Updated successfully");
 	}
 	

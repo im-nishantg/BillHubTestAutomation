@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>BillHub App Test Cases</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>12/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 19 14:55:18 IST 2024</td>
+<td>Started on:</td><td>Wed Mar 20 16:31:55 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>286 seconds (286593 ms)</td>
+<tr><td>Total time:</td><td>1125 seconds (1125501 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.billhub.qa.testcases.WithholdingTaxPageTest.duplicateWithholdingTaxAddTest()'><b>duplicateWithholdingTaxAddTest</b><br>Test class: com.billhub.qa.testcases.WithholdingTaxPageTest</td>
-<td><div><pre>java.lang.AssertionError: Test Failed!: duplicate credentials has been saved expected [false] but found [true]
-	at com.billhub.qa.testcases.WithholdingTaxPageTest.duplicateWithholdingTaxAddTest(WithholdingTaxPageTest.java:62)
+<td title='com.billhub.qa.testcases.UserPageTest.createMDMAndReadOnlyUsersTest()'><b>createMDMAndReadOnlyUsersTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td><div><pre>java.lang.AssertionError: User is present but not found on searching expected [true] but found [false]
+	at com.billhub.qa.testcases.UserPageTest.createMDMAndReadOnlyUsersTest(UserPageTest.java:152)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace652803980", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace652803980'><pre>java.lang.AssertionError: Test Failed!: duplicate credentials has been saved expected [false] but found [true]
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1199141889", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1199141889'><pre>java.lang.AssertionError: User is present but not found on searching expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertFalse(Assert.java:79)
-	at com.billhub.qa.testcases.WithholdingTaxPageTest.duplicateWithholdingTaxAddTest(WithholdingTaxPageTest.java:62)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.UserPageTest.createMDMAndReadOnlyUsersTest(UserPageTest.java:152)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -113,8 +113,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>45</td>
-<td>com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395</td></tr>
+<td>162</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -125,30 +125,65 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.billhub.qa.testcases.WithholdingTaxPageTest.AddTaxWithValidDataTest()'><b>AddTaxWithValidDataTest</b><br>Test class: com.billhub.qa.testcases.WithholdingTaxPageTest</td>
+<td title='com.billhub.qa.testcases.UserPageTest.addNewUserWithInvalidDataTest()'><b>addNewUserWithInvalidDataTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
 <td></td>
-<td>46</td>
-<td>com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395</td></tr>
+<td>81</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.WithholdingTaxPageTest.withholdingTaxAppearanceTest()'><b>withholdingTaxAppearanceTest</b><br>Test class: com.billhub.qa.testcases.WithholdingTaxPageTest</td>
+<td title='com.billhub.qa.testcases.UserPageTest.addNewUserWithInactiveStatusTest()'><b>addNewUserWithInactiveStatusTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
 <td></td>
-<td>30</td>
-<td>com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395</td></tr>
+<td>81</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.WithholdingTaxPageTest.SearchWithholdingTaxByRate()'><b>SearchWithholdingTaxByRate</b><br>Test class: com.billhub.qa.testcases.WithholdingTaxPageTest</td>
+<td title='com.billhub.qa.testcases.UserPageTest.addNewUserWithValidDataTest()'><b>addNewUserWithValidDataTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
 <td></td>
-<td>15</td>
-<td>com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395</td></tr>
+<td>81</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.WithholdingTaxPageTest.AddTaxWithInvalidDataTest()'><b>AddTaxWithInvalidDataTest</b><br>Test class: com.billhub.qa.testcases.WithholdingTaxPageTest</td>
+<td title='com.billhub.qa.testcases.UserPageTest.addNewUserWithActiveStatusTest()'><b>addNewUserWithActiveStatusTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>80</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.addNewUserWithDuplicateDataTest()'><b>addNewUserWithDuplicateDataTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>61</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.updateUserTest()'><b>updateUserTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>101</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.createAccountForSpecificCompanyTest()'><b>createAccountForSpecificCompanyTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>80</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.validateAddedUserInTheDatabaseTest()'><b>validateAddedUserInTheDatabaseTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>80</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.addNewUserWithoutDataTest()'><b>addNewUserWithoutDataTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>80</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.searchUserByBAGroupIDTest()'><b>searchUserByBAGroupIDTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
 <td></td>
 <td>60</td>
-<td>com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395</td></tr>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.WithholdingTaxPageTest.AddTaxWithBlankDataTest()'><b>AddTaxWithBlankDataTest</b><br>Test class: com.billhub.qa.testcases.WithholdingTaxPageTest</td>
+<td title='com.billhub.qa.testcases.UserPageTest.createCommercialForDifferentLocationTest()'><b>createCommercialForDifferentLocationTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
+<td></td>
+<td>80</td>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.UserPageTest.searchUserByNameTest()'><b>searchUserByNameTest</b><br>Test class: com.billhub.qa.testcases.UserPageTest</td>
 <td></td>
 <td>60</td>
-<td>com.billhub.qa.testcases.WithholdingTaxPageTest@21be3395</td></tr>
+<td>com.billhub.qa.testcases.UserPageTest@15d49048</td></tr>
 </table><p>
 </body>
 </html>

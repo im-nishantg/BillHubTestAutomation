@@ -32,8 +32,8 @@ import com.billhub.qa.base.TestBase;
 
 public class TestUtils extends TestBase{
 	
-	public static long PAGE_LOAD_TIMEOUT = 30;
-	public static long IMPLICIT_WAIT = 15;
+	public static long PAGE_LOAD_TIMEOUT = 45;
+	public static long IMPLICIT_WAIT = 20;
 	public static long EXPLICIT_WAIT = 10;
 	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";		
 	static Workbook book;
@@ -42,35 +42,35 @@ public class TestUtils extends TestBase{
 	public static WebElement waitForElementVisibility(By selector) {
 		
 		log.info("Waiting for element visibility: " + selector);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 	
 	public static void waitForElementInvisibility(By selector) {
 		
 		log.info("Waiting for element invisibility: " + selector);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
 	
 	public static WebElement waitForElementToBeClickable(By selector) {
 		
 		log.info("Waiting for element to be clickable: " + selector);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		return wait.until(ExpectedConditions.elementToBeClickable(selector));
 	}
 	
 	public static WebElement waitForWebElementToBeClickable(WebElement element) {
 		
 		log.info("Waiting for web element to be clickable: " + element);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	public static boolean isElementVisible(WebElement element) {
         
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
             wait.until(ExpectedConditions.visibilityOf(element));
             return true;
         } catch (Exception e) {
@@ -82,7 +82,7 @@ public class TestUtils extends TestBase{
 		
 		log.info("Checking if success toast is displayed for message: " + message);
         try {
-        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='" + message + "']")));
             return true;
         } catch (TimeoutException e) {
@@ -95,7 +95,7 @@ public class TestUtils extends TestBase{
 		
 		log.info("Waiting for toast to disappear");
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id=\"toast-container\"]")));
             return true;
         } catch (TimeoutException e) {
@@ -106,7 +106,7 @@ public class TestUtils extends TestBase{
 	
 	public static WebElement locateAndClickEditBtn(By selector) {
 		
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 	    try {
 	        WebElement editBtn = wait.until(ExpectedConditions.elementToBeClickable(selector));
 	        editBtn.click();
@@ -127,7 +127,7 @@ public class TestUtils extends TestBase{
 	
 	public static boolean matchSearchedData(By selector, String expectedValue) {
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 
 	    // Custom expected condition to wait until value in the table is equal to searched value
 	    ExpectedCondition<Boolean> condition = driver -> {

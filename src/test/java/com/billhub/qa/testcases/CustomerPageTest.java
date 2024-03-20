@@ -112,7 +112,7 @@ public class CustomerPageTest extends TestBase{
 		String customerName=(String) data[2][0], customerCode=TestUtils.numberToString(data[2][1]),customerPeriod=TestUtils.numberToString(data[2][2]), customerDrop=(String) data[2][3];
 		
 		boolean isActive=customerPage.validateInactiveStatus(customerName,customerCode,customerPeriod,customerDrop);
-		Assert.assertTrue(isActive,"Test Failed! customer is still active");
+		Assert.assertFalse(isActive,"Test Failed! customer is still active");
 	}
 
 	@AfterClass

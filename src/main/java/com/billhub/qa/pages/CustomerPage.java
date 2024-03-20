@@ -78,7 +78,9 @@ public class CustomerPage extends TestBase {
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByCode.sendKeys(customer_code);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), customer_code);
     }
 
@@ -88,7 +90,9 @@ public class CustomerPage extends TestBase {
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByName.sendKeys(customer_name);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[3]"),customer_name);
     }
 
@@ -97,11 +101,16 @@ public class CustomerPage extends TestBase {
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
+        
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         ActiveCheckBox.click();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
-//        closeBtn.click();
-        return TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        
+        boolean isAdded = TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        if(isAdded == false) closeBtn.click();
+        return isAdded;
     }
 
     public boolean validateAddCustomerWithInvalidData(String custName, String custCode, String custPeriod, String custDrop){
@@ -109,11 +118,16 @@ public class CustomerPage extends TestBase {
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	TestUtils.waitForToastToDisappear();
     	fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
+    	
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         ActiveCheckBox.click();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
-        closeBtn.click();
-        return TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        
+        boolean isAdded = TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        if(isAdded == false) closeBtn.click();
+        return isAdded;
     }
 
     public boolean validateAddNewCustomerWithoutData(String custName, String custCode, String custPeriod, String custDrop) {
@@ -126,8 +140,10 @@ public class CustomerPage extends TestBase {
         
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
-        closeBtn.click();
-        return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
+        
+        boolean isAdded = TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        if(isAdded == false) closeBtn.click();
+        return isAdded;
     }
 
     public boolean validateActiveStatus(String customer_code){
@@ -136,10 +152,15 @@ public class CustomerPage extends TestBase {
     	SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByCode.sendKeys(customer_code);
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerBtn.click();
 
-        TestUtils.locateAndClickEditBtn(By.xpath("//tbody/tr[1]/td[6]/i[1]"));
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.locateAndClickEditBtn(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr/td[6]/i"));
         boolean isActive= ActiveCheckBox.isSelected();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         closeBtn.click();
         return isActive;
     }
@@ -148,9 +169,11 @@ public class CustomerPage extends TestBase {
         
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	fillNewCustomerForm(custCode, custName,custPeriod,custDrop);
+    	
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
 //        closeBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return validateActiveStatus(custCode);
     }
 

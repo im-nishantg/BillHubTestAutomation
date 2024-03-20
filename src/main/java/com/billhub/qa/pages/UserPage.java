@@ -102,7 +102,7 @@ public class UserPage extends TestBase{
 		companyCode = TestUtils.waitForElementVisibility(By.cssSelector("#Company_ID"));
 		selectCity = TestUtils.waitForElementVisibility(By.cssSelector(".dropdown-btn"));
 		selectCity.click();
-		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		companyCode.sendKeys(company_code);
 		
 		// code to select city from dropdown
@@ -114,9 +114,10 @@ public class UserPage extends TestBase{
 	    
 	    TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-//		closeBtn.click();
 		
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithInactiveStatus(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
@@ -130,9 +131,10 @@ public class UserPage extends TestBase{
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-//		closeBtn.click();
 		
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithInvalidData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
@@ -143,8 +145,10 @@ public class UserPage extends TestBase{
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-		closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithDuplicateData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
@@ -154,9 +158,10 @@ public class UserPage extends TestBase{
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-		closeBtn.click();
 		
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithoutData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
@@ -167,9 +172,10 @@ public class UserPage extends TestBase{
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-		closeBtn.click();
-
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewReadOnlyUser(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
@@ -180,8 +186,10 @@ public class UserPage extends TestBase{
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-//		closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean searchUserByName(String user_name) {
@@ -190,7 +198,10 @@ public class UserPage extends TestBase{
 		searchUserByBAGroupID.clear();
 		searchUserByName.clear();
 		searchUserByName.sendKeys(user_name);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), user_name);
 	}
 	
@@ -200,7 +211,10 @@ public class UserPage extends TestBase{
 		searchUserByName.clear();
 		searchUserByBAGroupID.clear();
 		searchUserByBAGroupID.sendKeys(ba_group_id);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_group_id);
 	}
 
@@ -256,6 +270,7 @@ public class UserPage extends TestBase{
 	    firstName.sendKeys(first_name);
 	    lastName.sendKeys(last_name);
 	    
+	    TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	    updateBtn.click();
 	    
 	    return TestUtils.isSuccessToastDisplayed("User Data Updated successfully");

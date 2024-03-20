@@ -27,8 +27,10 @@ public class Temp extends TestBase{
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]")
     WebElement verifyMemoBtn;
+    
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-list/div/div/div[4]/div/div/div/div[7]/div/button")
     WebElement verifyBtn;
+    
     @FindBy(xpath = "//button[normalize-space()='Get Advances']")
     WebElement getAdvanceBtn;
 
@@ -40,12 +42,16 @@ public class Temp extends TestBase{
 
     @FindBy(xpath = "//div[@class='ng-select-container']//input[@role='combobox']")
     WebElement taxCodeInput;
+    
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-verification/div/div/form/div/div[1]/div[2]/div[2]/table/tbody/tr/td[4]/input")
     WebElement tdInput;
+    
     @FindBy(xpath = "//*[@id=\"defaultCheck1\"]")
     WebElement tdsCheckbox;
+    
     @FindBy(xpath = "//input[@placeholder='Assignment']")
     WebElement assignmentInput;
+    
     @FindBy(xpath = "//input[@placeholder='Itemtext']")
     WebElement itemTextInput;
     @FindBy(xpath = "//button[normalize-space()='Verify Invoice']")
@@ -103,6 +109,7 @@ public class Temp extends TestBase{
 	 public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_po.xlsx";
 	    
 	 public void updateInvoiceExcelSheet(String memo_number) {
+		 
 	        String downloaded_sheetPath = SHEET_PATH_FOR_DOWNLOADED_INVOICE + "/" + memo_number + ".xlsx";
 	        data1 = TestUtils.readExcelSheetByFilePath(downloaded_sheetPath, "Memo_invoice_Details");
 	        data2 = TestUtils.readExcelSheetByFilePath(downloaded_sheetPath, "Memo_Verification_details");
@@ -118,11 +125,6 @@ public class Temp extends TestBase{
 	            // Update Memo_Verification_details sheet
 	            Sheet verificationSheet = workbook.getSheet("Memo_Verification_details");
 	            updateSheet(verificationSheet, data2, 1, 12);
-
-	            // Update tax code in Memo_Verification_details
-	            String IGST = (String) data1[0][8];
-	            String tax_code = IGST.equals("0.0") ? "V0" : "KG";
-	            updateCell(verificationSheet.getRow(1), 14, tax_code,false);
 
 	            // Write the changes back to the workbook
 	            FileOutputStream fileOut = new FileOutputStream(SHEET_PATH_FOR_UPLOADING_INVOICE);
@@ -174,8 +176,16 @@ public class Temp extends TestBase{
 	            cell.setCellStyle(style);
 	        }
 	    }
+	 
+	    public void AddNewFields() {
+	    	
+	    	String IGST = (String) data1[0][8];
+            String tax_code = IGST.equals("0.0") ? "V0" : "KG";
+	    	TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 10, tax_code);
+	    }
+	    
 	    public boolean invoiceVerificationWithExcelsheet(){
-	        String memo_number = "30005631-2023-24-00039";
+	        String memo_number = "30005631-2023-24-00036";
 
 	        memoInput.sendKeys(memo_number);
 	        WebElement selectTab= TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
@@ -186,11 +196,15 @@ public class Temp extends TestBase{
 	        downloadInvoice.click();
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	        updateInvoiceExcelSheet(memo_number);
+	        AddNewFields();
 	        uploadInvoice.click();
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	        uploadFile.sendKeys(SHEET_PATH_FOR_UPLOADING_INVOICE);
+	        
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	        uploadBtn.click();
+	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+	        
 	        return true;
 	    }
 }
