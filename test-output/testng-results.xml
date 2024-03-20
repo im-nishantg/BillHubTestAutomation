@@ -1,67 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="12" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-20T16:31:55 IST" name="BillHub Test Automation Test Suite" finished-at="2024-03-20T16:50:40 IST" duration-ms="1125501">
+  <suite started-at="2024-03-20T19:37:43 IST" name="Default suite" finished-at="2024-03-20T19:38:17 IST" duration-ms="33745">
     <groups>
     </groups>
-    <test started-at="2024-03-20T16:31:55 IST" name="BillHub App Test Cases" finished-at="2024-03-20T16:50:40 IST" duration-ms="1125501">
-      <class name="com.billhub.qa.testcases.UserPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:31:55 IST" name="setup" finished-at="2024-03-20T16:32:27 IST" duration-ms="31981" status="PASS">
+    <test started-at="2024-03-20T19:37:43 IST" name="Default test" finished-at="2024-03-20T19:38:17 IST" duration-ms="33745">
+      <class name="com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test@5b3f3ba0]" started-at="2024-03-20T19:37:43 IST" name="setup" finished-at="2024-03-20T19:37:48 IST" duration-ms="5289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="addNewUserWithValidDataTest()[pri:1, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:32:27 IST" name="addNewUserWithValidDataTest" finished-at="2024-03-20T16:33:49 IST" duration-ms="81820" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewUserWithValidDataTest -->
-        <test-method signature="addNewUserWithInactiveStatusTest()[pri:2, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:33:49 IST" name="addNewUserWithInactiveStatusTest" finished-at="2024-03-20T16:35:10 IST" duration-ms="81627" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewUserWithInactiveStatusTest -->
-        <test-method signature="addNewUserWithActiveStatusTest()[pri:3, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:35:10 IST" name="addNewUserWithActiveStatusTest" finished-at="2024-03-20T16:36:31 IST" duration-ms="80503" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewUserWithActiveStatusTest -->
-        <test-method signature="validateAddedUserInTheDatabaseTest()[pri:4, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:36:31 IST" name="validateAddedUserInTheDatabaseTest" finished-at="2024-03-20T16:37:51 IST" duration-ms="80447" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAddedUserInTheDatabaseTest -->
-        <test-method signature="addNewUserWithInvalidDataTest()[pri:5, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:37:51 IST" name="addNewUserWithInvalidDataTest" finished-at="2024-03-20T16:39:12 IST" duration-ms="81034" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewUserWithInvalidDataTest -->
-        <test-method signature="addNewUserWithDuplicateDataTest()[pri:6, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:39:12 IST" name="addNewUserWithDuplicateDataTest" finished-at="2024-03-20T16:40:14 IST" duration-ms="61611" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewUserWithDuplicateDataTest -->
-        <test-method signature="addNewUserWithoutDataTest()[pri:7, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:40:14 IST" name="addNewUserWithoutDataTest" finished-at="2024-03-20T16:41:35 IST" duration-ms="80790" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewUserWithoutDataTest -->
-        <test-method signature="searchUserByNameTest()[pri:8, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:41:35 IST" name="searchUserByNameTest" finished-at="2024-03-20T16:42:35 IST" duration-ms="60463" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchUserByNameTest -->
-        <test-method signature="searchUserByBAGroupIDTest()[pri:9, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:42:35 IST" name="searchUserByBAGroupIDTest" finished-at="2024-03-20T16:43:36 IST" duration-ms="60376" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchUserByBAGroupIDTest -->
-        <test-method signature="createCommercialForDifferentLocationTest()[pri:10, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:43:36 IST" name="createCommercialForDifferentLocationTest" finished-at="2024-03-20T16:44:56 IST" duration-ms="80288" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createCommercialForDifferentLocationTest -->
-        <test-method signature="createMDMAndReadOnlyUsersTest()[pri:11, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:44:56 IST" name="createMDMAndReadOnlyUsersTest" finished-at="2024-03-20T16:47:38 IST" duration-ms="162056" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="validateExportButtonTest()[pri:5, instance:com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test@5b3f3ba0]" started-at="2024-03-20T19:37:48 IST" name="validateExportButtonTest" finished-at="2024-03-20T19:38:17 IST" duration-ms="28417" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[User is present but not found on searching expected [true] but found [false]]]>
+              <![CDATA[Expected condition failed: waiting for element to no longer be visible: By.className: modal-container (tried for 10 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: User is present but not found on searching expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.billhub.qa.testcases.UserPageTest.createMDMAndReadOnlyUsersTest(UserPageTest.java:152)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.className: modal-container (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.billhub.qa.utils.TestUtils.waitForElementInvisibility(TestUtils.java:53)
+at com.billhub.qa.pages.InvoiceValidationByAccounts_MESPL_Page.searchInvoicesWithMultipleFields(InvoiceValidationByAccounts_MESPL_Page.java:79)
+at com.billhub.qa.pages.InvoiceValidationByAccounts_MESPL_Page.validateExportButton(InvoiceValidationByAccounts_MESPL_Page.java:149)
+at com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test.validateExportButtonTest(InvoiceValidationByAccounts_MESPL_Test.java:71)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -88,25 +50,40 @@ at org.testng.TestNG.run(TestNG.java:1101)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=122.0.6261.129)
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d726e17371046464529b0b2f5ed502ce, findElement {using=class name, value=modal-container}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58955}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58955/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d726e17371046464529b0b2f5ed502ce
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:569)
+at org.openqa.selenium.support.ui.ExpectedConditions$20.apply(ExpectedConditions.java:565)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 30 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createMDMAndReadOnlyUsersTest -->
-        <test-method signature="createAccountForSpecificCompanyTest()[pri:12, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:47:38 IST" name="createAccountForSpecificCompanyTest" finished-at="2024-03-20T16:48:59 IST" duration-ms="80435" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAccountForSpecificCompanyTest -->
-        <test-method signature="updateUserTest()[pri:13, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:48:59 IST" name="updateUserTest" finished-at="2024-03-20T16:50:40 IST" duration-ms="101710" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateUserTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.billhub.qa.testcases.UserPageTest@15d49048]" started-at="2024-03-20T16:50:40 IST" name="tearDown" finished-at="2024-03-20T16:50:40 IST" duration-ms="99" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.billhub.qa.testcases.UserPageTest -->
-    </test> <!-- BillHub App Test Cases -->
-  </suite> <!-- BillHub Test Automation Test Suite -->
+        </test-method> <!-- validateExportButtonTest -->
+      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
