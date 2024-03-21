@@ -32,18 +32,21 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         for(int i=1; i<=8; i++)
         {
             String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(4);
-            String base_amount = TestUtils.generateRandomNumber(1);
+            String amount = TestUtils.generateRandomNumber(1);
+            String base_amount=amount;
             double igst = Double.parseDouble(base_amount) * 0.18;
             igst=Math.floor(igst*100)/100.0;
             String Igst = String.valueOf(igst);
             TestUtils.setCellData("BTBasedInvoice", i, 0, invoice_number);
             TestUtils.setCellData("BTBasedInvoice", i, 1, base_amount);
             TestUtils.setCellData("BTBasedInvoice", i, 2, Igst);
+            TestUtils.setCellData("BTBasedInvoice", i, 9, amount);
         }
     }
 
     @BeforeClass
     public void setup(){
+
         String from_state = (String) memoData[2][0], to_state = (String) memoData[2][1];
         initialization();
         loginPage= new LoginPage();
@@ -55,6 +58,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
     @Test(priority = 1)
     public void gstCodeVerificationTest(){
+
         String base_amount = (String) data[0][1], igst = (String) data[0][2];
         double expected_amount=Double.parseDouble(base_amount)+Double.parseDouble(igst);
         double actual_amount= createNonPOBasedInvoicePage.verifyGstCode(base_amount,igst);
@@ -65,6 +69,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
     @Test(priority = 2)
     public void tdCodeVerificationTest(){
+
         String base_amount = (String) data[0][1], cd = (String) data[0][4],igst = (String) data[0][2];
         double expected_amount=Double.parseDouble(base_amount)-Double.parseDouble(cd);
         double actual_amount=createNonPOBasedInvoicePage.verifyTdCode(base_amount,cd);
@@ -75,6 +80,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
     @Test(priority = 3)
     public void additionatAmountVerificationTest(){
+
         String base_amount = (String) data[0][1], tcs = (String) data[0][5],igst = (String) data[0][2];
         double expected_amount=Double.parseDouble(base_amount)+Double.parseDouble(tcs);
         double actual_amount= createNonPOBasedInvoicePage.verifyAdditionalAmount(base_amount,tcs);
@@ -85,6 +91,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
     @Test(priority = 4)
     public void createInvWithoutDataTest(){
+
         Invoice invoice = new Invoice("", "", "", "", "", "", "", "", "", "", "", "");
         boolean isFailed= createNonPOBasedInvoicePage.CreateInvoiceWithoutData(invoice);
         Assert.assertFalse(isFailed,"Test failed!");
@@ -93,8 +100,9 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
     @Test(priority = 5)
     public void submitMemoWithValidDataTest(){
+
         String company_code=(String) data[0][12], service_type=(String)data[0][13];
-        String BTinvoiceNumber="14340478";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
+        String BTinvoiceNumber="492775030";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
         String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
         String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
         String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
@@ -125,13 +133,11 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
     @Test(priority = 7)
     public void createMultipleInvoiceInSingleMemoTest() {
+
         List<Invoice> invoices = new ArrayList<>();
         String company_code=(String) data[2][12], service_type=(String)data[2][13];
         List<String> listOfBTs=new ArrayList<>();
-        listOfBTs.addAll(Arrays.asList("14048678", "14395978"));// Add BT number corresponding to company code and service type
-
-        String from_state = (String) memoData[3][0], to_state = (String) memoData[3][1];
-        createNonPOBasedInvoicePage = baDashboardPage.createNewMemoBTBased(from_state, to_state);
+        listOfBTs.addAll(Arrays.asList("222435078", "222445078"));// Add BT number corresponding to company code and service type
 
         for(int i=2; i<4; i++)
         {

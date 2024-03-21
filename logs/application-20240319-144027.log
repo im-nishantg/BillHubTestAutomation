@@ -1,0 +1,57 @@
+12:20:30.921 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+12:20:32.119 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:20:47.360 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:21:02.869 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice rejected successFully
+12:21:17.916 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Invoice rejected successFully
+12:25:21.095 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+12:25:22.076 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:25:37.433 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:25:52.643 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice rejected successFully
+12:25:57.959 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Invoice rejected successFully
+12:28:55.557 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+12:28:56.458 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:29:11.815 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:29:27.205 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice rejected successFully
+12:37:37.802 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:37:52.919 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (eb4d40640c0246d5e3d5469fadd9589a)] -> xpath: //button[@class='btn btn-link']]
+12:37:53.358 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (eb4d40640c0246d5e3d5469fadd9589a)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:37:53.676 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (eb4d40640c0246d5e3d5469fadd9589a)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:37:55.601 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:38:33.325 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:38:48.426 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6f2327cc9daec65384e999f0a016190b)] -> xpath: //button[@class='btn btn-link']]
+12:38:48.704 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6f2327cc9daec65384e999f0a016190b)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:38:48.928 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6f2327cc9daec65384e999f0a016190b)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:38:51.234 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:39:54.998 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:40:10.079 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7f9450517f62d5c18d1a8e14bb9d90ad)] -> xpath: //button[@class='btn btn-link']]
+12:40:10.440 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7f9450517f62d5c18d1a8e14bb9d90ad)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:40:10.770 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7f9450517f62d5c18d1a8e14bb9d90ad)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:40:13.285 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="verifiedBy"]/div/div/ul[2]/li
+12:40:13.502 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:43:51.552 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:44:06.673 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f60f4d4c090fb624e456bb239d409d22)] -> xpath: //button[@class='btn btn-link']]
+12:44:06.999 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f60f4d4c090fb624e456bb239d409d22)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:44:07.373 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f60f4d4c090fb624e456bb239d409d22)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:44:09.616 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="verifiedBy"]/div/div/ul[2]/li
+12:44:09.990 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:44:25.483 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:45:13.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:45:28.749 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (97842099b379a81d14dde2533a6f6e4d)] -> xpath: //button[@class='btn btn-link']]
+12:45:28.936 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (97842099b379a81d14dde2533a6f6e4d)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:45:29.153 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (97842099b379a81d14dde2533a6f6e4d)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:45:30.543 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:46:40.065 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:46:55.194 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6346e4dcbb5df917e7b07c6c91d75c06)] -> xpath: //button[@class='btn btn-link']]
+12:46:55.390 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6346e4dcbb5df917e7b07c6c91d75c06)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:46:55.686 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6346e4dcbb5df917e7b07c6c91d75c06)] -> xpath: //a[normalize-space()='Review Invoice Posting']]
+12:46:57.076 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-search-batch/div/div/div[1]/div[2]/div/div/typeahead-container/button/span/strong
+12:49:59.673 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:50:14.818 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (70f7a02a96865030b8dc5f9e37e83b8f)] -> xpath: //button[@class='btn btn-link']]
+12:50:15.184 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (70f7a02a96865030b8dc5f9e37e83b8f)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:50:15.454 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (70f7a02a96865030b8dc5f9e37e83b8f)] -> xpath: //a[normalize-space()='Review Invoice Posting']]
+12:50:17.486 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-search-batch/div/div/div[1]/div[2]/div/div/typeahead-container/button/span/strong
+12:50:18.323 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:54:32.420 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:54:47.590 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c44991b8c5f40d98671ba711d12bc1ba)] -> xpath: //button[@class='btn btn-link']]
+12:54:47.987 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c44991b8c5f40d98671ba711d12bc1ba)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:54:48.312 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c44991b8c5f40d98671ba711d12bc1ba)] -> xpath: //a[normalize-space()='Review Invoice Posting']]

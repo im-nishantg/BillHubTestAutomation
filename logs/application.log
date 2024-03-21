@@ -1,7 +1,14 @@
-19:12:53.944 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
-19:13:09.032 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1a7cedebc48530320d26afbde0e92900)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
-19:13:09.224 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
-19:13:24.339 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
-19:13:29.011 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1a7cedebc48530320d26afbde0e92900)] -> css selector: .btn.btn-warning.btn-acknowledge]
-19:13:29.119 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
-19:13:45.945 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:39:10.092 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:39:25.509 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f38a84659c462115c223ec04f6d2c051)] -> xpath: /html/body/modal-container/div/div/app-book-invoice-confirm/div[3]/div/div[2]/button]
+19:39:27.703 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element to be clickable: By.xpath: /html/body/modal-container/div/div/app-notify-dialog/div[1]/button
+19:39:27.986 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:39:43.099 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f38a84659c462115c223ec04f6d2c051)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:39:43.454 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f38a84659c462115c223ec04f6d2c051)] -> xpath: //a[normalize-space()='Review Invoice Posting']]
+19:39:44.323 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-search-batch/div/div/div[1]/div[2]/div/div/typeahead-container/button/span/strong
+19:48:04.136 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:48:19.247 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (77e8bb854b67365064a3f34b373c4302)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:48:19.525 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (77e8bb854b67365064a3f34b373c4302)] -> xpath: //a[normalize-space()='Review Invoice Posting']]
+19:48:20.977 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-search-batch/div/div/div[1]/div[2]/div/div/typeahead-container/button/span/strong
+19:49:19.242 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:49:34.382 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (522ef1b2000f3d59225305e098417bb2)] -> xpath: //span[normalize-space()='Dashboard']]
+19:49:34.655 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container

@@ -18,29 +18,40 @@ public class CustomerPage extends TestBase {
 	
     @FindBy(xpath = "//input[@id='Customer_Name']")
     WebElement SearchCustomerByName;
+
     @FindBy(xpath = "//input[@id='Customer_Code']")
     WebElement SearchCustomerByCode;
+
     @FindBy(xpath = "//button[normalize-space()='Search']")
     WebElement SearchCustomerBtn;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary btn-verify-blue active']")
     WebElement addCustomerBtn;
+
     @FindBy(xpath = "//tbody/tr[1]/td[6]")
     WebElement updateBtn;
+
     @FindBy(css = "div[class='has-float-label form-group col-md-6'] input[type='text']")
     WebElement customerCode;
+
     @FindBy(css = "div[class='modal-body pb-0'] div:nth-child(2) input:nth-child(1)")
     WebElement customerName;
+
     @FindBy(css = "input[formcontrolname='Credit_Period']")
     WebElement customerPeriod;
+
     @FindBy(id = "Vertical")
     WebElement verticalDropdown;
+
     @FindBy(css = "#defaultCheck2")
     WebElement ActiveCheckBox;
+
     @FindBy(css = "button[class='btn btn-primary btn-done']")
     WebElement addBtn;
+
     @FindBy(css = "button[class='btn btn-danger btn-done']")
     WebElement closeBtn;
+
 
     public CustomerPage(){
         PageFactory.initElements(driver,this);
@@ -49,6 +60,7 @@ public class CustomerPage extends TestBase {
         PageFactory.initElements(driver,this);
     }
     public void fillNewCustomerForm(String customer_code,String customer_name, String customer_period, String customer_drop){
+
         addCustomerBtn.click();
         initializePopupWebElements();
         customerCode.sendKeys(customer_code);
@@ -59,6 +71,7 @@ public class CustomerPage extends TestBase {
 
     }
     public boolean searchAddedCustomerByCode(String customer_code) {
+
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByCode.sendKeys(customer_code);
@@ -67,6 +80,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateSearchCustomerByName(String customer_name){
+
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByName.sendKeys(customer_name);
@@ -75,6 +89,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
+
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
         ActiveCheckBox.click();
@@ -102,6 +117,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateActiveStatus(String customer_code){
+
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByCode.sendKeys(customer_code);
@@ -111,9 +127,11 @@ public class CustomerPage extends TestBase {
         boolean isActive= ActiveCheckBox.isSelected();
         closeBtn.click();
         return isActive;
+
     }
 
     public boolean validateInactiveStatus(String custName, String custCode, String custPeriod, String custDrop){
+
         fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
         addBtn.click();
         closeBtn.click();
@@ -121,6 +139,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateAddedCustomerInDatabase(String customer_code){
+
         SearchCustomerByCode.clear();
         return searchAddedCustomerByCode(customer_code);
     }

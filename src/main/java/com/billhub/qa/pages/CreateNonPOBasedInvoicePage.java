@@ -84,7 +84,7 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[5]/select")
     WebElement submittingTo;
 
-    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button")
+    @FindBy(xpath = "//button[normalize-space()='SUBMIT MEMO']")
     WebElement submitMemoBtn;
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-memo-list/div/div/div[3]/div/div/div[1]/div/span")
@@ -93,12 +93,12 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
     @FindBy(xpath = "//div[@class='inv-footer-text']")
     WebElement totalInvAmount;
 
-    @FindBy(xpath = "//button[normalize-space()='SUBMIT MEMO']")
-    WebElement nextSubmitMemoBtn;
-    @FindBy(xpath = "//div[@class='modal-content']")
-    WebElement confirmationTab;
-    @FindBy(xpath = "//button[normalize-space()='Submit Memo']")
-    WebElement finalSubmitMemoBtn;
+//    @FindBy(xpath = "//button[normalize-space()='SUBMIT MEMO']")
+//    WebElement nextSubmitMemoBtn;
+//    @FindBy(xpath = "//div[@class='modal-content']")
+//    WebElement confirmationTab;
+//    @FindBy(xpath = "//button[normalize-space()='Submit Memo']")
+//    WebElement finalSubmitMemoBtn;
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[2]/button")
     WebElement printBtn;
 
@@ -178,9 +178,11 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
 
 //        code for actuallly submitting the memo
         submitMemoBtn.click();
-        nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
+        WebElement nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-memo-list/div/div/div[2]/div/form/div/div[6]/button"));
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         nextSubmitMemoBtn.click();
-        finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
+        WebElement finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 
 //        print button will be visible once the memo is submitted successfully
@@ -258,12 +260,12 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         submittingAt.sendKeys(invoices.get(0).submittingAt);
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         submittingTo.sendKeys(invoices.get(0).submittingTo);
-
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         //code for actually submitting the memo
         submitMemoBtn.click();
-        nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
+        WebElement nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
         TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
-        finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
+        WebElement finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='Submit Memo']"));
         TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 
 //      print button will be visible once the memo is submitted successfully
