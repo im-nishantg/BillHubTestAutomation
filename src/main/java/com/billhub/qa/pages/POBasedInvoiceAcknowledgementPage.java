@@ -240,11 +240,11 @@ public class POBasedInvoiceAcknowledgementPage extends TestBase{
     	TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	
-    	filterBtn.click();											//searching for the memo in the filter option
-    	memo.sendKeys(memo_number);
+    	filterBtn.click();											//searching for the invoice in the filter option
+    	invoice.sendKeys(invoice_number);
     	applyBtn.click();
     	
-    	boolean isMemoFound = TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[5]"), memo_number);
+    	boolean isMemoFound = TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]"), invoice_number);
     	
     	if(isMemoFound == false)						// if the correct memo is not found return false
     		return "Memo was not found.";
@@ -416,10 +416,10 @@ public class POBasedInvoiceAcknowledgementPage extends TestBase{
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	
     	filterBtn.click();											//searching for the memo in the filter option
-    	memo.sendKeys(memo_number);
+    	invoice.sendKeys(invoice_number);
     	applyBtn.click();
     	
-    	boolean isMemoFound = TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[5]"), memo_number);
+    	boolean isMemoFound = TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]"), invoice_number);
     	
     	if(isMemoFound == false)						// if the correct memo is not found return false
     		return "Memo was not found.";
@@ -586,8 +586,5 @@ public class POBasedInvoiceAcknowledgementPage extends TestBase{
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return true;
 	}
-
-	
-    
-    
+ 
 }

@@ -24,7 +24,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	private static boolean isMultipleInvoicesSubmitted = false;
 	public Object[][] data;
 	public Object[][] memoData = TestUtils.getTestData("BADashboardPage");
-	String po_number = "4500000887";										// This PO number has been used in all the test
+	String po_number = "4500000891";										// This PO number has been used in all the test
 	
 	public CreatePOBasedInvoicePageTest() {
 		super();

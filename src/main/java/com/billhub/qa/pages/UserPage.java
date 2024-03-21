@@ -77,6 +77,7 @@ public class UserPage extends TestBase{
 	public void fillAddUserForm(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email ) {
 		
 		addUserBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
         initializePopupWebElements();
         
 		userName.sendKeys(user_name);
@@ -90,13 +91,18 @@ public class UserPage extends TestBase{
 	
 	public boolean addNewUserWithValidData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email, String company_code, String city_name) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
+		
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
+		
 		addCompanyBtn = TestUtils.waitForElementVisibility(By.cssSelector("button[class='btn btn-success']"));
 		addCompanyBtn.click();
+		
 		companyCode = TestUtils.waitForElementVisibility(By.cssSelector("#Company_ID"));
 		selectCity = TestUtils.waitForElementVisibility(By.cssSelector(".dropdown-btn"));
 		selectCity.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		companyCode.sendKeys(company_code);
 		
 		// code to select city from dropdown
@@ -106,79 +112,115 @@ public class UserPage extends TestBase{
 	    Actions actions = new Actions(driver);
 	    actions.moveToElement(selectedLocation).click().build().perform();
 	    
+	    TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-		closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithInactiveStatus(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		activeBtn.click();
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-		closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithInvalidData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
-		addBtn.click();
-		closeBtn.click();
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		addBtn.click();
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithDuplicateData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
 		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
-		addBtn.click();
-		closeBtn.click();
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		addBtn.click();
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewUserWithoutData(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
-		addBtn.click();
-		closeBtn.click();
+		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		addBtn.click();
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean addNewReadOnlyUser(String user_name, String ba_group_id, String first_name, String last_name, String role_name, String email) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		fillAddUserForm(user_name, ba_group_id, first_name, last_name, role_name, email);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		addBtn.click();
-		closeBtn.click();
-		return TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		
+		boolean isAdded = TestUtils.isSuccessToastDisplayed("User Data Added successfully");
+		if(isAdded == false) closeBtn.click();
+		return isAdded;
 	}
 	
 	public boolean searchUserByName(String user_name) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchUserByBAGroupID.clear();
 		searchUserByName.clear();
 		searchUserByName.sendKeys(user_name);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), user_name);
 	}
 	
 	public boolean searchUserByBAGroupID(String ba_group_id) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchUserByName.clear();
 		searchUserByBAGroupID.clear();
 		searchUserByBAGroupID.sendKeys(ba_group_id);
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[3]"), ba_group_id);
 	}
 
 	public String addNewUserWithActiveStatus(String ba_group_id){
+		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		
 		if(searchUserByBAGroupID(ba_group_id) == false)		// if user is not found in DB then its status is neither active or deactive
 			return "";
@@ -189,26 +231,31 @@ public class UserPage extends TestBase{
 	
 	public boolean validateAddedUserInTheDatabase(String ba_group_id) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return searchUserByBAGroupID(ba_group_id);
 	}
 	
 	public boolean createCommercialForDifferentLocation(String ba_group_id) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return searchUserByBAGroupID(ba_group_id);
 	}
 	
 	public boolean createMDMAndReadOnlyUsers(String ba_group_id) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return searchUserByBAGroupID(ba_group_id);
 	}
 	
 	public boolean createAccountForSpecificCompany(String ba_group_id) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return searchUserByBAGroupID(ba_group_id);
 	}
 	
 	public boolean updateUser(String ba_group_id, String first_name, String last_name) {
 		
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		TestUtils.waitForToastToDisappear();
 		searchUserByBAGroupID(ba_group_id);
 		
@@ -223,6 +270,7 @@ public class UserPage extends TestBase{
 	    firstName.sendKeys(first_name);
 	    lastName.sendKeys(last_name);
 	    
+	    TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	    updateBtn.click();
 	    
 	    return TestUtils.isSuccessToastDisplayed("User Data Updated successfully");

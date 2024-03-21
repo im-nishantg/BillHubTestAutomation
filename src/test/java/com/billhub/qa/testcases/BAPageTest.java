@@ -27,11 +27,10 @@ public class BAPageTest extends TestBase{
 		String random_BA_name_first = "test_" + TestUtils.generateRandomString(6);  
 		String random_BA_name_second = "test_" + TestUtils.generateRandomString(6); 
 		String random_BA_code_first = TestUtils.generateRandomNumber(6);
-		String random_BA_code_second = TestUtils.generateRandomNumber(6);
 		TestUtils.setCellData("BA", 1, 1, random_BA_name_first);
 		TestUtils.setCellData("BA", 3, 1, random_BA_name_second);
 		TestUtils.setCellData("BA", 1, 0, random_BA_code_first);
-		TestUtils.setCellData("BA", 3, 0, random_BA_code_second);
+		TestUtils.setCellData("BA", 3, 0, random_BA_code_first);			
 	}
 	
 	@BeforeClass

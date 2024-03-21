@@ -22,7 +22,7 @@ public class CommercialDashboardPageTest extends TestBase  {
 
         initialization();
         loginPage= new LoginPage();
-        commercialDashboardPage = loginPage.loginAsCommercial(prop.getProperty("commercial_userid"),prop.getProperty("commercial_password"));
+        commercialDashboardPage = loginPage.loginAsCommercial(prop.getProperty("commercial_userid_for_po"),prop.getProperty("commercial_password_for_po"));
     }
 
     @Test(priority = 1)

@@ -74,7 +74,6 @@ public class CommercialDashboardPage extends TestBase{
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/div/input")
     WebElement acknowledgeMemoInput;
     
-
     public CommercialDashboardPage() {
     	
         PageFactory.initElements(driver, this);
@@ -248,5 +247,4 @@ public class CommercialDashboardPage extends TestBase{
         WebElement result=TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]"));
         return result.isDisplayed();
     }
-
 }

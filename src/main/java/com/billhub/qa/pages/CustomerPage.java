@@ -18,15 +18,23 @@ public class CustomerPage extends TestBase {
 	
     @FindBy(xpath = "//input[@id='Customer_Name']")
     WebElement SearchCustomerByName;
+<<<<<<< HEAD
 
     @FindBy(xpath = "//input[@id='Customer_Code']")
     WebElement SearchCustomerByCode;
 
+=======
+    
+    @FindBy(xpath = "//input[@id='Customer_Code']")
+    WebElement SearchCustomerByCode;
+    
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
     @FindBy(xpath = "//button[normalize-space()='Search']")
     WebElement SearchCustomerBtn;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary btn-verify-blue active']")
     WebElement addCustomerBtn;
+<<<<<<< HEAD
 
     @FindBy(xpath = "//tbody/tr[1]/td[6]")
     WebElement updateBtn;
@@ -49,19 +57,51 @@ public class CustomerPage extends TestBase {
     @FindBy(css = "button[class='btn btn-primary btn-done']")
     WebElement addBtn;
 
+=======
+    
+    @FindBy(xpath = "//tbody/tr[1]/td[6]")
+    WebElement updateBtn;
+    
+    @FindBy(css = "div[class='has-float-label form-group col-md-6'] input[type='text']")
+    WebElement customerCode;
+    
+    @FindBy(css = "div[class='modal-body pb-0'] div:nth-child(2) input:nth-child(1)")
+    WebElement customerName;
+    
+    @FindBy(css = "input[formcontrolname='Credit_Period']")
+    WebElement customerPeriod;
+    
+    @FindBy(id = "Vertical")
+    WebElement verticalDropdown;
+    
+    @FindBy(css = "#defaultCheck2")
+    WebElement ActiveCheckBox;
+    
+    @FindBy(css = "button[class='btn btn-primary btn-done']")
+    WebElement addBtn;
+    
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
     @FindBy(css = "button[class='btn btn-danger btn-done']")
     WebElement closeBtn;
 
 
     public CustomerPage(){
+    	
         PageFactory.initElements(driver,this);
     }
     public void initializePopupWebElements(){
+    	
         PageFactory.initElements(driver,this);
     }
     public void fillNewCustomerForm(String customer_code,String customer_name, String customer_period, String customer_drop){
+<<<<<<< HEAD
 
         addCustomerBtn.click();
+=======
+        
+    	addCustomerBtn.click();
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         initializePopupWebElements();
         customerCode.sendKeys(customer_code);
         customerName.sendKeys(customer_name);
@@ -71,76 +111,142 @@ public class CustomerPage extends TestBase {
 
     }
     public boolean searchAddedCustomerByCode(String customer_code) {
+<<<<<<< HEAD
 
+=======
+    	
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByCode.sendKeys(customer_code);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[2]"), customer_code);
     }
 
     public boolean validateSearchCustomerByName(String customer_name){
+<<<<<<< HEAD
 
+=======
+    	
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
         SearchCustomerByName.sendKeys(customer_name);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr[1]/td[3]"),customer_name);
     }
 
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
+<<<<<<< HEAD
 
+=======
+    	
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         ActiveCheckBox.click();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
-        closeBtn.click();
-        return TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        
+        boolean isAdded = TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        if(isAdded == false) closeBtn.click();
+        return isAdded;
     }
 
     public boolean validateAddCustomerWithInvalidData(String custName, String custCode, String custPeriod, String custDrop){
-        TestUtils.waitForToastToDisappear();
-        fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
+        
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	TestUtils.waitForToastToDisappear();
+    	fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
+    	
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         ActiveCheckBox.click();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
-        closeBtn.click();
-        return TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        
+        boolean isAdded = TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        if(isAdded == false) closeBtn.click();
+        return isAdded;
     }
 
     public boolean validateAddNewCustomerWithoutData(String custName, String custCode, String custPeriod, String custDrop) {
-        TestUtils.waitForToastToDisappear();
-        fillNewCustomerForm(custName, custCode, custPeriod, custDrop);
+        
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	TestUtils.waitForToastToDisappear();
+        fillNewCustomerForm(custCode, custName, custPeriod, custDrop);
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         ActiveCheckBox.click();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         addBtn.click();
-        closeBtn.click();
-        return TestUtils.isSuccessToastDisplayed("Kindly fill out all the mandatory fields");
+        
+        boolean isAdded = TestUtils.isSuccessToastDisplayed("customer Added successfully");
+        if(isAdded == false) closeBtn.click();
+        return isAdded;
     }
 
     public boolean validateActiveStatus(String customer_code){
+<<<<<<< HEAD
 
         SearchCustomerByCode.clear();
+=======
+        
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	SearchCustomerByCode.clear();
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         SearchCustomerByName.clear();
         SearchCustomerByCode.sendKeys(customer_code);
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerBtn.click();
 
-        TestUtils.locateAndClickEditBtn(By.xpath("//tbody/tr[1]/td[6]/i[1]"));
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.locateAndClickEditBtn(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-customer/div/div/div[3]/div/table/tbody/tr/td[6]/i"));
         boolean isActive= ActiveCheckBox.isSelected();
+        
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         closeBtn.click();
         return isActive;
 
     }
 
     public boolean validateInactiveStatus(String custName, String custCode, String custPeriod, String custDrop){
+<<<<<<< HEAD
 
         fillNewCustomerForm(custName,custCode,custPeriod,custDrop);
+=======
+        
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	fillNewCustomerForm(custCode, custName,custPeriod,custDrop);
+    	
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         addBtn.click();
-        closeBtn.click();
+//        closeBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         return validateActiveStatus(custCode);
     }
 
     public boolean validateAddedCustomerInDatabase(String customer_code){
+<<<<<<< HEAD
 
         SearchCustomerByCode.clear();
+=======
+        
+    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	SearchCustomerByCode.clear();
+>>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
         return searchAddedCustomerByCode(customer_code);
     }
 
