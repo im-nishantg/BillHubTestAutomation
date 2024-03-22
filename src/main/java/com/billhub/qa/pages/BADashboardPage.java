@@ -7,14 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.utils.TestUtils;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class BADashboardPage extends TestBase{
 	
-	@FindBy(xpath = "//button[@class='btn btn-primary ng-star-inserted']")
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]")
 	WebElement createMemoBtn;
 	
 	@FindBy(xpath = "//span[normalize-space()='Create Memo']")
@@ -36,7 +33,7 @@ public class BADashboardPage extends TestBase{
 	WebElement filterBtn;
 
 	@FindBy(xpath= "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[2]/div[2]/div/ul/li/form/div[1]/ngx-select-dropdown")
-	 WebElement company;
+	WebElement company;
 
 	@FindBy(xpath= "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[2]/div[2]/div/ul/li/form/div[2]/ngx-select-dropdown")
 	WebElement location;
@@ -57,7 +54,7 @@ public class BADashboardPage extends TestBase{
 	WebElement applyBtn;
 
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[2]/div[2]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/div/input")
-	 WebElement companySearch;
+	WebElement companySearch;
 
 	@FindBy(xpath = "//input[@name='search-text']")
 	WebElement locationSearch;
@@ -103,10 +100,13 @@ public class BADashboardPage extends TestBase{
 	
 	@FindBy(xpath = "/html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input")
 	WebElement poResultCheckBox;
+	
 	@FindBy(xpath = "//body[1]/modal-container[1]/div[1]/div[1]/app-add-lr-popup[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]")
 	WebElement btResultCheckBox;
+	
 	@FindBy(css = "#companyCode")
 	WebElement companyCode;
+	
 	@FindBy(xpath = "//select[@id='typeService']")
 	WebElement secviceType;
 	
@@ -115,6 +115,7 @@ public class BADashboardPage extends TestBase{
 
 	@FindBy(xpath = "//input[@placeholder='LRNUMBER2345']")
 	WebElement searchBtInput;
+	
 	@FindBy(xpath = "//button[normalize-space()='Search Number']")
 	WebElement searchBTBtn;
 
@@ -134,9 +135,9 @@ public class BADashboardPage extends TestBase{
 	WebElement cancelInvBtn;
 
 	public BADashboardPage() {
-
 		PageFactory.initElements(driver, this);
 	}
+	
 	public void initializePopupWebElements(){
 		PageFactory.initElements(driver,this);
 	}
@@ -145,6 +146,7 @@ public class BADashboardPage extends TestBase{
 	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
 
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		POBasedInvoiceCheckbox.click();

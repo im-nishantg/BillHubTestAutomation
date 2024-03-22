@@ -26,11 +26,16 @@ public class BAPageTest extends TestBase{
 		
 		String random_BA_name_first = "test_" + TestUtils.generateRandomString(6);  
 		String random_BA_name_second = "test_" + TestUtils.generateRandomString(6); 
-		String random_BA_code_first = TestUtils.generateRandomNumber(6);
+		String random_BA_code_first = "3000" + TestUtils.generateRandomNumber(4);
+		String random_BA_code_second = "3000" + TestUtils.generateRandomNumber(4);
+		String random_BA_groupId_first = "1000" + TestUtils.generateRandomNumber(4);
+		String random_BA_groupId_second = "1000" + TestUtils.generateRandomNumber(4);
 		TestUtils.setCellData("BA", 1, 1, random_BA_name_first);
 		TestUtils.setCellData("BA", 3, 1, random_BA_name_second);
 		TestUtils.setCellData("BA", 1, 0, random_BA_code_first);
-		TestUtils.setCellData("BA", 3, 0, random_BA_code_first);			
+		TestUtils.setCellData("BA", 3, 0, random_BA_code_second);	
+		TestUtils.setCellData("BA", 1, 6, random_BA_groupId_first);
+		TestUtils.setCellData("BA", 3, 6, random_BA_groupId_second);	
 	}
 	
 	@BeforeClass
@@ -40,7 +45,7 @@ public class BAPageTest extends TestBase{
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 		baPage = mdmDashboardPage.clickOnBaLink();
-		updateExcelSheetData();
+//		updateExcelSheetData();
 		data = TestUtils.getTestData("BA");
 	}
 	
@@ -138,7 +143,7 @@ public class BAPageTest extends TestBase{
 	@Test(priority = 10)
 	public void updateBATest(){
 		
-		String ba_code = TestUtils.numberToString(data[2][0]), contact_person_number = TestUtils.numberToString(data[0][10]);;
+		String ba_code = TestUtils.numberToString(data[0][0]), contact_person_number = TestUtils.numberToString(data[2][10]);;
 		String ba_name = (String) data[1][1];
 		boolean isUpdated = baPage.updateBA(ba_code, ba_name, contact_person_number);
 		Assert.assertTrue(isUpdated, "BA was not updated.");

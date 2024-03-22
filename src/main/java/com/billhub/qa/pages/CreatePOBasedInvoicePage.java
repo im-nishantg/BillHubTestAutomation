@@ -103,8 +103,14 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[1]/button")
 	WebElement homeBtn;
 	
-	public CreatePOBasedInvoicePage() {
-		
+	@FindBy(xpath = "//button[@class='btn btn-link']")
+	WebElement navbarExpandBtn;
+    
+    @FindBy(xpath = "//span[normalize-space()='Dashboard']")
+	WebElement dashboardBtn;
+    
+	
+	public CreatePOBasedInvoicePage() {	
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -189,13 +195,14 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		//print button will be visible once the memo is submitted successfully
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));			
 		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);	
-		homeBtn.click();							// going back to home button for next test
+		homeBtn.click();								// going back to the dashboard for the next test				
 		return isPrintBtnVisible;
 	}
 	
 	public boolean submitMemoWithDuplicateData(Invoice invoice) {
 		
 		fillCreateNewInvoiceForm(invoice);
+		resetBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Invoice Number Exist try another!");
 	}
 	
@@ -218,6 +225,8 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		
 		String amount =  totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
@@ -233,6 +242,8 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		
 		String amount = totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
@@ -248,6 +259,8 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		
 		String amount = totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}

@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test">
+      <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
         <methods>
           <include name="setup"/>
-          <include name="validateExportButtonTest"/>
+          <include name="tearDown"/>
+          <include name="gstCodeVerificationTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test -->
+      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

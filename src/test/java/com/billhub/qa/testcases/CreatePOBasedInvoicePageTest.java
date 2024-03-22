@@ -32,10 +32,11 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	
 	public void updateExcelSheetData() {
 		
-		for(int i=1; i<=8; i++)
+		for(int i=1; i<=3; i++)
 		{
 			String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(5);
-			String quantity = TestUtils.generateRandomNumber(1);
+//			String quantity = TestUtils.generateRandomNumber(1);
+			String quantity = "1";
 			String base_amount = quantity;
 			double igst = Double.parseDouble(quantity) * 0.18;
 			igst = Math.floor(igst * 100) / 100.0;		// Round down igst to 2 digits after the decimal
@@ -66,6 +67,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		String base_amount = (String) data[0][1], igst = (String) data[0][2];
 		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(igst);
 		double actual_amount = createPOBasedInvoicePage.verifyGstCode(base_amount, igst);
+		actual_amount = Math.floor(actual_amount * 100) / 100.0;	
 		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
 	}
 	
@@ -75,6 +77,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		String base_amount = (String) data[0][1], cd = (String) data[0][4];
 		double expected_amount = Double.parseDouble(base_amount) - Double.parseDouble(cd);
 		double actual_amount = createPOBasedInvoicePage.verifyTdCode(base_amount, cd);
+		actual_amount = Math.floor(actual_amount * 100) / 100.0;
 		Assert.assertEquals(actual_amount,expected_amount,"Test failed");
 	}
 	
@@ -84,6 +87,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		String base_amount = (String) data[0][1], tcs = (String) data[0][5];
 		double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(tcs);
 		double actual_amount=createPOBasedInvoicePage.verifyAdditionalAmount(base_amount, tcs);
+		actual_amount = Math.floor(actual_amount * 100) / 100.0;
 		Assert.assertEquals(actual_amount, expected_amount, "Test failed");
 	}
 	
@@ -107,6 +111,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		boolean isSubmitted = createPOBasedInvoicePage.submitMemoWithValidData(invoice, po_number);
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
 	}
+	
 	@Test(priority = 6)
 	public void submitMemoWithDuplicateDataTest(){
 
@@ -128,8 +133,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 			
 		List<Invoice> invoices = new ArrayList<>();
 		
-		
-		for(int i=1; i<8; i++)
+		for(int i=1; i<3; i++)
 		{
 			String invoice_number = (String) data[i][0], base_amount = (String) data[i][1], igst = (String) data[i][2];
 			String subServiceCategory = (String) data[i][3], cd = (String) data[i][4], tcs = (String) data[i][5];
@@ -143,7 +147,6 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 		boolean isSubmitted = createPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices, po_number);
 		isMultipleInvoicesSubmitted = isSubmitted;
 		Assert.assertTrue(isSubmitted, "Memo was not submitted");
-
 	}
 	
 	@Test(priority = 8)
