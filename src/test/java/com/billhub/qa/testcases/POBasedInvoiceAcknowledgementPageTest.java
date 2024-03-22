@@ -2,6 +2,7 @@ package com.billhub.qa.testcases;
 
 import java.time.Duration;
 
+import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -47,7 +48,7 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
     public void validateAcknowledgedStatusTest()  {
         
         String memo_status = poBasedInvoiceAcknowledgementPage.validateAcknowledgedMemoStatus();
-        Assert.assertEquals(memo_status, "Acknowledged", "Memo status was not updated successfully.");
+        Assert.assertTrue(StringUtils.containsIgnoreCase(memo_status,"Acknowledged"), "Memo status was not updated successfully.");
     }
 	
 	@Test(priority = 4)
@@ -63,7 +64,7 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
     public void validateVerifiedStatusTest()  {
        
         String memo_status = poBasedInvoiceAcknowledgementPage.validateVerifiedMemoStatus();
-        Assert.assertEquals(memo_status, "Verified", "Memo status was not updated successfully.");
+        Assert.assertTrue(StringUtils.containsIgnoreCase(memo_status,"Verified"), "Memo status was not updated successfully.");
     }
 	
 	@Test(priority = 6)

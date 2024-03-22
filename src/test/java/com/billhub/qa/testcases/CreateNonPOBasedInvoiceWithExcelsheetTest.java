@@ -43,12 +43,14 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
     }
     @BeforeClass
     public void setup() throws InterruptedException {
+
         String from_state = (String) memoData[2][0], to_state = (String) memoData[2][1];
         String company_code="MERU - MLMO";
         String service_type="GENERAL EXPENSES";
         initialization();
 		updateSingleInvoiceExcelSheet();
         updateMultipleInvoiceExcelSheet();
+
         loginPage=new LoginPage();
         baDashboardPage = loginPage.loginAsBa(prop.getProperty("ba_userid_bt"),prop.getProperty("ba_password_bt"));
         createNonPOBasedInvoiceWithExcelsheetPage = baDashboardPage.createNewMemoNonPOBasedWithExcelsheet(from_state,to_state,company_code,service_type,bt_number);
@@ -58,6 +60,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
 
     @Test(priority = 1)
     public void gstCodeVerificationTest(){
+
         String base_amount = (String) data[0][4], igst = (String) data[0][8];
         double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(igst);
 
@@ -67,6 +70,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
 
     @Test(priority = 2)
     public void tdCodeVerificationTest(){
+
         String base_amount = (String) data[0][4], cd = (String) data[0][9];
         double expected_amount = Double.parseDouble(base_amount) - Double.parseDouble(cd);
 
@@ -76,6 +80,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
 
     @Test(priority = 3)
     public void additionalAmountVerificationTest(){
+
         String base_amount = (String) data[0][4], tcs = (String) data[0][9];
 
         double expected_amount = Double.parseDouble(base_amount) + Double.parseDouble(tcs);
@@ -85,12 +90,14 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
 
     @Test(priority = 4)
     public void submitMemoWithoutInvoiceDocTest(){
+
         boolean isErrorToastAppear= createNonPOBasedInvoiceWithExcelsheetPage.submitWithoutInvDoc();
         Assert.assertTrue(isErrorToastAppear,"Test failed!");
     }
 
     @Test(priority = 5)
     public void submitMemoWithValidDataTest(){
+
         String submitting_at = (String) memoData[2][2], submitting_to = (String) memoData[2][3];
 
         boolean isSubmitted = createNonPOBasedInvoiceWithExcelsheetPage.submitMemoWithValidData(submitting_at, submitting_to);
@@ -98,6 +105,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
     }
     @Test(priority = 6)
     public void checkStatusOfSubmittedMemoTest(){
+
         String invoice_number=(String)data[0][1];//make sure this invoice is submitted
         String exp_status="Submitted";
 
@@ -108,6 +116,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
 
     @Test(priority = 7)
     public void submitMemoWithDuplicateDataTest(){
+
         String company_code="MERU - MLMO";
         String service_type="GENERAL EXPENSES";
         //company_code and service_type should be same as above submitted BT
@@ -118,6 +127,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
     }
     @Test(priority = 8)
     public void submitMemoWithoutDataTest(){
+
         String from_state = (String) memoData[2][0], to_state = (String) memoData[2][1];
         String company_code="MERU - MLMO";
         String service_type="GENERAL EXPENSES";
@@ -142,6 +152,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
 
     @Test(priority = 10)
     public void createMultipleInvoiceInSingleMemoTest(){
+
         String company_code="MESPL - MESP";
         String service_type="GENERAL EXPENSES";
         String bt_number_multiple="14349478";// BT number of above company's invoice

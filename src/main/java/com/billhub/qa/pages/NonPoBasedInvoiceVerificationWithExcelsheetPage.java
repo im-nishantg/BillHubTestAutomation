@@ -92,7 +92,7 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
 //    public Object[][] data1;//invoice details
 //    public Object[][] data2;//verification details
 //    public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE="C:\\Users\\SURAJ PATEL\\Downloads";
-//    public static String SHEET_PATH_FOR_UPLOADING_INVOICE=System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet.xlsx";
+//    public static String SHEET_PATH_FOR_UPLOADING_INVOICE=System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_bt.xlsx";
 //    public void updateInvoiceExcelSheet(String memo_number){
 //        String downloded_sheetPath=SHEET_PATH_FOR_DOWNLOADED_INVOICE+"/"+memo_number+".xlsx";
 //        data1= TestUtils.readExcelSheetByFilePath(downloded_sheetPath,"Memo_invoice_Details");
@@ -119,7 +119,7 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
     public Object[][] data1; // invoice details
     public Object[][] data2; // verification details
     public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE = "C:\\Users\\SURAJ PATEL\\Downloads";
-    public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet.xlsx";
+    public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_bt.xlsx";
 
     public void updateInvoiceExcelSheet(String memo_number) {
         String downloaded_sheetPath = SHEET_PATH_FOR_DOWNLOADED_INVOICE + "/" + memo_number + ".xlsx";

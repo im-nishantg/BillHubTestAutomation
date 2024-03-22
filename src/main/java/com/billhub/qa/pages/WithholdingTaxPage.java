@@ -13,7 +13,7 @@ public class WithholdingTaxPage extends TestBase{
 	
 	@FindBy(xpath = "//button[@class='btn btn-secondary btn-verify-blue active']")
 	WebElement addWithholdingTaxBtn;
-	
+
 	@FindBy(xpath = "//input[@id='taxRate']")
 	WebElement withholdingTaxInput;
 	
@@ -22,7 +22,7 @@ public class WithholdingTaxPage extends TestBase{
 
 	@FindBy(css = "input[formcontrolname='taxCode']")
 	WebElement withTaxCode;
-	
+
 	@FindBy(css = "input[formcontrolname='taxType']")
 	WebElement withTaxType;
 	
@@ -38,14 +38,27 @@ public class WithholdingTaxPage extends TestBase{
 	@FindBy(css = "button[class='btn btn-danger btn-done']")
 	WebElement closeBtn;
 
+
 	public WithholdingTaxPage() {
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void initalizePopupElements(){
 		PageFactory.initElements(driver, this);
 	}
+	
+	public void fillNewWithholdingTaxForm(String tax_type, String tax_code,String tax_rate,String tax_drop){
 
+		addWithholdingTaxBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		initalizePopupElements();
+		withTaxType.sendKeys(tax_type);
+		withTaxCode.sendKeys(tax_code);
+		withTaxRate.sendKeys(tax_rate);
+		Select selectVertical = new Select(withTaxDescrp);
+		selectVertical.selectByVisibleText(tax_drop);
+	}
+	
 	public boolean searchWithholdingTaxByTaxRate(String tax_rate) {
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
@@ -57,20 +70,6 @@ public class WithholdingTaxPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), tax_rate);
 	}
-
-	
-	public void fillNewWithholdingTaxForm(String tax_type, String tax_code,String tax_rate,String tax_drop){
-		
-		addWithholdingTaxBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		initalizePopupElements();
-		withTaxType.sendKeys(tax_type);
-		withTaxCode.sendKeys(tax_code);
-		withTaxRate.sendKeys(tax_rate);
-		Select selectVertical = new Select(withTaxDescrp);
-		selectVertical.selectByVisibleText(tax_drop);
-	}
-
 	
 	public boolean validateSearchWithholdingTax(String taxRate) {
 		
@@ -85,13 +84,12 @@ public class WithholdingTaxPage extends TestBase{
 	}
 
 	public boolean validateAddTaxWithValidData(String taxType, String taxCode, String taxRate, String taxDescription) {
-		
+
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		fillNewWithholdingTaxForm(taxType,taxCode,taxRate,taxDescription);
-		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		addBtn.click();
 		
+		addBtn.click();
 		boolean isAdded = TestUtils.isSuccessToastDisplayed("Withholding tax added successfully");
 		if(isAdded == false)	closeBtn.click();
 		return isAdded;
@@ -104,26 +102,24 @@ public class WithholdingTaxPage extends TestBase{
 	}
 
 	public boolean validateAddTaxWithBlankData(String taxType, String taxCode, String taxRate, String taxDescription) {
-		
+
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		fillNewWithholdingTaxForm(taxType, taxCode, taxRate, taxDescription);
-		
+		fillNewWithholdingTaxForm(taxType, taxCode, taxRate, taxDescription);	
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+	
 		addBtn.click();
-		
 		boolean isAdded = TestUtils.isSuccessToastDisplayed("Withholding tax added successfully");
 		if(isAdded == false)	closeBtn.click();
 		return isAdded;
 	}
 
 	public boolean validateDuplicateWithholdingData(String taxType, String taxCode, String taxRate, String taxDescription) {
-		
+
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		fillNewWithholdingTaxForm(taxType,taxCode,taxRate,taxDescription);
-		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		addBtn.click();
 		
+		addBtn.click();
 		boolean isAdded = TestUtils.isSuccessToastDisplayed("Withholding tax added successfully");
 		if(isAdded == false)	closeBtn.click();
 		return isAdded;

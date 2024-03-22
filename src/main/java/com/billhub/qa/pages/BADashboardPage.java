@@ -344,6 +344,7 @@ public class BADashboardPage extends TestBase{
 	public CreateNonPOBasedInvoicePage createNewMemoBTBased(String from_state, String to_state){
 		
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		fromState.sendKeys(from_state);

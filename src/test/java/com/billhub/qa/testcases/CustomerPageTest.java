@@ -36,7 +36,8 @@ public class CustomerPageTest extends TestBase{
 	
 	@BeforeClass
 	public void setup(){
-		
+
+
 		initialization();
 		loginPage= new LoginPage();
 		mdmDashboardPage = loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
@@ -47,7 +48,8 @@ public class CustomerPageTest extends TestBase{
 
 	@Test(priority = 1)
 	public void AddCustomerWithValidDataTest(){
-		
+
+
 		String customerName=(String) data[0][0], customerCode=TestUtils.numberToString(data[0][1]),customerPeriod=TestUtils.numberToString(data[0][2]), customerDrop=(String) data[0][3];
 		
 		boolean result= customerPage.validateAddCustomerWithValidData(customerName,customerCode,customerPeriod,customerDrop);
@@ -56,7 +58,8 @@ public class CustomerPageTest extends TestBase{
 
 	@Test(priority = 2)
 	public void SearchCustomerByCodeTest(){
-		
+
+
 		String customerCode=TestUtils.numberToString(data[0][1]);
 		
 		boolean result = customerPage.searchAddedCustomerByCode(customerCode);
@@ -65,7 +68,8 @@ public class CustomerPageTest extends TestBase{
 	
 	@Test(priority = 3)
 	public void SearchCustomerByNameTest(){
-		
+
+
 		String customerName=(String) data[0][0];
 		
 		boolean result = customerPage.validateSearchCustomerByName(customerName);
@@ -74,7 +78,8 @@ public class CustomerPageTest extends TestBase{
 	
 	@Test(priority = 4)
 	public void ValidateCustomerInDatabaseTest(){
-		
+
+
 		String customerCode=TestUtils.numberToString(data[0][1]);
 		
 		boolean isPresent = customerPage.validateAddedCustomerInDatabase(customerCode);
@@ -83,13 +88,15 @@ public class CustomerPageTest extends TestBase{
 
 	@Test(priority = 5)
 	public void AddCustomerWithoutDataTest(){
-		
+
+
 		boolean result=customerPage.validateAddNewCustomerWithoutData("","","","");
 		Assert.assertFalse(result,"Test failed as it has saved with blank data");
 	}
 
 	@Test(priority = 6)
 	public void AddCustomerWithInvalidDataTest(){
+
 		
 		String customerName=(String) data[1][0], customerCode=(String)data[1][1],customerPeriod=(String)data[1][2], customerDrop=(String) data[1][3];
 		
@@ -99,7 +106,8 @@ public class CustomerPageTest extends TestBase{
 
 	@Test(priority = 7)
 	public void CheckCustomerActiveStatusTest(){
-		
+
+
 		String customerCode=TestUtils.numberToString(data[0][1]);
 		
 		boolean isActive=customerPage.validateActiveStatus(customerCode);
@@ -108,7 +116,8 @@ public class CustomerPageTest extends TestBase{
 	
 	@Test(priority = 8)
 	public void CheckCustomerInactiveStatus(){
-		
+
+
 		String customerName=(String) data[2][0], customerCode=TestUtils.numberToString(data[2][1]),customerPeriod=TestUtils.numberToString(data[2][2]), customerDrop=(String) data[2][3];
 		
 		boolean isActive=customerPage.validateInactiveStatus(customerName,customerCode,customerPeriod,customerDrop);

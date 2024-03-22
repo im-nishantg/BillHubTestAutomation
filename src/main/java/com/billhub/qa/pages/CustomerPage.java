@@ -18,10 +18,10 @@ public class CustomerPage extends TestBase {
 	
     @FindBy(xpath = "//input[@id='Customer_Name']")
     WebElement SearchCustomerByName;
-    
+
     @FindBy(xpath = "//input[@id='Customer_Code']")
     WebElement SearchCustomerByCode;
-    
+
     @FindBy(xpath = "//button[normalize-space()='Search']")
     WebElement SearchCustomerBtn;
 
@@ -48,20 +48,20 @@ public class CustomerPage extends TestBase {
     
     @FindBy(css = "button[class='btn btn-primary btn-done']")
     WebElement addBtn;
-    
+
     @FindBy(css = "button[class='btn btn-danger btn-done']")
     WebElement closeBtn;
 
     public CustomerPage(){
-    	
         PageFactory.initElements(driver,this);
     }
+    
     public void initializePopupWebElements(){
-    	
         PageFactory.initElements(driver,this);
     }
+    
     public void fillNewCustomerForm(String customer_code,String customer_name, String customer_period, String customer_drop){
-        
+
     	addCustomerBtn.click();
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
         initializePopupWebElements();
@@ -73,7 +73,7 @@ public class CustomerPage extends TestBase {
 
     }
     public boolean searchAddedCustomerByCode(String customer_code) {
-    	
+
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
@@ -85,7 +85,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateSearchCustomerByName(String customer_name){
-    	
+	
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
@@ -97,7 +97,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
-    	
+	
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
@@ -147,7 +147,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateActiveStatus(String customer_code){
-        
+
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
@@ -163,10 +163,11 @@ public class CustomerPage extends TestBase {
         TestUtils.waitForElementInvisibility(By.className("modal-container"));
         closeBtn.click();
         return isActive;
+
     }
 
     public boolean validateInactiveStatus(String custName, String custCode, String custPeriod, String custDrop){
-        
+
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	fillNewCustomerForm(custCode, custName,custPeriod,custDrop);
     	
@@ -178,7 +179,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateAddedCustomerInDatabase(String customer_code){
-        
+
     	TestUtils.waitForElementInvisibility(By.className("modal-container"));
     	SearchCustomerByCode.clear();
         return searchAddedCustomerByCode(customer_code);

@@ -1,0 +1,67 @@
+15:04:57.116 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+15:04:58.364 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:05:13.541 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:05:28.626 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:05:43.796 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:05:58.887 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Advance document and debit notes fetched successfully
+15:06:13.970 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Advance document and debit notes fetched successfully
+15:06:14.185 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-verification/div/div/form/div/div[1]/div[1]/div[2]/table/tbody/tr/td[2]/ng-select/ng-dropdown-panel/div/div[2]/div
+15:06:14.222 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:07:57.970 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+15:07:58.919 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:08:14.047 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:08:29.063 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:08:44.217 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+15:08:59.255 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Advance document and debit notes fetched successfully
+15:09:14.338 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Advance document and debit notes fetched successfully
+15:09:14.625 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-verification/div/div/form/div/div[1]/div[1]/div[2]/table/tbody/tr/td[2]/ng-select/ng-dropdown-panel/div/div[2]/div
+15:09:14.653 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:01:03.486 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:01:04.380 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:01:19.780 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:01:34.825 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:01:50.192 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:02:05.254 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Advance document and debit notes fetched successfully
+16:02:20.331 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Advance document and debit notes fetched successfully
+16:02:20.820 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-verification/div/div/form/div/div[1]/div[1]/div[2]/table/tbody/tr/td[2]/ng-select/ng-dropdown-panel/div/div[2]/div
+16:02:20.865 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:04:17.515 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:04:18.318 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:04:33.670 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:04:48.711 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:05:04.068 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:05:19.676 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-verification/div/div/form/div/div[1]/div[1]/div[2]/table/tbody/tr/td[2]/ng-select/ng-dropdown-panel/div/div[2]/div
+16:10:18.287 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:10:19.136 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:10:34.496 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:10:49.523 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:11:04.791 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:11:20.485 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:11:36.350 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:11:52.261 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:12:07.810 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice verified and similiate successfully
+16:12:22.848 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Invoice verified and similiate successfully
+18:03:03.291 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:03:18.430 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (81229cf786efff61563d3f669d91dc37)] -> xpath: //button[@class='btn btn-primary ng-star-inserted']]
+18:03:19.394 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (81229cf786efff61563d3f669d91dc37)] -> xpath: //span[normalize-space()='Create Memo']]
+18:03:28.175 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:03:43.698 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:04:00.689 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:04:15.758 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (81229cf786efff61563d3f669d91dc37)] -> xpath: //button[normalize-space()='Done']]
+18:04:17.077 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:04:32.373 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:04:47.603 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:05:03.193 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:05:18.322 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (81229cf786efff61563d3f669d91dc37)] -> xpath: //tbody/tr[1]/td[1]]
+18:05:18.777 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (81229cf786efff61563d3f669d91dc37)] -> xpath: //button[normalize-space()='SAVE']]
+18:05:19.621 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:05:34.957 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:05:50.239 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:06:05.570 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-memo-list/div/div/div[2]/div/form/div/div[6]/button
+18:06:05.605 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:06:20.856 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button
+18:06:21.490 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:06:36.515 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (81229cf786efff61563d3f669d91dc37)] -> xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button]
+18:06:36.742 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:06:58.528 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:07:14.204 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container

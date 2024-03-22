@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
+      <class name="com.billhub.qa.testcases.CreatePaymentRequestPageTest">
         <methods>
           <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="gstCodeVerificationTest"/>
+          <include name="searchWithValidRequestNumberTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
+      </class> <!-- com.billhub.qa.testcases.CreatePaymentRequestPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
