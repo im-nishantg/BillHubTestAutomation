@@ -11,10 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class BADashboardPageTest extends TestBase {
-    LoginPage loginPage;
-
+    
+	LoginPage loginPage;
     BADashboardPage baDashboardPage;
-
     public Object[][] data = TestUtils.getTestData("BADashboardPage");
     
     @BeforeClass

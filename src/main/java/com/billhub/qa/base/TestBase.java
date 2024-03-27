@@ -34,6 +34,7 @@ public class TestBase {
 	public static void initialization() {
 		
 		log = LogManager.getLogger(TestBase.class.getName());
+		
 		String browserName = prop.getProperty("browser");
 		
 		if(browserName.equalsIgnoreCase("chrome")) {

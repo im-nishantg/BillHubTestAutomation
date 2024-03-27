@@ -13,8 +13,6 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.utils.TestUtils;
 
-
-
 public class ExtentReportNG extends TestBase implements ITestListener{
 	
 	ExtentReports report = new ExtentReports();

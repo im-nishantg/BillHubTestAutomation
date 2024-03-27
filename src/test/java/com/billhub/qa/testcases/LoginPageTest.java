@@ -26,26 +26,27 @@ public class LoginPageTest extends TestBase{
 		loginPage= new LoginPage();
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void loginAsMdmTest(){
 		mdmDashboardPage= loginPage.loginAsMdm(prop.getProperty("mdm_userid"),prop.getProperty("mdm_password"));
 	}
-	@Test
+	
+	@Test(priority = 2)
 	public void loginAsBATest(){
 		baDashboardPage= loginPage.loginAsBa(prop.getProperty("BA_userId"),prop.getProperty("password"));
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void loginAsCommercialTest(){
 		commercialDashboardPage=loginPage.loginAsCommercial(prop.getProperty("Commercial_userId"),prop.getProperty("password"));
 	}
 
-	@Test
+	@Test(priority = 4)
 	public void loginAsAccountTest(){
 		accountDashboardPage= loginPage.loginAsAccount(prop.getProperty("Account_userId"),prop.getProperty("password"));
 	}
 
-	@Test
+	@Test(priority = 5)
 	public void loginAsTaxationTest(){
 		taxationDashboardPage= loginPage.loginAsTaxation(prop.getProperty("Taxation_userId"),prop.getProperty("password"));
 	}

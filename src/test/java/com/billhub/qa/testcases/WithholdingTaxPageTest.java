@@ -26,7 +26,6 @@ public class WithholdingTaxPageTest extends TestBase{
 
 	public void updateExcelSheetData() {
 
-
 		String random_WTAX_code= TestUtils.generateRandomNumber(2);
 		String random_WRATE_code=TestUtils.generateRandomNumber(2);
 		TestUtils.setCellData("WithholdingTax", 1, 1, random_WTAX_code);
@@ -35,7 +34,6 @@ public class WithholdingTaxPageTest extends TestBase{
 	
 	@BeforeClass
 	public void setup() throws InterruptedException {
-
 
 		initialization();
 		loginPage= new LoginPage();
@@ -48,7 +46,6 @@ public class WithholdingTaxPageTest extends TestBase{
 
 	@Test(priority = 1)
 	public void AddTaxWithValidDataTest(){
-
 
 		String tax_Type=(String) data[0][0], tax_Code=(String) data[0][1], tax_Rate=TestUtils.numberToString(data[0][2]), tax_Description=(String) data[0][3];
 		
@@ -69,7 +66,6 @@ public class WithholdingTaxPageTest extends TestBase{
 	@Test(priority = 3)
 	public void SearchWithholdingTaxByRate(){
 
-
 		String tax_Rate=TestUtils.numberToString(data[0][2]);
 		
 		boolean result=withholdingTaxPage.validateSearchWithholdingTax(tax_Rate);
@@ -78,7 +74,6 @@ public class WithholdingTaxPageTest extends TestBase{
 	
 	@Test(priority = 4)
 	public  void withholdingTaxAppearanceTest(){
-
 
 		String tax_Rate=TestUtils.numberToString(data[0][2]);
 		
@@ -89,14 +84,12 @@ public class WithholdingTaxPageTest extends TestBase{
 	@Test(priority = 5)
 	public void AddTaxWithBlankDataTest(){
 
-
 		boolean result=withholdingTaxPage.validateAddTaxWithBlankData("","","","");
 		Assert.assertFalse(result,"Test failed!: Withholding tax added with blank data");
 	}
 	
 	@Test(priority = 6)
 	public void AddTaxWithInvalidDataTest(){
-
 
 		String tax_Type=(String) data[2][0], tax_Code=(String) data[2][1], tax_Rate=(String)data[2][2], tax_Description=(String) data[2][3];
 		

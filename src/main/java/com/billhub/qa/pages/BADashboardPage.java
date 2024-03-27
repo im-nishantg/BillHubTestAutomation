@@ -142,7 +142,6 @@ public class BADashboardPage extends TestBase{
 		PageFactory.initElements(driver,this);
 	}
 
-	
 	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
 
 		TestUtils.waitForElementInvisibility(By.className("loader"));
