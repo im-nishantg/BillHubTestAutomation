@@ -1,14 +1,10 @@
 package com.billhub.qa.pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.utils.Invoice;
 import com.billhub.qa.utils.TestUtils;
 
 public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
@@ -80,30 +76,27 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	WebElement invoiceAlreadyExistErrorText;
 	
 	public CreatePOBasedInvoiceWithExcelsheetPage() {
-		
 		PageFactory.initElements(driver, this);
 	}
 	
-	
 	public void uploadExcelSheet(String INVOICE_SHEET_PATH) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		uploadFileBtn.sendKeys(INVOICE_SHEET_PATH);
 		TestUtils.waitForElementVisibility(By.cssSelector(".btn.btn-warning.btn-acknowledge"));
 		TestUtils.waitForWebElementToBeClickable(uploadBtn).click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 	}
 	
 	public void attachSampleInvoiceFile() {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		attachBtn.click();
 		String invoice_file_path = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\Sample_Invoice.pdf";
 		addInvoice.sendKeys(invoice_file_path);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		TestUtils.waitForWebElementToBeClickable(doneBtn).click();
 	}
-
 
 	public double verifyGstCode() {
 		
@@ -114,7 +107,6 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		return Double.parseDouble(amount);
 	}
 
-
 	public double verifyTdCode() {
 		
 		editBtn.click();
@@ -123,7 +115,6 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
-
 
 	public double verifyAdditionalAmount() {
 		
@@ -141,9 +132,9 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the current invoice
 		
 		// code for tagging the location and the person for the memo
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		submittingAt.sendKeys(submitting_at);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		submittingTo.sendKeys(submitting_to);
 		
 		// code for actually submitting the memo
@@ -154,7 +145,7 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 		
 		//print button will be visible once the memo is submitted successfully
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));			
+		TestUtils.waitForElementInvisibility(By.className("loader"));			
 		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);	
 		homeBtn.click();							// going back to home button for next test
 		return isPrintBtnVisible;
@@ -163,7 +154,7 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	public boolean submitMemoWithDuplicateData(String SHEET_PATH_FOR_SINGLE_INVOICE) {
 		
 		uploadExcelSheet(SHEET_PATH_FOR_SINGLE_INVOICE);		// uploading the excel sheet with duplicate data
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		
 		boolean isErrorDisplayed = TestUtils.isElementVisible(invoiceAlreadyExistErrorText);	
 		return isErrorDisplayed;
@@ -171,7 +162,7 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	
 	public boolean submitMemoWithoutData(String SHEET_PATH_FOR_EMPTY_INVOICE) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		uploadFileBtn.sendKeys(SHEET_PATH_FOR_EMPTY_INVOICE);
 		
 		boolean isSubmitMemoBtnDisplayed = TestUtils.isElementVisible(submitMemoBtn);	
@@ -181,22 +172,22 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 	public boolean createMultipleInvoiceInSingleMemo(String SHEET_PATH_FOR_MULTIPLE_INVOICE, String submitting_at, String submitting_to) {
 		
 		uploadExcelSheet(SHEET_PATH_FOR_MULTIPLE_INVOICE);					// uploading the excel sheet with multiple invoices
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		
 		editBtn1.click();
 		attachSampleInvoiceFile();
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the first invoice
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		
 		editBtn2.click();
 		attachSampleInvoiceFile();
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the second invoice
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		
 		// code for tagging the location and the person for the memo
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		submittingAt.sendKeys(submitting_at);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		submittingTo.sendKeys(submitting_to);
 		
 		// code for actually submitting the memo
@@ -207,7 +198,7 @@ public class CreatePOBasedInvoiceWithExcelsheetPage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 		
 		//print button will be visible once the memo is submitted successfully
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));			
+		TestUtils.waitForElementInvisibility(By.className("loader"));			
 		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);	
 		homeBtn.click();							// going back to home button for next test
 		return isPrintBtnVisible;

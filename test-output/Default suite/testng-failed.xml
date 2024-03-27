@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.CreatePaymentRequestPageTest">
+      <class name="com.billhub.qa.testcases.InvoiceValidationByAccounts_MERU_Test">
         <methods>
+          <include name="tearDown"/>
+          <include name="searchInvoicesWithMultipleFieldsTest"/>
           <include name="setup"/>
-          <include name="searchWithValidRequestNumberTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.CreatePaymentRequestPageTest -->
+      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_MERU_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

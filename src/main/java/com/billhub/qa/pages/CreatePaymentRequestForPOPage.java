@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.utils.TestUtils;
 
-public class CreatePaymentRequestPage extends TestBase{
+public class CreatePaymentRequestForPOPage extends TestBase{
 	
 	@FindBy(xpath = "//button[@class='btn btn-link']")
 	WebElement navbarExpandBtn;
@@ -27,6 +27,9 @@ public class CreatePaymentRequestPage extends TestBase{
 	
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/create-payment-request/div/div/div[1]/div[2]/div/input")
 	WebElement searchBAInput;
+    
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/create-payment-request/div/div/div[2]/div/table/thead/tr/th[4]/input")
+	WebElement billNoInput;
     
     @FindBy(xpath = "//*[@id=\"ngb-typeahead-0-0\"]")
 	WebElement firstOption;
@@ -52,7 +55,7 @@ public class CreatePaymentRequestPage extends TestBase{
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-reject-payment-request/div/div[1]/div[1]/div[3]/div/div/button")
 	WebElement searchBtn;
     
-    @FindBy(xpath = "//*[@id=\"ngb-typeahead-5-0\"]/span/strong")
+    @FindBy(xpath = "/html/body/app-root/app-layout/div[1]/main/div/div/app-reject-payment-request/div/div[1]/div[1]/div[3]/div/typeahead-container/button")
 	WebElement firstOptionInInput;
     
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-reject-payment-request/div/div[1]/div[2]/div/table/tbody/tr/td[1]/div/input")
@@ -67,7 +70,26 @@ public class CreatePaymentRequestPage extends TestBase{
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-reject-payment-request/div/div[2]/div/button")
    	WebElement rejectPaymentRequestBtn;
     
-	public CreatePaymentRequestPage() {
+    @FindBy(xpath = "//td[normalize-space()='Payment rejected successfully']")
+	WebElement paymentRejectSuccessMessage;
+
+    @FindBy(xpath = "//a[normalize-space()='Filter']")
+    WebElement filterBtn;
+    
+    @FindBy(css = "input[formcontrolname='inv']")
+    WebElement invoice;
+    
+    @FindBy(css = "button[type='submit']")
+    WebElement applyBtn;
+    
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]/label")
+    WebElement firstRowInvoiceNumber;
+    
+    @FindBy(xpath = "/html/body/modal-container/div/div/app-invoice-info-popup/div[3]/div/div/button")
+    WebElement closeBtn;
+    
+    
+	public CreatePaymentRequestForPOPage() {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -76,11 +98,11 @@ public class CreatePaymentRequestPage extends TestBase{
 	
 	public void clickOnCreatePaymentRequestLink() {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
     	TestUtils.waitForWebElementToBeClickable(actionBtn).click();
     	TestUtils.waitForWebElementToBeClickable(createPaymentRequest).click();
-    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
 	}
 	
 	public boolean searchInvoicesByValidBaName(String ba_name) {
@@ -98,43 +120,107 @@ public class CreatePaymentRequestPage extends TestBase{
     	return TestUtils.isElementVisible(firstRowCheckbox);
 	}
 
-	public boolean validateExcelsheetData(String ba_name) {
+	public boolean validateExcelsheetData(String ba_name, String invoice_number){
 		
 		clickOnCreatePaymentRequestLink();
     	
     	searchBAInput.sendKeys(ba_name);
     	TestUtils.waitForWebElementToBeClickable(firstOption).click();
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
+    	
+    	billNoInput.sendKeys(invoice_number);
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
+    	
     	firstRowCheckbox.click();
     	addSelectedToPaymentRequestBtn.click();
     	
     	TestUtils.waitForWebElementToBeClickable(firstRowCheckboxInRequests).click();
     	createRequestBtn.click();
     	
-    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
     	submitBtn.click();
-    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		return true;
+    	
+		return TestUtils.isSuccessToastDisplayed("Create Payment Request");
+	}
+	
+	public void readPaymentRequestNumber(String invoice_number) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+
+		filterBtn.click();
+    	invoice.sendKeys(invoice_number);
+    	applyBtn.click();
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
+    	
+    	firstRowInvoiceNumber.click();
+    	WebElement paymentRequestNumber = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-invoice-info-popup/div[2]/div[2]/div[1]/div/div[3]/div[2]/table/tbody/tr/td[2]"));
+    	String payment_request_number = paymentRequestNumber.getText();
+    	
+    	TestUtils.setCellData("CreatePaymentRequestForPo", 1, 3, payment_request_number);
+    	closeBtn.click();
 	}
 	
 	// ************************  Functions associated with View Payment Request Page ************************
 	
 	public void clickOnViewPaymentRequestLink() {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
     	TestUtils.waitForWebElementToBeClickable(actionBtn).click();
     	TestUtils.waitForWebElementToBeClickable(viewPaymentRequest).click();
-    	TestUtils.waitForElementInvisibility(By.className("modal-container"));
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
 	}
 	
 	public boolean searchWithValidRequestNumber(String request_number) {
 		
-		clickOnViewPaymentRequestLink();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+    	TestUtils.waitForWebElementToBeClickable(actionBtn).click();
+    	TestUtils.waitForWebElementToBeClickable(viewPaymentRequest).click();
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
+    	
 		searchRequestNoInput.sendKeys(request_number);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(firstOptionInInput).click();
 		searchBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.isElementVisible(firstCheckbox);
 	}
+	
+	public boolean searchWithInvalidRequestNumber(String request_number) {
+		
+		clickOnViewPaymentRequestLink();
+		searchRequestNoInput.sendKeys(request_number);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		searchBtn.click();
+		return TestUtils.isElementVisible(firstCheckbox);
+	}
+	
+	public boolean ValidateDownloadPaymentRequest(String request_number) {
+		
+		searchWithValidRequestNumber(request_number);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		firstCheckbox.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		downloadPaymentRequestBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		return true;
+	}
+
+	public boolean ValidateRejectPaymentRequest(String request_number, String reason) {
+	    
+		searchWithValidRequestNumber(request_number);
+	    firstCheckbox.click();
+	    reasonInput.click();
+	    
+	    String Optionxpath = "//a[normalize-space()='" + reason + "']"; 
+	    TestUtils.waitForElementToBeClickable(By.xpath(Optionxpath)).click();
+	    
+	    TestUtils.waitForElementInvisibility(By.className("loader"));
+	    rejectPaymentRequestBtn.click();
+	    
+	    return TestUtils.isElementVisible(paymentRejectSuccessMessage);
+	}
+
 }

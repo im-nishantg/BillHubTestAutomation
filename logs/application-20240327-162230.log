@@ -1,0 +1,80 @@
+16:04:18.104 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Tax Code Added successfully
+16:04:38.149 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Tax Code Added successfully
+16:04:38.154 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:04:38.184 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:04:38.265 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:04:38.592 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:04:38.616 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Tax Code Added successfully
+16:04:58.651 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Tax Code Added successfully
+16:04:58.655 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:04:58.683 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:04:58.763 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:04:59.339 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:04:59.360 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Tax Code Added successfully
+16:05:19.399 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Tax Code Added successfully
+16:05:19.403 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:05:19.710 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:05:22.675 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:05:23.238 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:05:23.262 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:05:23.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: div:nth-child(3) input:nth-child(1)
+16:05:24.202 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: input[formcontrolname='Description']
+16:05:24.511 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Tax Code Updated successfully
+16:17:11.744 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:17:31.800 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c9914ae7fee174926eaa31a049886964)] -> xpath: //button[@class='btn btn-link']]
+16:17:31.926 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c9914ae7fee174926eaa31a049886964)] -> xpath: //span[normalize-space()='Master']]
+16:17:32.750 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (c9914ae7fee174926eaa31a049886964)] -> link text: Role]
+16:17:34.158 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:34.188 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:17:34.275 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:34.820 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Role Added successfully
+16:17:34.858 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:35.429 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:35.745 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:36.340 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:36.365 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:17:38.600 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:38.910 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Role Added successfully
+16:17:58.950 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Role Added successfully
+16:17:58.956 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:58.985 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:17:59.078 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:59.348 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Role Added successfully
+16:17:59.775 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:59.799 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:18:03.081 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:03.333 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Kindly fill out all the mandatory fields
+16:18:23.369 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Kindly fill out all the mandatory fields
+16:18:23.373 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:23.400 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+16:18:23.428 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:23.747 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:24.416 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //div[@class='form-group has-float-label col-md-6']//input[@type='text']
+16:18:25.144 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Role data updated successfully
+16:18:25.376 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:26.077 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:26.664 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:26.957 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:21:56.147 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:02.221 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+16:22:02.252 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+16:22:22.480 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:23.101 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:24.293 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+16:22:24.354 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:24.976 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:25.607 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:26.499 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+16:22:26.553 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:27.172 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:27.932 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+16:22:27.965 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+16:22:28.013 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:28.204 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:28.282 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+16:22:28.307 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+16:22:28.349 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:29.143 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+16:22:29.169 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+16:22:29.214 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:30.543 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table

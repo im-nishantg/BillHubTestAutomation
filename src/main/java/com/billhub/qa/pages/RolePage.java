@@ -18,11 +18,13 @@ public class RolePage extends TestBase{
 	
 	@FindBy(xpath = "//button[@class='btn btn-secondary btn-verify-blue active']")
 	WebElement addRoleBtn;
+	
 	@FindBy(xpath = "//input[@id='invoiceNumber']")
 	WebElement searchRoleName;
 
 	@FindBy(xpath = "//input[@id='tokenID']")
 	WebElement searchRoleCode;
+	
 	@FindBy(xpath = "//button[normalize-space()='Search']")
 	WebElement roleSearchBtn;
 
@@ -31,6 +33,7 @@ public class RolePage extends TestBase{
 
 	@FindBy(xpath = "//div[@class='has-float-label form-group col-md-6']//input[@type='text']")
 	WebElement roleCodeInput;
+	
 	@FindBy(xpath = "//div[@class='form-group has-float-label col-md-6']//input[@type='text']")
 	WebElement roleNameInput;
 
@@ -43,8 +46,6 @@ public class RolePage extends TestBase{
 	@FindBy(css = "button[class='btn btn-primary btn-done'] span")
 	WebElement updateBtn;
 
-
-
 	public RolePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -56,12 +57,15 @@ public class RolePage extends TestBase{
 	public void fillAddNewRoleForm(String role_code, String role_name){
 
 		addRoleBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		initializePopupWebElements();
 		roleCodeInput.sendKeys(role_code);
 		roleNameInput.sendKeys(role_name);
 	}
 
 	public boolean addNewRoleWithValidData(String role_code, String role_name) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
 		addNewRoleBtn.click();
@@ -70,6 +74,8 @@ public class RolePage extends TestBase{
 	}
 
 	public boolean addNewRoleWithInvalidData(String role_code, String role_name) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
 		addNewRoleBtn.click();
@@ -78,6 +84,8 @@ public class RolePage extends TestBase{
 	}
 
 	public boolean addNewRoleWithoutData(String role_code, String role_name) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
 		addNewRoleBtn.click();
@@ -86,6 +94,8 @@ public class RolePage extends TestBase{
 	}
 
 	public boolean addNewRoleWithDuplicateData(String role_code, String role_name) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddNewRoleForm(role_code, role_name);
 		addNewRoleBtn.click();
@@ -93,27 +103,37 @@ public class RolePage extends TestBase{
 	}
 
 	public boolean validateAddedRoleInTheDatabase(String role_code) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return searchRoleByCode(role_code);
 	}
 
 	public boolean searchRoleByName(String role_name) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchRoleCode.clear();
 		searchRoleName.clear();
 		searchRoleName.sendKeys(role_name);
 		roleSearchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-roles/div/div/div[3]/div/table/tbody/tr/td[3]"), role_name);
 	}
 
 	public boolean searchRoleByCode(String role_code) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchRoleCode.clear();
 		searchRoleName.clear();
 		searchRoleCode.sendKeys(role_code);
 		roleSearchBtn.click();
 		searchRoleCode.clear();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-roles/div/div/div[3]/div/table/tbody/tr/td[2]"), role_code);
 	}
 
 	public boolean updateRole(String role_code, String role_name){
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		searchRoleByCode(role_code);
 

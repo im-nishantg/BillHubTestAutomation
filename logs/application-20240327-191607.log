@@ -1,0 +1,65 @@
+19:07:35.917 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:07:36.472 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b89b933acba098753cbc03c9c6d59511)] -> xpath: //*[@id="ngb-typeahead-0-0"]]
+19:07:36.570 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:07:37.216 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:07:57.656 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:07:57.704 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b89b933acba098753cbc03c9c6d59511)] -> xpath: //button[@class='btn btn-link']]
+19:07:57.837 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b89b933acba098753cbc03c9c6d59511)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:13:57.079 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:14:17.979 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:14:18.038 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a665943cc0514752f6d36f73846dfde1)] -> xpath: //button[@class='btn btn-link']]
+19:14:18.181 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a665943cc0514752f6d36f73846dfde1)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:14:18.328 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a665943cc0514752f6d36f73846dfde1)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/div/ul/li[4]/a]
+19:14:18.979 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:14:19.565 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a665943cc0514752f6d36f73846dfde1)] -> xpath: //*[@id="ngb-typeahead-0-0"]]
+19:14:19.685 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:14:20.337 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:14:51.246 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:15:11.290 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+19:15:11.352 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]]
+19:15:11.604 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: //span[normalize-space()='Create Memo']]
+19:15:14.267 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:14.520 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:15.216 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:15.544 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:16.668 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: //button[normalize-space()='Done']]
+19:15:16.764 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:17.582 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:18.295 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:18.879 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+19:15:19.327 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: //button[normalize-space()='SAVE']]
+19:15:20.130 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:21.275 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:21.900 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:21.931 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+19:15:25.178 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: //*[@id="main"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button]
+19:15:25.292 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:25.853 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[@type='submit']
+19:15:25.881 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: //button[@type='submit']]
+19:15:25.949 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button
+19:15:26.508 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8bd41898975318d2e0e32e00df2afe1)] -> xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button]
+19:15:26.570 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:32.449 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+19:15:52.507 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:52.804 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:53.544 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+19:15:54.097 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:55.603 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:55.642 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (974370e163c91592290af8a7b7f0c170)] -> xpath: //button[@class='btn btn-link']]
+19:15:56.455 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (974370e163c91592290af8a7b7f0c170)] -> xpath: //span[normalize-space()='Dashboard']]
+19:15:57.112 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:58.082 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:58.216 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+19:15:58.736 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:15:59.376 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:01.039 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:01.338 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:01.481 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice verified and simulate successfully
+19:16:02.828 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:03.403 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (974370e163c91592290af8a7b7f0c170)] -> xpath: //span[normalize-space()='Dashboard']]
+19:16:03.520 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:04.498 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:04.532 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (974370e163c91592290af8a7b7f0c170)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:16:04.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (974370e163c91592290af8a7b7f0c170)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+19:16:05.112 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:16:06.173 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (974370e163c91592290af8a7b7f0c170)] -> xpath: /html/body/modal-container/div/div/app-book-invoice-confirm/div[3]/div/div[2]/button]

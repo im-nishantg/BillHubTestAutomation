@@ -41,18 +41,17 @@ public class TaxCodePage extends TestBase {
     WebElement updateBtn;
 
     public TaxCodePage() {
-    	
         PageFactory.initElements(driver, this);
     }
 
     public void initializePopupWebElements() {
-
         PageFactory.initElements(driver, this);
     }
 
     public void fillAddTaxCodeForm(String tax_code, String tax_percent, String desc) {
     	
         addTaxCodeBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         initializePopupWebElements();
 
         taxCode.sendKeys(tax_code);
@@ -62,6 +61,7 @@ public class TaxCodePage extends TestBase {
 
     public boolean addNewTaxCodeWithValidData(String tax_code, String tax_percent, String desc) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	TestUtils.waitForToastToDisappear();
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
@@ -71,36 +71,40 @@ public class TaxCodePage extends TestBase {
 
     public boolean addNewTaxCodeWithInvalidData(String tax_code, String tax_percent, String desc) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	TestUtils.waitForToastToDisappear();
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
         closeBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         return TestUtils.isSuccessToastDisplayed("Tax Code Added successfully");
     }
 
     public boolean addNewTaxCodeWithoutData(String tax_code, String tax_percent, String desc) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	TestUtils.waitForToastToDisappear();
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
         closeBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         return TestUtils.isSuccessToastDisplayed("Tax Code Added successfully");
     }
 
     public boolean addNewTaxCodeWithDuplicateData(String tax_code, String tax_percent, String desc) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	TestUtils.waitForToastToDisappear();
         fillAddTaxCodeForm(tax_code, tax_percent, desc);
         addBtn.click();
         closeBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         return TestUtils.isSuccessToastDisplayed("Tax Code Added successfully");
     }
 
     public boolean searchByTaxCode(String tax_code) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	searchByTaxPercent.clear();
     	searchByTaxCode.clear();
         searchByTaxCode.sendKeys(tax_code);
@@ -110,6 +114,7 @@ public class TaxCodePage extends TestBase {
 
     public boolean searchByTaxPercentage(String tax_percent) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	searchByTaxCode.clear();
     	searchByTaxPercent.clear();
         searchByTaxPercent.sendKeys(tax_percent);
@@ -119,11 +124,13 @@ public class TaxCodePage extends TestBase {
 
     public boolean validateAddedTaxCodeInTheDatabase(String tax_code) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         return searchByTaxCode(tax_code);
     }
 
     public boolean updateTaxCode(String tax_code, String tax_percent, String desc) {
     	
+    	TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
     	TestUtils.waitForToastToDisappear();
         searchByTaxCode(tax_code);
 

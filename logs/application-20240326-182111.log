@@ -1,0 +1,60 @@
+17:59:03.643 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:59:28.810 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:59:49.055 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (f8055dc1ea74b38e33d4ed0d1e1dc868)] -> xpath: //*[@id="main"]/main/div/div/create-payment-request/div/div/div[5]/div/table/tbody/tr/td[1]/div/input]
+17:59:49.253 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:59:49.289 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:00:26.161 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:00:46.231 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //button[@class='btn btn-link']]
+18:00:46.360 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+18:00:47.024 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/div/ul/li[4]/a]
+18:00:47.664 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:01:07.989 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //*[@id="ngb-typeahead-0-0"]]
+18:01:08.102 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:01:28.284 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:01:48.510 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //*[@id="main"]/main/div/div/create-payment-request/div/div/div[5]/div/table/tbody/tr/td[1]/div/input]
+18:01:48.691 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:02:08.810 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:02:28.824 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:02:48.868 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //span[normalize-space()='Dashboard']]
+18:02:49.034 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:03:09.318 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:03:29.431 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-invoice-info-popup/div[2]/div[2]/div[1]/div/div[3]/div[2]/table/tbody/tr/td[2]
+18:03:30.663 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:03:50.693 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+18:03:50.832 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b8464b59309eeb4a7b6efb42ce5f660b)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/div/ul/li[5]/a]
+18:03:51.500 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:04:11.605 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:04:51.724 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: #ngb-typeahead-0-0'
+18:11:25.167 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:11:45.214 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //button[@class='btn btn-link']]
+18:11:45.347 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+18:11:46.018 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/div/ul/li[4]/a]
+18:11:46.673 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:12:07.885 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //*[@id="ngb-typeahead-0-0"]]
+18:12:07.991 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:12:28.173 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:12:48.390 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //*[@id="main"]/main/div/div/create-payment-request/div/div/div[5]/div/table/tbody/tr/td[1]/div/input]
+18:12:48.578 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:13:08.699 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:13:28.767 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Create Payment Request
+18:13:48.794 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Create Payment Request
+18:13:49.174 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:14:09.216 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+18:14:09.365 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (72e8cd30fd1aef176c11e110be10de5f)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/div/ul/li[5]/a]
+18:14:10.032 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:14:30.237 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:15:10.323 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: #ngb-typeahead-0-0'
+18:18:47.025 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:19:07.090 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d0353a269fde10666f337e7632b0aaae)] -> xpath: //button[@class='btn btn-link']]
+18:19:07.212 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d0353a269fde10666f337e7632b0aaae)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+18:19:07.875 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d0353a269fde10666f337e7632b0aaae)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/div/ul/li[4]/a]
+18:19:08.515 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:19:28.802 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d0353a269fde10666f337e7632b0aaae)] -> xpath: //*[@id="ngb-typeahead-0-0"]]
+18:19:28.915 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:19:49.056 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:20:09.284 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d0353a269fde10666f337e7632b0aaae)] -> xpath: //*[@id="main"]/main/div/div/create-payment-request/div/div/div[5]/div/table/tbody/tr/td[1]/div/input]
+18:20:09.452 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:20:29.557 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Create Payment Request
+18:20:30.716 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+18:20:50.803 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (d0353a269fde10666f337e7632b0aaae)] -> xpath: //span[normalize-space()='Dashboard']]
+18:20:50.974 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container

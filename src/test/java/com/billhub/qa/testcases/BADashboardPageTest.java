@@ -16,6 +16,7 @@ public class BADashboardPageTest extends TestBase {
     BADashboardPage baDashboardPage;
 
     public Object[][] data = TestUtils.getTestData("BADashboardPage");
+    
     @BeforeClass
     public void setup(){
 

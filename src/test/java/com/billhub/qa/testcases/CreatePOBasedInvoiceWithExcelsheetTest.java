@@ -15,7 +15,9 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 	LoginPage loginPage;
 	BADashboardPage baDashboardPage;
 	CreatePOBasedInvoiceWithExcelsheetPage createPOBasedInvoiceWithExcelsheetPage;
+	
 	private static boolean isMultipleInvoicesSubmitted = false;
+	
 	public Object[][] data;
 	public Object[][] memoData = TestUtils.getTestData("BADashboardPage");
 	public static String SHEET_PATH_FOR_SINGLE_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\10005176_template_for_po_based_with_single_invoice.xlsx";
@@ -48,7 +50,6 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 			TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Memo", i, 1, invoice_number);
 			TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Invoice_PO_Mapping", i, 4, po_number);
 		}
-		
 	}
 	
 	@BeforeClass

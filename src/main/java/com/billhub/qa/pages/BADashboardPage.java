@@ -145,7 +145,7 @@ public class BADashboardPage extends TestBase{
 	
 	public CreatePOBasedInvoicePage createNewMemoPOBased(String from_state, String to_state) {
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
@@ -160,6 +160,7 @@ public class BADashboardPage extends TestBase{
 
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		filterBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		company.click();
 		companySearch.sendKeys(company_name);
 		targetCompany.click();
@@ -171,7 +172,9 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByService(String service_name) {
 
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		service.click();
 		serviceSearch.sendKeys(service_name);
 		targetService.click();
@@ -184,11 +187,12 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByCompanyAndLocation(String company_name,String location_name){
 
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		//		removing previously applied filters
 		delService.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		delCompany.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 
 		filterBtn.click();
 		company.click();
@@ -206,11 +210,12 @@ public class BADashboardPage extends TestBase{
 	}
 	 public boolean filterByLocation(String location_name) {
 
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 //		removing previously applied filters
 		delLocation.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		delCompany.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 
 		filterBtn.click();
 		location.click();
@@ -224,10 +229,10 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByPo() {
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		delLocation.click();		// removing previously applied filters
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
@@ -238,7 +243,7 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByBoth() {
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 		poBtn.click();
 		both.click();
@@ -252,7 +257,7 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByCompanyServiceAndMemo(String company_name,String service_name,String memo_num) {
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 		company.click();
 		companySearch.sendKeys(company_name);
@@ -274,13 +279,14 @@ public class BADashboardPage extends TestBase{
 
 	public boolean filterByInvoiceServiceAndLocation(String invo_num,String service_name,String loc_name) {
 
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		// removing previously applied filters
 		delMemo.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		delService.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		delCompany.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 
 		filterBtn.click();
 		invoice.sendKeys(invo_num);
@@ -301,7 +307,7 @@ public class BADashboardPage extends TestBase{
 
 	public CreatePOBasedInvoiceWithExcelsheetPage createNewMemoPOBasedWithExcelsheet(String from_state, String to_state, String po_number) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		
@@ -309,41 +315,47 @@ public class BADashboardPage extends TestBase{
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
 		uploadAndContinueBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		
 		// searching and tagging the PO to the invoice
 		searchPoInput.sendKeys(po_number);
 		searchPoBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
 		
 		uploadBtn.click();
 		return new CreatePOBasedInvoiceWithExcelsheetPage();
 	}
+	
 	public CreateNonPOBasedInvoiceWithExcelsheetPage createNewMemoNonPOBasedWithExcelsheet(String from_state,String to_state,String company_code,String service_type, String bt_number){
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
 		uploadAndContinueBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		companyCode.sendKeys(company_code);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		secviceType.sendKeys(service_type);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		// searching and tagging the PO to the invoice
 		searchBtInput.sendKeys(bt_number);
 		searchBTBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(btResultCheckBox).click();
+		
 		uploadBTBtn.click();
 		return new CreateNonPOBasedInvoiceWithExcelsheetPage();
 	}
 
 	public CreateNonPOBasedInvoicePage createNewMemoBTBased(String from_state, String to_state){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
@@ -355,17 +367,21 @@ public class BADashboardPage extends TestBase{
 
 
 	public boolean summitMemoWithDuplicateData(String from_state, String to_state, String company_code, String service_type, String bt_number){
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
 		uploadAndContinueBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		companyCode.sendKeys(company_code);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		secviceType.sendKeys(service_type);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		// searching and tagging the BT to the invoice
 		searchBtInput.sendKeys(bt_number);
 		searchBTBtn.click();
@@ -377,29 +393,35 @@ public class BADashboardPage extends TestBase{
 	}
 
 	public boolean submitMemoWithAnotherBt(String from_state, String to_state, String company_code, String service_type, String bt_number,String INVOICE_SHEET_PATH){
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
+		
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
 		uploadAndContinueBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		companyCode.sendKeys(company_code);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		secviceType.sendKeys(service_type);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		// searching and tagging the BT to the invoice
 		searchBtInput.sendKeys(bt_number);
 		searchBTBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(btResultCheckBox).click();
 		uploadBTBtn.click();
+		
 //		excel upload section   ....
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		uploadFileBtn.sendKeys(INVOICE_SHEET_PATH);
 		TestUtils.waitForElementVisibility(By.cssSelector(".btn.btn-warning.btn-acknowledge"));
 		TestUtils.waitForWebElementToBeClickable(submitFileBtn).click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		WebElement invalideInv=TestUtils.waitForElementVisibility(By.xpath("//label[normalize-space()='Invalid Invoice']"));
 		boolean isError=invalideInv.isDisplayed();
 		cancelInvBtn.click();

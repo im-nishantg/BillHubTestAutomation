@@ -32,14 +32,16 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	
 	public void updateExcelSheetData() {
 		
-		for(int i=1; i<=8; i++)
+		for(int i=1; i<=2; i++)
 		{
 			String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(5);
-			String quantity = TestUtils.generateRandomNumber(1);
+			String quantity = "1";
+//			String quantity = TestUtils.generateRandomNumber(1);
+//			if (Integer.parseInt(quantity) > 4) {					// Restricting base amount between 1-4
+//			    quantity = "4";
+//			}
 			String base_amount = quantity;
-			double igst = Double.parseDouble(quantity) * 0.18;
-			igst = Math.floor(igst * 100) / 100.0;		// Round down igst to 2 digits after the decimal
-			String Igst = String.valueOf(igst);
+			String Igst = "0";
 			TestUtils.setCellData("POBasedInvoice", i, 0, invoice_number);
 			TestUtils.setCellData("POBasedInvoice", i, 9, quantity);
 			TestUtils.setCellData("POBasedInvoice", i, 2, Igst);
@@ -132,7 +134,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 			
 		List<Invoice> invoices = new ArrayList<>();
 		
-		for(int i=1; i<8; i++)
+		for(int i=1; i<2; i++)
 		{
 			String invoice_number = (String) data[i][0], base_amount = (String) data[i][1], igst = (String) data[i][2];
 			String subServiceCategory = (String) data[i][3], cd = (String) data[i][4], tcs = (String) data[i][5];

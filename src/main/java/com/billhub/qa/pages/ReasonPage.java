@@ -1,6 +1,7 @@
 package com.billhub.qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -54,6 +55,7 @@ public class ReasonPage extends TestBase{
 	public void fillAddReasonForm(String reason_code, String reason_name, String type) {
 		
 		addReasonBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
         initializePopupWebElements();
         
         reasonCode.sendKeys(reason_code);
@@ -63,6 +65,7 @@ public class ReasonPage extends TestBase{
 	
 	public boolean addNewReasonWithValidData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
@@ -72,54 +75,62 @@ public class ReasonPage extends TestBase{
 	
 	public boolean addNewReasonWithInvalidData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.isSuccessToastDisplayed("Reason Added successfully");
 	}
 	
 	public boolean addNewReasonWithoutData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.isSuccessToastDisplayed("Reason Added successfully");
 	}
 	
 	public boolean addNewReasonWithDuplicateData(String reason_code, String reason_name, String type){
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		fillAddReasonForm(reason_code, reason_name, type);
 		addBtn.click();
 		closeBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.isSuccessToastDisplayed("Reason Added successfully");
 	}
 	
 	public boolean searchByReasonName(String reason_name) {
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchByReasonCode.clear();
 		searchByReasonName.clear();
 		searchByReasonName.sendKeys(reason_name);
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-reason/div/div/div[3]/div/table/tbody/tr/td[3]"), reason_name);
 	}
 
 	public boolean searchByReasonCode(String reason_code) {
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchByReasonName.clear();
 		searchByReasonCode.clear();
 		searchByReasonCode.sendKeys(reason_code);
 		searchBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-reason/div/div/div[3]/div/table/tbody/tr/td[2]"), reason_code);
 	}
 	
 	public boolean updateReason(String reason_code, String reason_name, String type) {
 		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForToastToDisappear();
 		searchByReasonCode(reason_code);
 		
