@@ -1,0 +1,84 @@
+17:50:29.301 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:29.541 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:29.631 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:30.232 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-list-ba/div/div/div[3]/div/table/tbody/tr[1]/td[9]
+17:50:30.273 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:30.297 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:30.495 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:30.568 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:31.145 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:31.172 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:50:32.312 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:33.698 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:33.777 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:50:53.835 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+17:50:53.897 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:54.982 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:50:55.070 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:56.607 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:50:56.683 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:51:16.694 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+17:51:16.774 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:17.345 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:51:17.558 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:18.810 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:18.885 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Added successfully
+17:51:38.954 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - BA Data Added successfully
+17:51:39.033 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:39.787 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:39.866 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:40.461 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:40.670 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:40.743 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:41.331 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:41.354 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:51:41.378 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:41.564 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:41.635 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:42.298 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: div[class='card-body p-2'] div:nth-child(1) div:nth-child(2) input:nth-child(1)
+17:51:42.851 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: input[formcontrolname='contact_number']
+17:51:43.092 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:51:43.175 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: BA Data Updated successfully
+17:52:17.769 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+17:52:37.838 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:37.889 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1c7704859b37994a55d1644e0280c0c0)] -> xpath: //button[@class='btn btn-link']]
+17:52:38.009 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1c7704859b37994a55d1644e0280c0c0)] -> xpath: //span[normalize-space()='Master']]
+17:52:38.831 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1c7704859b37994a55d1644e0280c0c0)] -> link text: User]
+17:52:41.343 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:41.372 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:52:41.473 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:43.183 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: button[class='btn btn-success']
+17:52:43.334 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: #Company_ID
+17:52:43.362 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .dropdown-btn
+17:52:43.436 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:43.519 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:44.074 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element to be clickable: By.cssSelector: li.multiselect-item-checkbox
+17:52:44.114 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element to be clickable: By.cssSelector: input[aria-label='Bangalore']
+17:52:44.293 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:44.387 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+17:52:45.077 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:45.105 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:52:48.396 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:49.542 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:49.629 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:49.706 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+17:52:50.398 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:50.422 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:50.631 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:50.708 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:51.296 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[8]
+17:52:51.337 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:51.362 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:51.540 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:51.608 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:52.179 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:52.199 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:52:53.355 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:54.475 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:52:54.540 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+17:53:14.606 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - User Data Added successfully
+17:53:14.676 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+17:53:15.492 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:53:16.667 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+17:53:16.749 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+17:53:36.812 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - User Data Added successfully

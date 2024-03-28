@@ -1,6 +1,7 @@
 package com.billhub.qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,8 +32,8 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/create-payment-request/div/div/div[2]/div/table/thead/tr/th[4]/input")
 	WebElement billNoInput;
     
-    @FindBy(xpath = "//*[@id=\"ngb-typeahead-0-0\"]")
-	WebElement firstOption;
+    @FindBy(xpath = "/html/body/app-root/app-layout/div[1]/main/div/div/create-payment-request/div/div/div[1]/div[2]/div/typeahead-container/button[6]")
+	WebElement fifthOption;
     
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/create-payment-request/div/div/div[2]/div/table/tbody/tr[1]/td[1]/div/input")
 	WebElement firstRowCheckbox;
@@ -109,7 +110,7 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
 		
 		clickOnCreatePaymentRequestLink();
     	searchBAInput.sendKeys(ba_name);
-    	TestUtils.waitForWebElementToBeClickable(firstOption).click();
+    	TestUtils.waitForWebElementToBeClickable(fifthOption).click();
     	return TestUtils.isElementVisible(firstRowCheckbox);
 	}
 
@@ -125,7 +126,7 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
 		clickOnCreatePaymentRequestLink();
     	
     	searchBAInput.sendKeys(ba_name);
-    	TestUtils.waitForWebElementToBeClickable(firstOption).click();
+    	TestUtils.waitForWebElementToBeClickable(fifthOption).click();
     	TestUtils.waitForElementInvisibility(By.className("loader"));
     	
     	billNoInput.sendKeys(invoice_number);
@@ -149,6 +150,7 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
 		TestUtils.waitForElementInvisibility(By.className("loader"));
 
+		TestUtils.waitForToastToDisappear();
 		filterBtn.click();
     	invoice.sendKeys(invoice_number);
     	applyBtn.click();
@@ -158,7 +160,7 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
     	WebElement paymentRequestNumber = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-invoice-info-popup/div[2]/div[2]/div[1]/div/div[3]/div[2]/table/tbody/tr/td[2]"));
     	String payment_request_number = paymentRequestNumber.getText();
     	
-    	TestUtils.setCellData("CreatePaymentRequestForPo", 1, 3, payment_request_number);
+    	TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 3, payment_request_number);
     	closeBtn.click();
 	}
 	
@@ -179,7 +181,8 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
     	TestUtils.waitForWebElementToBeClickable(actionBtn).click();
     	TestUtils.waitForWebElementToBeClickable(viewPaymentRequest).click();
     	TestUtils.waitForElementInvisibility(By.className("loader"));
-    	
+
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
 		searchRequestNoInput.sendKeys(request_number);
 		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(firstOptionInInput).click();
@@ -203,6 +206,8 @@ public class CreatePaymentRequestForNonPOPage extends TestBase{
 		TestUtils.waitForElementInvisibility(By.className("loader"));
 		firstCheckbox.click();
 		TestUtils.waitForElementInvisibility(By.className("loader"));
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
+
 		downloadPaymentRequestBtn.click();
 		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return true;

@@ -10,7 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class NonPOBasedInvoiceVerificationWithAdvancesTest extends TestBase {
-    LoginPage loginPage;
+    
+	LoginPage loginPage;
     NonPoBasedInvoiceVerificationWithAdvancesPage nonPoBasedInvoiceVerificationWithAdvancesPage;
     public Object [][]data = TestUtils.getTestData("BTBasedInvoiceAcknowledgement");
     @BeforeClass

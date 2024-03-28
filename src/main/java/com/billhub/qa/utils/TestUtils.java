@@ -35,7 +35,7 @@ public class TestUtils extends TestBase{
 	public static long PAGE_LOAD_TIMEOUT = 45;
 	public static long IMPLICIT_WAIT = 20;
 	public static long EXPLICIT_WAIT = 15;
-	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";		
+	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";
 	static Workbook book;
 	static Sheet sheet;
 	
@@ -49,6 +49,7 @@ public class TestUtils extends TestBase{
 	public static void waitForElementInvisibility(By selector) {
 		
 		log.info("Waiting for element invisibility: " + selector);
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
@@ -182,6 +183,9 @@ public class TestUtils extends TestBase{
 
         for (int i = 0; i < length; i++) {
             int digit = random.nextInt(10);  // Generate a random digit (0-9)
+            if(i == 0 && digit == 0) {
+            	digit = 1;							// ensuring the first digit of the generated number is not zero
+            }
             randomNumber.append(digit);
         }
         

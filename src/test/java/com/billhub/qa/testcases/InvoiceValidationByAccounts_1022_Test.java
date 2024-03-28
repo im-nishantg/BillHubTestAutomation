@@ -35,7 +35,7 @@ public class InvoiceValidationByAccounts_1022_Test extends TestBase{
 	public void searchInvoicesWithMultipleFieldsTest(){
 		
 		String location = (String) data[0][0], commercial_name = (String) data[0][1];
-		
+
 		boolean isDataDisplayed = invoiceValidationPage.searchInvoicesWithMultipleFields(location, commercial_name);
 		Assert.assertTrue(isDataDisplayed, "No data was displayed after filtering invoices with location and commercial name.");
 	}

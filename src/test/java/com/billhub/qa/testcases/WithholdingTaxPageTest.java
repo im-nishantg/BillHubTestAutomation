@@ -33,7 +33,7 @@ public class WithholdingTaxPageTest extends TestBase{
 	}
 	
 	@BeforeClass
-	public void setup() throws InterruptedException {
+	public void setup(){
 
 		initialization();
 		loginPage= new LoginPage();
@@ -54,12 +54,12 @@ public class WithholdingTaxPageTest extends TestBase{
 	}
 	
 	@Test(priority = 2)
-	public void duplicateWithholdingTaxAddTest(){
+	public void AddWithholdingTaxWithDuplicateDataTest(){
 
 		// pass duplicate credentials in arguments
 		String tax_Type=(String) data[0][0], tax_Code=(String) data[0][1], tax_Rate=TestUtils.numberToString(data[0][2]), tax_Description=(String) data[0][3];
 		
-		boolean result=withholdingTaxPage.validateDuplicateWithholdingData(tax_Type,tax_Code,tax_Rate,tax_Description);
+		boolean result=withholdingTaxPage.validateAddWithholdingTaxWithDuplicateData(tax_Type,tax_Code,tax_Rate,tax_Description);
 		Assert.assertFalse(result,"Test Failed!: duplicate credentials has been saved");
 	}
 

@@ -1,5 +1,6 @@
 package com.billhub.qa.pages;
 
+import com.billhub.qa.utils.TestUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,6 +48,7 @@ public class LoginPage extends TestBase{
 		userId.sendKeys(user);
 		password.sendKeys(pass);
 		loginBtn.click();
+
 		TestUtils.waitForElementInvisibility(By.className("modal-container"));
 		return new CommercialDashboardPage();
 	}

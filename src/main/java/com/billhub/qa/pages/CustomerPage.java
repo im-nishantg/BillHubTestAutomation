@@ -8,11 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class CustomerPage extends TestBase {
 	
@@ -49,6 +45,7 @@ public class CustomerPage extends TestBase {
     @FindBy(css = "button[class='btn btn-primary btn-done']")
     WebElement addBtn;
 
+
     @FindBy(css = "button[class='btn btn-danger btn-done']")
     WebElement closeBtn;
 
@@ -61,6 +58,7 @@ public class CustomerPage extends TestBase {
     }
     
     public void fillNewCustomerForm(String customer_code,String customer_name, String customer_period, String customer_drop){
+
 
     	addCustomerBtn.click();
     	TestUtils.waitForElementInvisibility(By.className("loader"));
@@ -85,7 +83,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateSearchCustomerByName(String customer_name){
-	
+
     	TestUtils.waitForElementInvisibility(By.className("loader"));
         SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
@@ -97,7 +95,8 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateAddCustomerWithValidData(String custName, String custCode, String custPeriod, String custDrop){
-	
+
+    	
     	TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForToastToDisappear();
         fillNewCustomerForm(custCode,custName,custPeriod,custDrop);
@@ -148,6 +147,7 @@ public class CustomerPage extends TestBase {
 
     public boolean validateActiveStatus(String customer_code){
 
+
     	TestUtils.waitForElementInvisibility(By.className("loader"));
     	SearchCustomerByCode.clear();
         SearchCustomerByName.clear();
@@ -179,6 +179,7 @@ public class CustomerPage extends TestBase {
     }
 
     public boolean validateAddedCustomerInDatabase(String customer_code){
+
 
     	TestUtils.waitForElementInvisibility(By.className("loader"));
     	SearchCustomerByCode.clear();
