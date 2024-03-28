@@ -81,13 +81,13 @@ public class CommercialDashboardPage extends TestBase{
 
     public boolean filterByCompany(String company_name){
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 //        removing automatically applied filters on Company
         filterBtn.click();
         applyBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         delCompany.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         filterBtn.click();
         company.click();
@@ -102,6 +102,7 @@ public class CommercialDashboardPage extends TestBase{
 
     public boolean filterByService(String service_name) {
 
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
         filterBtn.click();
         service.click();
         serviceSearch.sendKeys(service_name);
@@ -115,10 +116,11 @@ public class CommercialDashboardPage extends TestBase{
 
     public boolean filterByCompanyAndLocation(String company_name,String location_name){
 
+    	TestUtils.waitForElementInvisibility(By.className("loader"));
         delService.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         delCompany.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         filterBtn.click();
         company.click();
@@ -136,12 +138,12 @@ public class CommercialDashboardPage extends TestBase{
     
     public boolean filterByLocation(String location_name) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         // removing previously applied filters
         delLocation.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         delCompany.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         filterBtn.click();
         location.click();
@@ -157,10 +159,10 @@ public class CommercialDashboardPage extends TestBase{
 
     public boolean filterByPo() {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         // removing previously applied filters
         delLocation.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         acknowledgeMemoInput.click();
         filterBtn.click();
@@ -173,11 +175,11 @@ public class CommercialDashboardPage extends TestBase{
 
 	public boolean filterByNonPo() {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 		poBtn.click();
 		nonPo.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 		applyBtn.click();
 		TestUtils.waitForElementVisibility(By.className("dashboard-table"));
 
@@ -187,7 +189,7 @@ public class CommercialDashboardPage extends TestBase{
 
     public boolean filterByBoth() {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         filterBtn.click();
         poBtn.click();
         both.click();
@@ -200,7 +202,7 @@ public class CommercialDashboardPage extends TestBase{
 
     public boolean filterByInvoiceServiceAndLocation(String invoice_number,String service_name,String location_name) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         filterBtn.click();
         invoice.sendKeys(invoice_number);
         service.click();
@@ -221,15 +223,15 @@ public class CommercialDashboardPage extends TestBase{
     public boolean filterByCompanyServiceAndMemo(String company_name,String service_name,String memo_number) {
 
         delLocation.click();
-        TestUtils.waitForElementInvisibility(By.className("modal_container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         delService.click();
-        TestUtils.waitForElementInvisibility(By.className("modal_container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         filterBtn.click();
         invoice.clear();
         applyBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal_container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         filterBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal_container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         company.click();
         companySearch.sendKeys(company_name);
         targetCompany.click();

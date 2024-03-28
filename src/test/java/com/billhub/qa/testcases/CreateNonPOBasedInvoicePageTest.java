@@ -33,10 +33,11 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         {
             String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(4);
             String amount = TestUtils.generateRandomNumber(1);
+            if (Integer.parseInt(amount) > 4) {					// Restricting base amount between 1-4
+                amount = "4";
+            }
             String base_amount=amount;
-            double igst = Double.parseDouble(base_amount) * 0;
-            igst=Math.floor(igst*100)/100.0;
-            String Igst = String.valueOf(igst);
+            String Igst = "0";
             TestUtils.setCellData("BTBasedInvoice", i, 0, invoice_number);
             TestUtils.setCellData("BTBasedInvoice", i, 1, base_amount);
             TestUtils.setCellData("BTBasedInvoice", i, 2, Igst);
@@ -101,8 +102,9 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
     @Test(priority = 5)
     public void submitMemoWithValidDataTest(){
 
+        //for meru = company_code=(String) data[1][12], for 1022 = company_code=(String) data[0][12], for MESPL = company_code=(String) data[5][12]
         String company_code=(String) data[5][12], service_type=(String)data[5][13];
-        String BTinvoiceNumber="222495078";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
+        String BTinvoiceNumber="867906";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
         String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
         String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
         String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
@@ -145,6 +147,54 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
         boolean isSubmitted= createNonPOBasedInvoicePage.submitMemoWithDuplicateData();
         Assert.assertTrue(isSubmitted,"Memo was submitted with duplicate data!");
+
+    }
+    @Test(priority = 8)
+    public void submitMemoWithValidDataMESPLTest(){
+
+        //for meru = company_code=(String) data[1][12], for 1022 = company_code=(String) data[0][12], for MESPL = company_code=(String) data[5][12]
+        String company_code=(String) data[5][12], service_type=(String)data[5][13];
+        String BTinvoiceNumber="867909";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
+        String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
+        String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
+        String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
+        String submitting_at = (String) data[0][10], submitting_to = (String) data[0][11];
+
+        Invoice invoice=new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, amount, submitting_at, submitting_to);
+        boolean isSubmitted= createNonPOBasedInvoicePage.submitMemoWithValidData(invoice,company_code,service_type,BTinvoiceNumber);
+        Assert.assertTrue(isSubmitted,"Memo was not submitted!");
+
+    }
+    @Test(priority = 9)
+    public void submitMemoWithValidData1022Test(){
+
+        //for meru = company_code=(String) data[1][12], for 1022 = company_code=(String) data[0][12], for MESPL = company_code=(String) data[5][12]
+        String company_code=(String) data[0][12], service_type=(String)data[0][13];
+        String BTinvoiceNumber="867898";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
+        String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
+        String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
+        String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
+        String submitting_at = (String) data[0][10], submitting_to = (String) data[0][11];
+
+        Invoice invoice=new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, amount, submitting_at, submitting_to);
+        boolean isSubmitted= createNonPOBasedInvoicePage.submitMemoWithValidData(invoice,company_code,service_type,BTinvoiceNumber);
+        Assert.assertTrue(isSubmitted,"Memo was not submitted!");
+
+    }
+    @Test(priority = 5)
+    public void submitMemoWithValidDataMERUTest(){
+
+        //for meru = company_code=(String) data[1][12], for 1022 = company_code=(String) data[0][12], for MESPL = company_code=(String) data[5][12]
+        String company_code=(String) data[1][12], service_type=(String)data[1][13];
+        String BTinvoiceNumber="867904";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
+        String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
+        String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
+        String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
+        String submitting_at = (String) data[0][10], submitting_to = (String) data[0][11];
+
+        Invoice invoice=new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, amount, submitting_at, submitting_to);
+        boolean isSubmitted= createNonPOBasedInvoicePage.submitMemoWithValidData(invoice,company_code,service_type,BTinvoiceNumber);
+        Assert.assertTrue(isSubmitted,"Memo was not submitted!");
 
     }
 

@@ -8,14 +8,84 @@
 	
 	<test name="BillHub App Test Cases">
 		<classes>
+<!--    *********************   For invoive submission to view payment request to MESPL ***********-->
+<!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">-->
+<!--                <methods>-->
+<!--                    <include name="submitMemoWithValidDataMESPLTest"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--			 <class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">-->
+<!--                <methods>-->
+<!--                    <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>-->
+<!--                    <include name="validateAcknowledgeTheMemoTest"/>-->
+<!--                    <include name="validateAcknowledgedStatusTest"/>-->
+<!--                    <include name="verifyInvoiceWithValidDataTest"/>-->
+<!--                    <include name="validateVerifiedStatusTest"/>-->
+<!--                    <include name="bookingInvoiceWithValidDataTest"/>-->
+<!--                    <include name="searchByTransactionBatchIdTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name = "com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test">-->
+<!--                <methods>-->
+<!--                    <include name="validateCorrectInvoicesTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name = "com.billhub.qa.testcases.InvoiceValidationByTaxation_MESPL_Test">-->
+<!--                <methods>-->
+<!--                    <include name="validateCorrectInvoicesTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name = "com.billhub.qa.testcases.CreatePaymentRequestForNonPOPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="validateExcelsheetDataTest"/>-->
+<!--                    <include name="ValidateDownloadPaymentRequestTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">
+<!--    *********************   For invoive submission to view payment request to MERU ***********-->
+
+<!--            <class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">-->
+<!--                <methods>-->
+<!--                    <include name="submitMemoWithValidDataMERUTest"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">-->
+<!--                <methods>-->
+<!--                    <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>-->
+<!--                    <include name="validateAcknowledgeTheMemoTest"/>-->
+<!--                    <include name="validateAcknowledgedStatusTest"/>-->
+<!--                    <include name="verifyInvoiceWithValidDataTest"/>-->
+<!--                    <include name="validateVerifiedStatusTest"/>-->
+<!--                    <include name="bookingInvoiceWithValidDataTest"/>-->
+<!--                    <include name="searchByTransactionBatchIdTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name = "com.billhub.qa.testcases.InvoiceValidationByAccounts_MERU_Test">-->
+<!--                <methods>-->
+<!--                    <include name="validateCorrectInvoicesTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name = "com.billhub.qa.testcases.InvoiceValidationByTaxation_MERU_Test">-->
+<!--                <methods>-->
+<!--                    <include name="validateCorrectInvoicesTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name = "com.billhub.qa.testcases.CreatePaymentRequestForNonPOPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="validateExcelsheetDataTest"/>-->
+<!--                    <include name="ValidateDownloadPaymentRequestTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+
+<!--    *********************   For invoive submission to view payment request to 1022 ***********-->
+
+            <class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">
                 <methods>
-                    <include name="submitMemoWithValidDataTest"></include>
+                    <include name="submitMemoWithValidData1022Test"></include>
                 </methods>
             </class>
-
-			 <class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">
+            <class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">
                 <methods>
                     <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>
                     <include name="validateAcknowledgeTheMemoTest"/>
@@ -26,6 +96,82 @@
                     <include name="searchByTransactionBatchIdTest"/>
                 </methods>
             </class>
+            <class name = "com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_BT_Test">
+                <methods>
+                    <include name="validateCorrectInvoicesTest"/>
+                </methods>
+            </class>
+            <class name = "com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_BT_Test">
+                <methods>
+                    <include name="validateCorrectInvoicesTest"/>
+                </methods>
+            </class>
+            <class name = "com.billhub.qa.testcases.CreatePaymentRequestForNonPOPageTest">
+                <methods>
+                    <include name="validateExcelsheetDataTest"/>
+                    <include name="ValidateDownloadPaymentRequestTest"/>
+                </methods>
+            </class>
+
+
+
+		    	<!--  <class name = "com.billhub.qa.testcases.CustomerPageTest"></class>  --> 
+				<!--  <class name="com.billhub.qa.testcases.WithholdingTaxPageTest"></class>  -->
+			 	<!-- <class name = "com.billhub.qa.testcases.BAPageTest"></class> -->
+			    <!-- <class name = "com.billhub.qa.testcases.UserPageTest"></class>  -->
+			 	<!-- <class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
+			 	<!-- <class name = "com.billhub.qa.testcases.ReasonPageTest"></class> -->
+			 	<!-- <class name = "com.billhub.qa.testcases.RolePageTest"></class> -->
+			 	
+			 	<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class> -->
+<!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">-->
+<!--                <methods>-->
+<!--                    <include name="submitMemoWithValidDataTest"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+		  <!--  <class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class> -->
+<!-- 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class> -->
+<!--		   		<class name="com.billhub.qa.testcases.CommercialDashboardPageTest"></class>-->
+		   		 <!-- <class name="com.billhub.qa.testcases.BADashboardPageTest"></class>  -->
+<!--			<class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">-->
+		   
+<!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest"></class>-->
+		<!-- 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class> -->
+<!-- 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class> -->
+		   
+		   		
+		   		<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
+			 		<methods>
+			 			<include name="submitMemoWithValidDataTest"/>
+			 		</methods>
+			 	</class> 
+				 <class name="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest">
+	                <methods>
+	                    <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>
+	                    <include name="validateAcknowledgeTheMemoTest"/>
+	                    <include name="validateAcknowledgedStatusTest"/>
+	                    <include name="verifyInvoiceWithValidDataTest"/>
+	                    <include name="validateVerifiedStatusTest"/>
+	                    <include name="bookingInvoiceWithValidDataTest"/>
+	                    <include name="searchByTransactionBatchIdTest"/>
+	                </methods>
+	            </class>
+	            <class name = "com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test">
+			 		<methods>
+			 			<include name="validateCorrectInvoicesTest"/>
+			 		</methods>
+			 	</class>
+			 	<class name = "com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test">
+			 		<methods>
+			 			<include name="validateCorrectInvoicesTest"/>
+			 		</methods>
+			 	</class> 
+			 	<class name = "com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest">
+			 		<methods>
+			 			 <include name="validateExcelsheetDataTest"/>
+			 			 <include name="ValidateDownloadPaymentRequestTest"/>
+			 		</methods>
+			 	</class> -->
 		</classes>
 	</test>
 </suite>

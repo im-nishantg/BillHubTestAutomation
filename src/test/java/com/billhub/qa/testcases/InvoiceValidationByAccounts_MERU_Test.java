@@ -1,6 +1,7 @@
 package com.billhub.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.billhub.qa.base.TestBase;
@@ -15,7 +16,7 @@ public class InvoiceValidationByAccounts_MERU_Test extends TestBase{
 	
 	LoginPage loginPage;
 	InvoiceValidationByAccounts_MERU_Page invoiceValidationPage;
-	public Object[][] data = TestUtils.getTestData("InvoiceValidationAccounts_MERU");
+	public Object[][] data;
 	
 	public InvoiceValidationByAccounts_MERU_Test() {
 		super();
@@ -28,6 +29,7 @@ public class InvoiceValidationByAccounts_MERU_Test extends TestBase{
 		loginPage= new LoginPage();
 		loginPage.loginAsAccount(prop.getProperty("accounts_loginid_MERU"),prop.getProperty("accounts_password_MERU"));
 		invoiceValidationPage = new InvoiceValidationByAccounts_MERU_Page();
+		data = TestUtils.getTestData("InvoiceValidationAccounts_MERU");
 	}
 	
 	@Test(priority = 1)
@@ -83,9 +85,9 @@ public class InvoiceValidationByAccounts_MERU_Test extends TestBase{
 	@Test(priority = 7)
 	public void validateCorrectInvoicesTest(){
 		
-		String location = (String) data[0][0], commercial_name = (String) data[0][1];
+		String location = (String) data[0][0], commercial_name = (String) data[0][1], document_number = TestUtils.numberToString(data[0][3]);
 		
-		boolean isInvoiceCorrected = invoiceValidationPage.validateCorrectInvoices(location, commercial_name);
+		boolean isInvoiceCorrected = invoiceValidationPage.validateCorrectInvoices(location, commercial_name, document_number);
 		Assert.assertTrue(isInvoiceCorrected, "Invoice was not updated.");
 	}
 	
@@ -105,5 +107,10 @@ public class InvoiceValidationByAccounts_MERU_Test extends TestBase{
 		
 		boolean isInvoiceUpdated = invoiceValidationPage.validateRaiseQuery(location, commercial_name, reason);
 		Assert.assertTrue(isInvoiceUpdated, "Invoice was not updated.");
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
 	}
 }

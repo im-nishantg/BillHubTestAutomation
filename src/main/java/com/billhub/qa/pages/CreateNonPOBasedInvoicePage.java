@@ -188,14 +188,14 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
 //        code for tagging the location and the person fo the memo
         TestUtils.waitForElementInvisibility(By.className("loader"));
         ((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
+
         submittingAt.sendKeys(invoice.submittingAt);
-        System.out.println(invoice.submittingAt);
         TestUtils.waitForElementInvisibility(By.className("loader"));
         submittingTo.sendKeys(invoice.submittingTo);
-        System.out.println(invoice.submittingTo);
         TestUtils.waitForElementInvisibility(By.className("loader"));
 
 //        code for actuallly submitting the memo
+        TestUtils.waitForToastToDisappear();
         submitMemoBtn.click();
         WebElement nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//*[@id=\"main\"]/main/div/div/app-memo-list/div/div/div[2]/div/form/div/div[6]/button"));
         TestUtils.waitForElementInvisibility(By.className("loader"));
@@ -294,6 +294,8 @@ public class CreateNonPOBasedInvoicePage extends TestBase {
         submittingTo.sendKeys(invoices.get(0).submittingTo);
         TestUtils.waitForElementInvisibility(By.className("loader"));
         //code for actually submitting the memo
+
+        TestUtils.waitForToastToDisappear();
         submitMemoBtn.click();
         WebElement nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[normalize-space()='SUBMIT MEMO']"));
         TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();

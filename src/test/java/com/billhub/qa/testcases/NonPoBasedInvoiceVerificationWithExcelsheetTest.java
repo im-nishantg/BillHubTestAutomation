@@ -8,7 +8,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class NonPoBasedInvoiceVerificationWithExcelsheetTest extends TestBase {
-    LoginPage loginPage;
+    
+	LoginPage loginPage;
     NonPoBasedInvoiceVerificationWithExcelsheetPage nonPoBasedInvoiceVerificationWithExcelsheetPage;
 
     @BeforeClass

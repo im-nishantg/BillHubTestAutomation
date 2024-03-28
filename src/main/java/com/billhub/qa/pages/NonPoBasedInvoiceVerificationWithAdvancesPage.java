@@ -91,30 +91,30 @@ public class NonPoBasedInvoiceVerificationWithAdvancesPage extends TestBase {
         selectTab.click();
         verifyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         verifyInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         String igst_amount = igstAmount.getText().substring(2);						// Selecting wrong tax-code based on the igst amount
         String tax_code = igst_amount.equals("0") ? "V0 - 0% Tax" : "KG - 18% Input  IGST Deductible";
 
 
         getAdvanceBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         addAdvanceBtn.click();
         advanceDocumentInput.sendKeys(advance_doc_number);
-        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         advancDoceNumberSelectTab.click();
 
         advanceAmountInput.sendKeys(advance_amount);
 
 
         hsnCodeInput.sendKeys(hsn_code);
-        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         hsnSelectTab.click();
         taxCodeInput.sendKeys(tax_code);
-        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         taxcodeSelectTab.click();
 
 

@@ -54,20 +54,25 @@ public class Temp extends TestBase{
     
     @FindBy(xpath = "//input[@placeholder='Itemtext']")
     WebElement itemTextInput;
+    
     @FindBy(xpath = "//button[normalize-space()='Verify Invoice']")
     WebElement verifyInvoiceBtn;
+    
     @FindBy(xpath = "//button[normalize-space()='CANCEL']")
     WebElement cancelBtn;
 
     @FindBy(xpath = "/html/body/app-root/app-layout/div[1]/main/div/div/app-verification/div/div/form/div/div[1]/div[2]/div[2]/table/tbody/tr/td[2]/ng-select/ng-dropdown-panel/div/div[2]/div")
     WebElement hsnSelectTab;
+    
     @FindBy(xpath = "/html/body/app-root/app-layout/div[1]/main/div/div/app-verification/div/div/form/div/div[1]/div[2]/div[2]/table/tbody/tr/td[3]/ng-select/ng-dropdown-panel/div/div[2]/div")
     WebElement taxcodeSelectTab;
 
     @FindBy(xpath = "//div[@class='input-group']//select[@id='inputGroupSelect02']")
     WebElement rejectInput;
+    
     @FindBy(xpath = "//button[normalize-space()='Reject']")
     WebElement rejectBtn;
+    
     @FindBy(xpath = "//button[normalize-space()='Invoice Scanned Copy']")
     WebElement invoiceScannedCopyBtn;
 
@@ -79,23 +84,31 @@ public class Temp extends TestBase{
 
     @FindBy(xpath = "//button[@aria-label='Close']")
     WebElement closePopupBtn;
+    
     @FindBy(xpath = "/html/body/modal-container/div/div/app-verify-error/div[2]/table/tbody/tr/td[2]")
     WebElement messageType;
 
     @FindBy(xpath = "//a[normalize-space()='Filter']")
     WebElement filterBtn;
+    
     @FindBy(css = "input[formcontrolname='memo']")
     WebElement memo;
+    
     @FindBy(css = "button[type='submit']")
     WebElement applyBtn;
+    
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[13]")
     WebElement memoStatus;
+    
     @FindBy(xpath = "//a[normalize-space()='Download Template']")
     WebElement downloadInvoice;
+    
     @FindBy(xpath = "//b[normalize-space()='Upload Invoice File']")
     WebElement uploadInvoice;
+    
     @FindBy(xpath = "//input[@id='fileDropRef']")
     WebElement uploadFile;
+    
     @FindBy(xpath = "//button[normalize-space()='Upload']")
     WebElement uploadBtn;
 
@@ -177,15 +190,20 @@ public class Temp extends TestBase{
 	        }
 	    }
 	 
-	    public void AddNewFields() {
+	    public void AddNewFields(String withholding_tax, String item_text, String payment_term, String assignment) {
 	    	
 	    	String IGST = (String) data1[0][8];
             String tax_code = IGST.equals("0.0") ? "V0" : "KG";
 	    	TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 10, tax_code);
+	    	TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 11, withholding_tax);
+	    	TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 12, item_text);
+	    	TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 13, payment_term);
+	    	TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 14, assignment);
 	    }
 	    
-	    public boolean invoiceVerificationWithExcelsheet(){
-	        String memo_number = "30005631-2023-24-00036";
+	    public boolean invoiceVerificationWithExcelsheet(String withholding_tax, String item_text, String payment_term, String assignment){
+	        
+	    	String memo_number = "30005631-2023-24-00032";
 
 	        memoInput.sendKeys(memo_number);
 	        WebElement selectTab= TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
@@ -194,9 +212,11 @@ public class Temp extends TestBase{
 
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	        downloadInvoice.click();
+	        
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	        updateInvoiceExcelSheet(memo_number);
-	        AddNewFields();
+	        AddNewFields(withholding_tax, item_text, payment_term, assignment);
+	        
 	        uploadInvoice.click();
 	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
 	        uploadFile.sendKeys(SHEET_PATH_FOR_UPLOADING_INVOICE);

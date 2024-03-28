@@ -103,8 +103,14 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[1]/button")
 	WebElement homeBtn;
 	
-	public CreatePOBasedInvoicePage() {
-		
+	@FindBy(xpath = "//button[@class='btn btn-link']")
+	WebElement navbarExpandBtn;
+    
+    @FindBy(xpath = "//span[normalize-space()='Dashboard']")
+	WebElement dashboardBtn;
+    
+	
+	public CreatePOBasedInvoicePage() {	
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -118,7 +124,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	public void fillCreateNewInvoiceForm(Invoice invoice) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		invoiceNumber.sendKeys(invoice.invoiceNumber);
 		subServiceCategory.sendKeys(invoice.subServiceCategory);
 		baseAmount.sendKeys(invoice.baseAmount);
@@ -131,24 +137,24 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	public void attachSampleInvoiceFile() {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		attachBtn.click();
 		String invoice_file_path = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\Sample_Invoice.pdf";
 		addInvoice.sendKeys(invoice_file_path);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		TestUtils.waitForWebElementToBeClickable(doneBtn).click();
 	}
 	
 	public void tagPO(String qty, String hsn_code, String po_number) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		tagPOBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		
 		// searching and tagging the PO to the invoice
 		searchPoInput.sendKeys(po_number);
 		searchPoBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(poResultCheckBox).click();
 		
 		addToListBtn.click();
@@ -161,7 +167,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 	
 	public void createNewInvoice(Invoice invoice, String po_number) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		clearInputFields();
 		fillCreateNewInvoiceForm(invoice);
 		attachSampleInvoiceFile();
@@ -174,28 +180,32 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		TestUtils.waitForWebElementToBeClickable(saveBtn).click();	// saving the current invoice
 		
 		// code for tagging the location and the person for the memo
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		submittingAt.sendKeys(invoice.submittingAt);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		submittingTo.sendKeys(invoice.submittingTo);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		
 		// code for actually submitting the memo
-		submitMemoBtn.click();
+		TestUtils.waitForToastToDisappear();
+		TestUtils.waitForWebElementToBeClickable(submitMemoBtn).click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
 		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();	
 		finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
 		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 		
 		//print button will be visible once the memo is submitted successfully
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));			
+		TestUtils.waitForElementInvisibility(By.className("loader"));			
 		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);	
-		homeBtn.click();							// going back to home button for next test
+		homeBtn.click();								// going back to the dashboard for the next test				
 		return isPrintBtnVisible;
 	}
 	
 	public boolean submitMemoWithDuplicateData(Invoice invoice) {
 		
 		fillCreateNewInvoiceForm(invoice);
+		resetBtn.click();
 		return TestUtils.isSuccessToastDisplayed("Invoice Number Exist try another!");
 	}
 	
@@ -209,7 +219,7 @@ public class CreatePOBasedInvoicePage extends TestBase{
 
 	public double verifyGstCode(String base_amount, String Igst){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		clearInputFields();
 		
 		baseAmount.sendKeys(base_amount);
@@ -218,13 +228,15 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		
 		String amount =  totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
 
 	public double verifyTdCode(String base_amount, String Cd){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		clearInputFields();
 		
 		baseAmount.sendKeys(base_amount);
@@ -233,13 +245,15 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		
 		String amount = totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
 
 	public double verifyAdditionalAmount(String base_amount, String Tcs){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		clearInputFields();
 		
 		baseAmount.sendKeys(base_amount);
@@ -248,36 +262,40 @@ public class CreatePOBasedInvoicePage extends TestBase{
 		
 		String amount = totalInvAmount.getText();
 		amount = TestUtils.splitString(amount);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		
 		resetBtn.click();
 		return Double.parseDouble(amount);
 	}
 	
 	public boolean createMultipleInvoiceInSingleMemo (List<Invoice> invoices, String po_number) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		
 		for (Invoice invoice : invoices) {
 			
 	        createNewInvoice(invoice, po_number);
-	        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+	        TestUtils.waitForElementInvisibility(By.className("loader"));
 			TestUtils.waitForWebElementToBeClickable(saveBtn).click();				// saving the current invoice
 	    }
 		
 		// code for tagging the location and person for the memo
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));	
+		TestUtils.waitForElementInvisibility(By.className("loader"));	
 		submittingAt.sendKeys(invoices.get(0).submittingAt);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		submittingTo.sendKeys(invoices.get(0).submittingTo);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		
 		// code for actually submitting the memo
-		submitMemoBtn.click();
+		TestUtils.waitForToastToDisappear();
+		TestUtils.waitForWebElementToBeClickable(submitMemoBtn).click();
 		nextSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("//button[@type='submit']"));
 		TestUtils.waitForWebElementToBeClickable(nextSubmitMemoBtn).click();
 		finalSubmitMemoBtn = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button"));
 		TestUtils.waitForWebElementToBeClickable(finalSubmitMemoBtn).click();
 		
 		//print button will be visible once the memo is submitted successfully
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));		
+		TestUtils.waitForElementInvisibility(By.className("loader"));		
 		boolean isPrintBtnVisible = TestUtils.isElementVisible(printBtn);
 		return isPrintBtnVisible;	
 	}

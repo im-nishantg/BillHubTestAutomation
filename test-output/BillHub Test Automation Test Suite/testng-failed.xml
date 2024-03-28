@@ -6,13 +6,21 @@
   </listeners>
   <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.UserPageTest">
+      <class name="com.billhub.qa.testcases.CommercialDashboardPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="createMDMAndReadOnlyUsersTest"/>
+          <include name="filterByServiceTest"/>
+          <include name="filterByCompanyServiceAndMemoTest"/>
+          <include name="filterByPoTest"/>
+          <include name="filterByCompanyTest"/>
+          <include name="filterByInvoiceServiceAndLocationTest"/>
+          <include name="filterByBothTest"/>
+          <include name="filterByLocationTest"/>
           <include name="setup"/>
+          <include name="filterByNonPoTest"/>
+          <include name="filterByCompanyAndLocationTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.UserPageTest -->
+      </class> <!-- com.billhub.qa.testcases.CommercialDashboardPageTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->

@@ -1,11 +1,10 @@
 package com.billhub.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.billhub.qa.base.TestBase;
-import com.billhub.qa.pages.CommercialDashboardPage;
-import com.billhub.qa.pages.InvoiceValidationByAccounts_1022_Page;
 import com.billhub.qa.pages.InvoiceValidationByTaxation_1022_Page;
 import com.billhub.qa.pages.LoginPage;
 import com.billhub.qa.utils.TestUtils;
@@ -15,7 +14,7 @@ public class InvoiceValidationByTaxation_1022_Test extends TestBase{
 	
 	LoginPage loginPage;
 	InvoiceValidationByTaxation_1022_Page invoiceValidationPage;
-	public Object[][] data = TestUtils.getTestData("InvoiceValidationAccounts_1022");
+	public Object[][] data;
 	
 	public InvoiceValidationByTaxation_1022_Test() {
 		super();
@@ -28,6 +27,7 @@ public class InvoiceValidationByTaxation_1022_Test extends TestBase{
 		loginPage= new LoginPage();
 		loginPage.loginAsTaxation(prop.getProperty("taxation_loginid_1022"),prop.getProperty("taxation_password_1022"));
 		invoiceValidationPage = new InvoiceValidationByTaxation_1022_Page();
+		data = TestUtils.getTestData("InvoiceValidationAccounts_1022");
 	}
 	
 	@Test(priority = 1)
@@ -83,9 +83,9 @@ public class InvoiceValidationByTaxation_1022_Test extends TestBase{
 	@Test(priority = 7)
 	public void validateCorrectInvoicesTest(){
 		
-		String location = (String) data[0][0], commercial_name = (String) data[0][1];
+		String location = (String) data[0][0], commercial_name = (String) data[0][1], document_number = TestUtils.numberToString(data[0][3]);
 		
-		boolean isInvoiceCorrected = invoiceValidationPage.validateCorrectInvoices(location, commercial_name);
+		boolean isInvoiceCorrected = invoiceValidationPage.validateCorrectInvoices(location, commercial_name, document_number);
 		Assert.assertTrue(isInvoiceCorrected, "Invoice was not updated.");
 	}
 	
@@ -106,4 +106,10 @@ public class InvoiceValidationByTaxation_1022_Test extends TestBase{
 		boolean isInvoiceUpdated = invoiceValidationPage.validateRaiseQuery(location, commercial_name, reason);
 		Assert.assertTrue(isInvoiceUpdated, "Invoice was not updated.");
 	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
 }
+

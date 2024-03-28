@@ -2,12 +2,11 @@ package com.billhub.qa.pages;
 
 import com.billhub.qa.base.TestBase;
 import com.billhub.qa.utils.TestUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-
 
 public class MdmDashboardPage extends TestBase{
 	
@@ -45,7 +44,7 @@ public class MdmDashboardPage extends TestBase{
 
 	public CustomerPage clickOnCustomerLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
 		TestUtils.waitForWebElementToBeClickable(customerBtn).click();
@@ -54,7 +53,7 @@ public class MdmDashboardPage extends TestBase{
 	
 	public BAPage clickOnBaLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
 		TestUtils.waitForWebElementToBeClickable(baBtn).click();
@@ -63,7 +62,7 @@ public class MdmDashboardPage extends TestBase{
 
 	public UserPage clickOnUserLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
 		TestUtils.waitForWebElementToBeClickable(userBtn).click();
@@ -72,7 +71,7 @@ public class MdmDashboardPage extends TestBase{
 
 	public WithholdingTaxPage clickOnWithholdingTaxLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();	
 		TestUtils.waitForWebElementToBeClickable(withHoldingTaxBtn).click();
@@ -81,7 +80,7 @@ public class MdmDashboardPage extends TestBase{
 
 	public RolePage clickOnRoleLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();
 		TestUtils.waitForWebElementToBeClickable(roleBtn).click();
@@ -90,7 +89,7 @@ public class MdmDashboardPage extends TestBase{
 
 	public TaxCodePage clickOnTaxCodeLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();
 		TestUtils.waitForWebElementToBeClickable(taxCodeBtn).click();
@@ -99,7 +98,7 @@ public class MdmDashboardPage extends TestBase{
 
 	public ReasonPage clickOnReasonLink(){
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();		
 		TestUtils.waitForWebElementToBeClickable(masterBtn).click();
 		TestUtils.waitForWebElementToBeClickable(reasonBtn).click();

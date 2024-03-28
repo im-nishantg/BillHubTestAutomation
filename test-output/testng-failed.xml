@@ -3,12 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test">
+      <class name="com.billhub.qa.testcases.BAPageTest">
         <methods>
+          <include name="addNewBaWithInvalidDataTest"/>
+          <include name="addNewBAWithInactiveStatusTest"/>
+          <include name="searchBAByCodeTest"/>
+          <include name="searchBAByNameTest"/>
+          <include name="validateAddedBAInTheDatabaseTest"/>
+          <include name="addNewBaWithoutDataTest"/>
+          <include name="updateBATest"/>
           <include name="setup"/>
-          <include name="validateExportButtonTest"/>
+          <include name="addNewBAWithDuplicateDataTest"/>
+          <include name="tearDown"/>
+          <include name="addNewBaWithValidDataTest"/>
+          <include name="addNewBAWithActiveStatusTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_MESPL_Test -->
+      </class> <!-- com.billhub.qa.testcases.BAPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

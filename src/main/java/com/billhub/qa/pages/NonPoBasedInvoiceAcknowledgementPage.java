@@ -2,6 +2,7 @@
 package com.billhub.qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -41,7 +42,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[5]")
     WebElement firstRowMemoNumber;
 
-    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]")
+    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]/label")
     WebElement firstRowInvoiceNumber;
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[13]")
@@ -366,6 +367,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
     }
 
     public boolean invoiceVerificationWithInvalideData(String hsn_code,String assignment,String item_text, String memo_number ){
+
         memoInput.sendKeys(memo_number);
         WebElement selectTab= TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
@@ -395,7 +397,8 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean verifyInvoiceWithValidData(String assignment, String item_text,String hsn_code) {
 
-//        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
+        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
         memoInput.sendKeys(memo_number);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
@@ -544,6 +547,8 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(reviewInvoicePostingBtn).click();
+
+        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
         searchBatchIdInput.sendKeys(batch_id);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-search-batch/div/div/div[1]/div[2]/div/div/typeahead-container/button/span/strong"));
         selectTab.click();
@@ -594,5 +599,44 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
         TestUtils.waitForElementInvisibility(By.className("loader"));
         return true;
+    }
+
+
+    // ********************* Function to read the document number for validation by accounts and taxation **************
+
+    public void readDocumentNumberForValidation() {
+
+        TestUtils.waitForElementInvisibility(By.className("loader"));
+        TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
+        TestUtils.waitForElementInvisibility(By.className("loader"));
+
+        filterBtn.click();
+        invoice.sendKeys(invoice_number);
+        applyBtn.click();
+        TestUtils.waitForElementInvisibility(By.className("loader"));
+
+        firstRowInvoiceNumber.click();
+        WebElement companyName = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-invoice-info-popup/div[2]/div[1]/div/div/div[1]/div/div[2]/div/b"));
+        String company_name = companyName.getText();
+
+        WebElement KRNumber = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-invoice-info-popup/div[2]/div[1]/div/div/div[2]/div[3]/div[4]/div[2]"));
+        String document_number = KRNumber.getText();
+
+        if(company_name.equalsIgnoreCase("1022")){
+            TestUtils.setCellData("InvValidationAccounts_1022_BT", 1, 3, document_number);		// updating excel sheet
+            TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 1, document_number);
+            TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 2, invoice_number);
+        }
+        else if(company_name.equalsIgnoreCase("MLMO")){
+            TestUtils.setCellData("InvoiceValidationAccounts_MERU", 1, 3, document_number);		// updating excel sheet
+            TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 1, document_number);
+            TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 2, invoice_number);
+        }
+        else if(company_name.equalsIgnoreCase("MESP")){
+            TestUtils.setCellData("InvoiceValidationAccounts_MESPL", 1, 3, document_number);		// updating excel sheet
+            TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 1, document_number);
+            TestUtils.setCellData("CreatePaymentRequestForNonPo", 1, 2, invoice_number);
+        }
+
     }
 }

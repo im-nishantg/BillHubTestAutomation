@@ -4,6 +4,7 @@ package com.billhub.qa.testcases;
 import com.billhub.qa.pages.NonPoBasedInvoiceAcknowledgementPage;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -77,6 +78,7 @@ public class NonPoBasedInvoiceAcknowledgementTest extends TestBase{
     public void searchByTransactionBatchIdTest()  {
 
         boolean isDetailsDisplayed = nonPoBasedInvoiceAcknowledgementPage.searchByTransactionBatchId();
+        nonPoBasedInvoiceAcknowledgementPage.readDocumentNumberForValidation();	// Reading doc number for Accounts and taxation validation
         Assert.assertTrue(isDetailsDisplayed, "Details of the transaction batchId were not displayed.");
     }
 
@@ -198,5 +200,10 @@ public class NonPoBasedInvoiceAcknowledgementTest extends TestBase{
 
         boolean areDetailsDisplayed = nonPoBasedInvoiceAcknowledgementPage.searchByInvalidTransactionBatchId(batch_id);
         Assert.assertFalse(areDetailsDisplayed, "Details of the transaction were displayed for invalid batchId.");
+    }
+
+    @AfterClass
+    public void tearDown(){
+        driver.close();
     }
 }

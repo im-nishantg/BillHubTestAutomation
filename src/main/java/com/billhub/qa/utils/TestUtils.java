@@ -34,8 +34,8 @@ public class TestUtils extends TestBase{
 	
 	public static long PAGE_LOAD_TIMEOUT = 45;
 	public static long IMPLICIT_WAIT = 20;
-	public static long EXPLICIT_WAIT = 30;
-	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";		
+	public static long EXPLICIT_WAIT = 15;
+	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";
 	static Workbook book;
 	static Sheet sheet;
 	

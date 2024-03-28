@@ -1,0 +1,74 @@
+<<<<<<< HEAD
+19:51:07.332 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+19:52:29.998 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //button[@class='btn btn-link']]
+19:52:30.558 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //span[normalize-space()='Dashboard']]
+19:52:36.547 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:52:37.307 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:53:02.488 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+19:53:04.615 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //span[normalize-space()='Dashboard']]
+19:53:04.768 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:53:06.206 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //span[normalize-space()='Dashboard']]
+19:53:06.359 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:53:06.398 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:53:06.507 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+19:53:07.163 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+19:53:28.387 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+19:53:28.774 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (39fbbf772ff9a46246add5fc916e15b9)] -> xpath: //a[normalize-space()='Review Invoice Posting']]
+07:41:10.401 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: model-container
+07:41:44.589 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@class='btn btn-primary ng-star-inserted']'
+=======
+21:18:44.575 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:18:44.623 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:18:45.977 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:18:46.002 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:18:46.042 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:18:46.664 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:18:47.278 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:18:47.887 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:18:49.201 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:18:49.224 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:19:39.969 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:07.244 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:33.406 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+21:20:53.482 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:53.664 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:54.302 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:55.189 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:20:55.263 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:56.190 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:20:56.216 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:20:56.264 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:56.871 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:57.486 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:58.620 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:20:58.678 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:59.297 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:20:59.914 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:00.804 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:21:00.853 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:00.948 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:01.739 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:21:01.768 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:21:01.811 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:02.545 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:02.620 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:21:02.648 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:21:02.691 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:03.470 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:21:03.496 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:21:03.535 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:04.869 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:21:04.897 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+21:21:05.130 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:05.738 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:06.445 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:07.052 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+21:21:08.235 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.className: dashboard-table
+21:21:08.261 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]
+>>>>>>> fa729d54ec6346f1c215968e78c5ae454ec124bf
+13:15:26.545 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+13:15:48.899 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+13:15:49.120 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+13:15:49.504 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (aa114bb6a12e5d400c3111fe28efd8e6)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[1]/ngx-select-dropdown/div/div/ul[2]/li]
+13:15:50.537 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (aa114bb6a12e5d400c3111fe28efd8e6)] -> xpath: //*[@id="main"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]]
+13:15:50.962 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader

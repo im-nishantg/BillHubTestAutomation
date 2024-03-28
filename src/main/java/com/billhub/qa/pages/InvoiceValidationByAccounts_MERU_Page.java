@@ -1,5 +1,6 @@
 package com.billhub.qa.pages;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,6 +28,12 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/div/input")
 	WebElement commercialNameInput;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[5]/input")
+	WebElement documentNumberInput;
+	
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-account/div/div/div[3]/div[1]/table/tbody/tr[1]/td[6]")
+	WebElement firstRowDocumentNumber;
 	
 	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-account/div/div/div[2]/div/div/div[1]/div/ul/li/form/div[3]/ngx-select-dropdown/div/div/ul[2]/li[1]")
 	WebElement firstCommercialName;
@@ -76,10 +83,10 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 	
 	public boolean searchInvoicesWithMultipleFields(String location, String commercial_name) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		crossIcon.click();
 		
 		locationBtn.click();
@@ -94,18 +101,46 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 		
 		applyBtn.click();
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 
 		return TestUtils.isElementVisible(firstRowCheckBox);
 	}
+	
+	public boolean searchInvoiceWithDocumentNumber(String location, String commercial_name, String document_number) {
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		filterBtn.click();
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		crossIcon.click();
+		
+		locationBtn.click();
+		locationInput.sendKeys(location);
+		TestUtils.waitForWebElementToBeClickable(firstLocation).click();
+		locationBtn.click();
+		
+		commercialNameBtn.click();
+		commercialNameInput.sendKeys(commercial_name);
+		TestUtils.waitForWebElementToBeClickable(firstCommercialName).click();
+		commercialNameBtn.click();
+		
+		documentNumberInput.sendKeys(document_number);
+		
+		applyBtn.click();
+		
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		filterBtn.click();
+
+		return StringUtils.containsIgnoreCase(firstRowDocumentNumber.getText(), document_number);
+	}
 
 	public boolean searchInvoicesWithInvalidData(String location, String commercial_name) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		crossIcon.click();
 		
 		locationBtn.click();
@@ -120,7 +155,7 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 		
 		applyBtn.click();
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		filterBtn.click();
 
 		return TestUtils.isElementVisible(firstRowCheckBox);
@@ -128,49 +163,52 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 	
 	public boolean validateAllInvoices() {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		allInvoicesBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.isElementVisible(firstRowCheckBox);
 	}
 
 	public boolean validatePendingInvoices() {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		pendingInvoicesBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.isElementVisible(firstRowCheckBox);
 	}
 	
 
 	public boolean validateExportButton(String location, String commercial_name) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchInvoicesWithMultipleFields(location, commercial_name);
 		firstRowCheckBox.click();
 		TestUtils.waitForWebElementToBeClickable(exportBtn).click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return true;
 	}
 	
 	public boolean validateDownloadButton(String location, String commercial_name) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchInvoicesWithMultipleFields(location, commercial_name);
 		firstRowCheckBox.click();
 		TestUtils.waitForWebElementToBeClickable(DownloadBtn).click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return true;
 	}
 	
-	public boolean validateCorrectInvoices(String location, String commercial_name) {
+	public boolean validateCorrectInvoices(String location, String commercial_name, String document_number) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
-		searchInvoicesWithMultipleFields(location, commercial_name);
+		TestUtils.waitForElementInvisibility(By.className("loader"));
+		boolean isDocumentNumberFound = searchInvoiceWithDocumentNumber(location, commercial_name, document_number);
+		
+		if(isDocumentNumberFound == false) 		
+			return false;
 		
 		firstRowCheckBox.click();
 		correctInvoiceBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		confirmationBtn.click();
 		
 		return TestUtils.isSuccessToastDisplayed("Invoice updated successfully");
@@ -178,12 +216,12 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 	
 	public boolean validateBlanketApprove(String location, String commercial_name) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchInvoicesWithMultipleFields(location, commercial_name);
 		
 		firstRowCheckBox.click();
 		blanketApproveBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		confirmationBtn.click();
 		
 		return TestUtils.isSuccessToastDisplayed("Invoice updated successfully");
@@ -191,13 +229,13 @@ public class InvoiceValidationByAccounts_MERU_Page extends TestBase{
 	
 	public boolean validateRaiseQuery(String location, String commercial_name, String reason) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchInvoicesWithMultipleFields(location, commercial_name);
 		
 		firstRowCheckBox.click();
 		raiseQueryBtn.click();
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		selectReason.sendKeys(reason);
 		validateBtn.click();
 		

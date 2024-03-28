@@ -26,7 +26,10 @@ public class TempTest extends TestBase{
 	
 	@Test
     public void validateInvoiceVerificationWithExcelsheetTest(){
-        boolean isVerified= temp.invoiceVerificationWithExcelsheet();
+		
+		String withholding_tax = "00-00-0%", item_text = "test", payment_term = "B002", assignment = "test";
+		
+        boolean isVerified = temp.invoiceVerificationWithExcelsheet(withholding_tax, item_text, payment_term, assignment);
         Assert.assertTrue(isVerified,"test fail");
     }
 }

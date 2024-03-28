@@ -34,7 +34,22 @@ public class TestBase {
 	public static void initialization() {
 		
 		log = LogManager.getLogger(TestBase.class.getName());
-		driver = WebDriverManager.chromedriver().create();
+		
+		String browserName = prop.getProperty("browser");
+		
+		if(browserName.equalsIgnoreCase("chrome")) {
+			driver = WebDriverManager.chromedriver().create();
+        } 
+		else if(browserName.equalsIgnoreCase("firefox")) {
+			driver = WebDriverManager.firefoxdriver().create();
+        } 
+		else if(browserName.equalsIgnoreCase("edge")) {
+			driver = WebDriverManager.edgedriver().create();
+        } 
+		else {
+            throw new IllegalArgumentException("Invalid browser name provided: " + browserName);
+        }
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtils.PAGE_LOAD_TIMEOUT));

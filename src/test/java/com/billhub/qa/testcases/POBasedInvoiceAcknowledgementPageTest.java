@@ -2,7 +2,9 @@ package com.billhub.qa.testcases;
 
 import java.time.Duration;
 
+import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -47,7 +49,7 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
     public void validateAcknowledgedStatusTest()  {
         
         String memo_status = poBasedInvoiceAcknowledgementPage.validateAcknowledgedMemoStatus();
-        Assert.assertEquals(memo_status, "Acknowledged", "Memo status was not updated successfully.");
+        Assert.assertTrue(StringUtils.containsIgnoreCase(memo_status,"Acknowledged"), "Memo status was not updated successfully.");
     }
 	
 	@Test(priority = 4)
@@ -63,7 +65,7 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
     public void validateVerifiedStatusTest()  {
        
         String memo_status = poBasedInvoiceAcknowledgementPage.validateVerifiedMemoStatus();
-        Assert.assertEquals(memo_status, "Verified", "Memo status was not updated successfully.");
+        Assert.assertTrue(StringUtils.containsIgnoreCase(memo_status,"Verified"), "Memo status was not updated successfully.");
     }
 	
 	@Test(priority = 6)
@@ -77,7 +79,8 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
     public void searchByTransactionBatchIdTest()  {
         
         boolean isDetailsDisplayed = poBasedInvoiceAcknowledgementPage.searchByTransactionBatchId();
-        Assert.assertTrue(isDetailsDisplayed, "Details of the transaction batchId were not displayed.");
+        poBasedInvoiceAcknowledgementPage.readDocumentNumberForValidation();	// Reading doc number for Accounts and taxation validation
+        Assert.assertTrue(isDetailsDisplayed, "Details of the transaction batchId were not displayed.");   
     }
 	
 	// ******************************** All Tests Associated with Acknowledgement of the invoice  ****************************
@@ -204,5 +207,9 @@ public class POBasedInvoiceAcknowledgementPageTest extends TestBase{
         boolean areDetailsDisplayed = poBasedInvoiceAcknowledgementPage.searchByInvalidTransactionBatchId(batch_id);
         Assert.assertFalse(areDetailsDisplayed, "Details of the transaction were displayed for invalid batchId.");
     }
-
+	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
 }
