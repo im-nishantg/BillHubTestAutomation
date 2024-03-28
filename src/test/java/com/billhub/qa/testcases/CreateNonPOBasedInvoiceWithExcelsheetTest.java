@@ -34,7 +34,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
     }
     public void updateMultipleInvoiceExcelSheet() {
 
-        for(int i=1; i<=2; i++) {
+        for(int i=1; i<=2; i++){
             String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(5);
             TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Invoice_LR_Mapping", i, 1, invoice_number);
             TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_MULTIPLE_INVOICE, "Memo", i, 1, invoice_number);

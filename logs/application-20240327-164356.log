@@ -1,0 +1,61 @@
+16:17:47.254 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:47.352 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:49.230 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:51.087 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:51.790 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:52.116 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:52.222 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice verified and simulate successfully
+16:17:53.903 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:17:54.534 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a7cb20fede17988e43c598185600ea5a)] -> xpath: //span[normalize-space()='Dashboard']]
+16:18:24.962 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:18:24.995 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a7cb20fede17988e43c598185600ea5a)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:18:55.577 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:19:15.622 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a7cb20fede17988e43c598185600ea5a)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:19:15.745 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (a7cb20fede17988e43c598185600ea5a)] -> xpath: //a[normalize-space()='Review Invoice Posting']]
+16:22:02.327 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:30.134 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:22:34.095 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (9fa52a125faa9887da2bafd96788614a)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:23:41.648 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:27:18.728 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (876f183283c62ee1be874c4fa553e696)] -> xpath: //button[@class='btn btn-link']]
+16:29:17.777 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:29:20.150 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (effba16d0fcef937b2aa6a44c9d96cae)] -> xpath: //button[@class='btn btn-link']]
+16:29:36.026 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Dashboard']'
+16:29:50.032 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:29:52.346 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1103cc63a72a9609ea3fa0036f32d26e)] -> xpath: //button[@class='btn btn-link']]
+16:29:57.819 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Dashboard']'
+16:31:50.698 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:31:53.050 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:31:53.093 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (667fe34e41f17f9b67bc7829b3bfaccb)] -> xpath: //button[@class='btn btn-link']]
+16:32:04.857 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Dashboard']'
+16:32:18.839 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:32:21.749 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:32:48.284 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:32:51.152 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:32:51.190 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b0f7292fcdf48ef50f81412a776d0ff1)] -> xpath: //button[@class='btn btn-link']]
+16:33:06.941 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Dashboard']'
+16:33:57.959 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:34:00.867 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (17416522cd5c5b1b16ed8f6fc773e1b5)] -> xpath: //button[@class='btn btn-link']]
+16:34:13.284 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[normalize-space()='Dashboard']'
+16:36:46.907 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: model-container
+16:37:07.057 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7df748955aaef046382d1f4391a39bd0)] -> xpath: //button[@class='btn btn-link']]
+16:37:07.164 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7df748955aaef046382d1f4391a39bd0)] -> xpath: //span[normalize-space()='Dashboard']]
+16:37:07.819 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:37:07.860 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7df748955aaef046382d1f4391a39bd0)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:37:07.950 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7df748955aaef046382d1f4391a39bd0)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+16:37:09.021 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:37:09.771 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (7df748955aaef046382d1f4391a39bd0)] -> xpath: /html/body/modal-container/div/div/app-book-invoice-confirm/div[3]/div/div[2]/button]
+16:37:11.707 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element to be clickable: By.xpath: /html/body/modal-container/div/div/app-notify-dialog/div[1]/button
+16:38:42.904 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: model-container
+16:39:03.057 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ec5401b0a2bc9a53d5feb5373431a12e)] -> xpath: //button[@class='btn btn-link']]
+16:39:03.174 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ec5401b0a2bc9a53d5feb5373431a12e)] -> xpath: //span[normalize-space()='Dashboard']]
+16:39:03.855 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:39:03.897 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ec5401b0a2bc9a53d5feb5373431a12e)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:39:03.985 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ec5401b0a2bc9a53d5feb5373431a12e)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+16:39:09.944 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader-overlay
+16:39:30.544 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: model-container
+16:39:50.677 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:40:10.810 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (1ebe69461e6ad606edbd255287457915)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:40:48.050 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: model-container
+16:41:08.177 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:41:28.203 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ca758113d62828196be3616c8986f8f5)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+16:41:28.316 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (ca758113d62828196be3616c8986f8f5)] -> xpath: //a[normalize-space()='Review Invoice Posting']]

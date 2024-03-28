@@ -34,7 +34,7 @@ public class TestUtils extends TestBase{
 	
 	public static long PAGE_LOAD_TIMEOUT = 45;
 	public static long IMPLICIT_WAIT = 20;
-	public static long EXPLICIT_WAIT = 10;
+	public static long EXPLICIT_WAIT = 30;
 	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\billhub\\qa\\testdata\\BillHubTestdata.xlsx";		
 	static Workbook book;
 	static Sheet sheet;
@@ -49,11 +49,8 @@ public class TestUtils extends TestBase{
 	public static void waitForElementInvisibility(By selector) {
 		
 		log.info("Waiting for element invisibility: " + selector);
-<<<<<<< HEAD
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-=======
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
->>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
     }
 	

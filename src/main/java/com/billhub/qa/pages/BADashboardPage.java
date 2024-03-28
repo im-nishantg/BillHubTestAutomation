@@ -1,6 +1,7 @@
 package com.billhub.qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -340,13 +341,15 @@ public class BADashboardPage extends TestBase{
 	}
 
 	public CreateNonPOBasedInvoicePage createNewMemoBTBased(String from_state, String to_state){
-		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+		TestUtils.waitForElementInvisibility(By.className("model-container"));
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
 		TestUtils.waitForWebElementToBeClickable(createMemoBtn).click();
 		TestUtils.waitForWebElementToBeClickable(createMemoTab).click();
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
 		proceedManuallyBtn.click();
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return new CreateNonPOBasedInvoicePage();
 	}
 
@@ -380,23 +383,23 @@ public class BADashboardPage extends TestBase{
 		fromState.sendKeys(from_state);
 		toState.sendKeys(to_state);
 		uploadAndContinueBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		companyCode.sendKeys(company_code);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		secviceType.sendKeys(service_type);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		// searching and tagging the BT to the invoice
 		searchBtInput.sendKeys(bt_number);
 		searchBTBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		TestUtils.waitForWebElementToBeClickable(btResultCheckBox).click();
 		uploadBTBtn.click();
 //		excel upload section   ....
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		uploadFileBtn.sendKeys(INVOICE_SHEET_PATH);
 		TestUtils.waitForElementVisibility(By.cssSelector(".btn.btn-warning.btn-acknowledge"));
 		TestUtils.waitForWebElementToBeClickable(submitFileBtn).click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		WebElement invalideInv=TestUtils.waitForElementVisibility(By.xpath("//label[normalize-space()='Invalid Invoice']"));
 		boolean isError=invalideInv.isDisplayed();
 		cancelInvBtn.click();

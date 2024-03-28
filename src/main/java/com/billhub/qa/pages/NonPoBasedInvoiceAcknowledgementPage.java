@@ -208,20 +208,20 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean validateSubmittedPoBasedInvoiceInDashboard() {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         loadDashboardBtn.click();
         return TestUtils.isElementVisible(dashboardFirstRow);
     }
 
     public boolean validateAcknowledgeTheMemo() {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         filterBtn.click();
         invoiceTypeDropdown.click();
         nonPoTab.click();
         applyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
 
         memo_number = firstRowMemoNumber.getText();						// reading memo number from the first row in the dashboard
         invoice_number = firstRowInvoiceNumber.getText();
@@ -231,7 +231,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         selectTab.click();
         acknowledgeBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         invoiceCheckbox.click();
         acknowledgeMemoBtn.click();
 
@@ -245,15 +245,15 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public String validateAcknowledgedMemoStatus() {	// Test for verifying the status of acknowledged memo in the dashboard
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+//        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         filterBtn.click();											//searching for the memo in the filter option
         invoice.sendKeys(invoice_number);
         applyBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         boolean isMemoFound = TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[5]/div/table/tbody/tr[1]/td[4]/label"), invoice_number);
 
         if(isMemoFound == false) return "Memo was not found.";				// if the correct memo is not found return false
@@ -263,17 +263,17 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean ValidateRejectTheMemo(String memo_number, String reason) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         memoInput.sendKeys(memo_number);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
         acknowledgeBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         invoiceCheckbox.click();
         rejectMemoBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         selectReason.sendKeys(reason);
         rejectInvoiceBtn.click();
         boolean isInvoiceRejected = TestUtils.isElementVisible(rejectMemoSuccessMessage);
@@ -283,7 +283,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public String validateRejectedMemoStatus(String invoice_number) {		// Test for verifying the status of rejected memo in the dashboard
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         filterBtn.click();											//searching for the memo in the filter option
         invoice.sendKeys(invoice_number);
         applyBtn.click();
@@ -296,19 +296,19 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean ValidateReassignTheMemo(String memo_number, String submitting_from, String submitting_to) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         memoInput.sendKeys(memo_number);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
         acknowledgeBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         reassignMemoBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         submittingFrom.sendKeys(submitting_from);
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         submittingTo.sendKeys(submitting_to);
 
         assignBtn.click();
@@ -319,44 +319,44 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean validateInvoiceFilePreview(String memo_number) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         memoInput.sendKeys(memo_number);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
         verifyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         verifyInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         invoiceScannedCopyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         invoiceFileBtn.click();
         return TestUtils.isElementVisible(invoiceFilePreview);
     }
 
     public boolean verifyInvoiceWithInvalidTaxCode(String hsn_code, String assignment, String item_text,String memo_number) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         memoInput.sendKeys(memo_number);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
         verifyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         verifyInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         String igst_amount = igstAmount.getText().substring(2);						// Selecting wrong tax-code based on the igst amount
         String tax_code = igst_amount.equals("0") ?  "KG - 18% Input  IGST Deductible" : "V0 - 0% Tax";
 
         hsnCodeInput.sendKeys(hsn_code);
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         hsnSelectTab.click();
         taxCodeInput.sendKeys(tax_code);
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         taxCodeSelectTab.click();
         tdsApplicableCheckbox.click();
         assignmentInput.sendKeys(assignment);
@@ -371,19 +371,19 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         selectTab.click();
         verifyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         verifyInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         String igst_amount = igstAmount.getText().substring(2);						// Selecting wrong tax-code based on the igst amount
         String tax_code = igst_amount.equals("0") ? "V0 - 0% Tax" : "KG - 18% Input  IGST Deductible";
 
         hsnCodeInput.sendKeys(hsn_code);
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         hsnSelectTab.click();
         taxCodeInput.sendKeys(tax_code);
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         taxCodeSelectTab.click();
         tdsApplicableCheckbox.click();
         assignmentInput.sendKeys(assignment);
@@ -395,31 +395,31 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean verifyInvoiceWithValidData(String assignment, String item_text,String hsn_code) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+//        TestUtils.waitForElementInvisibility(By.className("loader-overlay"));
         memoInput.sendKeys(memo_number);
         WebElement selectTab = TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
         selectTab.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("model-container"));
         verifyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         verifyInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         hsnCodeInput.sendKeys(hsn_code);
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         hsnSelectTab.click();
         String igst_amount = igstAmount.getText().substring(2);								// Selecting tax-code based on the igst amount
         String tax_code = igst_amount.equals("0") ? "V0 - 0% Tax" : "KG - 18% Input  IGST Deductible" ;
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         tdsApplicableCheckbox.click();
         assignmentInput.sendKeys(assignment);
         itemTextInput.sendKeys(item_text);
         taxCodeInput.sendKeys(tax_code);
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         taxCodeSelectTab.click();
         finalVerifyInvoiceBtn.click();
 
@@ -428,9 +428,8 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public String validateVerifiedMemoStatus() {	// Test for verifying the status of verified memo in the dashboard
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
         filterBtn.click();											//searching for the memo in the filter option
         memo.sendKeys(memo_number);
@@ -449,10 +448,10 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         selectTab.click();
         verifyBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         verifyInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         rejectInput.sendKeys(reason);
         rejectBtn.click();
 
@@ -462,14 +461,14 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
     // ********************* Functions associated with booking of the verified invoice *****************
 
     public boolean bookingInvoiceWithValidData(){
+        TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
+        TestUtils.waitForElementInvisibility(By.className("loader"));
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(approveInvoiceForBookingBtn).click();
-
         invoiceNumberInput.sendKeys(invoice_number);
         searchInvoiceBtn.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         firstInvoiceCheckbox.click();
         bookInvoiceBtn.click();
 
@@ -488,7 +487,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean searchingInvoiceWithMultipleFields(String invoice_number, String ba_name) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(approveInvoiceForBookingBtn).click();
@@ -497,13 +496,13 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         baNameInput.sendKeys(ba_name);
         searchInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-review-invoice-list/div/div/div[3]/div/table/tbody/tr/td[3]/button"), invoice_number);
     }
 
     public boolean searchingInvoiceWithInvalidData(String invoice_number, String ba_name) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(approveInvoiceForBookingBtn).click();
@@ -512,13 +511,13 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         baNameInput.sendKeys(ba_name);
         searchInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-review-invoice-list/div/div/div[3]/div/table/tbody/tr/td[3]/button"), invoice_number);
     }
 
     public boolean downloadingInvoiceBeforeBooking(String invoice_number, String ba_name, String verified_by) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(approveInvoiceForBookingBtn).click();
@@ -531,11 +530,11 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         firstOption.click();
         searchInvoiceBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         firstInvoiceCheckbox.click();
         downloadBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         return true;
     }
 
@@ -543,7 +542,6 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean searchByTransactionBatchId() {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(reviewInvoicePostingBtn).click();
         searchBatchIdInput.sendKeys(batch_id);
@@ -556,7 +554,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean searchByInvalidTransactionBatchId(String batch_id) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(reviewInvoicePostingBtn).click();
@@ -568,7 +566,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean validatingTwoDocumentNumbers(String batch_id) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(reviewInvoicePostingBtn).click();
@@ -583,7 +581,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
 
     public boolean downloadingBookedInvoiceTest(String batch_id) {
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(actionBtn).click();
         TestUtils.waitForWebElementToBeClickable(reviewInvoicePostingBtn).click();
@@ -594,7 +592,7 @@ public class NonPoBasedInvoiceAcknowledgementPage extends TestBase{
         searchBatchIdBtn.click();
         downloadButton.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         return true;
     }
 }

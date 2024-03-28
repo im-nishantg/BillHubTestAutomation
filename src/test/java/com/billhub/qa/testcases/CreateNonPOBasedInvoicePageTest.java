@@ -34,7 +34,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
             String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(4);
             String amount = TestUtils.generateRandomNumber(1);
             String base_amount=amount;
-            double igst = Double.parseDouble(base_amount) * 0.18;
+            double igst = Double.parseDouble(base_amount) * 0;
             igst=Math.floor(igst*100)/100.0;
             String Igst = String.valueOf(igst);
             TestUtils.setCellData("BTBasedInvoice", i, 0, invoice_number);
@@ -70,7 +70,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
     @Test(priority = 2)
     public void tdCodeVerificationTest(){
 
-        String base_amount = (String) data[0][1], cd = (String) data[0][4],igst = (String) data[0][2];
+        String base_amount = (String) data[0][1], cd = (String) data[0][4];
         double expected_amount=Double.parseDouble(base_amount)-Double.parseDouble(cd);
         double actual_amount=createNonPOBasedInvoicePage.verifyTdCode(base_amount,cd);
         Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
@@ -81,7 +81,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
     @Test(priority = 3)
     public void additionatAmountVerificationTest(){
 
-        String base_amount = (String) data[0][1], tcs = (String) data[0][5],igst = (String) data[0][2];
+        String base_amount = (String) data[0][1], tcs = (String) data[0][5];
         double expected_amount=Double.parseDouble(base_amount)+Double.parseDouble(tcs);
         double actual_amount= createNonPOBasedInvoicePage.verifyAdditionalAmount(base_amount,tcs);
         Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
@@ -101,8 +101,8 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
     @Test(priority = 5)
     public void submitMemoWithValidDataTest(){
 
-        String company_code=(String) data[0][12], service_type=(String)data[0][13];
-        String BTinvoiceNumber="492775030";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
+        String company_code=(String) data[5][12], service_type=(String)data[5][13];
+        String BTinvoiceNumber="222495078";// THIS IS THE INVOICE NUMBER OF BT OF ABOVE COMPANY CODE
         String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
         String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
         String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
@@ -117,21 +117,6 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
 
     @Test(priority = 6)
-    public void submitMemoWithDuplicateDataTest(){
-
-        String from_state = (String) memoData[2][0], to_state = (String) memoData[2][1];
-        createNonPOBasedInvoicePage = baDashboardPage.createNewMemoBTBased(from_state, to_state);
-
-        String invoice_number = (String) data[0][0], base_amount = (String) data[0][1], igst = (String) data[0][2];
-        String subServiceCategory = (String) data[0][3], cd = (String) data[0][4], tcs = (String) data[0][5];
-        String hsn_code = TestUtils.numberToString(data[0][6]), end_customer = (String) data[0][7], comment = (String) data[0][8], amount = TestUtils.numberToString(data[0][9]);
-        String submitting_at = (String) data[0][10], submitting_to = (String) data[0][11];
-        Invoice invoice=new Invoice(invoice_number, base_amount, igst, subServiceCategory, cd, tcs, hsn_code, end_customer, comment, amount, submitting_at, submitting_to);
-        boolean isSubmitted= createNonPOBasedInvoicePage.submitMemoWithDuplicateData(invoice);
-        Assert.assertTrue(isSubmitted,"Memo was submitted with duplicate data!");
-    }
-
-    @Test(priority = 7)
     public void createMultipleInvoiceInSingleMemoTest() {
 
         List<Invoice> invoices = new ArrayList<>();
@@ -152,6 +137,14 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
 
         boolean isSubmitted = createNonPOBasedInvoicePage.createMultipleInvoiceInSingleMemo(invoices,company_code,service_type,listOfBTs);
         Assert.assertTrue(isSubmitted, "Memo was not submitted");
+
+    }
+
+    @Test(priority = 7)
+    public void submitMemoWithDuplicateDataTest(){
+
+        boolean isSubmitted= createNonPOBasedInvoicePage.submitMemoWithDuplicateData();
+        Assert.assertTrue(isSubmitted,"Memo was submitted with duplicate data!");
 
     }
 

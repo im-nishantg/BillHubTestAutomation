@@ -11,21 +11,21 @@
 		    	<!--  <class name = "com.billhub.qa.testcases.CustomerPageTest"></class>  --> 
 				<!--  <class name="com.billhub.qa.testcases.WithholdingTaxPageTest"></class>  -->
 			 	 <!-- <class name = "com.billhub.qa.testcases.BAPageTest"></class>  --> 
-			       <class name = "com.billhub.qa.testcases.UserPageTest"></class>
+<!--			       <class name = "com.billhub.qa.testcases.UserPageTest"></class>-->
 			 	<!-- <class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
 			 	 <!-- <class name = "com.billhub.qa.testcases.ReasonPageTest"></class>  -->
-<<<<<<< HEAD
+
 <!--			 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class>-->
-<!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">-->
-<!--                <methods>-->
-<!--                    <include name="submitMemoWithValidDataTest"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
+			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">
+                <methods>
+                    <include name="submitMemoWithValidDataTest"></include>
+                </methods>
+            </class>
 			 <!-- 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class> -->
 <!-- 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class> -->
 			<!-- <class name="com.billhub.qa.testcases.CommercialDashboardPageTest"></class> -->
-			<class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">
-=======
+<!--			<class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">-->
+
 			 	<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
 			 		<methods>
 			 			<include name="submitMemoWithValidDataTest"/>
@@ -35,22 +35,17 @@
 			 <!-- 	<class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class> -->
 <!-- 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class> -->
 			<!-- <class name="com.billhub.qa.testcases.CommercialDashboardPageTest"></class> -->
-			<!-- <class name="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest">
->>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
+			 <class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">
                 <methods>
-<!--                    <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>-->
-<!--                    <include name="validateAcknowledgeTheMemoTest"/>-->
-<!--                    <include name="validateAcknowledgedStatusTest"/>-->
+                    <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>
+                    <include name="validateAcknowledgeTheMemoTest"/>
+                    <include name="validateAcknowledgedStatusTest"/>
                     <include name="verifyInvoiceWithValidDataTest"/>
                     <include name="validateVerifiedStatusTest"/>
                     <include name="bookingInvoiceWithValidDataTest"/>
                     <include name="searchByTransactionBatchIdTest"/>
                 </methods>
-<<<<<<< HEAD
             </class>
-=======
-            </class>  -->
->>>>>>> 27ed5e92058fe9b1ebea8f0cca71296156386a47
 		</classes>
 	</test>
 </suite>
