@@ -11,20 +11,20 @@
 		    	<!--  <class name = "com.billhub.qa.testcases.CustomerPageTest"></class>  --> 
 				<!--  <class name="com.billhub.qa.testcases.WithholdingTaxPageTest"></class>  -->
 			 	<!-- <class name = "com.billhub.qa.testcases.BAPageTest"></class> -->
-			    <!-- <class name = "com.billhub.qa.testcases.UserPageTest"></class>  -->
+			    <!-- <class name = "com.billhub.qa.testcases.UserPageTest"></class> -->
 			 	<!-- <class name = "com.billhub.qa.testcases.TaxCodePageTest"></class>  -->
 			 	<!-- <class name = "com.billhub.qa.testcases.ReasonPageTest"></class> -->
-			 	<!-- <class name = "com.billhub.qa.testcases.RolePageTest"></class> -->
+			    <!-- <class name = "com.billhub.qa.testcases.RolePageTest"></class> -->
 			 	
-			 	<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class> -->
+			 	<!--  <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest"></class> -->
 <!--			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoicePageTest">-->
 <!--                <methods>-->
 <!--                    <include name="submitMemoWithValidDataTest"></include>-->
 <!--                </methods>-->
 <!--            </class>-->
-		  <!--  <class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class> -->
+		    <!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoiceWithExcelsheetTest"></class> -->
 <!-- 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class> -->
-		   		<class name="com.billhub.qa.testcases.CommercialDashboardPageTest"></class>
+		   		<!-- <class name="com.billhub.qa.testcases.CommercialDashboardPageTest"></class> -->
 		   		 <!-- <class name="com.billhub.qa.testcases.BADashboardPageTest"></class>  -->
 <!--			<class name="com.billhub.qa.testcases.NonPoBasedInvoiceAcknowledgementTest">-->
 		   
@@ -33,7 +33,7 @@
 <!-- 			<class name="com.billhub.qa.testcases.CreateNonPOBasedInvoiceWithExcelsheetTest"></class> -->
 		   
 		   		
-		   		<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
+		   		 <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
 			 		<methods>
 			 			<include name="submitMemoWithValidDataTest"/>
 			 		</methods>
@@ -64,7 +64,9 @@
 			 			 <include name="validateExcelsheetDataTest"/>
 			 			 <include name="ValidateDownloadPaymentRequestTest"/>
 			 		</methods>
-			 	</class> -->
+			 	</class> 
+			 	
+			 	
 		</classes>
 	</test>
 </suite>

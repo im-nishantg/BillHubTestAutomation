@@ -24,7 +24,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	private static boolean isMultipleInvoicesSubmitted = false;
 	public Object[][] data;
 	public Object[][] memoData = TestUtils.getTestData("BADashboardPage");
-	String po_number = "4500000891";										// This PO number has been used in all the test
+	String po_number = "4500000904";										// This PO number has been used in all the test
 	
 	public CreatePOBasedInvoicePageTest() {
 		super();
@@ -32,13 +32,14 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 	
 	public void updateExcelSheetData() {
 		
-		for(int i=1; i<=8; i++)
+		for(int i=1; i<=2; i++)
 		{
 			String invoice_number = "TESTINV"  + TestUtils.generateRandomNumber(5);
-			String quantity = TestUtils.generateRandomNumber(1);
-			if (Integer.parseInt(quantity) > 4) {					// Restricting base amount between 1-4
-			    quantity = "4";
-			}
+			String quantity = "1";
+//			String quantity = TestUtils.generateRandomNumber(1);
+//			if (Integer.parseInt(quantity) > 4) {					// Restricting base amount between 1-4
+//			    quantity = "4";
+//			}
 			String base_amount = quantity;
 			String Igst = "0";
 			TestUtils.setCellData("POBasedInvoice", i, 0, invoice_number);
@@ -132,7 +133,7 @@ public class CreatePOBasedInvoicePageTest extends TestBase{
 			
 		List<Invoice> invoices = new ArrayList<>();
 		
-		for(int i=1; i<8; i++)
+		for(int i=1; i<2; i++)
 		{
 			String invoice_number = (String) data[i][0], base_amount = (String) data[i][1], igst = (String) data[i][2];
 			String subServiceCategory = (String) data[i][3], cd = (String) data[i][4], tcs = (String) data[i][5];

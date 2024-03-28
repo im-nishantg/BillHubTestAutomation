@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [BillHub Test Automation Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.billhub.qa.extentReportListener.ExtentReportNG"/>
+  </listeners>
+  <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.BAPageTest">
+      <class name="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
         <methods>
-          <include name="addNewBaWithInvalidDataTest"/>
-          <include name="addNewBAWithInactiveStatusTest"/>
-          <include name="searchBAByCodeTest"/>
-          <include name="searchBAByNameTest"/>
-          <include name="validateAddedBAInTheDatabaseTest"/>
-          <include name="addNewBaWithoutDataTest"/>
-          <include name="updateBATest"/>
           <include name="setup"/>
-          <include name="addNewBAWithDuplicateDataTest"/>
+          <include name="submitMemoWithValidDataTest"/>
           <include name="tearDown"/>
-          <include name="addNewBaWithValidDataTest"/>
-          <include name="addNewBAWithActiveStatusTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.BAPageTest -->
+      </class> <!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest -->
+      <class name="com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="validateCorrectInvoicesTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test -->
+      <class name="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest">
+        <methods>
+          <include name="validateVerifiedStatusTest"/>
+          <include name="validateAcknowledgeTheMemoTest"/>
+          <include name="tearDown"/>
+          <include name="verifyInvoiceWithValidDataTest"/>
+          <include name="searchByTransactionBatchIdTest"/>
+          <include name="setup"/>
+          <include name="bookingInvoiceWithValidDataTest"/>
+          <include name="validateAcknowledgedStatusTest"/>
+        </methods>
+      </class> <!-- com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest -->
+      <class name="com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test">
+        <methods>
+          <include name="setup"/>
+          <include name="validateCorrectInvoicesTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test -->
+      <class name="com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest">
+        <methods>
+          <include name="ValidateDownloadPaymentRequestTest"/>
+          <include name="setup"/>
+          <include name="validateExcelsheetDataTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- BillHub App Test Cases(failed) -->
+</suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->
