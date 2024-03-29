@@ -19,10 +19,12 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetTest extends TestBase {
         loginPage.loginAsCommercial(prop.getProperty("commercial_userid"),prop.getProperty("commercial_password"));
         nonPoBasedInvoiceVerificationWithExcelsheetPage= new NonPoBasedInvoiceVerificationWithExcelsheetPage();
     }
-    @Test
+    @Test(priority = 1)
     public void validateInvoiceVerificationWithExcelsheetTest(){
-        boolean isVerified= nonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet();
-        Assert.assertTrue(isVerified,"test fail");
+        String withholding_tax = "00-00-0%", item_text = "test", payment_term = "B002", assignment = "test";
+
+        boolean isVerified = nonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet(withholding_tax, item_text, payment_term, assignment);
+        Assert.assertTrue(isVerified, "Invoice was not verified with valid data.");
     }
 
 }

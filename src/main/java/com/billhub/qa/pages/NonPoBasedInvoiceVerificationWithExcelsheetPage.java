@@ -84,42 +84,18 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
     WebElement uploadFile;
     @FindBy(xpath = "//button[normalize-space()='Upload']")
     WebElement uploadBtn;
+    @FindBy(xpath = "/html/body/modal-container/div/div/app-upload-invoice-popup/div/div[2]/div[2]/button")
+    WebElement proceedWithInvoiceBtn;
 
     public NonPoBasedInvoiceVerificationWithExcelsheetPage(){
         PageFactory.initElements(driver,this);
     }
 
-//    public Object[][] data1;//invoice details
-//    public Object[][] data2;//verification details
-//    public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE="C:\\Users\\SURAJ PATEL\\Downloads";
-//    public static String SHEET_PATH_FOR_UPLOADING_INVOICE=System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_bt.xlsx";
-//    public void updateInvoiceExcelSheet(String memo_number){
-//        String downloded_sheetPath=SHEET_PATH_FOR_DOWNLOADED_INVOICE+"/"+memo_number+".xlsx";
-//        data1= TestUtils.readExcelSheetByFilePath(downloded_sheetPath,"Memo_invoice_Details");
-//        data2=TestUtils.readExcelSheetByFilePath(downloded_sheetPath,"Memo_Verification_details");
-//        for(int i=1; i<=15; i++){
-//            String value=(String)data1[0][i];
-//            if(value.equals("0.0")) value="0";
-//            else if(value.equals("1.0")) value="1";
-//            TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_invoice_Details", 1, i, value);
-//        }
-//        for(int i=1; i<=12; i++){
-//            String value = (String)data2[0][i];
-//            if(value.equals("0.0"))value = "0";
-//            else if(value.equals("1.0"))value = "1";
-//            TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, i, value);
-//        }
-//        String IGST=(String)data1[0][8];
-//        String tax_code= IGST.equals("0.0") ?  "V0" : "KG";
-//
-//        TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 14, tax_code);
-//    }
-
 
     public Object[][] data1; // invoice details
     public Object[][] data2; // verification details
     public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE = "C:\\Users\\SURAJ PATEL\\Downloads";
-    public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_bt.xlsx";
+    public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_non_po.xlsx";
 
     public void updateInvoiceExcelSheet(String memo_number) {
         String downloaded_sheetPath = SHEET_PATH_FOR_DOWNLOADED_INVOICE + "/" + memo_number + ".xlsx";
@@ -193,7 +169,21 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
             cell.setCellStyle(style);
         }
     }
-    public boolean invoiceVerificationWithExcelsheet(){
+
+
+    public void AddNewFields(String withholding_tax, String item_text, String payment_term, String assignment) {
+
+        String IGST = (String) data1[0][8];
+        String tax_code = IGST.equals("0.0") ? "V0" : "KG";
+        TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 14, tax_code);
+        TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 16, withholding_tax);
+        TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 17, item_text);
+        TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 18, payment_term);
+        TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 19, assignment);
+    }
+
+    public boolean invoiceVerificationWithExcelsheet(String withholding_tax, String item_text, String payment_term, String assignment){
+
         String memo_number = "30005574-2023-24-00009";
 
         memoInput.sendKeys(memo_number);
@@ -201,18 +191,25 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
         selectTab.click();
         verifyMemoBtn.click();
 
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         downloadInvoice.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         updateInvoiceExcelSheet(memo_number);
+        AddNewFields(withholding_tax, item_text, payment_term, assignment);
+
         uploadInvoice.click();
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         uploadFile.sendKeys(SHEET_PATH_FOR_UPLOADING_INVOICE);
-        TestUtils.waitForElementInvisibility(By.className("modal-container"));
+
+        TestUtils.waitForElementInvisibility(By.className("loader"));
         uploadBtn.click();
-        return true;
+        TestUtils.waitForElementInvisibility(By.className("loader"));
+        proceedWithInvoiceBtn.click();
+
+        WebElement invoiceStatus = TestUtils.waitForElementVisibility(By.xpath("/html/body/modal-container/div/div/app-verify-log-popup/div/table/tbody/tr/td[4]"));
+        String successMessage = "Invoice verified and simulate successfully";
+
+        return invoiceStatus.getText().equalsIgnoreCase(successMessage);
     }
-
-
-
 }
