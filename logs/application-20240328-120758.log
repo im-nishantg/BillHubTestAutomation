@@ -1,0 +1,68 @@
+11:48:19.347 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button
+11:48:19.945 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button]
+11:48:20.028 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:54:35.184 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:54:55.291 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:54:55.490 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+11:54:56.075 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:54:56.880 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:56:14.018 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:56:34.095 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:57:17.651 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:57:37.725 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:57:37.878 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+11:57:38.511 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:57:56.444 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:58:16.504 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:58:16.653 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+11:58:17.232 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:58:47.420 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:59:07.469 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:59:07.611 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+11:59:08.191 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:59:08.911 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Please only select invoices with valid GRN
+12:00:03.214 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:00:23.314 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:00:23.460 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+12:00:24.054 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:00:24.887 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:00:26.604 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:00:44.573 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:01:04.655 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:01:04.797 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+12:01:05.394 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:01:06.101 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:01:07.767 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:01:08.095 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:01:08.238 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice verified and simulate successfully
+12:01:28.272 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Invoice verified and simulate successfully
+12:02:04.444 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:02:24.626 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+12:02:25.202 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:02:26.051 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:02:27.217 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice rejected successFully
+12:02:47.277 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - Invoice rejected successFully
+12:03:21.160 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:03:41.235 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:03:41.288 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (29057066b896982199ded08200044393)] -> xpath: //button[@class='btn btn-link']]
+12:03:41.412 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (29057066b896982199ded08200044393)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:03:42.074 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (29057066b896982199ded08200044393)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:03:42.947 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:04:42.907 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:05:02.965 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:05:03.017 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (db37675b2b7603b36007c7ca71dd3eef)] -> xpath: //button[@class='btn btn-link']]
+12:05:03.141 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (db37675b2b7603b36007c7ca71dd3eef)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:05:03.796 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (db37675b2b7603b36007c7ca71dd3eef)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:05:04.820 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="verifiedBy"]/div/div/ul[2]/li
+12:05:04.958 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:05:05.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:05:19.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:05:39.697 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:05:39.748 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (9f2da537fe997ac47e05b1c4edf33463)] -> xpath: //button[@class='btn btn-link']]
+12:05:39.874 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (9f2da537fe997ac47e05b1c4edf33463)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]
+12:05:40.526 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (9f2da537fe997ac47e05b1c4edf33463)] -> xpath: //a[normalize-space()='Approve invoice for Booking']]
+12:05:41.443 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:07:38.005 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+12:07:58.053 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+12:07:58.106 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b436c9b45f62e2376260660c75501dbe)] -> xpath: //button[@class='btn btn-link']]
+12:07:58.231 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b436c9b45f62e2376260660c75501dbe)] -> xpath: //*[@id="sidebar"]/div[1]/perfect-scrollbar/div/div[1]/div[2]/ul/li[3]/a]

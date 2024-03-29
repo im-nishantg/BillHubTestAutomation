@@ -183,6 +183,9 @@ public class TestUtils extends TestBase{
 
         for (int i = 0; i < length; i++) {
             int digit = random.nextInt(10);  // Generate a random digit (0-9)
+            if(i == 0 && digit == 0) {
+            	digit = 1;							// ensuring the first digit of the generated number is not zero
+            }
             randomNumber.append(digit);
         }
         

@@ -1,0 +1,64 @@
+11:46:35.498 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:35.555 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]]
+11:46:35.889 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //span[normalize-space()='Create Memo']]
+11:46:36.804 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:37.548 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:38.133 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+11:46:38.306 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:38.949 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+11:46:43.579 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> css selector: .btn.btn-warning.btn-acknowledge]
+11:46:43.680 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:50.844 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:51.720 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:52.300 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[normalize-space()='Done']]
+11:46:52.415 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[normalize-space()='SAVE']]
+11:46:53.222 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:54.370 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:55.110 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[@type='submit']
+11:46:55.139 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[@type='submit']]
+11:46:55.542 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button
+11:46:56.112 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button]
+11:46:56.177 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:57.677 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:46:59.318 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]]
+11:47:00.688 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //span[normalize-space()='Create Memo']]
+11:47:01.581 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:02.294 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:02.867 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+11:47:03.048 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:03.640 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+11:47:07.995 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> css selector: .btn.btn-warning.btn-acknowledge]
+11:47:08.114 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:12.955 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:13.040 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:14.692 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]]
+11:47:14.991 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //span[normalize-space()='Create Memo']]
+11:47:15.856 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:16.567 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:17.149 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+11:47:17.320 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:58.009 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:47:59.673 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]]
+11:47:59.965 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //span[normalize-space()='Create Memo']]
+11:48:00.846 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:01.603 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:02.196 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+11:48:02.390 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:02.988 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .btn.btn-warning.btn-acknowledge
+11:48:07.334 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> css selector: .btn.btn-warning.btn-acknowledge]
+11:48:07.427 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:11.163 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:11.243 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:12.094 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:12.674 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[normalize-space()='Done']]
+11:48:12.783 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[normalize-space()='SAVE']]
+11:48:13.598 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:14.756 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:15.499 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:16.071 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[normalize-space()='Done']]
+11:48:16.175 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[normalize-space()='SAVE']]
+11:48:16.965 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:18.062 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:18.152 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:48:18.846 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[@type='submit']
+11:48:18.873 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (b81d04133228f39fb48370eac7171937)] -> xpath: //button[@type='submit']]

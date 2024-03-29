@@ -12,7 +12,8 @@ import org.testng.annotations.Test;
 
 
 public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
-    LoginPage loginPage;
+
+	LoginPage loginPage;
     BADashboardPage baDashboardPage;
     CreateNonPOBasedInvoiceWithExcelsheetPage createNonPOBasedInvoiceWithExcelsheetPage;
     public Object[][] data;
@@ -32,6 +33,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
         TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Memo", 1, 1, invoice_number);
         TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_SINGLE_INVOICE, "Invoice_LR_Mapping", 1, 1, invoice_number);
     }
+
     public void updateMultipleInvoiceExcelSheet() {
 
         for(int i=1; i<=2; i++){
@@ -41,8 +43,9 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
         }
 
     }
+
     @BeforeClass
-    public void setup() throws InterruptedException {
+    public void setup(){
 
         String from_state = (String) memoData[2][0], to_state = (String) memoData[2][1];
         String company_code="MERU - MLMO";
@@ -103,6 +106,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
         boolean isSubmitted = createNonPOBasedInvoiceWithExcelsheetPage.submitMemoWithValidData(submitting_at, submitting_to);
         Assert.assertTrue(isSubmitted, "Memo was not submitted");
     }
+
     @Test(priority = 6)
     public void checkStatusOfSubmittedMemoTest(){
 
@@ -125,6 +129,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetTest extends TestBase {
         boolean isFailed=baDashboardPage.summitMemoWithDuplicateData(from_state,to_state,company_code,service_type,bt_number);
         Assert.assertTrue(isFailed,"Duplicate memo submitted!");
     }
+
     @Test(priority = 8)
     public void submitMemoWithoutDataTest(){
 

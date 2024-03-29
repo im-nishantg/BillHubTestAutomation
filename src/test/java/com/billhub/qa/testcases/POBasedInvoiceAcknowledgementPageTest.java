@@ -1,7 +1,5 @@
 package com.billhub.qa.testcases;
 
-import java.time.Duration;
-
 import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;

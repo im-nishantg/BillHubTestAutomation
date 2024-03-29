@@ -23,7 +23,6 @@ public class WithholdingTaxPage extends TestBase{
 	@FindBy(css = "input[formcontrolname='taxCode']")
 	WebElement withTaxCode;
 
-
 	@FindBy(css = "input[formcontrolname='taxType']")
 	WebElement withTaxType;
 	
@@ -52,7 +51,7 @@ public class WithholdingTaxPage extends TestBase{
 	public void fillNewWithholdingTaxForm(String tax_type, String tax_code,String tax_rate,String tax_drop){
 
 		addWithholdingTaxBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		initalizePopupElements();
 		withTaxType.sendKeys(tax_type);
 		withTaxCode.sendKeys(tax_code);
@@ -63,34 +62,34 @@ public class WithholdingTaxPage extends TestBase{
 	
 	public boolean searchWithholdingTaxByTaxRate(String tax_rate) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		withholdingTaxInput.clear();
 		withholdingTaxInput.sendKeys(tax_rate);
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), tax_rate);
 	}
 
 	
 	public boolean validateSearchWithholdingTax(String taxRate) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		withholdingTaxInput.clear();
 		withholdingTaxInput.sendKeys(taxRate);
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		searchBtn.click();
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return TestUtils.matchSearchedData(By.xpath("//*[@id=\"main\"]/main/div/div/app-list-withholding-tax/div/div/div[3]/div/table/tbody/tr[1]/td[5]"), taxRate);
 	}
 
 	public boolean validateAddTaxWithValidData(String taxType, String taxCode, String taxRate, String taxDescription) {
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		fillNewWithholdingTaxForm(taxType,taxCode,taxRate,taxDescription);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 
 
 		addBtn.click();
@@ -101,16 +100,16 @@ public class WithholdingTaxPage extends TestBase{
 
 	public boolean validateWithholdingTaxInDatabase(String taxRate) {
 		
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		return searchWithholdingTaxByTaxRate(taxRate);
 	}
 
 	public boolean validateAddTaxWithBlankData(String taxType, String taxCode, String taxRate, String taxDescription) {
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 
 		fillNewWithholdingTaxForm(taxType, taxCode, taxRate, taxDescription);	
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 	
 		addBtn.click();
 
@@ -120,14 +119,13 @@ public class WithholdingTaxPage extends TestBase{
 		return isAdded;
 	}
 
-	public boolean validateDuplicateWithholdingData(String taxType, String taxCode, String taxRate, String taxDescription) {
+	public boolean validateAddWithholdingTaxWithDuplicateData(String taxType, String taxCode, String taxRate, String taxDescription) {
 
 
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 		fillNewWithholdingTaxForm(taxType,taxCode,taxRate,taxDescription);
-		TestUtils.waitForElementInvisibility(By.className("modal-container"));
+		TestUtils.waitForElementInvisibility(By.className("loader"));
 
-		
 		addBtn.click();
 		boolean isAdded = TestUtils.isSuccessToastDisplayed("Withholding tax added successfully");
 		if(isAdded == false)	closeBtn.click();

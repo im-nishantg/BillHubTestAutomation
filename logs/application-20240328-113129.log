@@ -1,0 +1,76 @@
+11:22:00.482 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: //*[@id="main"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]]
+11:22:00.725 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: //span[normalize-space()='Create Memo']]
+11:22:01.615 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:03.455 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: Invoice Number Exist try another!
+11:22:03.484 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:04.039 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:04.234 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:04.926 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:05.174 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:05.749 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: //button[normalize-space()='Done']]
+11:22:05.836 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:06.627 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:07.329 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:07.901 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: /html/body/modal-container/div/div/app-add-po-popup/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[1]/div/input]
+11:22:08.328 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:08.370 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: //button[normalize-space()='SAVE']]
+11:22:09.101 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:10.242 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:10.319 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:22:10.339 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:22:13.562 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: //*[@id="main"]/main/div/div/app-create-memo/div/div/div[2]/div/form/div/div[6]/button]
+11:22:13.661 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //button[@type='submit']
+11:22:13.687 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: //button[@type='submit']]
+11:22:14.027 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button
+11:22:14.582 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (dd0a2e89cdff68c089d3e9f135147a9d)] -> xpath: /html/body/modal-container/div/div/app-memo-submit-confirm/div[3]/div/div[2]/button]
+11:22:14.638 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:29:49.726 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+11:30:09.768 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:09.820 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19027ee5520c7509f5220c4a336c6cf1)] -> xpath: //button[@class='btn btn-link']]
+11:30:09.940 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19027ee5520c7509f5220c4a336c6cf1)] -> xpath: //span[normalize-space()='Master']]
+11:30:10.763 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (19027ee5520c7509f5220c4a336c6cf1)] -> link text: User]
+11:30:12.445 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:12.473 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:30:12.587 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:13.752 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: button[class='btn btn-success']
+11:30:13.828 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: #Company_ID
+11:30:13.860 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.cssSelector: .dropdown-btn
+11:30:13.938 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:14.020 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:14.584 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element to be clickable: By.cssSelector: li.multiselect-item-checkbox
+11:30:14.623 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element to be clickable: By.cssSelector: input[aria-label='Bangalore']
+11:30:14.803 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:14.892 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+11:30:15.120 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:15.156 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:30:18.962 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:20.087 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:20.173 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:20.259 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+11:30:20.483 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:21.047 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:21.242 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:21.320 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:21.913 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: //*[@id="main"]/main/div/div/app-list-user/div/div/div[3]/div/table/tbody/tr[1]/td[8]
+11:30:21.956 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:21.983 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:22.173 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:22.247 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:22.830 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:22.854 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:30:23.997 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:25.102 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:25.169 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+11:30:45.191 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - User Data Added successfully
+11:30:45.255 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:30:46.038 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:47.154 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:30:47.223 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+11:31:07.277 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - User Data Added successfully
+11:31:07.330 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:31:07.900 [main] INFO  com.billhub.qa.base.TestBase - Waiting for toast to disappear
+11:31:08.134 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:31:09.038 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+11:31:09.108 [main] INFO  com.billhub.qa.base.TestBase - Checking if success toast is displayed for message: User Data Added successfully
+11:31:29.165 [main] ERROR com.billhub.qa.base.TestBase - TimeoutException: Success toast not displayed for message - User Data Added successfully
+11:31:29.222 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader

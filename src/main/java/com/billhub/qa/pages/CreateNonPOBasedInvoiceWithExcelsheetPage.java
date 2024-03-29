@@ -12,19 +12,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
-    @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-upload/div/div/div[2]/div/div[1]/div[2]/div/input")
+    
+	@FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-upload/div/div/div[2]/div/div[1]/div[2]/div/input")
     WebElement uploadFileBtn;
 
     @FindBy(css = ".btn.btn-warning.btn-acknowledge")
     WebElement uploadBtn;
+    
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div/div/div/div[4]/button[1]")
     WebElement editBtn;
+    
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[1]/div/div/div[4]/button[1]/i")
     WebElement editBtn1;
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-create-memo/div/div/div[3]/div[1]/div/perfect-scrollbar/div/div[1]/div/div/div[2]/div/div/div[4]/button[1]/i")
     WebElement editBtn2;
-
 
     @FindBy(xpath = "//div[@class='inv-footer-text']")
     WebElement totalInvAmount;
@@ -58,6 +60,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//button[@type='submit']")
     WebElement nextSubmitMemoBtn;
+    
     @FindBy(xpath = "/html/body/modal-container/div/div/app-add-lr-popup/div[3]/button[1]")
     WebElement uploadBTBtn;
 
@@ -69,6 +72,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-final/div/div/div[2]/div[1]/button")
     WebElement homeBtn;
+    
     @FindBy(xpath = "//button[@aria-label='Close']")
     WebElement statusCloseBtn;
 
@@ -77,6 +81,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-invalid-invoices/div/div/div[2]/div[2]/table/tbody/tr/td[1]")
     WebElement invoiceAlreadyExistErrorText;
+    
     @FindBy(xpath = "//button[normalize-space()='Load Dashboard Data']")
     WebElement loadDashboardBtn;
 
@@ -86,6 +91,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
     }
 
     public void uploadExcelSheet(String INVOICE_SHEET_PATH) {
+    	
         TestUtils.waitForElementInvisibility(By.className("loader"));
         uploadFileBtn.sendKeys(INVOICE_SHEET_PATH);
         TestUtils.waitForElementVisibility(By.cssSelector(".btn.btn-warning.btn-acknowledge"));
@@ -94,6 +100,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
     }
 
     public void attachSampleInvoiceFile() {
+    	
         TestUtils.waitForElementInvisibility(By.className("loader"));
         attachBtn.click();
         String invoice_file_path = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\Sample_Invoice.pdf";
@@ -166,6 +173,7 @@ public class CreateNonPOBasedInvoiceWithExcelsheetPage extends TestBase {
     }
 
     public String statusOfSubmittedMemo(String invoice_number){
+    	
         String inv="TESTINV4309";
         TestUtils.waitForElementInvisibility(By.className("loader"));
         loadDashboardBtn.click();
