@@ -92,7 +92,7 @@ public class VerificationWithExcelsheetForPoPage extends TestBase{
 	
 	 public Object[][] data1; // invoice details
 	 public Object[][] data2; // verification details
-	 public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE = "C:\\Users\\nisha\\Downloads";
+	 public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE = prop.getProperty("download_folder_path");
 	 public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_po.xlsx";
 	    
 	 public void updateInvoiceExcelSheet(String memo_number) {			

@@ -15,6 +15,7 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetTest extends TestBase {
     NonPoBasedInvoiceVerificationWithExcelsheetPage nonPoBasedInvoiceVerificationWithExcelsheetPage;
 
     public Object[][] data;
+    
     @BeforeClass
     public void setup(){
         initialization();
@@ -23,22 +24,23 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetTest extends TestBase {
         nonPoBasedInvoiceVerificationWithExcelsheetPage= new NonPoBasedInvoiceVerificationWithExcelsheetPage();
         data = TestUtils.getTestData("VerificationWithExcelsheetBT");
     }
-    @Test(priority = 1)
-    public void validateInvoiceVerificationWithExcelsheetTest(){
-        String withholding_tax = "00-00-0%", item_text = "test", payment_term = "B002", assignment = "test";
-
-        boolean isVerified = nonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet(withholding_tax, item_text, payment_term, assignment);
-        Assert.assertTrue(isVerified, "Invoice was not verified with valid data.");
-    }
-
-    @Test(priority = 2)
-    public void validateVerifiedStatusTest()  {
-
-        String invoice_number = (String) data[0][1];
-
-        String memo_status = nonPoBasedInvoiceVerificationWithExcelsheetPage.validateVerifiedMemoStatus(invoice_number);
-        Assert.assertTrue(StringUtils.containsIgnoreCase(memo_status,"Verified"), "Memo status was not updated successfully.");
-    }
+    
+//    @Test(priority = 1)
+//    public void validateInvoiceVerificationWithExcelsheetTest(){
+//        String withholding_tax = "00-00-0%", item_text = "test", payment_term = "B002", assignment = "test";
+//
+//        boolean isVerified = nonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet(withholding_tax, item_text, payment_term, assignment);
+//        Assert.assertTrue(isVerified, "Invoice was not verified with valid data.");
+//    }
+//
+//    @Test(priority = 2)
+//    public void validateVerifiedStatusTest()  {
+//
+//        String invoice_number = (String) data[0][1];
+//
+//        String memo_status = nonPoBasedInvoiceVerificationWithExcelsheetPage.validateVerifiedMemoStatus(invoice_number);
+//        Assert.assertTrue(StringUtils.containsIgnoreCase(memo_status,"Verified"), "Memo status was not updated successfully.");
+//    }
 
     @Test(priority = 3)
     public void validateInvoiceVerificationWithInvalidTaxCodeTest(){

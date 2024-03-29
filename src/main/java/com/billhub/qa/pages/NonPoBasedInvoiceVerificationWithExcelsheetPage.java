@@ -14,7 +14,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
-    @FindBy(xpath = "//button[@class='btn btn-link']")
+    
+	@FindBy(xpath = "//button[@class='btn btn-link']")
     WebElement navbarExpandBtn;
 
     @FindBy(xpath = "//span[normalize-space()='Dashboard']")
@@ -25,6 +26,7 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-dashboard/div/div[1]/div[2]/button[2]")
     WebElement verifyMemoBtn;
+    
     @FindBy(xpath = "//*[@id=\"main\"]/main/div/div/app-list/div/div/div[4]/div/div/div/div[7]/div/button")
     WebElement verifyBtn;
 
@@ -72,7 +74,6 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
 
     @FindBy(xpath = "//button[normalize-space()='Invoice Scanned Copy']")
     WebElement invoiceScannedCopyBtn;
-
 
     @FindBy(xpath = "//i[@class='fa fa-file-pdf faFont']")
     WebElement invoiceFileBtn;
@@ -135,7 +136,7 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
 
     public Object[][] data1; // invoice details
     public Object[][] data2; // verification details
-    public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE = "C:\\Users\\SURAJ PATEL\\Downloads";
+    public static String SHEET_PATH_FOR_DOWNLOADED_INVOICE = prop.getProperty("download_folder_path");
     public static String SHEET_PATH_FOR_UPLOADING_INVOICE = System.getProperty("user.dir") + "\\src\\main\\java\\com\\billhub\\qa\\testdata\\invoice_verification_sheet_non_po.xlsx";
 
     public void updateInvoiceExcelSheet(String memo_number) {
@@ -315,6 +316,7 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
         verificationPopupCloseBtn.click();
 
         TestUtils.waitForElementInvisibility(By.className("loader"));
+        TestUtils.waitForWebElementToBeClickable(navbarExpandBtn).click();
         TestUtils.waitForWebElementToBeClickable(dashboardBtn).click();
         TestUtils.waitForElementInvisibility(By.className("loader"));
 
