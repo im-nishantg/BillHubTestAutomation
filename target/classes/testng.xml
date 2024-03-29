@@ -36,7 +36,7 @@
 		<!--    *********************   For invoice submission to view payment request to 1022 PO Based *********** -->
 			
 			
-				<class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
+				<!-- <class name = "com.billhub.qa.testcases.CreatePOBasedInvoicePageTest">
 			 		<methods>
 			 			<include name="submitMemoWithValidDataTest"/>
 			 		</methods>
@@ -68,7 +68,7 @@
 			 			 <include name="ValidateDownloadPaymentRequestTest"/>
 			 		</methods>
 			 	</class> 
-			 	
+			 	 -->
 			 	
 
 
@@ -186,7 +186,11 @@
 	                    <include name="ValidateDownloadPaymentRequestTest"/>
 	                </methods>
 	            </class> -->
-
+		
+		<!--    *********************   For PO based invoice verification with Excel sheet  *********** -->
+			
+				 <class name = "com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest"></class> 
+				 
 		</classes>
 	</test>
 </suite>

@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest">
+      <class name="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest">
         <methods>
-          <include name="ValidateDownloadPaymentRequestTest"/>
           <include name="setup"/>
-          <include name="tearDown"/>
+          <include name="InvoiceVerificationWithValidDataTest"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest -->
+      </class> <!-- com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,73 @@
+16:06:13.955 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:06:14.897 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:16.114 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:18.098 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:18.193 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:18.825 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:19.448 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-verify-log-popup/div/table/tbody/tr/td[4]
+16:06:21.343 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:21.428 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:22.001 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (07d65825fcb9376dc3795a8b1eec7334)] -> xpath: //button[@class='btn btn-link']]
+16:06:22.253 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (07d65825fcb9376dc3795a8b1eec7334)] -> xpath: //span[normalize-space()='Dashboard']]
+16:06:22.922 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:23.899 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:24.047 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:06:24.546 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:25.175 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:25.237 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:25.853 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:26.527 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container[2]/div/div/app-invoice-log/div[2]/table/tbody/tr/td[4]/div
+16:06:27.184 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:27.258 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:28.092 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:06:28.131 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (07d65825fcb9376dc3795a8b1eec7334)] -> xpath: //button[@class='btn btn-link']]
+16:06:28.929 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (07d65825fcb9376dc3795a8b1eec7334)] -> xpath: //span[normalize-space()='Dashboard']]
+16:06:30.284 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:25.270 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:07:46.362 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:07:47.311 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:48.653 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:50.632 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:50.719 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:51.351 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:51.968 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-verify-log-popup/div/table/tbody/tr/td[4]
+16:07:53.507 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:53.587 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:54.162 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6495e856da53753f507dd7c032db3303)] -> xpath: //button[@class='btn btn-link']]
+16:07:54.413 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6495e856da53753f507dd7c032db3303)] -> xpath: //span[normalize-space()='Dashboard']]
+16:07:55.084 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:56.961 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:57.110 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:07:57.636 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:58.250 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:58.310 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:58.919 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:07:59.585 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container[2]/div/div/app-invoice-log/div[2]/table/tbody/tr/td[4]/div
+16:08:00.291 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:00.367 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:01.200 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:01.236 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (6495e856da53753f507dd7c032db3303)] -> xpath: //span[normalize-space()='Dashboard']]
+16:08:02.062 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:03.252 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:08:03.835 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:04.448 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:04.509 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:05.112 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:08:05.697 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:11:37.705 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: modal-container
+16:11:58.817 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:11:59.530 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:00.790 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:02.762 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:02.849 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:03.477 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:04.096 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/modal-container/div/div/app-verify-log-popup/div/table/tbody/tr/td[4]
+16:12:05.883 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:05.966 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:06.545 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (be96f52da3354c2acbd826468982a848)] -> xpath: //button[@class='btn btn-link']]
+16:12:06.752 [main] INFO  com.billhub.qa.base.TestBase - Waiting for web element to be clickable: [[ChromeDriver: chrome on windows (be96f52da3354c2acbd826468982a848)] -> xpath: //span[normalize-space()='Dashboard']]
+16:12:07.436 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:09.087 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:09.235 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element visibility: By.xpath: /html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button
+16:12:09.819 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader
+16:12:10.444 [main] INFO  com.billhub.qa.base.TestBase - Waiting for element invisibility: By.className: loader

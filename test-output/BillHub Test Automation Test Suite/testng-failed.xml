@@ -6,13 +6,12 @@
   </listeners>
   <test thread-count="5" name="BillHub App Test Cases(failed)">
     <classes>
-      <class name="com.billhub.qa.testcases.RolePageTest">
+      <class name="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest">
         <methods>
-          <include name="addNewRoleWithDuplicateDataTest"/>
+          <include name="InvoiceVerificationWithDifferentDataInTwoSheetsTest"/>
           <include name="setup"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.billhub.qa.testcases.RolePageTest -->
+      </class> <!-- com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest -->
     </classes>
   </test> <!-- BillHub App Test Cases(failed) -->
 </suite> <!-- Failed suite [BillHub Test Automation Test Suite] -->

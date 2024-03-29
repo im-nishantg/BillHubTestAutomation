@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">BillHub Test Automation Test Suite</span>
+              <span class="suite-name border-failed">BillHub Test Automation Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods,   11 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" class="hide-methods failed suite-BillHub_Test_Automation_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-BillHub_Test_Automation_Test_Suite -->
+                      <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" class="show-methods failed suite-BillHub_Test_Automation_Test_Suite"> (show)</a> <!-- show-methods failed suite-BillHub_Test_Automation_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-BillHub_Test_Automation_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest" class="method navigator-link" hash-for-method="InvoiceVerificationWithDifferentDataInTwoSheetsTest">InvoiceVerificationWithDifferentDataInTwoSheetsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-BillHub_Test_Automation_Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,57 +117,27 @@
                     <div class="method-list-content passed suite-BillHub_Test_Automation_Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest" class="method navigator-link" hash-for-method="ValidateDownloadPaymentRequestTest">ValidateDownloadPaymentRequestTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest" class="method navigator-link" hash-for-method="InvoiceVerificationWithInvalidDataTest">InvoiceVerificationWithInvalidDataTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="bookingInvoiceWithValidDataTest">bookingInvoiceWithValidDataTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest" class="method navigator-link" hash-for-method="InvoiceVerificationWithValidDataTest">InvoiceVerificationWithValidDataTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="searchByTransactionBatchIdTest">searchByTransactionBatchIdTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest" class="method navigator-link" hash-for-method="validateInvoiceVerificationWithInvalidTaxCodeTest">validateInvoiceVerificationWithInvalidTaxCodeTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.CreatePOBasedInvoicePageTest" class="method navigator-link" hash-for-method="submitMemoWithValidDataTest">submitMemoWithValidDataTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest" class="method navigator-link" hash-for-method="validateLogButtonFunctionalityTest">validateLogButtonFunctionalityTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="validateAcknowledgeTheMemoTest">validateAcknowledgeTheMemoTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="validateAcknowledgedStatusTest">validateAcknowledgedStatusTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test" class="method navigator-link" hash-for-method="validateCorrectInvoicesTest">validateCorrectInvoicesTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test" class="method navigator-link" hash-for-method="validateCorrectInvoicesTest">validateCorrectInvoicesTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest" class="method navigator-link" hash-for-method="validateExcelsheetDataTest">validateExcelsheetDataTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="validateVerifiedStatusTest">validateVerifiedStatusTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest" class="method navigator-link" hash-for-method="verifyInvoiceWithValidDataTest">verifyInvoiceWithValidDataTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BillHub_Test_Automation_Test_Suite" title="com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest" class="method navigator-link" hash-for-method="validateVerifiedStatusTest">validateVerifiedStatusTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-BillHub_Test_Automation_Test_Suite -->
@@ -168,68 +152,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-BillHub_Test_Automation_Test_Suite" class="panel BillHub_Test_Automation_Test_Suite">
-          <div class="suite-BillHub_Test_Automation_Test_Suite-class-passed">
+          <div class="suite-BillHub_Test_Automation_Test_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.billhub.qa.testcases.CreatePOBasedInvoicePageTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="submitMemoWithValidDataTest">
-                  </a> <!-- submitMemoWithValidDataTest -->
-                  <span class="method-name">submitMemoWithValidDataTest</span>
+                  <a name="InvoiceVerificationWithDifferentDataInTwoSheetsTest">
+                  </a> <!-- InvoiceVerificationWithDifferentDataInTwoSheetsTest -->
+                  <span class="method-name">InvoiceVerificationWithDifferentDataInTwoSheetsTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: Invoice was verified with different data in two sheets. expected [true] but found [false]
+	at com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithDifferentDataInTwoSheetsTest(VerificationWithExcelsheetForPoTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BillHub_Test_Automation_Test_Suite-class-passed -->
+          </div> <!-- suite-BillHub_Test_Automation_Test_Suite-class-failed -->
           <div class="suite-BillHub_Test_Automation_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test</span>
+              <span class="class-name">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validateCorrectInvoicesTest">
-                  </a> <!-- validateCorrectInvoicesTest -->
-                  <span class="method-name">validateCorrectInvoicesTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BillHub_Test_Automation_Test_Suite-class-passed -->
-          <div class="suite-BillHub_Test_Automation_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="bookingInvoiceWithValidDataTest">
-                  </a> <!-- bookingInvoiceWithValidDataTest -->
-                  <span class="method-name">bookingInvoiceWithValidDataTest</span>
+                  <a name="InvoiceVerificationWithInvalidDataTest">
+                  </a> <!-- InvoiceVerificationWithInvalidDataTest -->
+                  <span class="method-name">InvoiceVerificationWithInvalidDataTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="searchByTransactionBatchIdTest">
-                  </a> <!-- searchByTransactionBatchIdTest -->
-                  <span class="method-name">searchByTransactionBatchIdTest</span>
+                  <a name="InvoiceVerificationWithValidDataTest">
+                  </a> <!-- InvoiceVerificationWithValidDataTest -->
+                  <span class="method-name">InvoiceVerificationWithValidDataTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validateAcknowledgeTheMemoTest">
-                  </a> <!-- validateAcknowledgeTheMemoTest -->
-                  <span class="method-name">validateAcknowledgeTheMemoTest</span>
+                  <a name="validateInvoiceVerificationWithInvalidTaxCodeTest">
+                  </a> <!-- validateInvoiceVerificationWithInvalidTaxCodeTest -->
+                  <span class="method-name">validateInvoiceVerificationWithInvalidTaxCodeTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validateAcknowledgedStatusTest">
-                  </a> <!-- validateAcknowledgedStatusTest -->
-                  <span class="method-name">validateAcknowledgedStatusTest</span>
+                  <a name="validateLogButtonFunctionalityTest">
+                  </a> <!-- validateLogButtonFunctionalityTest -->
+                  <span class="method-name">validateLogButtonFunctionalityTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -237,50 +211,6 @@
                   <a name="validateVerifiedStatusTest">
                   </a> <!-- validateVerifiedStatusTest -->
                   <span class="method-name">validateVerifiedStatusTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyInvoiceWithValidDataTest">
-                  </a> <!-- verifyInvoiceWithValidDataTest -->
-                  <span class="method-name">verifyInvoiceWithValidDataTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BillHub_Test_Automation_Test_Suite-class-passed -->
-          <div class="suite-BillHub_Test_Automation_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateCorrectInvoicesTest">
-                  </a> <!-- validateCorrectInvoicesTest -->
-                  <span class="method-name">validateCorrectInvoicesTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BillHub_Test_Automation_Test_Suite-class-passed -->
-          <div class="suite-BillHub_Test_Automation_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="ValidateDownloadPaymentRequestTest">
-                  </a> <!-- ValidateDownloadPaymentRequestTest -->
-                  <span class="method-name">ValidateDownloadPaymentRequestTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateExcelsheetDataTest">
-                  </a> <!-- validateExcelsheetDataTest -->
-                  <span class="method-name">validateExcelsheetDataTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -300,38 +230,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;BillHub App Test Cases&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.billhub.qa.testcases.CreatePOBasedInvoicePageTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;submitMemoWithValidDataTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.CreatePOBasedInvoicePageTest --&gt;
-      &lt;class name=&quot;com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;validateSubmittedBTBasedInvoiceInDashboardTest&quot;/&gt;
-          &lt;include name=&quot;validateAcknowledgeTheMemoTest&quot;/&gt;
-          &lt;include name=&quot;validateAcknowledgedStatusTest&quot;/&gt;
-          &lt;include name=&quot;verifyInvoiceWithValidDataTest&quot;/&gt;
-          &lt;include name=&quot;validateVerifiedStatusTest&quot;/&gt;
-          &lt;include name=&quot;bookingInvoiceWithValidDataTest&quot;/&gt;
-          &lt;include name=&quot;searchByTransactionBatchIdTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest --&gt;
-      &lt;class name=&quot;com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;validateCorrectInvoicesTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test --&gt;
-      &lt;class name=&quot;com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;validateCorrectInvoicesTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test --&gt;
-      &lt;class name=&quot;com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;validateExcelsheetDataTest&quot;/&gt;
-          &lt;include name=&quot;ValidateDownloadPaymentRequestTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest --&gt;
+      &lt;class name=&quot;com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- BillHub App Test Cases --&gt;
 &lt;/suite&gt; &lt;!-- BillHub Test Automation Test Suite --&gt;
@@ -345,7 +244,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">BillHub App Test Cases (5 classes)</span>
+                <span class="test-name">BillHub App Test Cases (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -371,56 +270,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(11);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'submitMemoWithValidDataTest')
-data.setCell(0, 2, 'com.billhub.qa.testcases.CreatePOBasedInvoicePageTest')
-data.setCell(0, 3, 13700);
+data.setCell(0, 1, 'InvoiceVerificationWithDifferentDataInTwoSheetsTest')
+data.setCell(0, 2, 'com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest')
+data.setCell(0, 3, 45857);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'validateExcelsheetDataTest')
-data.setCell(1, 2, 'com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest')
-data.setCell(1, 3, 6659);
+data.setCell(1, 1, 'InvoiceVerificationWithValidDataTest')
+data.setCell(1, 2, 'com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest')
+data.setCell(1, 3, 7202);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'ValidateDownloadPaymentRequestTest')
-data.setCell(2, 2, 'com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest')
-data.setCell(2, 3, 6334);
+data.setCell(2, 1, 'InvoiceVerificationWithInvalidDataTest')
+data.setCell(2, 2, 'com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest')
+data.setCell(2, 3, 5118);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyInvoiceWithValidDataTest')
-data.setCell(3, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(3, 3, 4983);
+data.setCell(3, 1, 'validateVerifiedStatusTest')
+data.setCell(3, 2, 'com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest')
+data.setCell(3, 3, 3531);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'searchByTransactionBatchIdTest')
-data.setCell(4, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(4, 3, 4881);
+data.setCell(4, 1, 'validateInvoiceVerificationWithInvalidTaxCodeTest')
+data.setCell(4, 2, 'com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest')
+data.setCell(4, 3, 2609);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validateAcknowledgeTheMemoTest')
-data.setCell(5, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(5, 3, 4220);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'validateCorrectInvoicesTest')
-data.setCell(6, 2, 'com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test')
-data.setCell(6, 3, 3070);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'bookingInvoiceWithValidDataTest')
-data.setCell(7, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(7, 3, 2845);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'validateAcknowledgedStatusTest')
-data.setCell(8, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(8, 3, 2586);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'validateCorrectInvoicesTest')
-data.setCell(9, 2, 'com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test')
-data.setCell(9, 3, 2580);
-data.setCell(10, 0, 10)
-data.setCell(10, 1, 'validateVerifiedStatusTest')
-data.setCell(10, 2, 'com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest')
-data.setCell(10, 3, 2400);
+data.setCell(5, 1, 'validateLogButtonFunctionalityTest')
+data.setCell(5, 2, 'com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest')
+data.setCell(5, 3, 746);
 window.suiteTableData['BillHub_Test_Automation_Test_Suite']= { tableData: data, tableDiv: 'times-div-BillHub_Test_Automation_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 54 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-BillHub_Test_Automation_Test_Suite">
               </div> <!-- times-div-BillHub_Test_Automation_Test_Suite -->
             </div> <!-- times-div -->
@@ -435,118 +314,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-BillHub_Test_Automation_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">42 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.billhub.qa.testcases.CreatePOBasedInvoicePageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">createMultipleInvoiceInSingleMemoTest</span>
-                <br/>
-                <span class="ignored-method-name">additionalAmountVerificationTest</span>
-                <br/>
-                <span class="ignored-method-name">gstCodeVerificationTest</span>
-                <br/>
-                <span class="ignored-method-name">splitPoQuantityAndCreateMultipleInvoicesTest</span>
-                <br/>
-                <span class="ignored-method-name">tdCodeVerificationTest</span>
-                <br/>
-                <span class="ignored-method-name">createInvoiceWithoutDataTest</span>
-                <br/>
-                <span class="ignored-method-name">submitMemoWithDuplicateDataTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">validateRaiseQueryTest</span>
-                <br/>
-                <span class="ignored-method-name">validatePendingInvoicesTest</span>
-                <br/>
-                <span class="ignored-method-name">validateExportButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">validateDownloadButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">validateAllInvoicesTest</span>
-                <br/>
-                <span class="ignored-method-name">validateBlanketApproveTest</span>
-                <br/>
-                <span class="ignored-method-name">searchInvoicesWithInvalidData</span>
-                <br/>
-                <span class="ignored-method-name">searchInvoicesWithMultipleFieldsTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">validateInvoiceFilePreviewTest</span>
-                <br/>
-                <span class="ignored-method-name">ValidateRejectTheAcknowledgedInvoiceTest</span>
-                <br/>
-                <span class="ignored-method-name">downloadingInvoiceBeforeBookingTest</span>
-                <br/>
-                <span class="ignored-method-name">validatingTwoDocumentNumbersTest</span>
-                <br/>
-                <span class="ignored-method-name">searchingInvoiceWithMultipleFieldsTest</span>
-                <br/>
-                <span class="ignored-method-name">acknowledgingInvalidGRNTest</span>
-                <br/>
-                <span class="ignored-method-name">downloadingBookedInvoiceTest</span>
-                <br/>
-                <span class="ignored-method-name">searchingInvoiceWithInvalidDataTest</span>
-                <br/>
-                <span class="ignored-method-name">validateSubmittedPoBasedInvoiceInDashboardTest</span>
-                <br/>
-                <span class="ignored-method-name">ValidateRejectTheMemoTest</span>
-                <br/>
-                <span class="ignored-method-name">verifyInvoiceWithInvalidTaxCodeTest</span>
-                <br/>
-                <span class="ignored-method-name">ValidateReassignTheMemoTest</span>
-                <br/>
-                <span class="ignored-method-name">searchByInvalidTransactionBatchIdTest</span>
-                <br/>
-                <span class="ignored-method-name">validateRejectedStatusTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">searchInvoicesWithInvalidData</span>
-                <br/>
-                <span class="ignored-method-name">searchInvoicesWithMultipleFieldsTest</span>
-                <br/>
-                <span class="ignored-method-name">validateDownloadButtonTest</span>
-                <br/>
-                <span class="ignored-method-name">validateRaiseQueryTest</span>
-                <br/>
-                <span class="ignored-method-name">validateBlanketApproveTest</span>
-                <br/>
-                <span class="ignored-method-name">validateAllInvoicesTest</span>
-                <br/>
-                <span class="ignored-method-name">validatePendingInvoicesTest</span>
-                <br/>
-                <span class="ignored-method-name">validateExportButtonTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">ValidateRejectPaymentRequestTest</span>
-                <br/>
-                <span class="ignored-method-name">searchInvoicesByInvalidBaNameTest</span>
-                <br/>
-                <span class="ignored-method-name">searchWithInvalidRequestNumberTest</span>
-                <br/>
-                <span class="ignored-method-name">searchInvoicesByValidBaNameTest</span>
-                <br/>
-                <span class="ignored-method-name">searchWithValidRequestNumberTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-BillHub_Test_Automation_Test_Suite" class="panel">
@@ -555,103 +325,37 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.billhub.qa.testcases.CreatePOBasedInvoicePageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">submitMemoWithValidDataTest</span>
-                <span class="method-start">35829 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">49533 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">49677 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">validateAcknowledgeTheMemoTest</span>
-                <span class="method-start">74433 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">validateAcknowledgedStatusTest</span>
-                <span class="method-start">78656 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">verifyInvoiceWithValidDataTest</span>
-                <span class="method-start">81243 ms</span>
+                <span class="method-name">InvoiceVerificationWithValidDataTest</span>
+                <span class="method-start">26456 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateVerifiedStatusTest</span>
-                <span class="method-start">86227 ms</span>
+                <span class="method-start">33662 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">bookingInvoiceWithValidDataTest</span>
-                <span class="method-start">88629 ms</span>
+                <span class="method-name">validateInvoiceVerificationWithInvalidTaxCodeTest</span>
+                <span class="method-start">37195 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">searchByTransactionBatchIdTest</span>
-                <span class="method-start">91476 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">96358 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">96547 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">validateCorrectInvoicesTest</span>
-                <span class="method-start">121556 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">124627 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">124736 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">validateCorrectInvoicesTest</span>
-                <span class="method-start">149777 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">152358 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">152538 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">validateExcelsheetDataTest</span>
-                <span class="method-start">188622 ms</span>
+                <span class="method-name">validateLogButtonFunctionalityTest</span>
+                <span class="method-start">39806 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">ValidateDownloadPaymentRequestTest</span>
-                <span class="method-start">195283 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">InvoiceVerificationWithDifferentDataInTwoSheetsTest</span>
+                <span class="method-start">40554 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">201619 ms</span>
-              </div> <!-- configuration-class after -->
+              <div class="test-method">
+                <span class="method-name">InvoiceVerificationWithInvalidDataTest</span>
+                <span class="method-start">86588 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

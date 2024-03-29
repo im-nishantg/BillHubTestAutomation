@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>BillHub App Test Cases</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>11/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Mar 28 19:40:13 IST 2024</td>
+<td>Started on:</td><td>Fri Mar 29 16:15:33 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>201 seconds (201846 ms)</td>
+<tr><td>Total time:</td><td>91 seconds (91729 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,55 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithDifferentDataInTwoSheetsTest()'><b>InvoiceVerificationWithDifferentDataInTwoSheetsTest</b><br>Test class: com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td>
+<td><div><pre>java.lang.AssertionError: Invoice was verified with different data in two sheets. expected [true] but found [false]
+	at com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithDifferentDataInTwoSheetsTest(VerificationWithExcelsheetForPoTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace827029829", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace827029829'><pre>java.lang.AssertionError: Invoice was verified with different data in two sheets. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithDifferentDataInTwoSheetsTest(VerificationWithExcelsheetForPoTest.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>45</td>
+<td>com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest@6d5620ce</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,60 +125,30 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest.validateExcelsheetDataTest()'><b>validateExcelsheetDataTest</b><br>Test class: com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest</td>
+<td title='com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.validateInvoiceVerificationWithInvalidTaxCodeTest()'><b>validateInvoiceVerificationWithInvalidTaxCodeTest</b><br>Test class: com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td>
 <td></td>
-<td>6</td>
-<td>com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest@af9a89f</td></tr>
+<td>2</td>
+<td>com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest@6d5620ce</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test.validateCorrectInvoicesTest()'><b>validateCorrectInvoicesTest</b><br>Test class: com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test</td>
+<td title='com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.validateLogButtonFunctionalityTest()'><b>validateLogButtonFunctionalityTest</b><br>Test class: com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td>
+<td></td>
+<td>0</td>
+<td>com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest@6d5620ce</td></tr>
+<tr>
+<td title='com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.validateVerifiedStatusTest()'><b>validateVerifiedStatusTest</b><br>Test class: com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td>
 <td></td>
 <td>3</td>
-<td>com.billhub.qa.testcases.InvoiceValidationByAccounts_1022_Test@22367b8</td></tr>
+<td>com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest@6d5620ce</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test.validateCorrectInvoicesTest()'><b>validateCorrectInvoicesTest</b><br>Test class: com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test</td>
+<td title='com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithInvalidDataTest()'><b>InvoiceVerificationWithInvalidDataTest</b><br>Test class: com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td>
 <td></td>
-<td>2</td>
-<td>com.billhub.qa.testcases.InvoiceValidationByTaxation_1022_Test@41b0ae4c</td></tr>
+<td>5</td>
+<td>com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest@6d5620ce</td></tr>
 <tr>
-<td title='com.billhub.qa.testcases.CreatePOBasedInvoicePageTest.submitMemoWithValidDataTest()'><b>submitMemoWithValidDataTest</b><br>Test class: com.billhub.qa.testcases.CreatePOBasedInvoicePageTest</td>
+<td title='com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithValidDataTest()'><b>InvoiceVerificationWithValidDataTest</b><br>Test class: com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td>
 <td></td>
-<td>13</td>
-<td>com.billhub.qa.testcases.CreatePOBasedInvoicePageTest@18eec010</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest.validateAcknowledgedStatusTest()'><b>validateAcknowledgedStatusTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</td>
-<td></td>
-<td>2</td>
-<td>com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest@40298285</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest.validateAcknowledgeTheMemoTest()'><b>validateAcknowledgeTheMemoTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</td>
-<td></td>
-<td>4</td>
-<td>com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest@40298285</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest.searchByTransactionBatchIdTest()'><b>searchByTransactionBatchIdTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</td>
-<td></td>
-<td>4</td>
-<td>com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest@40298285</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest.validateVerifiedStatusTest()'><b>validateVerifiedStatusTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</td>
-<td></td>
-<td>2</td>
-<td>com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest@40298285</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest.bookingInvoiceWithValidDataTest()'><b>bookingInvoiceWithValidDataTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</td>
-<td></td>
-<td>2</td>
-<td>com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest@40298285</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest.verifyInvoiceWithValidDataTest()'><b>verifyInvoiceWithValidDataTest</b><br>Test class: com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest</td>
-<td></td>
-<td>4</td>
-<td>com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest@40298285</td></tr>
-<tr>
-<td title='com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest.ValidateDownloadPaymentRequestTest()'><b>ValidateDownloadPaymentRequestTest</b><br>Test class: com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest</td>
-<td></td>
-<td>6</td>
-<td>com.billhub.qa.testcases.CreatePaymentRequestForPOPageTest@af9a89f</td></tr>
+<td>7</td>
+<td>com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest@6d5620ce</td></tr>
 </table><p>
 </body>
 </html>
