@@ -43,7 +43,6 @@
 			 	</class> 
 				 <class name="com.billhub.qa.testcases.POBasedInvoiceAcknowledgementPageTest">
 	                <methods>
-	                    <include name="validateSubmittedBTBasedInvoiceInDashboardTest"/>
 	                    <include name="validateAcknowledgeTheMemoTest"/>
 	                    <include name="validateAcknowledgedStatusTest"/>
 	                    <include name="verifyInvoiceWithValidDataTest"/>

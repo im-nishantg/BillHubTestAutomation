@@ -1,8 +1,9 @@
 package com.billhub.qa.testcases;
 
 import com.billhub.qa.pages.*;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.billhub.qa.base.TestBase;
@@ -20,7 +21,7 @@ public class LoginPageTest extends TestBase{
 		super();
 	}
 
-	@BeforeMethod
+	@BeforeClass
 	public void setup(){
 		initialization();
 		loginPage= new LoginPage();
@@ -51,7 +52,7 @@ public class LoginPageTest extends TestBase{
 		taxationDashboardPage= loginPage.loginAsTaxation(prop.getProperty("taxation_loginid_1022"),prop.getProperty("taxation_password_1022"));
 	}
 	
-	@AfterMethod						
+	@AfterClass						
 	public void tearDown() {
 		driver.close();						
 	}

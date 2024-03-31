@@ -1,6 +1,7 @@
 package com.billhub.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -145,5 +146,9 @@ public class CreatePOBasedInvoiceWithExcelsheetTest extends TestBase{
 		Assert.assertTrue(isMultipleInvoicesSubmitted, "Memo was not submitted");
 	}
 	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
 
 }

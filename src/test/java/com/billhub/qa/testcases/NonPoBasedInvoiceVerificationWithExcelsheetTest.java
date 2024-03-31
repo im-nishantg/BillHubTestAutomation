@@ -6,6 +6,7 @@ import com.billhub.qa.pages.NonPoBasedInvoiceVerificationWithExcelsheetPage;
 import com.billhub.qa.utils.TestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -27,9 +28,10 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetTest extends TestBase {
     
 //    @Test(priority = 1)
 //    public void validateInvoiceVerificationWithExcelsheetTest(){
-//        String withholding_tax = "00-00-0%", item_text = "test", payment_term = "B002", assignment = "test";
+//    	
+//    	String memo_number = (String) data[0][0], withholding_tax = (String) data[0][2] , item_text = (String) data[0][3], payment_term = (String) data[0][4], assignment = (String) data[0][5];
 //
-//        boolean isVerified = nonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet(withholding_tax, item_text, payment_term, assignment);
+//        boolean isVerified = nonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet(memo_number, withholding_tax, item_text, payment_term, assignment);
 //        Assert.assertTrue(isVerified, "Invoice was not verified with valid data.");
 //    }
 //
@@ -79,5 +81,8 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetTest extends TestBase {
         Assert.assertTrue(isErrorDisplayed, "Invoice was verified with Invalid data.");
     }
 
-
+    @AfterClass
+    public void tearDown() {
+        driver.close();
+    }
 }

@@ -8,19 +8,65 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">BillHub Test Automation Test Suite</th></tr>
-<tr><td><a href="#t0">BillHub App Test Cases</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">89,507</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">50,673</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">BillHub Test Automation Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">BillHub App Test Cases &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td><td><a href="#m0">InvoiceVerificationWithDifferentDataInTwoSheetsTest</a></td><td rowspan="1">1711725766646</td><td rowspan="1">44870</td></tr><tr><th colspan="4">BillHub App Test Cases &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest</td><td><a href="#m1">InvoiceVerificationWithInvalidDataTest</a></td><td rowspan="1">1711725811673</td><td rowspan="1">4041</td></tr><tr class="passedeven"><td><a href="#m2">InvoiceVerificationWithValidDataTest</a></td><td rowspan="1">1711725753146</td><td rowspan="1">7603</td></tr><tr class="passedeven"><td><a href="#m3">validateInvoiceVerificationWithInvalidTaxCodeTest</a></td><td rowspan="1">1711725763290</td><td rowspan="1">2611</td></tr><tr class="passedeven"><td><a href="#m4">validateLogButtonFunctionalityTest</a></td><td rowspan="1">1711725765904</td><td rowspan="1">740</td></tr><tr class="passedeven"><td><a href="#m5">validateVerifiedStatusTest</a></td><td rowspan="1">1711725760754</td><td rowspan="1">2535</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.billhub.qa.testcases.NonPoBasedInvoiceVerificationWithExcelsheetTest</td><td><a href="#m0">validateInvoiceVerificationWithExcelsheetTest</a></td><td rowspan="1">1711728565093</td><td rowspan="1">24278</td></tr></tbody>
 </table>
-<h2>BillHub App Test Cases</h2><h3 id="m0">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest#InvoiceVerificationWithDifferentDataInTwoSheetsTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Invoice was verified with different data in two sheets. expected [true] but found [false]
-	at com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest.InvoiceVerificationWithDifferentDataInTwoSheetsTest(VerificationWithExcelsheetForPoTest.java:72)
+<h2>Default test</h2><h3 id="m0">com.billhub.qa.testcases.NonPoBasedInvoiceVerificationWithExcelsheetTest#validateInvoiceVerificationWithExcelsheetTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/modal-container/div/div/app-upload-invoice-popup/div/div[2]/div[2]/button&quot;}
+  (Session info: chrome=123.0.6312.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0b9b975fe6d1e7552b4cbfe89f63dfa0, findElement {value=/html/body/modal-container/div/div/app-upload-invoice-popup/div/div[2]/div[2]/button, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\nisha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61970/devtoo..., se:cdpVersion: 123.0.6312.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0b9b975fe6d1e7552b4cbfe89f63dfa0
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at com.billhub.qa.pages.NonPoBasedInvoiceVerificationWithExcelsheetPage.invoiceVerificationWithExcelsheet(NonPoBasedInvoiceVerificationWithExcelsheetPage.java:250)
+	at com.billhub.qa.testcases.NonPoBasedInvoiceVerificationWithExcelsheetTest.validateInvoiceVerificationWithExcelsheetTest(NonPoBasedInvoiceVerificationWithExcelsheetTest.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest#InvoiceVerificationWithInvalidDataTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest#InvoiceVerificationWithValidDataTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest#validateInvoiceVerificationWithInvalidTaxCodeTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest#validateLogButtonFunctionalityTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.billhub.qa.testcases.VerificationWithExcelsheetForPoTest#validateVerifiedStatusTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

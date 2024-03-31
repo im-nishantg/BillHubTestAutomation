@@ -66,8 +66,6 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
     }
 
-
-
     @Test(priority = 2)
     public void tdCodeVerificationTest(){
 
@@ -76,8 +74,6 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         double actual_amount=createNonPOBasedInvoicePage.verifyTdCode(base_amount,cd);
         Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
     }
-
-
 
     @Test(priority = 3)
     public void additionatAmountVerificationTest(){
@@ -88,8 +84,6 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         Assert.assertEquals(actual_amount,expected_amount,"Test failed!");
     }
 
-
-
     @Test(priority = 4)
     public void createInvWithoutDataTest(){
 
@@ -97,7 +91,6 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         boolean isFailed= createNonPOBasedInvoicePage.CreateInvoiceWithoutData(invoice);
         Assert.assertFalse(isFailed,"Test failed!");
     }
-
 
     @Test(priority = 5)
     public void submitMemoWithValidDataTest(){
@@ -115,8 +108,6 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         Assert.assertTrue(isSubmitted,"Memo was not submitted!");
 
     }
-
-
 
     @Test(priority = 6)
     public void createMultipleInvoiceInSingleMemoTest() {
@@ -149,6 +140,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         Assert.assertTrue(isSubmitted,"Memo was submitted with duplicate data!");
 
     }
+    
     @Test(priority = 8)
     public void submitMemoWithValidDataMESPLTest(){
 
@@ -165,6 +157,7 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         Assert.assertTrue(isSubmitted,"Memo was not submitted!");
 
     }
+    
     @Test(priority = 9)
     public void submitMemoWithValidData1022Test(){
 
@@ -181,7 +174,8 @@ public class CreateNonPOBasedInvoicePageTest extends TestBase {
         Assert.assertTrue(isSubmitted,"Memo was not submitted!");
 
     }
-    @Test(priority = 5)
+    
+    @Test(priority = 10)
     public void submitMemoWithValidDataMERUTest(){
 
         //for meru = company_code=(String) data[1][12], for 1022 = company_code=(String) data[0][12], for MESPL = company_code=(String) data[5][12]

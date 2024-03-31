@@ -2,6 +2,7 @@ package com.billhub.qa.testcases;
 
 import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -82,4 +83,8 @@ public class VerificationWithExcelsheetForPoTest extends TestBase{
         Assert.assertTrue(isErrorDisplayed, "Invoice was verified with Invalid data.");
     }
 	
+	@AfterClass
+    public void tearDown() {
+        driver.close();
+    }
 }

@@ -224,9 +224,9 @@ public class NonPoBasedInvoiceVerificationWithExcelsheetPage extends TestBase {
         TestUtils.updateExcelSheetByFilePath(SHEET_PATH_FOR_UPLOADING_INVOICE, "Memo_Verification_details", 1, 19, assignment);
     }
 
-    public boolean invoiceVerificationWithExcelsheet(String withholding_tax, String item_text, String payment_term, String assignment){
+    public boolean invoiceVerificationWithExcelsheet(String memo_number, String withholding_tax, String item_text, String payment_term, String assignment){
 
-        String memo_number = "30005574-2023-24-00021";
+        
 
         memoInput.sendKeys(memo_number);
         WebElement selectTab= TestUtils.waitForElementVisibility(By.xpath("/html/body/app-root/app-layout/div[1]/main/div/div/app-dashboard/div/div[1]/div[2]/div/typeahead-container/button"));
